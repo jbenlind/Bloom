@@ -1,8 +1,4 @@
-# JumpStart
-
-<p align="center">
-<img src="/react-app/public/logo.png" />
-</p>
+# Bloom
 
 ## What is it?
 
@@ -63,4 +59,4 @@ Owners can:
 
 * Change and update the site quickly quickly
 * Send out emails to everyone that opts in for it to keep them updated
-# Bloom
+
