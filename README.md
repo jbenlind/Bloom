@@ -1,8 +1,3 @@
-# JumpStart
-
-<p align="center">
-<img src="/react-app/public/logo.png" />
-</p>
 
 ## What is it?
 
