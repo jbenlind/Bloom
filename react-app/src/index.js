@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import configureStore from './store';
-import { ModalProvider } from './context/Modal';
+import { ModalProvider } from './context/modal.js'
 
 import * as sessionActions from './store/session';
 
