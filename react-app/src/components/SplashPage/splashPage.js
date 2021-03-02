@@ -5,11 +5,7 @@ const SplashPage = () => {
 
     return (
         <>
-            <div id="background-Image">
-                <div id="cardStock">
-
-                </div>
-            </div>
+            
         </>
     )
 }
