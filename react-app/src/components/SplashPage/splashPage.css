@@ -10,10 +10,9 @@
 
 #cardStock {
     background-color: white;
-    height: 60vh;
-    width: 50vw;
+    height: 100%;
+    width: 40vw;
     position: absolute;
     z-index: 1;
-    top: 20vh;
-    left: 25vw;
+    left: 30vw;
 }
