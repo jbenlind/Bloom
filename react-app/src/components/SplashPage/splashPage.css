@@ -1,5 +1,5 @@
 #background-Image {
-    background-image: url('../Images/pexels-artem-saranin-1124960.jpg');
+    background-image: url('../Images/pexels-adrianna-calvo-17666.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,4 +15,5 @@
     position: absolute;
     z-index: 1;
     left: 30vw;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
 }
