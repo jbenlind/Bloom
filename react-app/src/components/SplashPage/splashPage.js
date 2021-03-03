@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 
 import './splashPage.css';
 
-const SplashPage = () => {
+const SplashPage = ({setBloomState}) => {
 
     const history = useHistory();
 
@@ -11,6 +11,14 @@ const SplashPage = () => {
         e.preventDefault();
         history.push('/userHub');
     }
+
+    useEffect(() => {
+        const url = window.location.href;
+
+        if(!url.includes("userHub")) {
+           setBloomState("")
+        }
+    })
 
     return (
         <>

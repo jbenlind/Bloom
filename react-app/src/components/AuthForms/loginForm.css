@@ -1,0 +1,28 @@
+.form-background {
+    background-color: white;
+    height: 550px;
+    width: 500px;
+}
+
+#hub-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #d4cdb2;
+    height: 550px;
+}
+
+.hub-button {
+    width: 250px;
+    height: 50px;
+    background-color: transparent;
+    border: transparent;
+    margin: 5px 0;
+    font-size: 1.6rem;
+    letter-spacing: .3rem;
+	text-transform: uppercase;
+    color:#0f6eea;
+}
+
+.hub-button:hover {
+    color: #6289bd;
+}

@@ -1,20 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useHistory } from 'react-router-dom';
 import './userHub.css';
 
-const UserHub = () => {
+import LoginForm from '../AuthForms';
+
+const UserHub = ({setBloomState}) => {
 
     // const history = useHistory();
 
+    useEffect(() => {
+        const url = window.location.href;
+
+        if(url.includes("userHub")) {
+           setBloomState("translate")
+        } 
+    })
 
     return (
         <>
             <div id="hub-background">
-                <div id="hub-sidebar">
-                    <button className="hub-button">Log In</button>
-                    <button className="hub-button">Sign Up</button>
-                    <button className="hub-button">Demo</button>
-                </div>
+                <LoginForm />
             </div>
         </>
     )

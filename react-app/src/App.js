@@ -28,15 +28,17 @@ const App = () => {
   //   return null;
   // }
 
+  const [bloomState, setBloomState] = useState("")
+
   return (
     <>
-      <Navigation />
+      <Navigation bloomState={bloomState}/>
         <Switch>
             <Route path="/" exact={true}>
-              <SplashPage />
+              <SplashPage setBloomState={setBloomState}/>
             </Route>
             <Route path="/userHub" exact={true}>
-              <UserHub />
+              <UserHub setBloomState={setBloomState}/>
             </Route>
         </Switch>
     </>

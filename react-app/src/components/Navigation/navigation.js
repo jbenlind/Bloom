@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import './navigation.css';
 
-const Navigation = () => {
+const Navigation = ({bloomState}) => {
 
+
+     console.log("------------", bloomState)
     return (
         <>
             <div id="grid-container">
                 <div id="first-fraction">
-                    <NavLink id="bloom-title" to="">
+                    <NavLink className={bloomState} id="bloom-title" to="/">
                         <span id="b">B</span>
                         <span id="loom">loom</span>
                     </NavLink>

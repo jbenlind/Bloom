@@ -2,10 +2,12 @@
     position: absolute;
     width: 100vw;
     z-index: 1;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, .3);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
 }
 
 #first-fraction {
@@ -15,13 +17,14 @@
 }
 
 #second-fraction{
-    padding-top:12px;
+    padding-top:4px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #third-fraction {
+    padding-top:4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,3 +128,18 @@
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+
+
+.translate {
+    animation: translate 4s ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes translate {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, 420px);
+    }
+  }
