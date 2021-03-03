@@ -14,6 +14,8 @@ class Reservations(db.Model):
     foodAllergies = db.Column(db.Boolean, nullable=False)
     foodAllergiesDescription = db.Column(db.Text, nullable=True)
 
+    user_page = db.relationship("User_page", back_populates="reservations")
+
     def to_dict(self):
         return {
             "id": self.id,

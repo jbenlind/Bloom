@@ -14,9 +14,15 @@ class User_page(db.Model):
     venueName = db.Column(db.String(255), nullable=False)
     venueLocation = db.Column(db.String(255), nullable=False)
     profileImg = db.Column(db.String(255), nullable=False)
-    pageLayoutId = db.Column(db.Integer, nullable=False)
-    backgroundImgId = db.Column(db.Integer, nullable=False)
-    colorPalleteId = db.Column(db.Integer, nullable=False)
+    pageLayoutId = db.Column(db.Integer, db.ForeignKey("page_layout.id"), nullable=False)
+    backgroundImgId = db.Column(db.Integer, db.ForeignKey("background_images.id"), nullable=False)
+    colorPaletteId = db.Column(db.Integer, db.ForeignKey("color_palette.id"), nullable=False)
+
+    user = db.relationship("User", back_populates="user_page")
+    reservations = db.relationship("Reservation", back_populates="user_page")
+    page_layout = db.relationship("Page_layout", back_populates="user_page")
+    background_images = db.relationship("Background_images", back_populates="user_page")
+    color_palette = db.relationship("Color_palette", back_populates="user_page")
 
     def to_dict(self):
         return {
@@ -32,5 +38,5 @@ class User_page(db.Model):
             "profileImg": self.profileImg,
             "pageLayoutId": self.pageLayoutId,
             "backgroundImgId": self.backgroundImgId,
-            "colorPalleteId": self.colorPalleteId
+            "colorPaletteId": self.colorPaletteId
         }
