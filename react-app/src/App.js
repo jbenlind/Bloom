@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { authenticate } from './store/session';
 
 import SplashPage from './components/SplashPage';
+import Navigation from './components/Navigation';
 import './App.css';
 
 const App = () => {
@@ -28,11 +29,12 @@ const App = () => {
 
   return (
     <>
-      <Switch>
-          <Route path="/" exact={true}>
-            <SplashPage />
-          </Route>
-      </Switch>
+      <Navigation />
+        <Switch>
+            <Route path="/" exact={true}>
+              <SplashPage />
+            </Route>
+        </Switch>
     </>
   );
 }

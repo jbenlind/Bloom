@@ -22,6 +22,7 @@ To start local development for this application, you'll need to:
 12. Start your Flask backend in the terminal that's in the root of the local project with `flask run`
 13. Run `npm start` in your `react-app` directory to start the React app. This should open in your default browser.
 14. Be sure to make your own branch for your changes before pushing up to GitHub.
+15. pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
 
 ## Technologies Used
 
@@ -59,4 +60,3 @@ Owners can:
 
 * Change and update the site quickly quickly
 * Send out emails to everyone that opts in for it to keep them updated
-

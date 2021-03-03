@@ -1,19 +1,10 @@
-#background-Image {
-    background-image: url('../Images/pexels-adrianna-calvo-17666.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-}
-
-#cardStock {
-    background-color: white;
-    height: 100%;
-    width: 40vw;
+#backgroundImage {
     position: absolute;
-    z-index: 1;
-    left: 30vw;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
 }
