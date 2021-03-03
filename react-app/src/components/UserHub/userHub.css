@@ -1,5 +1,9 @@
 #hub-background {
-    background-color: #96a39c;
+    background: url("https://bloombucketjesse.s3.us-east-2.amazonaws.com/userhub-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     height: 100vh;
     width: 100%;
     display: flex;

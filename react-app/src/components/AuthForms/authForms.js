@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import './loginForm.css';
+import './authForms.css';
 
-const LoginForm = () => {
+const AuthForms = () => {
 
     const [selected, setSelected] = useState('1')
 
@@ -11,11 +11,13 @@ const LoginForm = () => {
                     <button className={`${selected} hub-button`}>Log In</button>
                     <button className="hub-button">Sign Up</button>
                     <button className="hub-button">Demo</button>
+                    <img className="auth-icon" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png" alt=""></img>
             </div>
             <div className="form-background">
+                {/* switch */}
             </div>
         </>
     )
 }
 
-export default LoginForm;
+export default AuthForms;

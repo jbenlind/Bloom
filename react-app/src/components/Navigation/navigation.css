@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-#b {
+.b {
     color: white;
     text-transform: uppercase;
     font-size: 2.2rem;
@@ -133,6 +133,7 @@
 .translate {
     animation: translate 4s ;
     animation-fill-mode: forwards;
+
 }
 
 @keyframes translate {
@@ -141,5 +142,6 @@
     }
     100% {
       transform: translate(0, 420px);
+      color:#0f6eea;
     }
   }

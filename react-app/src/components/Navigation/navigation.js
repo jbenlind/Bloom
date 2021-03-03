@@ -11,7 +11,7 @@ const Navigation = ({bloomState}) => {
             <div id="grid-container">
                 <div id="first-fraction">
                     <NavLink className={bloomState} id="bloom-title" to="/">
-                        <span id="b">B</span>
+                        <span className={`${bloomState} b`}>B</span>
                         <span id="loom">loom</span>
                     </NavLink>
                 </div>
