@@ -5,6 +5,7 @@ import { authenticate } from './store/session';
 
 import SplashPage from './components/SplashPage';
 import Navigation from './components/Navigation';
+import UserHub from './components/UserHub';
 import './App.css';
 
 const App = () => {
@@ -33,6 +34,9 @@ const App = () => {
         <Switch>
             <Route path="/" exact={true}>
               <SplashPage />
+            </Route>
+            <Route path="/userHub" exact={true}>
+              <UserHub />
             </Route>
         </Switch>
     </>
