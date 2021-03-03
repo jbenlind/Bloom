@@ -9,10 +9,8 @@ def seed_users():
 
     jesse = User(
                  username='jesse',
-                 email='jesse@jumpstart.io',
+                 email='jesse@bloom.io',
                  password='password',
-                 city='Milwaukee',
-                 state='Wisconsin',
                 )
 
     new_users = []
@@ -22,8 +20,7 @@ def seed_users():
             new_user = User(**user)
             new_users.append(new_user)
 
-
-    db.session.add_all([Jesse, Karis, peter])
+    db.session.add_all([Jesse])
     db.session.add_all(new_users)
     db.session.commit()
 

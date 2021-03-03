@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/reednorton/.pyenv/versions/3.8.3/bin/python",
+    "python.pythonPath": "/home/jesse/.pyenv/shims/python",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.pycodestyleEnabled": true
