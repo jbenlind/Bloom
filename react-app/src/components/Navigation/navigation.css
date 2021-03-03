@@ -1,0 +1,12 @@
+#container {
+    position: absolute;
+    width: 90vw;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.link {
+    font-size: 25px;
+    color: #0f6eea;
+    text-decoration: none;
+}
