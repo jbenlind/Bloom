@@ -1,11 +1,30 @@
-#container {
+#grid-container {
     position: absolute;
     width: 100vw;
     z-index: 1;
     background-color: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#first-fraction {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+#second-fraction{
+    padding-top:12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#third-fraction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
 }
 
 #b {
@@ -38,7 +57,6 @@
     font-size: 30px;
     color: #0f6eea;
     text-decoration: none;
-    margin-top: 10px;
 }
 
 #loom:hover,
