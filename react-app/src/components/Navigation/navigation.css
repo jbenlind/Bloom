@@ -5,6 +5,11 @@
     background-color: transparent;
 }
 
+#icon {
+    height: 60px;
+}
+
+
 .link {
     font-size: 25px;
     color: #0f6eea;
