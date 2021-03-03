@@ -21,7 +21,7 @@ const Navigation = () => {
                 </div>
                 <div id="third-fraction">
                     {/* <Logout /> */}
-                    <NavLink id="getStarted-button" to="">Get Started</NavLink>
+                    {/* <button className="btn from-top">Get Started</button> */}
                 </div>
             </div>
 

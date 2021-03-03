@@ -7,11 +7,17 @@ from app.models import db, User
 
 def seed_users():
 
+    demo = User(
+        username='demo',
+        email='demo@bloom.io',
+        password='password'
+    )
+
     jesse = User(
-                 username='jesse',
-                 email='jesse@bloom.io',
-                 password='password',
-                )
+        username='jesse',
+        email='jesse@bloom.io',
+        password='password',
+    )
 
     new_users = []
     with open('./app/seeds/users.json') as f:
@@ -20,7 +26,7 @@ def seed_users():
             new_user = User(**user)
             new_users.append(new_user)
 
-    db.session.add_all([Jesse])
+    db.session.add_all([demo, jesse])
     db.session.add_all(new_users)
     db.session.commit()
 
