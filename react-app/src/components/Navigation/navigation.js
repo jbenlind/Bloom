@@ -9,12 +9,15 @@ const Navigation = () => {
             <div id="container">
                 {/* all caps? */}
 
-                <NavLink className="link" to=""> <img id="icon" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png" alt=""></img>Bloom</NavLink>
+                <NavLink id="bloom-title" to="">
+                    <span id="b">B</span>
+                    <span id="loom">loom</span>
+                </NavLink>
                 <NavLink className="link" to="">Templates</NavLink>
                 <NavLink className="link" to="">Find a page</NavLink>
                 <NavLink className="link" to="">Log In</NavLink>
                 {/* <NavLink className="link" to="">My page</NavLink> */}
-                <NavLink className="link" to="">Get Started</NavLink>
+                <NavLink id="getStarted-button" to="">Get Started</NavLink>
             </div>
 
         </>
