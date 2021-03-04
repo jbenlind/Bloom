@@ -87,7 +87,7 @@
 
 .btn:hover {
     color: #6289bd;
-	transition-delay: .5s;
+	transition-delay: .1s;
 }
 
 .btn:hover:before {
@@ -96,7 +96,7 @@
 
 .btn:hover:after {
 	background: rgba(255, 255, 255, .4);
-	transition-delay: .35s;
+	transition-delay: .15s;
 }
 
 /* From Top */

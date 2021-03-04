@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 import './loginForm.css';
 
-const LoginForm = () => {
+const LoginForm = ({authenticated}) => {
 
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
@@ -16,36 +16,47 @@ const LoginForm = () => {
         e.preventDefault();
         const user = await dispatch(login(email, password));
         if (user.errors) {
-        setErrors(["Provided credentials are invalid."]);
+        setErrors(["Login Failed"]);
         }
     };
 
+    const updateEmail = (e) => {
+        setEmail(e.target.value);
+      };
+
+      const updatePassword = (e) => {
+        setPassword(e.target.value);
+      };
+
+      if (authenticated) {
+        return <Redirect to="/" />;
+      }
+
     return (
         <>
-            <form className='login-form' onSubmit={onLogin}>
-                <h3 className='form-header'>Log In</h3>
-                <p className='form-text'>Let's get you outside</p>
+            <form className="auth-form" onSubmit={onLogin}>
                 <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <div className="input-fields">
+                <h3 className='auth-header'>Log In</h3>
                     <input
-                        className='email-input'
-                        type="text"
-                        value={credential}
-                        onChange={(e) => setCredential(e.target.value)}
-                        required
-                        placeholder='Email address...'
+                       className="auth-input-field"
+                       name="email"
+                       type="text"
+                       placeholder="Email"
+                       value={email}
+                       onChange={updateEmail}
                     />
                     <input
-                        className='password-input'
+                        className="auth-input-field"
+                        name="password"
                         type="password"
+                        placeholder="Password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        placeholder='Password...'
+                        onChange={updatePassword}
                     />
-                    <button className='login-button' type="submit">Log In</button>
+                    <button className='btn from-top' type="submit">Log In</button>
                 </div>
             </form>
 
