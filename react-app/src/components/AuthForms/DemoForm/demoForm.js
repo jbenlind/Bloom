@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { login } from '../../../store/session';
 import './demoForm.css';
 
-const DemoForm = () => {
+const DemoForm = ({setAuthenticated}) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -19,6 +19,7 @@ const DemoForm = () => {
         const demoEmail = "demo@bloom.io";
         const demoPassword = "password";
         setTimeout(await dispatch(login(demoEmail, demoPassword)), 1000);
+        setAuthenticated(true)
         history.push("/userPage/1")
       };
 

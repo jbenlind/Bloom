@@ -58,6 +58,11 @@
 
 }
 
+.logout {
+    background-color: transparent;
+    border: none;
+}
+
 #loom:hover,
 .link:hover {
     color: #6289bd;
