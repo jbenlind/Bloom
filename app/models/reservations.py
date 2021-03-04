@@ -10,7 +10,7 @@ class Reservations(db.Model):
     lastName = db.Column(db.String(150), nullable=False)
     email = db.Column(db.String(150), nullable=False)
     attending = db.Column(db.Boolean, nullable=False)
-    numberAttending = db.Column(db.Integer, nullable=False)
+    numberAttending = db.Column(db.Integer, nullable=False, default=0)
     foodAllergies = db.Column(db.Boolean, nullable=False)
     foodAllergiesDescription = db.Column(db.Text, nullable=True)
 
