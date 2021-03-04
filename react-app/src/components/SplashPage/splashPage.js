@@ -25,7 +25,7 @@ const SplashPage = ({setBloomState}) => {
             <img id="backgroundImage" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/splashPage-backgroundImage.png" alt=""></img>
             <div id="page-container">
                 <h1 id="slogan-header">Beautiful sites made easy</h1>
-                <button onClick={(e) => getStarted(e)} className="btn from-top">Get Started</button>
+                <button onClick={(e) => getStarted(e)} className="get-started btn from-top">Get Started</button>
             </div>
 
         </>
