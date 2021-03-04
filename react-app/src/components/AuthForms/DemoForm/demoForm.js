@@ -9,6 +9,13 @@ const DemoForm = () => {
             setSelected((prev) => !prev)
     }
 
+    // const demoLogin = async (e) => {
+    //     e.preventDefault();
+    //     const demoEmail = "demo@bloom.io";
+    //     const demoPassword = "password";
+    //     setTimeout(await dispatch(login(demoEmail, demoPassword)), 1000);
+    //   };
+
     return (
         <>
             <div className="demo-description">

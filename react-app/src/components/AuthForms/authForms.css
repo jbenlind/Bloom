@@ -113,3 +113,10 @@
     text-transform: uppercase;
     letter-spacing: .1rem;
 }
+
+.auth-errors-login {
+    position: absolute;
+    margin-top: 330px;
+    font-size: 25px;
+    color: rgba(255, 0, 0, 0.5);
+}

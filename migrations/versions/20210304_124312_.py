@@ -1,8 +1,8 @@
-"""initial
+"""empty message
 
-Revision ID: a720ca5980d7
+Revision ID: 4799015085e7
 Revises: 
-Create Date: 2021-03-03 00:21:10.040063
+Create Date: 2021-03-04 12:43:12.432293
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a720ca5980d7'
+revision = '4799015085e7'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -49,11 +49,15 @@ def upgrade():
     sa.Column('pageName', sa.String(length=100), nullable=False),
     sa.Column('partnerOne', sa.String(length=100), nullable=False),
     sa.Column('partnerTwo', sa.String(length=100), nullable=False),
-    sa.Column('weddingDate', sa.DateTime(), nullable=False),
-    sa.Column('weddingTime', sa.DateTime(), nullable=False),
+    sa.Column('weddingDateTime', sa.DateTime(), nullable=False),
     sa.Column('venueName', sa.String(length=255), nullable=False),
-    sa.Column('venueLocation', sa.String(length=255), nullable=False),
+    sa.Column('venueAddress', sa.String(length=255), nullable=False),
+    sa.Column('venueCity', sa.String(length=255), nullable=False),
+    sa.Column('venueState', sa.String(length=255), nullable=False),
+    sa.Column('venueZip', sa.Integer(), nullable=False),
     sa.Column('profileImg', sa.String(length=255), nullable=False),
+    sa.Column('latitude', sa.Float(), nullable=True),
+    sa.Column('longitude', sa.Float(), nullable=True),
     sa.Column('pageLayoutId', sa.Integer(), nullable=False),
     sa.Column('backgroundImgId', sa.Integer(), nullable=False),
     sa.Column('colorPaletteId', sa.Integer(), nullable=False),

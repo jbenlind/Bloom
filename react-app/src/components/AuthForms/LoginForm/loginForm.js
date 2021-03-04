@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { login } from '../../../store/session';
-import { Redirect } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 import '../authForms.css';
 
-const LoginForm = ({authenticated}) => {
+const LoginForm = ({authenticated, setAuthenticated}) => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let count = 0
 
     const onLogin = async (e) => {
         e.preventDefault();
         const user = await dispatch(login(email, password));
         if (user.errors) {
         setErrors(["Login Failed"]);
+        } else {
+            setAuthenticated(true)
+            history.push(`/usePage/${user.id}`)
         }
     };
 
@@ -28,16 +32,9 @@ const LoginForm = ({authenticated}) => {
         setPassword(e.target.value);
       };
 
-      if (authenticated) {
-        return <Redirect to="/" />;
-      }
-
     return (
         <>
             <form className="auth-form" onSubmit={onLogin}>
-                <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
                 <div className="input-fields">
                 <h4 className='auth-header'>Back Again?</h4>
                     <input
@@ -48,7 +45,7 @@ const LoginForm = ({authenticated}) => {
                        placeholder="Email"
                        value={email}
                        onChange={updateEmail}
-                    />
+                       />
                     <input
                         className="auth-input-field"
                         name="password"
@@ -56,8 +53,11 @@ const LoginForm = ({authenticated}) => {
                         placeholder="Password"
                         value={password}
                         onChange={updatePassword}
-                    />
+                        />
                     <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
+                    <div className="auth-errors-login">
+                        {errors.map((error, idx) => <div key={idx}>{error}</div>)}
+                    </div>
                 </div>
             </form>
 

@@ -8,6 +8,8 @@ class Page_layout(db.Model):
     layout = db.Column(db.String(100), nullable=False)
     navbarPosition = db.Column(db.String(100), nullable=False)
 
+    user_page = db.relationship("User_page", back_populates="page_layout")
+
     def to_dict(self):
         return {
             "id": self.id,
