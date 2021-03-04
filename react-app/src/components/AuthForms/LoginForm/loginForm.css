@@ -4,9 +4,9 @@
 
 .auth-header {
     text-transform: uppercase;
-    font-size: 1.8rem;
     letter-spacing: .2rem;
-    color: rgba(0, 0, 0, .8);
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, .7);
 }
 
 .input-fields {
@@ -22,7 +22,10 @@
     height: 60px;
     width: 300px;
     outline: none;
-    margin-top: 60px;
+    border-color: rgba(0, 0, 0, .4);
+    margin-top: 15px;
+    font-size: 25px;
+    color: rgba(0, 0, 0, .6);
 }
 
 .not-ready {
@@ -35,8 +38,8 @@
     text-transform: uppercase;
     font-size: 1.8rem;
     letter-spacing: .2rem;
-    color: rgba(0, 0, 0, .5);
-    margin-top: 60px;;
+    color: rgba(0, 0, 0, .7);
+    margin-top: 15px;
 }
 
 .ready {
@@ -48,14 +51,20 @@
     font-size: 1.8rem;
     letter-spacing: .2rem;
     color: white;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .5);
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
-    margin-top: 60px;
     transition: all 0.25s ease-in 0s;
+    margin-top: 15px;
 
 }
 
 .ready:hover {
-    text-decoration: underline 2px solid white;
     cursor: pointer;
+}
+
+::placeholder {
+    font-size: 20px;
+    color:#6289bd;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
 }

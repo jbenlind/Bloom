@@ -39,8 +39,9 @@ const LoginForm = ({authenticated}) => {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <div className="input-fields">
-                <h3 className='auth-header'>Welcome Back</h3>
+                <h4 className='auth-header'>Back Again?</h4>
                     <input
+                       autoComplete="off"
                        className="auth-input-field"
                        name="email"
                        type="text"

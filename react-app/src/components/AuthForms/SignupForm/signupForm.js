@@ -39,8 +39,9 @@ const SignupForm = ({authenticated}) => {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <div className="input-fields">
-                <h3 className='auth-header'>Welcome Back</h3>
+                <h4 className='auth-header'>Welcome</h4>
                     <input
+                       autoComplete="off"
                        className="auth-input-field"
                        name="username"
                        type="text"
@@ -49,6 +50,7 @@ const SignupForm = ({authenticated}) => {
                        onChange={updateEmail}
                     />
                     <input
+                       autoComplete="off"
                        className="auth-input-field"
                        name="email"
                        type="text"
@@ -64,7 +66,15 @@ const SignupForm = ({authenticated}) => {
                         value={password}
                         onChange={updatePassword}
                     />
-                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
+                    <input
+                        className="auth-input-field"
+                        name="password"
+                        type="password"
+                        placeholder="Confirm"
+                        value={password}
+                        onChange={updatePassword}
+                    />
+                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Sign Up</button>
                 </div>
             </form>
 

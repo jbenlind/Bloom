@@ -137,6 +137,12 @@
 
 }
 
+#translate {
+    animation: translate 7s;
+    animation-fill-mode: forwards;
+    animation-delay: .7s;
+}
+
 
 @keyframes translate {
     0% {
@@ -144,15 +150,19 @@
       text-decoration: none;
       text-decoration: none;
       border-bottom: none;
+
     }
-    30% {
+    40% {
         transform: translate(0, 220px);
+        color:#0f6eea;
     }
-    70% {
-        transform: translate(20.34vw, 220px);
+    80% {
+        transform: translate(390px, 220px);
+        color:#0f6eea;
     }
     100% {
-      transform: translate(20.34vw, 220px);
+      transform: translate(390px, 220px);
+      color:#0f6eea;
       border-bottom: none;
     }
 

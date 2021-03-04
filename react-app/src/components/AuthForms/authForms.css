@@ -34,12 +34,11 @@
 
 .hub-button:hover {
     cursor: pointer;
-    text-decoration: underline 2px solid #e9f3ea;;
 }
 
 
 #selected {
-    background-color: #f1f7f1;
+    background-color: rgba(255, 255, 255, .5);
     color:rgba(0, 0, 0, .5)
     /* possibly black */
 }
