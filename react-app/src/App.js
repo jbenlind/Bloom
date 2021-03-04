@@ -33,10 +33,10 @@ const App = () => {
 
   return (
     <>
-      <Navigation bloomState={bloomState}/>
+      <Navigation bloomState={bloomState} authenticated={authenticated}/>
         <Switch>
             <Route path="/" exact={true} authenticated={authenticated}>
-              <SplashPage setBloomState={setBloomState} />
+              <SplashPage setBloomState={setBloomState} authenticated={authenticated}/>
             </Route>
             <Route path="/userHub" exact={true} authenticated={authenticated}>
               <UserHub setBloomState={setBloomState} setAuthenticated={setAuthenticated}/>

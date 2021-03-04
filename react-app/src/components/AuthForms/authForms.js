@@ -5,7 +5,7 @@ import DemoForm from './DemoForm';
 import './authForms.css';
 import { authenticate } from "../../store/session";
 
-const AuthForms = ({authenticated}) => {
+const AuthForms = ({authenticated, setAuthenticated}) => {
 
     const [selected, setSelected] = useState('login')
 
@@ -30,9 +30,9 @@ const AuthForms = ({authenticated}) => {
             </div>
             <div className="form-background">
                 {selected === "login" &&
-                <LoginForm authenticated={authenticated} />}
+                <LoginForm authenticated={authenticated} setAuthenticated={setAuthenticated} />}
                 {selected === "signup" &&
-                <SignupForm authenticated={authenticated} />}
+                <SignupForm authenticated={authenticated} setAuthenticated={setAuthenticated} />}
                 {selected === "demo" &&
                 <DemoForm />}
             </div>

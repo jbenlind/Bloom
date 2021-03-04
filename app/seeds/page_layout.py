@@ -5,7 +5,6 @@ from app.models import db, Page_layout
 def seed_page_layout():
 
     layoutOne = Page_layout(
-        id='1',
         layout='horizontal',
         navbarPosition='bottom'
     )
@@ -14,5 +13,5 @@ def seed_page_layout():
     db.session.commit()
 
 def undo_page_layout():
-    db.session.execute('TRUNCATE page_layout CASCADE;')
+    db.session.execute('TRUNCATE page_layout RESTART IDENTITY CASCADE;')
     db.session.commit()

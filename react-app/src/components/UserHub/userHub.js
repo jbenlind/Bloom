@@ -3,7 +3,7 @@ import './userHub.css';
 
 import AuthForms from '../AuthForms';
 
-const UserHub = ({setBloomState}) => {
+const UserHub = ({setBloomState, authenticated, setAuthenticated}) => {
 
     // const history = useHistory();
 
@@ -18,7 +18,7 @@ const UserHub = ({setBloomState}) => {
     return (
         <>
             <div id="hub-background">
-                <AuthForms />
+                <AuthForms authenticated={authenticated} setAuthenticated={setAuthenticated} />
             </div>
         </>
     )

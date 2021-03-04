@@ -4,14 +4,12 @@ from app.models import db, User
 def seed_users():
 
     demo = User(
-        id=1,
         username='demo',
         email='demo@bloom.io',
         password='password'
     )
 
     jesse = User(
-        id=2,
         username='jesse',
         email='jesse@bloom.io',
         password='password',
@@ -22,5 +20,5 @@ def seed_users():
 
 
 def undo_users():
-    db.session.execute('TRUNCATE users CASCADE;')
+    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()

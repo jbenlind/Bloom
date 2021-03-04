@@ -15,9 +15,9 @@ class User_page(db.Model):
     venueCity = db.Column(db.String(255), nullable=False)
     venueState = db.Column(db.String(255), nullable=False)
     venueZip = db.Column(db.Integer, nullable=False)
-    profileImg = db.Column(db.String(255), nullable=False)
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
+    profileImg = db.Column(db.String(255), nullable=False)
     pageLayoutId = db.Column(
         db.Integer, db.ForeignKey("page_layout.id"), nullable=False)
     backgroundImgId = db.Column(

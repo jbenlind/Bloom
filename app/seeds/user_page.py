@@ -1,12 +1,12 @@
 import datetime
 from werkzeug.security import generate_password_hash
-from app.models import db, User_page
+from app.models import db, User_page, Background_images, User
 
 
 def seed_user_page():
 
     one = User_page(
-        userId=1,
+        userId=2,
         pageName="Jesse's page",
         partnerOne="Karis Naumann",
         partnerTwo="Jesse Lindloff",
@@ -17,9 +17,9 @@ def seed_user_page():
         venueState="Wisconsin",
         venueZip=53204,
         profileImg="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png",
-        pageLayoutId="1",
-        backgroundImgId="1",
-        colorPaletteId="1"
+        pageLayoutId=1,
+        backgroundImgId=1,
+        colorPaletteId=1
     )
 
     db.session.add_all([one])
@@ -27,5 +27,5 @@ def seed_user_page():
 
 
 def undo_user_page():
-    db.session.execute('TRUNCATE user_page CASCADE')
+    db.session.execute('TRUNCATE user_page RESTART IDENTITY CASCADE')
     db.session.commit()

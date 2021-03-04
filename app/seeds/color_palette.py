@@ -5,8 +5,7 @@ from app.models import db, Color_palette
 def seed_color_palette():
 
     paletteOne = Color_palette(
-        id='1',
-        layout='standard',
+        palette='standard',
     )
 
     db.session.add_all([paletteOne])
@@ -19,5 +18,5 @@ def seed_color_palette():
 
 
 def undo_color_palette():
-    db.session.execute('TRUNCATE color_palette CASCADE;')
+    db.session.execute('TRUNCATE color_palette RESTART IDENTITY CASCADE;')
     db.session.commit()
