@@ -1,26 +1,43 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-import { login } from '../../../store/session';
+import { signUp, login } from "../../../store/session";
 import { Redirect } from 'react-router-dom';
 
-import './signupForm.css';
+import '../authForms.css';
 
-const SignupForm = ({authenticated}) => {
+const SignupForm = ({authenticated, setAuthenticated}) => {
 
     const dispatch = useDispatch();
+    const [username, setUsername] = useState("");
     const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
 
-    const onLogin = async (e) => {
+    const onSignUp = async (e) => {
         e.preventDefault();
-        const user = await dispatch(login(email, password));
-        if (user.errors) {
-        setErrors(["Login Failed"]);
+        const user = await dispatch(
+          signUp(username, email, password)
+        );
+        if (password === repeatPassword) {
+          if (!user.errors) {
+            setAuthenticated(true);
+          } else {
+            const errors = user.errors.map(error => error.split(' : ')[1]);
+            setErrors(errors);
+          }
+        } else {
+          setErrors([
+            "Confirm Password field must be the same as the Password field",
+          ]);
         }
-    };
+      };
 
-    const updateEmail = (e) => {
+      const updateUsername = (e) => {
+        setUsername(e.target.value);
+      };
+
+      const updateEmail = (e) => {
         setEmail(e.target.value);
       };
 
@@ -28,13 +45,15 @@ const SignupForm = ({authenticated}) => {
         setPassword(e.target.value);
       };
 
-      if (authenticated) {
-        return <Redirect to="/" />;
-      }
+      const updateRepeatPassword = (e) => {
+        setRepeatPassword(e.target.value);
+      };
+
+      console.log(repeatPassword === "")
 
     return (
         <>
-            <form className="auth-form" onSubmit={onLogin}>
+            <form className="auth-form" onSubmit={onSignUp}>
                 <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
@@ -46,8 +65,8 @@ const SignupForm = ({authenticated}) => {
                        name="username"
                        type="text"
                        placeholder="Username"
-                       value={email}
-                       onChange={updateEmail}
+                       value={username}
+                       onChange={updateUsername}
                     />
                     <input
                        autoComplete="off"
@@ -68,13 +87,13 @@ const SignupForm = ({authenticated}) => {
                     />
                     <input
                         className="auth-input-field"
-                        name="password"
+                        name="repeat_password"
                         type="password"
                         placeholder="Confirm"
-                        value={password}
-                        onChange={updatePassword}
+                        value={repeatPassword}
+                        onChange={updateRepeatPassword}
                     />
-                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Sign Up</button>
+                    <button disabled={!(repeatPassword !== "")} className={email && password ? "ready" : "not-ready"} type="submit">Sign Up</button>
                 </div>
             </form>
 

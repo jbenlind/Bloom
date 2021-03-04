@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { login } from '../../../store/session';
 import { Redirect } from 'react-router-dom';
 
-import './loginForm.css';
+import '../authForms.css';
 
 const LoginForm = ({authenticated}) => {
 
