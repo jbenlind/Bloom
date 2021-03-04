@@ -4,21 +4,53 @@
 
 .auth-header {
     text-transform: uppercase;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     letter-spacing: .2rem;
-    color: ;
+    color: rgba(0, 0, 0, .8);
 }
 
 .input-fields {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
+
 }
 
 .auth-input-field {
     padding-left:20px;
     height: 60px;
     width: 300px;
+    outline: none;
+    margin-top: 60px;
+}
 
+.not-ready {
+    text-transform: uppercase;
+    height: 50px;
+    width: 200px;
+    cursor: not-allowed;
+    border: transparent;
+    outline: none;
+    background-color:transparent;
+    font-size: 30px;
+    color: rgba(0, 0, 0, .5);
+    margin-top: 60px;;
+}
+
+.ready {
+    text-transform: uppercase;
+    height: 50px;
+    width: 200px;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    margin-top: 80px;
+}
+
+.ready:hover {
+    color: rgba(0, 0, 0, .8);
 }

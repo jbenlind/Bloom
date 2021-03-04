@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { login } from '../../../store/session';
 import { Redirect } from 'react-router-dom';
@@ -39,7 +39,7 @@ const LoginForm = ({authenticated}) => {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
                 <div className="input-fields">
-                <h3 className='auth-header'>Log In</h3>
+                <h3 className='auth-header'>Welcome Back</h3>
                     <input
                        className="auth-input-field"
                        name="email"
@@ -56,7 +56,7 @@ const LoginForm = ({authenticated}) => {
                         value={password}
                         onChange={updatePassword}
                     />
-                    <button className='btn from-top' type="submit">Log In</button>
+                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
                 </div>
             </form>
 
