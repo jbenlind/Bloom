@@ -19,6 +19,18 @@ def seed_user_page():
         colorPaletteId="1"
     )
 
+    new_user_page = []
+    with open('./app/seeds/user_page.json') as f:
+        data = json.load(f)
+        for page in data:
+            new_user_page = User_page(**page)
+            new_user_page.append(new_user_page)
+
+
+    db.session.add_all([one])
+    db.session.add_all(new_projects)
+    db.session.commit()
+
 
 def undo_user_page():
     db.session.execute('TRUNCATE user_page CASCADE')

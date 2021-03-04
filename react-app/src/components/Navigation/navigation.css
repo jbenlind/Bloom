@@ -138,7 +138,7 @@
 }
 
 #translate {
-    animation: translate 7s;
+    animation: translate .5s;
     animation-fill-mode: forwards;
     animation-delay: .7s;
 }
@@ -152,11 +152,11 @@
       border-bottom: none;
 
     }
-    40% {
+    25% {
         transform: translate(0, 220px);
         color:#0f6eea;
     }
-    80% {
+    60% {
         transform: translate(390px, 220px);
         color:#0f6eea;
     }

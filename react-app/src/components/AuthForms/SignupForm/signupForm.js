@@ -93,7 +93,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
                         value={repeatPassword}
                         onChange={updateRepeatPassword}
                     />
-                    <button disabled={!(repeatPassword !== "")} className={email && password ? "ready" : "not-ready"} type="submit">Sign Up</button>
+                    <button disabled={!(username && email && password && repeatPassword)}  className={username && email && password && repeatPassword ? "ready" : "not-ready"} type="submit">Sign Up</button>
                 </div>
             </form>
 
