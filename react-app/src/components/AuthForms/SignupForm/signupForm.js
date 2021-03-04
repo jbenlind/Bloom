@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { useDispatch } from "react-redux";
 import { login } from '../../../store/session';
 import { Redirect } from 'react-router-dom';
 
-import './loginForm.css';
+import './signupForm.css';
 
-const LoginForm = ({authenticated}) => {
+const SignupForm = ({authenticated}) => {
 
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
@@ -42,6 +42,14 @@ const LoginForm = ({authenticated}) => {
                 <h3 className='auth-header'>Welcome Back</h3>
                     <input
                        className="auth-input-field"
+                       name="username"
+                       type="text"
+                       placeholder="Username"
+                       value={email}
+                       onChange={updateEmail}
+                    />
+                    <input
+                       className="auth-input-field"
                        name="email"
                        type="text"
                        placeholder="Email"
@@ -64,4 +72,4 @@ const LoginForm = ({authenticated}) => {
     )
 }
 
-export default LoginForm;
+export default SignupForm;

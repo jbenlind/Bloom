@@ -6,19 +6,20 @@ import { authenticate } from './store/session';
 import SplashPage from './components/SplashPage';
 import Navigation from './components/Navigation';
 import UserHub from './components/UserHub';
+import SignupForm from './components/AuthForms/SignupForm';
 import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
 
-  // const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   // useEffect(() => {
   //   (async () => {
   //     const user = await dispatch(authenticate());
   //     if (!user.errors) {
-  //       // setAuthenticated(true);
+  //       setAuthenticated(true);
   //     }
   //     setLoaded(true);
   //   })();
@@ -37,7 +38,7 @@ const App = () => {
             <Route path="/" exact={true}>
               <SplashPage setBloomState={setBloomState}/>
             </Route>
-            <Route path="/userHub" exact={true}>
+            <Route path="/userHub" authenticated={authenticated} exact={true}>
               <UserHub setBloomState={setBloomState}/>
             </Route>
         </Switch>

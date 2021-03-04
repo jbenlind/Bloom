@@ -4,14 +4,12 @@ import './navigation.css';
 
 const Navigation = ({bloomState}) => {
 
-
-     console.log("------------", bloomState)
     return (
         <>
             <div id="grid-container">
                 <div id="first-fraction">
                     <NavLink className={bloomState} id="bloom-title" to="/">
-                        <span className={`${bloomState} b`}>B</span>
+                        <span id={bloomState} className="b">B</span>
                         <span id="loom">loom</span>
                     </NavLink>
                 </div>

@@ -137,16 +137,23 @@
 
 }
 
+
 @keyframes translate {
     0% {
       transform: translate(0, 0);
+      text-decoration: none;
+      text-decoration: none;
+      border-bottom: none;
     }
-    75% {
-        color:#0f6eea;
+    30% {
+        transform: translate(0, 220px);
+    }
+    70% {
+        transform: translate(20.34vw, 220px);
     }
     100% {
-      transform: translate(0, 420px);
-      color:#0f6eea;
+      transform: translate(20.34vw, 220px);
+      border-bottom: none;
     }
 
   }

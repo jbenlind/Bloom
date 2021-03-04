@@ -10,7 +10,7 @@
 #hub-sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content:center;
     /* background-color: #d9e2da; */
     background-color: rgba(0, 0, 0, .2);
     height: 550px;
@@ -42,8 +42,4 @@
     background-color: #f1f7f1;
     color:rgba(0, 0, 0, .5)
     /* possibly black */
-}
-
-#spacer {
-    height: 20px;
 }

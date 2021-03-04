@@ -1,5 +1,4 @@
 import React, {useEffect} from "react";
-import { useHistory } from 'react-router-dom';
 import './userHub.css';
 
 import AuthForms from '../AuthForms';
