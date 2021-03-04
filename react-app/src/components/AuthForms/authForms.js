@@ -1,20 +1,38 @@
 import React, { useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import LoginForm from './LoginForm/';
 import './authForms.css';
 
 const AuthForms = () => {
 
-    const [selected, setSelected] = useState('1')
+    const [selected, setSelected] = useState('login')
+
+    const loginSelected = () => {
+        setSelected("login")
+    }
+
+    const signupSelected = () => {
+        setSelected("signup")
+    }
+
+    const demoSelected = () => {
+        setSelected("demo")
+    }
 
     return (
         <>
             <div id="hub-sidebar">
-                    <button className={`${selected} hub-button`}>Log In</button>
-                    <button className="hub-button">Sign Up</button>
-                    <button className="hub-button">Demo</button>
-                    <img className="auth-icon" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png" alt=""></img>
+                    <button id={selected === "login" ? "selected" : ""} className="hub-button" onClick={(e) =>loginSelected()}>Log In</button>
+                    <button id={selected === "signup" ? "selected" : ""} className="hub-button" onClick={(e) => signupSelected()}>Sign Up</button>
+                    <button id={selected === "demo" ? "selected" : ""} className="hub-button" onClick={(e) => demoSelected()}>Demo</button>
+                    <div id="spacer"></div>
             </div>
             <div className="form-background">
-                {/* switch */}
+                <Switch>
+                    <Route to='/loginForm'>
+                        <LoginForm />
+                    </Route>
+                </Switch>
             </div>
         </>
     )

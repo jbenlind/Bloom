@@ -1,36 +1,51 @@
 .form-background {
-    background-color: white;
+    background-color: #e9f3ea;
     height: 550px;
     width: 500px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
 }
 
 #hub-sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #d9e2da;
+    justify-content: space-evenly;
+    /* background-color: #d9e2da; */
+    background-color: rgba(0, 0, 0, .2);
     height: 550px;
-    border: 10px solid white;
+    border: 8px solid #e9f3ea;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
 }
 
 .hub-button {
     width: 250px;
-    height: 50px;
+    height: 80px;
     background-color: transparent;
     border: transparent;
     margin: 5px 0;
     font-size: 1.6rem;
     letter-spacing: .3rem;
 	text-transform: uppercase;
-    color:#0f6eea;
+    color:white;
+    margin:0;
+    outline: none;
 }
 
 .hub-button:hover {
-    color: #6289bd;
+    cursor: pointer;
+    text-decoration: underline 2px solid #e9f3ea;;
 }
 
 .auth-icon {
-    margin-top: 55px;
-    height: 200px;
-    width: 200px;
+    margin-top: 65px;
+    height: 150px;
+    width: 150px;
+}
+
+#selected {
+    background-color: #e9f3ea;
+    color:#0f6eea;
+}
+
+#spacer {
+    height: 20px;
 }
