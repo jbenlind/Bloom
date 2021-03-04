@@ -49,7 +49,9 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
         setRepeatPassword(e.target.value);
       };
 
-      console.log(repeatPassword === "")
+      if (authenticated) {
+        return <Redirect to="/" />;
+      }
 
     return (
         <>

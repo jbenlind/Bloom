@@ -1,4 +1,4 @@
-import json
+import datetime
 from werkzeug.security import generate_password_hash
 from app.models import db, User_page
 
@@ -6,29 +6,23 @@ from app.models import db, User_page
 def seed_user_page():
 
     one = User_page(
-        userId=2,
+        userId=1,
         pageName="Jesse's page",
         partnerOne="Karis Naumann",
-        partnerTwo="Jesse Lindloff"
-        weddingDateTime=datetime.now(),
+        partnerTwo="Jesse Lindloff",
+        weddingDateTime=datetime.datetime.now(),
         venueName="The Ivy House",
-        venueLocation="906 South Barclay Street, Milwaukee, Wisconsin 53204"
+        venueAddress="906 South Barclay Street",
+        venueCity="Milwaukee",
+        venueState="Wisconsin",
+        venueZip=53204,
         profileImg="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png",
-        pageLayoutId="1"
-        backgroundImgId="1"
+        pageLayoutId="1",
+        backgroundImgId="1",
         colorPaletteId="1"
     )
 
-    new_user_page = []
-    with open('./app/seeds/user_page.json') as f:
-        data = json.load(f)
-        for page in data:
-            new_user_page = User_page(**page)
-            new_user_page.append(new_user_page)
-
-
     db.session.add_all([one])
-    db.session.add_all(new_projects)
     db.session.commit()
 
 

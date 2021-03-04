@@ -11,8 +11,13 @@ class User_page(db.Model):
     partnerTwo = db.Column(db.String(100), nullable=False)
     weddingDateTime = db.Column(db.DateTime, nullable=False)
     venueName = db.Column(db.String(255), nullable=False)
-    venueLocation = db.Column(db.String(255), nullable=False)
+    venueAddress = db.Column(db.String(255), nullable=False)
+    venueCity = db.Column(db.String(255), nullable=False)
+    venueState = db.Column(db.String(255), nullable=False)
+    venueZip = db.Column(db.Integer, nullable=False)
     profileImg = db.Column(db.String(255), nullable=False)
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float)
     pageLayoutId = db.Column(
         db.Integer, db.ForeignKey("page_layout.id"), nullable=False)
     backgroundImgId = db.Column(
@@ -21,7 +26,7 @@ class User_page(db.Model):
         db.Integer, db.ForeignKey("color_palette.id"), nullable=False)
 
     user = db.relationship("User", back_populates="user_page")
-    reservations = db.relationship("Reservation", back_populates="user_page")
+    reservations = db.relationship("Reservations", back_populates="user_page")
     page_layout = db.relationship("Page_layout", back_populates="user_page")
     background_images = db.relationship(
         "Background_images", back_populates="user_page")

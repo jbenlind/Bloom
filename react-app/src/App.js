@@ -6,7 +6,7 @@ import { authenticate } from './store/session';
 import SplashPage from './components/SplashPage';
 import Navigation from './components/Navigation';
 import UserHub from './components/UserHub';
-import SignupForm from './components/AuthForms/SignupForm';
+import MyPage from './components/MyPage';
 import './App.css';
 
 const App = () => {
@@ -35,11 +35,14 @@ const App = () => {
     <>
       <Navigation bloomState={bloomState}/>
         <Switch>
-            <Route path="/" exact={true}>
-              <SplashPage setBloomState={setBloomState}/>
+            <Route path="/" exact={true} authenticated={authenticated}>
+              <SplashPage setBloomState={setBloomState} />
             </Route>
-            <Route path="/userHub" authenticated={authenticated} exact={true}>
-              <UserHub setBloomState={setBloomState}/>
+            <Route path="/userHub" exact={true} authenticated={authenticated}>
+              <UserHub setBloomState={setBloomState} setAuthenticated={setAuthenticated}/>
+            </Route>
+            <Route path="/myPage/:userId" exact={true} authenticated={authenticated}>
+              <MyPage setAuthenticated={setAuthenticated}/>
             </Route>
         </Switch>
     </>

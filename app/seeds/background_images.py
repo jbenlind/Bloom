@@ -1,25 +1,31 @@
-import json
 from werkzeug.security import generate_password_hash
-from app.models import db, Background_Images
+from app.models import db, Background_images
 
 
-def seed_color_palette():
+def seed_background_images():
 
-    paletteOne = Background_Images(
+    imageOne = Background_images(
         id='1',
-        imgUrl='standard',
+        imgUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-1.jpg',
+    )
+    imageTwo = Background_images(
+        id='2',
+        imgUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-2.jpg',
+    )
+    imageThree = Background_images(
+        id='3',
+        imgUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-3.jpg',
+    )
+    imageFour = Background_images(
+        id='4',
+        imgUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-4.jpg',
+    )
+    imageFive = Background_images(
+        id='5',
+        imgUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-5.jpg',
     )
 
-
-    new_background_image = []
-    with open('./app/seeds/background_images.json') as f:
-        data = json.load(f)
-        for image in data:
-            new_background_image = Background_Images(**image)
-            new_background_image.append(new_background_image)
-
-    db.session.add_all([paletteOne])
-    db.session.add_all(new_background_image)
+    db.session.add_all([imageOne, imageTwo, imageThree, imageFour, imageFive])
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.
@@ -28,6 +34,6 @@ def seed_color_palette():
 # the auto incrementing primary key
 
 
-def undo_page_layout():
-    db.session.execute('TRUNCATE color_palette CASCADE;')
+def undo_background_images():
+    db.session.execute('TRUNCATE background_images CASCADE;')
     db.session.commit()

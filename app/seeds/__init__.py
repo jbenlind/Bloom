@@ -4,6 +4,7 @@ from .user_page import seed_user_page, undo_user_page
 from .reservations import seed_reservations, undo_reservations
 from .page_layout import seed_page_layout, undo_page_layout
 from .color_palette import seed_color_palette, undo_color_palette
+from .background_images import seed_background_images, undo_background_images
 
 
 seed_commands = AppGroup('seed')
@@ -15,10 +16,12 @@ def seed():
     seed_reservations()
     seed_page_layout()
     seed_color_palette()
+    seed_background_images()
 
 
 @seed_commands.command('undo')
 def undo():
+    undo_background_images()
     undo_color_palette()
     undo_page_layout()
     undo_reservations()
