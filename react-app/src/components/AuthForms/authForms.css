@@ -70,7 +70,7 @@
     border-color: rgba(0, 0, 0, .4);
     margin-top: 15px;
     font-size: 25px;
-    color: rgba(0, 0, 0, .6);
+    color: rgba(0, 0, 0, .7);
 }
 
 .not-ready {
@@ -117,6 +117,13 @@
 .auth-errors-login {
     position: absolute;
     margin-top: 330px;
+    font-size: 25px;
+    color: rgba(255, 0, 0, 0.5);
+}
+
+.auth-errors-signUp {
+    position: absolute;
+    margin-top: 460px;
     font-size: 25px;
     color: rgba(255, 0, 0, 0.5);
 }
