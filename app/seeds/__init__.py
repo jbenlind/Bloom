@@ -9,12 +9,13 @@ from .background_images import seed_background_images, undo_background_images
 
 seed_commands = AppGroup('seed')
 
+
 @seed_commands.command('all')
 def seed():
     seed_users()
     seed_page_layout()
-    seed_color_palette()
     seed_background_images()
+    seed_color_palette()
     seed_user_page()
     seed_reservations()
 
@@ -23,7 +24,7 @@ def seed():
 def undo():
     undo_reservations()
     undo_user_page()
-    undo_background_images()
     undo_color_palette()
+    undo_background_images()
     undo_page_layout()
     undo_users()

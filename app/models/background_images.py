@@ -10,6 +10,8 @@ class Background_images(db.Model):
 
     user_page = db.relationship(
         "User_page", back_populates="background_images")
+    color_palette = db.relationship(
+        "Color_palette", back_populates="background_images")
 
     def to_dict(self):
         return {
