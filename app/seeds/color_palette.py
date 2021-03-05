@@ -5,6 +5,7 @@ from app.models import db, Color_palette
 def seed_color_palette():
 
     paletteOne = Color_palette(
+        name="Basic",
         palette='standard',
     )
 
