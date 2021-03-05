@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import LoginForm from './LoginForm/';
-import SignupForm from './SignupForm';
-import DemoForm from './DemoForm';
-import './authForms.css';
+import LoginForm from "./LoginForm/";
+import SignupForm from "./SignupForm";
+import DemoForm from "./DemoForm";
+import "./authForms.css";
 
 const AuthForms = ({authenticated, setAuthenticated}) => {
 
-    const [selected, setSelected] = useState('login')
+    const [selected, setSelected] = useState("login")
 
 
     const loginSelected = () => {

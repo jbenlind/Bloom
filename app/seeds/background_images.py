@@ -5,23 +5,23 @@ from app.models import db, Background_images
 def seed_background_images():
 
     imageOne = Background_images(
-        name="wedding-venue",
-        imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-1.jpg',
+        name="bright night",
+        imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-3.jpg',
     )
     imageTwo = Background_images(
-        name="white-flowers",
+        name="perfect blur",
         imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-2.jpg',
     )
     imageThree = Background_images(
-        name="string-lights",
-        imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-3.jpg',
+        name="white wedding",
+        imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-1.jpg',
     )
     imageFour = Background_images(
-        name="rose-pedals",
+        name="pink perfection",
         imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-4.jpg',
     )
     imageFive = Background_images(
-        name="daisys",
+        name="bright Bloom",
         imageUrl='https://bloombucketjesse.s3.us-east-2.amazonaws.com/backgroundImage-5.jpg',
     )
 

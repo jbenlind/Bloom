@@ -1,3 +1,3 @@
-import AuthForms from './authForms.js';
+import AuthForms from "./authForms.js";
 
 export default AuthForms;

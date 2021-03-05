@@ -17,5 +17,7 @@ class Color_palette(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
+            "backgroundImageId": self.backgroundImageId,
+            "name": self.name,
             "palette": self.palette,
         }

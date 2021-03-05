@@ -1,5 +1,5 @@
-const SET_USER = 'session/SET_USER';
-const REMOVE_USER = 'session/REMOVE_USER';
+const SET_USER = "session/SET_USER";
+const REMOVE_USER = "session/REMOVE_USER";
 
 const setUser = (user) => {
   return {
@@ -15,9 +15,9 @@ const removeUser = () => {
 };
 
 export const authenticate = () => async (dispatch) => {
-  const response = await fetch('/api/auth/', {
+  const response = await fetch("/api/auth/", {
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     }
   });
   const user = await response.json();
@@ -28,10 +28,10 @@ export const authenticate = () => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-  const response = await fetch('/api/auth/login', {
-    method: 'POST',
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
       email,

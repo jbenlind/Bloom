@@ -5,6 +5,12 @@ class User_page(db.Model):
     __tablename__ = 'user_page'
 
     id = db.Column(db.Integer, primary_key=True)
+    backgroundImgId = db.Column(
+        db.Integer, db.ForeignKey("background_images.id"), nullable=False)
+    pageLayoutId = db.Column(
+        db.Integer, db.ForeignKey("page_layout.id"), nullable=False)
+    colorPaletteId = db.Column(
+        db.Integer, db.ForeignKey("color_palette.id"), nullable=False)
     userId = db.Column(db.Integer, db.ForeignKey("users.id"))
     pageName = db.Column(db.String(100), nullable=False)
     partnerOne = db.Column(db.String(100), nullable=False)
@@ -18,12 +24,6 @@ class User_page(db.Model):
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
     profileImg = db.Column(db.String(255), nullable=False)
-    pageLayoutId = db.Column(
-        db.Integer, db.ForeignKey("page_layout.id"), nullable=False)
-    backgroundImgId = db.Column(
-        db.Integer, db.ForeignKey("background_images.id"), nullable=False)
-    colorPaletteId = db.Column(
-        db.Integer, db.ForeignKey("color_palette.id"), nullable=False)
 
     user = db.relationship("User", back_populates="user_page")
     reservations = db.relationship("Reservations", back_populates="user_page")
