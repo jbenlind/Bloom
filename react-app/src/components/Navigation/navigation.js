@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../store/session";
-import FromTopButton from "../FromTopButton";
+// import FromTopButton from "../FromTopButton";
 import "./navigation.css";
 
-const Navigation = ({ translateNav, authenticated, setAuthenticated }) => {
+const Navigation = ({ authenticated, setAuthenticated }) => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const location = useLocation();
+  const pathName = location.pathname.slice(1);
 
   const logoutFunction = async (e) => {
     history.push("/");
@@ -20,9 +22,9 @@ const Navigation = ({ translateNav, authenticated, setAuthenticated }) => {
     <>
       <div id="grid-container">
         <div id="first-fraction">
-          <NavLink id={translateNav} className="bloom-title" to="/">
+          <NavLink id={pathName} className="bloom-title" to="/">
             <span className="b">B</span>
-             <span id={translateNav} className="loom">
+             <span id={pathName} className="loom">
               loom
             </span>
           </NavLink>

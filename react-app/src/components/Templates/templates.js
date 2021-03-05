@@ -56,8 +56,8 @@ const Templates = ({translateNav}) => {
                     {images &&
                     images.map((image) => (
                         <div key={image.id} id={position} className="background-images-template">
-                            <img className="template-image" src={image.imageUrl} alt=""></img>
                             <div className="image-description">{image.name}</div>
+                            <img className="template-image" src={image.imageUrl} alt=""></img>
                         </div>
                     ))}
                     {hideLeft &&
@@ -66,6 +66,7 @@ const Templates = ({translateNav}) => {
                     <button id={hideRight} className="right-arrow" onClick={changePositionRight}><i className="far fa-chevron-right"></i></button>}
                 </div>
                 <div className="page-layouts">
+                    {/* <h2 className="template-header">Select a layout</h2> */}
                 </div>
                 <div className="color-palettes">
 

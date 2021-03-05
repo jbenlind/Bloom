@@ -14,7 +14,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const [authenticated, setAuthenticated] = useState(false);
-  const [translateNav, setTranslateNav] = useState("");
   // const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,20 +28,17 @@ const App = () => {
   return (
     <>
       <Navigation
-        translateNav={translateNav}
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
       />
       <Switch>
         <Route path="/" exact={true} authenticated={authenticated}>
           <SplashPage
-            setTranslateNav={setTranslateNav}
             authenticated={authenticated}
           />
         </Route>
         <Route path="/userHub" exact={true} authenticated={authenticated}>
           <UserHub
-            setTranslateNav={setTranslateNav}
             setAuthenticated={setAuthenticated}
           />
         </Route>
@@ -53,11 +49,10 @@ const App = () => {
         >
           <MyPage
             setAuthenticated={setAuthenticated}
-            translateNav={translateNav}
           />
         </Route>
         <Route path="/templates" exact={true}>
-          <Templates translateNav={translateNav} />
+          <Templates />
         </Route>
       </Switch>
     </>

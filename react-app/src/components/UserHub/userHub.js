@@ -1,18 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./userHub.css";
 
 import AuthForms from "../AuthForms";
 
-const UserHub = ({ setTranslateNav, authenticated, setAuthenticated }) => {
-  // const history = useHistory();
-
-  useEffect(() => {
-    const url = window.location.href;
-
-    if (url.includes("userHub")) {
-      setTranslateNav("translate");
-    }
-  });
+const UserHub = ({ authenticated, setAuthenticated }) => {
 
   return (
     <>

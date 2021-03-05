@@ -63,7 +63,7 @@
     color: #6289bd;
 }
 
-#translate {
+#userHub {
     animation: slider 4.2s;
     animation-fill-mode: forwards;
     animation-delay: .6s;
@@ -92,4 +92,3 @@
       color: white;
     }
 }
-

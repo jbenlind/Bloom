@@ -1,15 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import FromTopButton from "../FromTopButton";
 import "./splashPage.css";
 
-const SplashPage = ({ setTranslateNav }) => {
-  useEffect(() => {
-    const url = window.location.href;
-
-    if (!url.includes("userHub")) {
-      setTranslateNav("");
-    }
-  });
+const SplashPage = () => {
 
   return (
     <>
