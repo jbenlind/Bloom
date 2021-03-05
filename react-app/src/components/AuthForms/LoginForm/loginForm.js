@@ -11,7 +11,6 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
     const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    let count = 0
 
     const onLogin = async (e) => {
         e.preventDefault();
