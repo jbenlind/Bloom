@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
-import './splashPage.css';
+import "./splashPage.css";
 
 const SplashPage = ({setBloomState}) => {
 
@@ -9,7 +9,7 @@ const SplashPage = ({setBloomState}) => {
 
     const getStarted = (e) => {
         e.preventDefault();
-        history.push('/userHub');
+        history.push("/userHub");
     }
 
     useEffect(() => {

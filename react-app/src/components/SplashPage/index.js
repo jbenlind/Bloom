@@ -1,3 +1,3 @@
-import SplashPage from './splashPage.js';
+import SplashPage from "./splashPage.js";
 
 export default SplashPage;

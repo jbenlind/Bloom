@@ -1,3 +1,3 @@
-import Templates from './templates.js';
+import Templates from "./templates.js";
 
 export default Templates

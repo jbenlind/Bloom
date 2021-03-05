@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
-import './userHub.css';
+import "./userHub.css";
 
-import AuthForms from '../AuthForms';
+import AuthForms from "../AuthForms";
 
 const UserHub = ({setBloomState, authenticated, setAuthenticated}) => {
 

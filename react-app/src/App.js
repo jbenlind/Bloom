@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { authenticate } from './store/session';
+import { authenticate } from "./store/session";
 
-import SplashPage from './components/SplashPage';
-import Navigation from './components/Navigation';
-import UserHub from './components/UserHub';
-import MyPage from './components/MyPage';
-import Templates from './components/Templates';
-import './App.css';
+import SplashPage from "./components/SplashPage";
+import Navigation from "./components/Navigation";
+import UserHub from "./components/UserHub";
+import MyPage from "./components/MyPage";
+import Templates from "./components/Templates";
+import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();

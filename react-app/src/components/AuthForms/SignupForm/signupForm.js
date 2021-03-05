@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUp, login } from "../../../store/session";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
-import '../authForms.css';
+import "../authForms.css";
 
 const SignupForm = ({authenticated, setAuthenticated}) => {
 
@@ -25,7 +25,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
         setAuthenticated(true);
         history.push(`/usePage/${user.id}`)
       } else {
-        const errors = user.errors.map(error => error.split(' : ')[1]);
+        const errors = user.errors.map(error => error.split(" : ")[1]);
         setErrors(errors);
       }
     } else {
@@ -55,7 +55,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
     <>
       <form className="auth-form" onSubmit={onSignUp}>
           <div className="input-fields">
-          <h4 className='auth-header'>Welcome</h4>
+          <h4 className="auth-header">Welcome</h4>
               <input
                   autoComplete="off"
                   className="auth-input-field"

@@ -1,9 +1,9 @@
 import React, { useState, useEffect} from "react";
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom"
 import { NavLink } from "react-router-dom";
-import { logout } from '../../store/session';
-import './navigation.css';
+import { logout } from "../../store/session";
+import "./navigation.css";
 
 const Navigation = ({bloomState, authenticated, setAuthenticated}) => {
 

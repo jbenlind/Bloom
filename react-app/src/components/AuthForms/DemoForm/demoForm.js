@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { login } from '../../../store/session';
-import './demoForm.css';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { login } from "../../../store/session";
+import "./demoForm.css";
 
 const DemoForm = ({setAuthenticated}) => {
 

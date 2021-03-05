@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from '../../../store/session';
-import { useHistory } from 'react-router-dom';
-import '../authForms.css';
+import { login } from "../../../store/session";
+import { useHistory } from "react-router-dom";
+import "../authForms.css";
 
 const LoginForm = ({authenticated, setAuthenticated}) => {
 
@@ -36,7 +36,7 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
         <>
             <form className="auth-form" onSubmit={onLogin}>
                 <div className="input-fields">
-                <h4 className='auth-header'>Back Again?</h4>
+                <h4 className="auth-header">Back Again?</h4>
                     <input
                        autoComplete="off"
                        className="auth-input-field"
