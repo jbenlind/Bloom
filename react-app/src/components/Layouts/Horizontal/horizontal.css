@@ -1,0 +1,14 @@
+.horizontal-top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    width: 100vw;
+}
+
+.horizontal-tabs {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

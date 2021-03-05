@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemplatePageElements } from '../../store/pageElements';
+import { getTemplatePageElements } from '../../../store/pageElements';
 import './horizontal.css';
 
 const Horizontal = () => {
@@ -13,15 +13,18 @@ const Horizontal = () => {
     useEffect(() => {
         dispatch(getTemplatePageElements())
     }, [dispatch])
-
+     console.log(image)
     return (
         <>
-            <img className="backgroundImg" src={image.imageUrl} alt="">
-                <div className="horizontalCard">
-
+            {image &&
+            <img id="backgroundImage" src={image.imageUrl} alt=""></img>}
+            <div className="horizontal-top-nav">
+                <div className="horizontal-tabs">
+                    <button>Wedding Information</button>
+                    <button>Venue Information</button>
+                    <button>RSVP</button>
                 </div>
-            </img>
-
+            </div>
         </>
     )
 }

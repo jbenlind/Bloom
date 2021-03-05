@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import UserHub from "./components/UserHub";
 import MyPage from "./components/MyPage";
 import Templates from "./components/Templates";
+import Horizontal from "./components/Layouts/Horizontal";
 import "./App.css";
 
 const App = () => {
@@ -27,10 +28,10 @@ const App = () => {
 
   return (
     <>
-      <Navigation
+      {/* <Navigation
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
-      />
+      /> */}
       <Switch>
         <Route path="/" exact={true} authenticated={authenticated}>
           <SplashPage
@@ -53,6 +54,9 @@ const App = () => {
         </Route>
         <Route path="/templates" exact={true}>
           <Templates />
+        </Route>
+        <Route path="/horizontal">
+          <Horizontal />
         </Route>
       </Switch>
     </>
