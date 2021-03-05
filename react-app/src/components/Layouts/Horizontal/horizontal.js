@@ -20,9 +20,12 @@ const Horizontal = () => {
             <img id="backgroundImage" src={image.imageUrl} alt=""></img>}
             <div className="horizontal-top-nav">
                 <div className="horizontal-tabs">
-                    <button>Wedding Information</button>
-                    <button>Venue Information</button>
-                    <button>RSVP</button>
+                    <button className="horizontal-button">j & K</button>
+                    <button className="horizontal-button">venue</button>
+                    <button className="horizontal-button">RSVP</button>
+                </div>
+                <div className="horizontal-card">
+                    
                 </div>
             </div>
         </>

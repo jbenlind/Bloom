@@ -1,14 +1,35 @@
 .horizontal-top-nav {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 100px;
-    width: 100vw;
+    margin-top: 75px;
+
 }
 
 .horizontal-tabs {
-    width: 100vw;
+    height: 50px;
+    width: 30vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-bottom: 75px;
+}
+
+.horizontal-button {
+    background-color: transparent;
+    border: transparent;
+    color: #5b6c34;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: .2rem;
+}
+
+.horizontal-card {
+    background-color: rgba(255, 255, 255, .8);
+    height: 600px;
+    width: 600px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
 }
