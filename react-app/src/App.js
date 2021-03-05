@@ -40,7 +40,7 @@ const App = () => {
               <UserHub setBloomState={setBloomState} setAuthenticated={setAuthenticated}/>
             </Route>
             <Route path="/myPage/:userId" exact={true} authenticated={authenticated}>
-              <MyPage setAuthenticated={setAuthenticated}/>
+              <MyPage setAuthenticated={setAuthenticated} bloomState={bloomState}/>
             </Route>
             <Route path="/templates" exact={true}>
               <Templates bloomState={bloomState} />
