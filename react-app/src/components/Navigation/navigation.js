@@ -8,9 +8,9 @@ const Navigation = ({bloomState}) => {
         <>
             <div id="grid-container">
                 <div id="first-fraction">
-                    <NavLink className={bloomState} id="bloom-title" to="/">
-                        <span id={bloomState} className="b">B</span>
-                        <span id="loom">loom</span>
+                    <NavLink id={bloomState} className="bloom-title" to="/">
+                        <span className="b">B</span>
+                        <span id={bloomState} className="loom">loom</span>
                     </NavLink>
                 </div>
                 <div id="second-fraction">
