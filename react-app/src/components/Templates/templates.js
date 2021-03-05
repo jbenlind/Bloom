@@ -51,21 +51,21 @@ const Templates = ({translateNav}) => {
     return (
         <>
             <div className="template-layout">
-                <h2 className="template-header">First you will select one of our background images</h2>
+                <h2 className="template-header">Select a background image</h2>
                 <div className="background-images">
                     {images &&
                     images.map((image) => (
                         <div key={image.id} id={position} className="background-images-template">
                             <img className="template-image" src={image.imageUrl} alt=""></img>
-                            <div>{image.name}</div>
+                            <div className="image-description">{image.name}</div>
                         </div>
                     ))}
-                </div>
-                <div className="page-layouts">
                     {hideLeft &&
                     <button id={hideLeft} className="left-arrow" onClick={changePositionLeft}><i className="far fa-chevron-left"></i></button>}
                     {hideRight &&
                     <button id={hideRight} className="right-arrow" onClick={changePositionRight}><i className="far fa-chevron-right"></i></button>}
+                </div>
+                <div className="page-layouts">
                 </div>
                 <div className="color-palettes">
 

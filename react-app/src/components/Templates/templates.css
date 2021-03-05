@@ -1,20 +1,22 @@
 .template-layout {
-    background-color: rgb(182, 190, 197);
+    background-color: rgb(214, 222, 230);
     width: 100%;
     overflow-x: hidden;
 }
 
 .template-header {
+    color: white;
     display: flex;
     justify-content: center;
-    padding-top: 130px;
+    padding-top: 120px;
     padding-bottom: 60px;
+    font-size: 2.1rem;
+    letter-spacing: .1rem;
 }
 
 .background-images {
     display: flex;
     overflow-x: hidden;
-    background-color: rgb(182, 190, 197);
 
 }
 
@@ -24,47 +26,58 @@
     width: 1100px;
     border-radius: 50px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
-    transform: translateX(-2380px);
+    transform: translateX(-2400px);
+}
+
+.image-description {
+    font-size: 30px;
+    transform: translateX(-1750px);
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: .2rem;
 }
 
 #center{
     padding-bottom: 50px;
-    transition-duration: 1.2s;
+    transition-duration: 1.3s;
 }
 
 #L1{
     padding-bottom: 50px;
-    transition-duration: 1.2s;
+    transition-duration: 1.3s;
     transform: translateX(68vw);
 }
 
 #L2 {
     padding-bottom: 50px;
-    transition-duration: 1.2s;
-    transform: translateX(135vw);
+    transition-duration: 1.3s;
+    transform: translateX(135.5vw);
 }
 
 #R1 {
     padding-bottom: 50px;
-    transition-duration: 1.2s;
-    transform: translateX(-68vw);
+    transition-duration: 1.3s;
+    transform: translateX(-67.5vw);
 }
 
 #R2 {
     padding-bottom: 50px;
-    transition-duration: 1.2s;
+    transition-duration: 1.3s;
     transform: translateX(-135vw);
 }
 
 .left-arrow {
     position: absolute;
     top: 52vh;
-    left: 15vw;
+    left: 14.5vw;
     height: 50px;
     width: 30px;
     background-color: transparent;
     border: none;
     color: rgba(255, 255, 255, .7);
+    margin: 0;
+    padding: 0;
 }
 
 .fa-chevron-left,
@@ -75,28 +88,21 @@
 .right-arrow {
     position: absolute;
     top: 52vh;
-    right: 15vw;
+    right: 16vw;
     height: 50px;
     width: 30px;
     background-color: transparent;
     border: none;
     color: rgba(255, 255, 255, .7);
+    transition: all .8s ease-out 10s;
 
 }
 
 .right-arrow:hover,
 .left-arrow:hover {
-    -webkit-animation: bounce .4s infinite alternate;
-    -moz-animation: bounce .4s infinite alternate;
     animation: bounce .4s infinite alternate;
 }
 
-@-webkit-keyframes bounce {
-    to { -webkit-transform: scale(1.2); }
-  }
-  @-moz-keyframes bounce {
-    to { -moz-transform: scale(1.2); }
-  }
   @keyframes bounce {
-    to { transform: scale(1.2); }
+    to { transform: scale(1.1); }
   }
