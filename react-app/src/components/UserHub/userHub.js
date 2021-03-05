@@ -1,27 +1,29 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./userHub.css";
 
 import AuthForms from "../AuthForms";
 
-const UserHub = ({setBloomState, authenticated, setAuthenticated}) => {
+const UserHub = ({ setTranslateNav, authenticated, setAuthenticated }) => {
+  // const history = useHistory();
 
-    // const history = useHistory();
+  useEffect(() => {
+    const url = window.location.href;
 
-    useEffect(() => {
-        const url = window.location.href;
+    if (url.includes("userHub")) {
+      setTranslateNav("translate");
+    }
+  });
 
-        if(url.includes("userHub")) {
-           setBloomState("translate")
-        }
-    })
-
-    return (
-        <>
-            <div id="hub-background">
-                <AuthForms authenticated={authenticated} setAuthenticated={setAuthenticated} />
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div id="hub-background">
+        <AuthForms
+          authenticated={authenticated}
+          setAuthenticated={setAuthenticated}
+        />
+      </div>
+    </>
+  );
+};
 
 export default UserHub;

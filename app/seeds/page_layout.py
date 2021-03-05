@@ -4,12 +4,20 @@ from app.models import db, Page_layout
 
 def seed_page_layout():
 
-    layoutOne = Page_layout(
+    horizontalOne = Page_layout(
+        layout='horizontal',
+        navbarPosition='top'
+    )
+    horizontalTwo = Page_layout(
         layout='horizontal',
         navbarPosition='bottom'
     )
+    verticalOne = Page_layout(
+        layout='vertical',
+        navbarPosition='top'
+    )
 
-    db.session.add_all([layoutOne])
+    db.session.add_all([horizontalOne, horizontalTwo, verticalOne])
     db.session.commit()
 
 

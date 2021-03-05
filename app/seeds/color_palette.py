@@ -5,9 +5,19 @@ from app.models import db, Color_palette
 def seed_color_palette():
 
     paletteOne = Color_palette(
-        name="Basic",
+        name="standard",
         backgroundImageId=1,
-        palette='standard',
+        palette="standard",
+    )
+    paletteTwo = Color_palette(
+        name="muted",
+        backgroundImageId=1,
+        palette="muted"
+    )
+    palettedThree = Color_palette(
+        name="vibrant",
+        backgroundImageId="1",
+        palette="vibrant"
     )
 
     db.session.add_all([paletteOne])
