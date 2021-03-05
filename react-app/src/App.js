@@ -7,33 +7,31 @@ import SplashPage from './components/SplashPage';
 import Navigation from './components/Navigation';
 import UserHub from './components/UserHub';
 import MyPage from './components/MyPage';
+import Templates from './components/Templates';
 import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
 
   const [authenticated, setAuthenticated] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const user = await dispatch(authenticate());
-  //     if (!user.errors) {
-  //       setAuthenticated(true);
-  //     }
-  //     setLoaded(true);
-  //   })();
-  // }, [dispatch]);
-
-  // if (!loaded) {
-  //   return null;
-  // }
-
   const [bloomState, setBloomState] = useState("")
+  // const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const user = await dispatch(authenticate());
+      if (!user.errors) {
+        setAuthenticated(true);
+      }
+
+    })();
+  }, [dispatch]);
+
+
 
   return (
     <>
-      <Navigation bloomState={bloomState} authenticated={authenticated}/>
+      <Navigation bloomState={bloomState} authenticated={authenticated} setAuthenticated={setAuthenticated} />
         <Switch>
             <Route path="/" exact={true} authenticated={authenticated}>
               <SplashPage setBloomState={setBloomState} authenticated={authenticated}/>
@@ -43,6 +41,9 @@ const App = () => {
             </Route>
             <Route path="/myPage/:userId" exact={true} authenticated={authenticated}>
               <MyPage setAuthenticated={setAuthenticated}/>
+            </Route>
+            <Route path="/templates" exact={true}>
+              <Templates bloomState={bloomState} />
             </Route>
         </Switch>
     </>

@@ -3,11 +3,11 @@ import LoginForm from './LoginForm/';
 import SignupForm from './SignupForm';
 import DemoForm from './DemoForm';
 import './authForms.css';
-import { authenticate } from "../../store/session";
 
 const AuthForms = ({authenticated, setAuthenticated}) => {
 
     const [selected, setSelected] = useState('login')
+
 
     const loginSelected = () => {
         setSelected("login")
@@ -34,7 +34,7 @@ const AuthForms = ({authenticated, setAuthenticated}) => {
                 {selected === "signup" &&
                 <SignupForm authenticated={authenticated} setAuthenticated={setAuthenticated} />}
                 {selected === "demo" &&
-                <DemoForm />}
+                <DemoForm setAuthenticated={setAuthenticated}/>}
             </div>
         </>
     )

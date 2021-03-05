@@ -3,3 +3,8 @@
   padding: 0;
   font-family: 'Playfair Display', serif;
 }
+
+button,
+input {
+  outline: none;
+}

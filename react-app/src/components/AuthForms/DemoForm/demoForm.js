@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { login } from '../../../store/session';
 import './demoForm.css';
 
-const DemoForm = () => {
+const DemoForm = ({setAuthenticated}) => {
 
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [selected, setSelected] = useState(false)
 
     const selectedFunction = () => {
             setSelected((prev) => !prev)
     }
 
-    // const demoLogin = async (e) => {
-    //     e.preventDefault();
-    //     const demoEmail = "demo@bloom.io";
-    //     const demoPassword = "password";
-    //     setTimeout(await dispatch(login(demoEmail, demoPassword)), 1000);
-    //   };
+    const demoLogin = async (e) => {
+        e.preventDefault();
+        const demoEmail = "demo@bloom.io";
+        const demoPassword = "password";
+        setTimeout(await dispatch(login(demoEmail, demoPassword)), 1000);
+        setAuthenticated(true)
+        history.push("/userPage/1")
+      };
 
     return (
         <>
@@ -30,7 +37,7 @@ const DemoForm = () => {
                         checked={selected}
                     />
                 </label>
-                <button disabled={!(selected)} className={selected ? "ready" : "not-ready"} type="submit">Enter</button>
+                <button onClick={demoLogin} disabled={!(selected)} className={selected ? "ready" : "not-ready"} type="submit">Enter</button>
             </div>
         </>
     )
