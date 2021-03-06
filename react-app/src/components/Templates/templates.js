@@ -11,8 +11,8 @@ const Templates = ({translateNav}) => {
     const palettes = useSelector((state) => state.pageElements.colorPalettes ? state.pageElements.colorPalettes : null);
 
     const [position, setPosition] = useState("center");
-    const [hideLeft, setHideLeft] = useState(true)
-    const [hideRight, setHideRight] = useState(true)
+    const [hideLeft, setHideLeft] = useState("true")
+    const [hideRight, setHideRight] = useState("true")
 
     useEffect(() => {
         window.scrollTo(0, 0);

@@ -32,14 +32,14 @@ console.log(pathName)
           </NavLink>
         </div>
         <div id="second-fraction">
-          <NavLink id={pathName === "templates"? "inUse" :""} className="link" to="/templates">
+          <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
             Templates
           </NavLink>
           <NavLink className="link" to="">
             Find a page
           </NavLink>
           {!authenticated && (
-            <NavLink id={pathName === "userHub"? "inUse" :""} className="link" to="/userHub">
+            <NavLink id={pathName === "userHub"? "inUse" : ""} className="link" to="/userHub">
               Log In
             </NavLink>
           )}
@@ -55,7 +55,7 @@ console.log(pathName)
               log out
             </button>
           ))}
-          {((!authenticated && ((pathName === "") || (pathName === "templates")))  && (
+          {(((!authenticated && (pathName === "") || (pathName === "templates")))  && (
             <FromCenterButton />
           ))}
         </div>
