@@ -55,9 +55,9 @@ console.log(pathName)
               log out
             </button>
           ))}
-          {(((!authenticated && (pathName === "") || (pathName === "templates")))  && (
+          {(((!authenticated && (pathName === "")) || (pathName === "templates")))  && (
             <FromCenterButton />
-          ))}
+          )}
         </div>
       </div>
     </>
