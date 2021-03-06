@@ -16,7 +16,7 @@ def seed_user_page():
         venueCity="Milwaukee",
         venueState="Wisconsin",
         venueZip=53204,
-        profileImg="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png",
+        profileImg="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg",
         pageLayoutId=1,
         backgroundImgId=1,
         colorPaletteId=1
