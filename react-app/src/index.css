@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Raleway:wght@500&display=swap');
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Oxygen', sans-serif; */
 }
 
 button,

@@ -2,7 +2,7 @@
     width: 100vw;
     position: fixed;
     z-index: 1;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: rgba(209, 209, 209, 0.3);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 10px;
@@ -75,19 +75,19 @@
       color:#0f6eea;
     }
     25% {
-        transform: translate(0, 270px);
+        transform: translate(0, 260px);
         color:#0f6eea;
     }
     60% {
-        transform: translate(390px, 270px);
+        transform: translate(390px, 260px);
         color:#0f6eea;
     }
     99% {
-        transform: translate(390px, 270px);
+        transform: translate(390px, 260px);
         color: white;
       }
     100% {
-      transform: translate(390px, 270px);
+      transform: translate(390px, 260px);
       color: white;
     }
 }

@@ -1,3 +1,3 @@
-import Vertical from './vertical.js';
+import Horizontal from './horizontal.js';
 
-export default Vertical;
+export default Horizontal;

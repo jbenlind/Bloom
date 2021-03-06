@@ -19,12 +19,6 @@ const Horizontal = () => {
             {image &&
             <img id="backgroundImage" src={image.imageUrl} alt=""></img>}
             <div className="horizontal-top-nav">
-                <div className="horizontal-tabs">
-                    <button id="underline" className="horizontal-button">k & p</button>
-                    <button className="horizontal-button">venue</button>
-                    <button className="horizontal-button">RSVP</button>
-                    <button className="horizontal-button">ceremony</button>
-                </div>
                 <div className="horizontal-card">
                     <div className='top-half'>
                         <img className="profile-image" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
@@ -33,6 +27,12 @@ const Horizontal = () => {
                         <p className="invitation">joyfully invite you to their<br></br> wedding celebration</p>
                         <div className="vertical-line"></div>
                         <p className="invitation">September 23, 2023</p>
+                </div>
+                <div className="horizontal-tabs">
+                    <button id="underline" className="horizontal-button">k & p</button>
+                    <button className="horizontal-button">venue</button>
+                    <button className="horizontal-button">ceremony</button>
+                    <button className="horizontal-button">RSVP</button>
                 </div>
             </div>
         </>

@@ -35,13 +35,13 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
         <>
             <form className="auth-form" onSubmit={onLogin}>
                 <div className="input-fields">
-                <h4 className="auth-header">Back Again?</h4>
+                    <h4 className="auth-header">Back Again?</h4>
                     <input
                        autoComplete="off"
                        className="auth-input-field"
+                       placeholder="Email"
                        name="email"
                        type="text"
-                       placeholder="Email"
                        value={email}
                        onChange={updateEmail}
                        />
