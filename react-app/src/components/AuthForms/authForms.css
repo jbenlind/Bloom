@@ -11,14 +11,13 @@
     display: flex;
     flex-direction: column;
     justify-content:center;
-    /* background-color: #d9e2da; */
     background-color: rgba(0, 0, 0, .2);
-    height: 550px;
+    height: 534px;
     border: 8px solid #f1f7f1;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
 }
 
-.hub-button {
+#hub-button {
     width: 250px;
     height: 80px;
     background-color: transparent;
@@ -28,20 +27,25 @@
     letter-spacing: .3rem;
 	text-transform: uppercase;
     color:white;
-    margin:0;
     outline: none;
-}
-
-.hub-button:hover {
+    transition: all .4s ease-in;
     cursor: pointer;
-}
 
+}
 
 #selected {
+    height:80px;
+    font-size: 1.6rem;
+    letter-spacing: .3rem;
+	text-transform: uppercase;
     background-color: rgba(255, 255, 255, .5);
-    color:rgba(0, 0, 0, .5)
-    /* possibly black */
+    border: transparent;
+    color:rgba(0, 0, 0, .5);
+    transition: all .4s ease-in;
+    cursor: pointer;
+
 }
+
 
 .auth-form {
     display: flex;

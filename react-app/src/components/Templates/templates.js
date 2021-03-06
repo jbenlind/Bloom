@@ -51,7 +51,10 @@ const Templates = ({translateNav}) => {
     return (
         <>
             <div className="template-layout">
-                <h2 className="template-header">Select a background image</h2>
+                <div className="description-holder">
+                    <p className="description-header">View Our <br></br> Templates</p>
+                    <p className="templates-description">Get started with any of our best-in-class templates. Customize the background image and color palette to fit your style, and let Bloom do the work for you. Making a beautiful wedding website has never been easier.</p>
+                </div>
                 <div className="background-images">
                     {images &&
                     images.map((image) => (

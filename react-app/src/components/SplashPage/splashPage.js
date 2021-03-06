@@ -1,5 +1,5 @@
 import React from "react";
-import FromTopButton from "../FromTopButton";
+import FromCenterButton from "../FromCenterButton";
 import "./splashPage.css";
 
 const SplashPage = () => {
@@ -13,7 +13,7 @@ const SplashPage = () => {
       ></img>
       <div id="page-container">
         <h1 id="slogan-header">Beautiful sites made easy</h1>
-        <FromTopButton />
+        <FromCenterButton />
       </div>
     </>
   );

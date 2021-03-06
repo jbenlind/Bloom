@@ -24,11 +24,5 @@
 #slogan-header {
     font-size: 50px;
     color: white;
-}
-
-.get-started {
-    margin-top: 20px;
-    width: 300px;
-    display: flex;
-
+    margin-bottom: 30px;
 }

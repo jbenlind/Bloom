@@ -1,24 +1,44 @@
 .template-layout {
-    background-color: rgb(214, 222, 230);
+    background-color: #e8ece8;
     width: 100%;
+    overflow-x: hidden;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
-.template-header {
-    color: rgba(0, 0, 0, .5);
+.description-holder {
     display: flex;
-    justify-content: center;
-    margin-right: 330px;
-    padding-top: 150px;
-    padding-bottom: 30px;
-    font-size: 2rem;
-    letter-spacing: .1rem;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    padding: 100px 0;
+
+
 }
+
+.description-header {
+    color: rgba(0, 0, 0, .6);
+    display: flex;
+    width: 15vw;
+    font-size: 50px;
+    text-align: justify;
+}
+
+.templates-description {
+    color: rgba(0, 0, 0, .6);
+    display: flex;
+    width: 40vw;
+    font-size: 30px;
+    text-align: justify;
+}
+
 
 .background-images {
     display: flex;
     overflow-x: hidden;
-
+    background-color: white;
 }
 
 .template-image {
@@ -34,16 +54,16 @@
     position: relative;
     top: 500px;
     transform: translateX(-1610px);
-    color: rgba(0, 0, 0, .7);
+    color: #0f6eea;
     text-transform: uppercase;
     font-size: 2rem;
     letter-spacing: .2rem;
     z-index: 1;
     width: fit-content;
-    background-color: rgba(255, 255, 255, .5);
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
+    background-color: rgba(255, 255, 255, .6);
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
     padding: 10px 10px 5px 10px;
 }
 
@@ -55,30 +75,30 @@
 #L1{
     padding-bottom: 50px;
     transition-duration: 1.3s;
-    transform: translateX(68vw);
+    transform: translateX(57.5vw);
 }
 
 #L2 {
     padding-bottom: 50px;
     transition-duration: 1.3s;
-    transform: translateX(135.5vw);
+    transform: translateX(115vw);
 }
 
 #R1 {
     padding-bottom: 50px;
     transition-duration: 1.3s;
-    transform: translateX(-67.5vw);
+    transform: translateX(-57.5vw);
 }
 
 #R2 {
     padding-bottom: 50px;
     transition-duration: 1.3s;
-    transform: translateX(-135vw);
+    transform: translateX(-115vw);
 }
 
 .left-arrow {
     position: absolute;
-    top: 50vh;
+    top: 72vh;
     left: 20.3vw;
     height: 50px;
     width: 30px;
@@ -92,13 +112,14 @@
 .fa-chevron-left,
 .fa-chevron-right {
     font-size: 80px;
+    color: #0f6eea;
 }
 
 .right-arrow {
     margin: 0;
     padding:0;
     position: absolute;
-    top: 50vh;
+    top: 72vh;
     right: 20.5vw;
     height: 50px;
     width: 30px;

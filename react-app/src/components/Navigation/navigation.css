@@ -1,6 +1,6 @@
 #grid-container {
     width: 100vw;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     background-color: rgba(255, 255, 255, .3);
     display: grid;
@@ -8,6 +8,7 @@
     padding-top: 10px;
     padding-bottom: 20px;
     border-bottom: 1px solid white;
+    height: 50px;
 }
 
 #first-fraction {
@@ -39,7 +40,6 @@
 
 
 .bloom-title {
-    border-bottom: 2px solid white;
     text-decoration: none;
 }
 
@@ -64,10 +64,9 @@
 }
 
 #userHub {
-    animation: slider 4.2s;
-    animation-fill-mode: forwards;
-    animation-delay: .6s;
+    animation: slider 4.2s .6s forwards;
 }
+
 
 @keyframes slider {
     0% {
@@ -91,4 +90,13 @@
       transform: translate(390px, 270px);
       color: white;
     }
+}
+
+.logout {
+    background-color: transparent;
+    border:none;
+}
+
+#inUse {
+    border-bottom: 2px solid white;
 }

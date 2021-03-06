@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import './fromTopButton.css';
+import './fromCenterButton.css';
 
-const FromTopButton = () => {
+const FromCenterButton = () => {
 
     const history = useHistory();
 
@@ -12,10 +12,10 @@ const FromTopButton = () => {
     }
     return (
         <>
-            <button onClick={(e) => getStarted(e)} className="get-started btn from-top">Get Started</button>
+            <button onClick={(e) => getStarted(e)} className="btn from-center">Get Started</button>
         </>
 
     )
 }
 
-export default FromTopButton;
+export default FromCenterButton;
