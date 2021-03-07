@@ -65,6 +65,8 @@
 
 }
 
+
+
 .auth-box input:focus ~ label,
 .auth-box input:valid ~ label {
     top:-20px;
@@ -76,14 +78,19 @@
 
 .auth-errors-login {
     position: absolute;
-    margin-top: 330px;
-    font-size: 25px;
+    top: -85px;
+    left: 60px;
+    font-size: 20px;
+    text-transform: uppercase;
     color: rgba(255, 0, 0, 0.5);
 }
 
 .auth-errors-signUp {
     position: absolute;
-    margin-top: 460px;
-    font-size: 25px;
+    top: -80px;
+    left: 5px;
+    font-size: 20px;
+    width: 400px;
+    text-transform: uppercase;
     color: rgba(255, 0, 0, 0.5);
 }
