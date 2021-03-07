@@ -100,3 +100,7 @@
 #inUse {
     border-bottom: 2px solid white;
 }
+
+html:not([data-scroll="0"]) #grid-container {
+    background-color: rgba(209, 209, 209, 0.9);
+  }

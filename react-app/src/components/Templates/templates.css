@@ -2,10 +2,9 @@
     background-color: #e8ece8;
     width: 100%;
     overflow-x: hidden;
-    padding-top: 80px;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 .description-holder {
@@ -14,8 +13,6 @@
     justify-content: space-evenly;
     width: 100vw;
     padding: 100px 0;
-
-
 }
 
 .description-header {
@@ -34,26 +31,14 @@
     text-align: justify;
 }
 
-
-.background-images {
-    display: flex;
-    overflow-x: hidden;
-    background-color: white;
-}
-
 .template-image {
-    margin-left: 200px;
-    height: 500px;
-    width: 900px;
+    height: 400px;
+    width: 500px;
     border-radius: 5px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, .2);
-    transform: translateX(-1890px);
 }
 
 .image-description {
-    position: relative;
-    top: 500px;
-    transform: translateX(-1610px);
     color: #0f6eea;
     text-transform: uppercase;
     font-size: 2rem;
@@ -66,75 +51,3 @@
     border-right: 3px solid white;
     padding: 10px 10px 5px 10px;
 }
-
-#center{
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-}
-
-#L1{
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(57.5vw);
-}
-
-#L2 {
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(115vw);
-}
-
-#R1 {
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(-57.5vw);
-}
-
-#R2 {
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(-115vw);
-}
-
-.left-arrow {
-    position: absolute;
-    top: 72vh;
-    left: 20.3vw;
-    height: 50px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    color: rgba(255, 255, 255, .7);
-    margin: 0;
-    padding: 0;
-}
-
-.fa-chevron-left,
-.fa-chevron-right {
-    font-size: 80px;
-    color: #0f6eea;
-}
-
-.right-arrow {
-    margin: 0;
-    padding:0;
-    position: absolute;
-    top: 72vh;
-    right: 20.5vw;
-    height: 50px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    color: rgba(255, 255, 255, .7);
-    transition: all .8s ease-out 10s;
-
-}
-
-.right-arrow:hover,
-.left-arrow:hover {
-    animation: bounce .4s infinite alternate;
-}
-
-  @keyframes bounce {
-    to { transform: scale(1.1); }
-  }
