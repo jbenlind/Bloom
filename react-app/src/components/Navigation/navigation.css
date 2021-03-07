@@ -103,4 +103,4 @@
 
 html:not([data-scroll="0"]) #grid-container {
     background-color: rgba(209, 209, 209, 0.9);
-  }
+}

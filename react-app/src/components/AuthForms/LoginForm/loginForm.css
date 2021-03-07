@@ -15,7 +15,6 @@
     letter-spacing: .2rem;
 	text-transform: uppercase;
     color: rgba(0,0,0, .7);
-    /* color: ; */
 }
 
 .auth-box input {
@@ -60,7 +59,7 @@
 
 }
 
-.auth-box input:focus ~label,
+.auth-box input:focus ~ label,
 .auth-box input:valid ~ label {
     top:-20px;
     left:10px;

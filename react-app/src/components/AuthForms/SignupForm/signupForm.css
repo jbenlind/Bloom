@@ -15,7 +15,6 @@
     letter-spacing: .2rem;
 	text-transform: uppercase;
     color: rgba(0,0,0, .7);
-    /* color: ; */
 }
 
 .auth-box-two input {
@@ -30,7 +29,6 @@
     border: 2px solid rgba(0,0,0, .7);
     cursor: pointer;
     color: rgba(0,0,0, .6);
-
 }
 
 .auth-box-two button {
@@ -57,7 +55,6 @@
     left: 10px;
     font-weight: bold;
     font-size: 15px;
-
 }
 
 .auth-box-two input:focus ~label,

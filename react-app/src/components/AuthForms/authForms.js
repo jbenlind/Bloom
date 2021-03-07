@@ -8,7 +8,6 @@ const AuthForms = ({authenticated, setAuthenticated}) => {
 
     const [selected, setSelected] = useState("login")
 
-
     const loginSelected = () => {
         setSelected("login")
     }
