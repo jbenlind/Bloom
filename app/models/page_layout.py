@@ -14,5 +14,5 @@ class Page_layout(db.Model):
         return {
             "id": self.id,
             "layout": self.layout,
-            "navbarPosition": self.navbarPosition,
+            "imageUrl": self.imageUrl,
         }

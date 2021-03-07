@@ -55,6 +55,15 @@ const Templates = ({translateNav}) => {
                     <p className="description-header">View Our <br></br> Templates</p>
                     <p className="templates-description">Get started with any of our best-in-class templates. Customize the background image and color palette to fit your style, and let Bloom do the work for you. Making a beautiful wedding website has never been easier.</p>
                 </div>
+                <div className="page-layouts">
+                    {layouts &&
+                    layouts.map((layout) => (
+                        <div key={layout.id} id={position} className="layout-images">
+                            <div className="layout-description">{layout.name}</div>
+                            <img className="layout-image" src={layout.imageUrl} alt=""></img>
+                        </div>
+                    ))}
+                </div>
                 <div className="background-images">
                     {images &&
                     images.map((image) => (
@@ -67,9 +76,6 @@ const Templates = ({translateNav}) => {
                     <button id={hideLeft} className="left-arrow" onClick={changePositionLeft}><i className="far fa-chevron-left"></i></button>}
                     {hideRight &&
                     <button id={hideRight} className="right-arrow" onClick={changePositionRight}><i className="far fa-chevron-right"></i></button>}
-                </div>
-                <div className="page-layouts">
-                    {/* <h2 className="template-header">Select a layout</h2> */}
                 </div>
                 <div className="color-palettes">
 

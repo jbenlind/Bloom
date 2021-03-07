@@ -24,7 +24,7 @@ def seed_page_layout():
 
     )
 
-    db.session.add_all([layoutOne, layoutTwo, layoutTwo, layoutThree])
+    db.session.add_all([layoutOne, layoutTwo, layoutThree, layoutFour])
     db.session.commit()
 
 
