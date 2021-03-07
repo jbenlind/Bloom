@@ -57,7 +57,7 @@ const LoginForm = ({setAuthenticated}) => {
                             />
                         <label>Password</label>
                     </div>
-                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
+                    <button disabled={!(email && password)} id={email && password ? "ready" : ""} className="not-ready" type="submit">Log In</button>
                     <div className="auth-errors-login">
                         {errors.map((error, idx) => <div key={idx}>{error}</div>)}
                     </div>

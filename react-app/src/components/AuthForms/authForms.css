@@ -31,61 +31,138 @@
     color:white;
 }
 
-.selected {
-    width: 250px;
+#selected {
+    color:rgba(0, 0, 0, 1);
+    transition: all 1s ease-in-out;
+}
+
+#p-one{
+    position: absolute;
+    top: 37vh;
+    left: 30.4vw;
     height: 80px;
-    font-size: 1.6rem;
-    letter-spacing: .3rem;
-	text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    border: transparent;
-    background-color: rgba(255,255,255, .5);
-    color:rgba(0, 0, 0, .4);
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation-fill-mode: forwards;
 }
 
-.not-ready {
-    height: 50px;
-    width: 200px;
-    cursor: not-allowed;
-    border: transparent;
-    outline: none;
-    background-color:transparent;
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    letter-spacing: .2rem;
-    color: rgba(0, 0, 0, .2);
-    background-color: rgba(0, 0, 0, .1);
-    margin-top: 15px;
-}
-
-.ready {
-    height: 50px;
-    width: 200px;
-    border: none;
-    outline: none;
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    letter-spacing: .2rem;
-    color: white;
-    background-color: #5e85b8;
-    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
-    transition: all 0.25s ease-in 0s;
-    margin-top: 15px;
-    cursor: pointer;
-
-}
-
-.auth-errors-login {
+#p-two {
     position: absolute;
-    margin-top: 330px;
-    font-size: 25px;
-    color: rgba(255, 0, 0, 0.5);
+    top: 37vh;
+    left: 30.4vw;
+    height: 80px;
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: a-one 1s;
+    animation-fill-mode: forwards;
 }
 
-.auth-errors-signUp {
+@keyframes a-one {
+    0% {
+        top: 37vh;
+    }
+    100% {
+        top: 46vh;
+    }
+}
+
+
+#p-three {
     position: absolute;
-    margin-top: 460px;
-    font-size: 25px;
-    color: rgba(255, 0, 0, 0.5);
+    top: 37vh;
+    left: 30.4vw;
+    height: 80px;
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: a-two 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a-two {
+    0% {
+        top: 37vh;
+    }
+    100% {
+        top: 54vh;
+    }
+}
+
+#p-four {
+    position: absolute;
+    top: 46vh;
+    left: 30.4vw;
+    height: 80px;
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: a-three 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a-three {
+    0% {
+        top: 46vh;
+    }
+    100% {
+        top: 37vh;
+    }
+}
+
+#p-five {
+    position: absolute;
+    top: 46vh;
+    left: 30.4vw;
+    height: 80px;
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: a-four 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a-four {
+    0% {
+        top: 46vh;
+    }
+    100% {
+        top: 54vh;
+    }
+}
+
+#p-six {
+    position: absolute;
+    top: 46vh;
+    left: 30.4vw;
+    height: 80px;
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: a-five 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a-five {
+    0% {
+        top: 54vh;
+    }
+    100% {
+        top: 46vh;
+    }
+}
+
+#p-seven {
+    position: absolute;
+    top: 54vh;
+    left: 30.4vw;
+    height: 80px;
+    width: 252px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: a-six 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a-six {
+    0% {
+        top: 54vh;
+    }
+    100% {
+        top: 37vh;
+    }
 }

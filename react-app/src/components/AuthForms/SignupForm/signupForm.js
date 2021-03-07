@@ -68,7 +68,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
             </div>
             <div>
               <input
-                autocomplete="new-email"
+                autoComplete=""
                 name="email"
                 type="text"
                 value={email}
@@ -97,7 +97,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
                 />
               <label>Confirm</label>
             </div>
-            <button disabled={!(username && email && password && repeatPassword)}  className={username && email && password && repeatPassword ? "ready" : "not-ready"} type="submit">Sign Up</button>
+            <button disabled={!(username && email && password && repeatPassword)}  id={username && email && password && repeatPassword ? "ready" : ""} className="not-ready" type="submit">Sign Up</button>
             <div className="auth-errors-signUp">
               {errors.map((error, idx) => <div key={idx}>{error}</div>)}
             </div>

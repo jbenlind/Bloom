@@ -73,3 +73,17 @@
     font-size: 15px;
     color: #6289bd;
 }
+
+.auth-errors-login {
+    position: absolute;
+    margin-top: 330px;
+    font-size: 25px;
+    color: rgba(255, 0, 0, 0.5);
+}
+
+.auth-errors-signUp {
+    position: absolute;
+    margin-top: 460px;
+    font-size: 25px;
+    color: rgba(255, 0, 0, 0.5);
+}

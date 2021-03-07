@@ -66,3 +66,26 @@
     font-size: 15px;
     color: #6289bd;
 }
+
+.not-ready {
+    height: 50px;
+    width: 200px;
+    cursor: not-allowed;
+    border: transparent;
+    outline: none;
+    background-color:transparent;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: .2rem;
+    color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .1);
+    margin-top: 15px;
+}
+
+#ready {
+    background-color: #5e85b8;
+    cursor: pointer;
+    color: rgba(255, 255, 255, .7);
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    transition: all 0.25s ease-in 0s;
+}
