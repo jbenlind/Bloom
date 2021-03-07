@@ -39,7 +39,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
     await dispatch(logout());
     setAuthenticated(false);
   };
-
+  
   return (
     <>
       <div id="grid-container">

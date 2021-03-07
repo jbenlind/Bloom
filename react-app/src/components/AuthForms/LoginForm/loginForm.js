@@ -38,13 +38,13 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
                 <form onSubmit={onLogin}>
                     <div>
                         <input
-                        autoComplete="off"
-                        name="email"
-                        type="text"
-                        value={email}
-                        onChange={updateEmail}
-                        required={true}
-                        />
+                            autoComplete="off"
+                            name="email"
+                            type="text"
+                            value={email}
+                            onChange={updateEmail}
+                            required={true}
+                            />
                         <label>Email</label>
                     </div>
                     <div>
@@ -55,11 +55,11 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
                             onChange={updatePassword}
                             required={true}
                             />
-                            <label>Password</label>
+                        <label>Password</label>
                     </div>
-                        <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
-                        <div className="auth-errors-login">
-                            {errors.map((error, idx) => <div key={idx}>{error}</div>)}
+                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
+                    <div className="auth-errors-login">
+                        {errors.map((error, idx) => <div key={idx}>{error}</div>)}
                     </div>
                 </form>
             </div>
