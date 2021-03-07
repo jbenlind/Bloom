@@ -1,12 +1,14 @@
 #grid-container {
     width: 100vw;
+    position: fixed;
     z-index: 1;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: rgba(209, 209, 209, 0.3);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 10px;
     padding-bottom: 20px;
     border-bottom: 1px solid white;
+    height: 50px;
 }
 
 #first-fraction {
@@ -38,7 +40,6 @@
 
 
 .bloom-title {
-    border-bottom: 2px solid white;
     text-decoration: none;
 }
 
@@ -63,10 +64,9 @@
 }
 
 #userHub {
-    animation: slider 4.2s;
-    animation-fill-mode: forwards;
-    animation-delay: .6s;
+    animation: slider 4.2s .6s forwards;
 }
+
 
 @keyframes slider {
     0% {
@@ -75,19 +75,32 @@
       color:#0f6eea;
     }
     25% {
-        transform: translate(0, 270px);
+        transform: translate(0, 260px);
         color:#0f6eea;
     }
     60% {
-        transform: translate(390px, 270px);
+        transform: translate(390px, 260px);
         color:#0f6eea;
     }
     99% {
-        transform: translate(390px, 270px);
+        transform: translate(390px, 260px);
         color: white;
       }
     100% {
-      transform: translate(390px, 270px);
+      transform: translate(390px, 260px);
       color: white;
     }
 }
+
+.logout {
+    background-color: transparent;
+    border:none;
+}
+
+#inUse {
+    border-bottom: 2px solid white;
+}
+
+html:not([data-scroll="0"]) #grid-container {
+    background-color: rgba(209, 209, 209, 0.9);
+  }

@@ -1,109 +1,119 @@
 .template-layout {
-    background-color: rgb(214, 222, 230);
+    background-color: #e7e7e7;
     width: 100%;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.template-header {
-    color: rgba(0, 0, 0, .7);
+section {
+    padding: 90px 0;
+}
+
+#section-2 {
+    height: 70vh;
+    padding-top: 140px;
+    background-color: #f6fbf3;
+}
+
+.templates-header {
+    color: rgba(0, 0, 0, .6);
+    font-size: 35px;
     display: flex;
+    padding-top: 150px;
+    align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    padding-top: 130px;
-    padding-bottom: 60px;
-    font-size: 2rem;
-    letter-spacing: .1rem;
-}
-
-.background-images {
-    display: flex;
-    overflow-x: hidden;
-
-}
-
-.template-image {
-    margin-left: 200px;
-    height: 600px;
-    width: 1100px;
-    border-radius: 50px;
-    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
-    transform: translateX(-2400px);
-}
-
-.image-description {
-    display: flex;
-    transform: translateX(-2100px);
-    color: rgba(0, 0, 0, .7);
-    text-transform: uppercase;
-    font-size: 2rem;
     letter-spacing: .2rem;
 }
 
-#center{
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-}
-
-#L1{
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(68vw);
-}
-
-#L2 {
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(135.5vw);
-}
-
-#R1 {
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(-67.5vw);
-}
-
-#R2 {
-    padding-bottom: 50px;
-    transition-duration: 1.3s;
-    transform: translateX(-135vw);
-}
-
-.left-arrow {
+.image-description {
     position: absolute;
-    top: 52vh;
-    left: 14.5vw;
-    height: 50px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    color: rgba(255, 255, 255, .7);
-    margin: 0;
-    padding: 0;
+    top:58.5vh;
+    left: 0;
+    color: #0f6eea;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, .6);
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    padding: 10px 10px 5px 10px;
 }
 
-.fa-chevron-left,
-.fa-chevron-right {
-    font-size: 80px;
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.right-arrow {
-    position: absolute;
-    top: 52vh;
-    right: 16vw;
-    height: 50px;
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    color: rgba(255, 255, 255, .7);
-    transition: all .8s ease-out 10s;
-
+.carousel-root {
+    width: fit-content;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, .2);
 }
 
-.right-arrow:hover,
-.left-arrow:hover {
-    animation: bounce .4s infinite alternate;
+.carousel.carousel-slider .control-arrow {
+    padding: 20px;
+    margin-top: 250px;
+    height: 100px;
+    background-color: rgb(19, 111, 216, .6);
 }
 
-  @keyframes bounce {
-    to { transform: scale(1.1); }
-  }
+.carousel.carousel-slider .control-arrow::after {
+    padding: 20px;
+    margin-top: 250px;
+    height: 100px;
+    background-color: rgb(19, 111, 216, .6);
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+    padding: 20px;
+    margin-top: 250px;
+    height: 100px;
+    background-color: rgb(19, 111, 216, .7);
+}
+
+.templates-description {
+    width: 15vw;
+    font-size: 35px;
+    color: rgba(0, 0, 0, .6);
+}
+
+
+.templates-image {
+    height: 600px;
+}
+
+.color-palette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 70vh;
+    padding: 100px 0;
+}
+
+.template-description-horizontal {
+    font-size: 35px;
+    color: rgba(0, 0, 0, .6);
+    padding-bottom: 80px;
+}
+
+.palette-images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-bottom: 70px;
+}
+
+.color-palette-img {
+    height: 500px;
+    width: 700px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, .2);
+}

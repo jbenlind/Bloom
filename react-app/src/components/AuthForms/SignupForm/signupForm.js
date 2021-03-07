@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../../store/session";
 import { useHistory } from "react-router-dom";
-
-import "../authForms.css";
+import "./signupForm.css";
 
 const SignupForm = ({authenticated, setAuthenticated}) => {
 
@@ -53,49 +52,61 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
 
   return (
     <>
-      <form className="auth-form" onSubmit={onSignUp}>
-          <div className="input-fields">
-          <h4 className="auth-header">Welcome</h4>
+      <div className="auth-box-two">
+        <h4>Welcome</h4>
+          <form onSubmit={onSignUp}>
+            <div>
               <input
-                  autoComplete="off"
-                  className="auth-input-field"
-                  name="username"
-                  type="text"
-                  placeholder="Username"
-                  value={username}
-                  onChange={updateUsername}
-                  />
+              autoComplete="off"
+              className="auth-input-field"
+              name="username"
+              type="text"
+              value={username}
+              onChange={updateUsername}
+              required={true}
+              />
+              <label>Username</label>
+            </div>
+            <div>
               <input
-                  autoComplete="off"
-                  className="auth-input-field"
-                  name="email"
-                  type="text"
-                  placeholder="Email"
-                  value={email}
-                  onChange={updateEmail}
-                  />
+                autoComplete="off"
+                className="auth-input-field"
+                name="email"
+                type="text"
+                value={email}
+                onChange={updateEmail}
+                required={true}
+                />
+              <label>Email</label>
+            </div>
+            <div>
               <input
-                  className="auth-input-field"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={updatePassword}
-                  />
+                className="auth-input-field"
+                name="password"
+                type="password"
+                value={password}
+                onChange={updatePassword}
+                required={true}
+                />
+              <label>Password</label>
+            </div>
+            <div>
               <input
-                  className="auth-input-field"
-                  name="repeat_password"
-                  type="password"
-                  placeholder="Confirm"
-                  value={repeatPassword}
-                  onChange={updateRepeatPassword}
-                  />
-              <button disabled={!(username && email && password && repeatPassword)}  className={username && email && password && repeatPassword ? "ready" : "not-ready"} type="submit">Sign Up</button>
-              <div className="auth-errors-signUp">
-                {errors.map((error, idx) => <div key={idx}>{error}</div>)}
-              </div>
-          </div>
-      </form>
+                className="auth-input-field"
+                name="repeat_password"
+                type="password"
+                value={repeatPassword}
+                onChange={updateRepeatPassword}
+                required={true}
+                />
+              <label>Confirm</label>
+            </div>
+            <button disabled={!(username && email && password && repeatPassword)}  className={username && email && password && repeatPassword ? "ready" : "not-ready"} type="submit">Sign Up</button>
+            <div className="auth-errors-signUp">
+              {errors.map((error, idx) => <div key={idx}>{error}</div>)}
+            </div>
+        </form>
+      </div>
     </>
   )
 }

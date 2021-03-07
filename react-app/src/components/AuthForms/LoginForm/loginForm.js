@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../../store/session";
 import { useHistory } from "react-router-dom";
-import "../authForms.css";
+import "./loginForm.css";
 
 const LoginForm = ({authenticated, setAuthenticated}) => {
 
@@ -33,33 +33,36 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
 
     return (
         <>
-            <form className="auth-form" onSubmit={onLogin}>
-                <div className="input-fields">
-                <h4 className="auth-header">Back Again?</h4>
-                    <input
-                       autoComplete="off"
-                       className="auth-input-field"
-                       name="email"
-                       type="text"
-                       placeholder="Email"
-                       value={email}
-                       onChange={updateEmail}
-                       />
-                    <input
-                        className="auth-input-field"
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={updatePassword}
-                        />
+            <div className="auth-box">
+                <h4>Back Again?</h4>
+                <form onSubmit={onLogin}>
+                    <div>
+                        <input
+                            autoComplete="off"
+                            name="email"
+                            type="text"
+                            value={email}
+                            onChange={updateEmail}
+                            required={true}
+                            />
+                        <label>Email</label>
+                    </div>
+                    <div>
+                        <input
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={updatePassword}
+                            required={true}
+                            />
+                        <label>Password</label>
+                    </div>
                     <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
                     <div className="auth-errors-login">
                         {errors.map((error, idx) => <div key={idx}>{error}</div>)}
                     </div>
-                </div>
-            </form>
-
+                </form>
+            </div>
         </>
     )
 }

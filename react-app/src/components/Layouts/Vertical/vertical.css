@@ -1,0 +1,88 @@
+/* wedding venue image colors */
+/* muted #5b6c34; #a5943f; */
+
+.vertical-top-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+
+}
+
+.vertical-tabs {
+    height: 50px;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    background-color: rgb(254, 255, 238, .7);
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    margin-top: 50px;
+}
+
+.vertical-button {
+    background-color: transparent;
+    border: transparent;
+    color: #f767ff;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: .2rem;
+    margin: 20px 0;
+
+}
+
+.vertical-card {
+    background-color: rgb(254, 255, 238);
+    height: 700px;
+    width: 650px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+
+}
+
+.profile-image {
+    height: 250px;
+    width: 250px;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+#underline {
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+
+}
+.top-half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+}
+
+.couple-names {
+    color: #f767ff;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    letter-spacing: .1rem;
+}
+
+.vertical-line {
+    margin-top: 20px;
+    height: 100px;
+    border-left: 2px solid rgba(0, 0, 0, .4);
+}
+
+.invitation {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top:30px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #4f81a9;
+}

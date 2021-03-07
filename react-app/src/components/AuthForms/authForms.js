@@ -24,9 +24,9 @@ const AuthForms = ({authenticated, setAuthenticated}) => {
     return (
         <>
             <div id="hub-sidebar">
-                <button id={selected === "login" ? "selected" : ""} className="hub-button" onClick={(e) =>loginSelected()}>Log In</button>
-                <button id={selected === "signup" ? "selected" : ""} className="hub-button" onClick={(e) => signupSelected()}>Sign Up</button>
-                <button id={selected === "demo" ? "selected" : ""} className="hub-button" onClick={(e) => demoSelected()}>Demo</button>
+                <button className={selected === "login" ? "selected" : "hub-button"}  onClick={(e) =>loginSelected()}>Log In</button>
+                <button className={selected === "signup" ? "selected" : "hub-button"}  onClick={(e) => signupSelected()}>Sign Up</button>
+                <button className={selected === "demo" ? "selected" : "hub-button"}  onClick={(e) => demoSelected()}>Demo</button>
             </div>
             <div className="form-background">
                 {selected === "login" &&
