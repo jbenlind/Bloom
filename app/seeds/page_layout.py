@@ -4,20 +4,27 @@ from app.models import db, Page_layout
 
 def seed_page_layout():
 
-    horizontalOne = Page_layout(
-        layout='horizontal',
-        navbarPosition='top'
+    layoutOne = Page_layout(
+        layout='top',
+        imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-top.png"
     )
-    horizontalTwo = Page_layout(
-        layout='horizontal',
-        navbarPosition='bottom'
+    layoutTwo = Page_layout(
+        layout='bottom',
+        imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-bottom.png"
+
     )
-    verticalOne = Page_layout(
-        layout='vertical',
-        navbarPosition='top'
+    layoutThree = Page_layout(
+        layout='left',
+        imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-left.png"
+
+    )
+    layoutFour = Page_layout(
+        layout='right',
+        imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-right.png"
+
     )
 
-    db.session.add_all([horizontalOne, horizontalTwo, verticalOne])
+    db.session.add_all([layoutOne, layoutTwo, layoutTwo, layoutThree])
     db.session.commit()
 
 

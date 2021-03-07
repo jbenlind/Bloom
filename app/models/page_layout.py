@@ -6,7 +6,7 @@ class Page_layout(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     layout = db.Column(db.String(100), nullable=False)
-    navbarPosition = db.Column(db.String(100), nullable=False)
+    imageUrl = db.Column(db.String(100))
 
     user_page = db.relationship("User_page", back_populates="page_layout")
 
