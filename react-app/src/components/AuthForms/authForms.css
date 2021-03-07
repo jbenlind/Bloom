@@ -1,11 +1,10 @@
 .form-background {
-    background-color: #f1f7f1;
+    background-color: #f1faf1;
     height: 550px;
     width: 500px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
     display: flex;
     justify-content: center;
-    transition: all 5s ease-out;
 }
 
 #hub-sidebar {
@@ -21,7 +20,6 @@
 .hub-button {
     width: 250px;
     height: 80px;
-    margin:5px 0;
     font-size: 1.6rem;
     letter-spacing: .3rem;
 	text-transform: uppercase;
@@ -30,13 +28,11 @@
     border: transparent;
     background-color: transparent;
     color:white;
-    transition: .2s ease-in-out;
 }
 
 .selected {
     width: 250px;
     height: 80px;
-    margin:5px 0;
     font-size: 1.6rem;
     letter-spacing: .3rem;
 	text-transform: uppercase;
@@ -45,38 +41,6 @@
     border: transparent;
     background-color: rgba(255,255,255, .5);
     color:rgba(0, 0, 0, .4);
-    transition: all .2s ease-in;
-}
-
-.auth-form {
-    display: flex;
-
-}
-
-.auth-header {
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    font-size: 1.8rem;
-    color: rgba(0, 0, 0, .7);
-}
-
-.input-fields {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.auth-input-field {
-    padding-left:20px;
-    height: 60px;
-    width: 300px;
-    outline: none;
-    border-color: rgba(0, 0, 0, .4);
-    margin-top: 15px;
-    font-size: 25px;
-    color: rgba(0, 0, 0, .7);
 }
 
 .not-ready {

@@ -59,7 +59,21 @@ section {
     padding: 20px;
     margin-top: 250px;
     height: 100px;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgb(19, 111, 216, .6);
+}
+
+.carousel.carousel-slider .control-arrow::after {
+    padding: 20px;
+    margin-top: 250px;
+    height: 100px;
+    background-color: rgb(19, 111, 216, .6);
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+    padding: 20px;
+    margin-top: 250px;
+    height: 100px;
+    background-color: rgb(19, 111, 216, .7);
 }
 
 .templates-description {
