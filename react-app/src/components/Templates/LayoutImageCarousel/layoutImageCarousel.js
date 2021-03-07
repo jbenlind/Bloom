@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import "./layoutImageCarousel.css";
 
 const LayoutImageCarousel = () => {
     const dispatch = useDispatch();
@@ -19,7 +18,7 @@ const LayoutImageCarousel = () => {
         infiniteLoop:true,
         showThumbs:false,
         stopOnHover:true,
-        width:1000,
+        width:1200,
         autoPlay:true,
         transitionTime: 1500,
         interval:9000,
@@ -27,18 +26,26 @@ const LayoutImageCarousel = () => {
 
     return (
         <>
-            <div className="carousel-container">
-                <Carousel
-                 {...options}
-                 >
-                    {layouts &&
-                    layouts.map((layout) => (
-                    <div key={layout.id} className="carousel-container">
-                        <img className="image-container" src={layout.imageUrl} alt="" />
-                    </div>
-                    ))}
-                </Carousel>
+            <div className="background-images-container">
+                <div className="carousel-container">
+                    <Carousel
+                        {...options}
+                        >
+                        {layouts &&
+                        layouts.map((layout) => (
+                        <div key={layout.id} className="carousel-container">
+                            <img className="templates-image" src={layout.imageUrl} alt="" />
+                        </div>
+                        ))}
+                    </Carousel>
+                    <p className="templates-description">
+                        We have built four templates from you to pick from to
+                        make your site you own. Keep scrolling to see the other ways
+                        to customize your page.
+                    </p>
+                </div>
             </div>
+
         </>
     )
 }

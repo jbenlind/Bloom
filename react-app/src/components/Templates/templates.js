@@ -19,14 +19,10 @@ const Templates = ({translateNav}) => {
     return (
         <>
             <div className="template-layout">
-                <div className="description-holder">
-                    <p className="description-header">View Our <br></br> Templates</p>
-                    <p className="templates-description">Get started with any of our best-in-class templates. Customize the background image and color palette to fit your style, and let Bloom do the work for you. Making a beautiful wedding website has never been easier.</p>
-                </div>
+                <p className="templates-header">Your site is only a few clicks away</p>
                 <LayoutImageCarousel />
                 <BackgroundImageCarousel />
-                <div className="color-palettes">
-                </div>
+                <div className="spacer"></div>
             </div>
         </>
     )
