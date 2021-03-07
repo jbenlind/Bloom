@@ -39,8 +39,7 @@ const LayoutImageCarousel = () => {
                     ))}
                 </Carousel>
                 <p className="templates-description">
-                    We have many images for you to choose from to keep the
-                    customization coming. We want every aspect to be
+                    We keep the customization coming with different background images. We want every aspect to be
                     exactly the way you want it!
                 </p>
             </div>
