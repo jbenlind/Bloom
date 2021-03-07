@@ -21,31 +21,28 @@ const LayoutImageCarousel = () => {
         width:1200,
         autoPlay:true,
         transitionTime: 1500,
-        interval:9000,
+        interval:8000,
     }
 
     return (
         <>
-            <div className="background-images-container">
-                <div className="carousel-container">
-                    <Carousel
-                        {...options}
-                        >
-                        {layouts &&
-                        layouts.map((layout) => (
-                        <div key={layout.id} className="carousel-container">
-                            <img className="templates-image" src={layout.imageUrl} alt="" />
-                        </div>
-                        ))}
-                    </Carousel>
-                    <p className="templates-description">
-                        We have built four templates from you to pick from to
-                        make your site you own. Keep scrolling to see the other ways
-                        to customize your page.
-                    </p>
-                </div>
+            <div className="carousel-container">
+                <p className="templates-description">
+                    We have built four templates for you to pick from to
+                    make your site your own. Keep scrolling to see the other ways
+                    you can customize your page.
+                </p>
+                <Carousel
+                    {...options}
+                    >
+                    {layouts &&
+                    layouts.map((layout) => (
+                    <div key={layout.id} className="carousel-container">
+                        <img className="templates-image" src={layout.imageUrl} alt="" />
+                    </div>
+                    ))}
+                </Carousel>
             </div>
-
         </>
     )
 }

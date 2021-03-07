@@ -21,17 +21,12 @@ const LayoutImageCarousel = () => {
         width:1200,
         autoPlay:true,
         transitionTime: 1500,
-        interval:9000,
+        interval:8000,
     }
 
     return (
         <>
             <div className="carousel-container">
-                <p className="templates-description">
-                    We have many images for you to choose from to keep the
-                    customization coming. We want every aspect to be
-                    exactly the way you want it!
-                </p>
                 <Carousel
                  {...options}
                  >
@@ -43,6 +38,11 @@ const LayoutImageCarousel = () => {
                     </div>
                     ))}
                 </Carousel>
+                <p className="templates-description">
+                    We have many images for you to choose from to keep the
+                    customization coming. We want every aspect to be
+                    exactly the way you want it!
+                </p>
             </div>
         </>
     )

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import Slider from "infinite-react-carousel";
 
 import "./index.css";
 import App from "./App";
