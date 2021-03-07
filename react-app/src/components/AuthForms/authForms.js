@@ -6,10 +6,13 @@ import "./authForms.css";
 
 const AuthForms = ({authenticated, setAuthenticated}) => {
 
-    const [selected, setSelected] = useState("login")
+    const [selected, setSelected] = useState("login");
 
     const loginSelected = () => {
-        setSelected("login")
+        setTimeout(() => {
+            setSelected("login")
+        }, 500)
+
     }
 
     const signupSelected = () => {
@@ -29,7 +32,7 @@ const AuthForms = ({authenticated, setAuthenticated}) => {
             </div>
             <div className="form-background">
                 {selected === "login" &&
-                <LoginForm authenticated={authenticated} setAuthenticated={setAuthenticated} />}
+                <LoginForm selected={selected} authenticated={authenticated} setAuthenticated={setAuthenticated} />}
                 {selected === "signup" &&
                 <SignupForm authenticated={authenticated} setAuthenticated={setAuthenticated} />}
                 {selected === "demo" &&

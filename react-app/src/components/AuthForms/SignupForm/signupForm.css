@@ -1,11 +1,12 @@
 .auth-box-two{
     position: absolute;
-    top: 47%;
+    top: 46%;
     left: 56.5%;
     transform: translate(-50%, -50%);
     width: 270px;
     box-sizing: border-box;
     height: 400px;
+    animation: fadeIn 2s;
 }
 
 .auth-box-two h4 {
@@ -33,7 +34,7 @@
 
 .auth-box-two button {
     border-bottom: none;
-    margin: 0 0 0 30px;
+    margin: 10px 0 0 30px;
 }
 
 .auth-box-two form div {

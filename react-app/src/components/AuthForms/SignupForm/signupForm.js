@@ -58,7 +58,6 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
             <div>
               <input
               autoComplete="off"
-              className="auth-input-field"
               name="username"
               type="text"
               value={username}
@@ -69,8 +68,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
             </div>
             <div>
               <input
-                autoComplete="off"
-                className="auth-input-field"
+                autocomplete="new-email"
                 name="email"
                 type="text"
                 value={email}
@@ -81,7 +79,6 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
             </div>
             <div>
               <input
-                className="auth-input-field"
                 name="password"
                 type="password"
                 value={password}
@@ -92,7 +89,6 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
             </div>
             <div>
               <input
-                className="auth-input-field"
                 name="repeat_password"
                 type="password"
                 value={repeatPassword}

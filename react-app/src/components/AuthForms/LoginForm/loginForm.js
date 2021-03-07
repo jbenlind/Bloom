@@ -4,7 +4,7 @@ import { login } from "../../../store/session";
 import { useHistory } from "react-router-dom";
 import "./loginForm.css";
 
-const LoginForm = ({authenticated, setAuthenticated}) => {
+const LoginForm = ({setAuthenticated}) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -27,9 +27,9 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
         setEmail(e.target.value);
       };
 
-      const updatePassword = (e) => {
-        setPassword(e.target.value);
-      };
+    const updatePassword = (e) => {
+    setPassword(e.target.value);
+    };
 
     return (
         <>
