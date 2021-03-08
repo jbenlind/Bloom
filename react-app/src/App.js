@@ -9,6 +9,7 @@ import UserHub from "./components/UserHub";
 import MyPage from "./components/MyPage";
 import Templates from "./components/Templates";
 import Vertical from "./components/Layouts/Vertical";
+import SlidingSideBar from "./components/SlidingSideBar";
 import "./App.css";
 
 const App = () => {
@@ -55,8 +56,11 @@ const App = () => {
         <Route path="/templates" exact={true}>
           <Templates />
         </Route>
-        <Route path="/Vertical">
+        <Route path="/vertical">
           <Vertical />
+        </Route>
+        <Route path="slide">
+          <SlidingSideBar />
         </Route>
       </Switch>
     </>
