@@ -1,0 +1,148 @@
+.side-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #f0eeee;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid rgba(0, 0, 0, .6);
+    border-top: 2px solid rgba(0, 0, 0, .6);
+}
+
+#open {
+    animation: slide-open 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-open {
+    0% {
+        left: -15.6vw;
+        box-shadow: 0 0 0 transparent
+
+    }
+    100% {
+        left: 0;
+        box-shadow: 2px 67px 5px rgba(0, 0, 0, .5);
+    }
+}
+
+#closed {
+    animation: slide-close 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-close {
+    0% {
+        left: 0;
+        box-shadow: 2px 67px 5px rgba(0, 0, 0, .5);
+    }
+    100% {
+        left: -15.6vw;
+        box-shadow: 0 0 0 transparent
+    }
+}
+
+
+/* close button */
+
+
+.slide-button-start {
+    padding-top:10px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    overflow: hidden;
+    background-color: #e7e7e7;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .6);
+    border-right: 2px solid rgba(0, 0, 0, .6);
+    border-top: 2px solid rgba(0, 0, 0, .6);
+    border-bottom: 2px solid rgba(0, 0, 0, .6);
+    cursor: pointer;
+}
+
+#slide-button-start {
+    animation: slide-out 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        left: 0;
+        padding-top: 10px;
+        width: 50px;
+    }
+    100% {
+        left: 300px;
+        padding-top: 25px;
+        width:60px;
+    }
+}
+
+#slide-button-end {
+    animation: slide-in 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        left: 300px;
+        padding-top: 25px;
+    }
+    100% {
+        left: 0;
+        padding-top: 10px;
+    }
+}
+
+
+.bar {
+    display: block;
+    background-color: rgba(0, 0, 0, .7);
+    width: 35px;
+    height: 3px;
+    border-radius: 5px;
+    margin: 5px auto;
+    transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ .content {
+    transform: translateX(20%);
+  }
+
+  input[type="checkbox"]:checked ~ label .bar {
+    background-color: rgba(0, 0, 0, .7)
+  }
+
+  input[type="checkbox"]:checked ~ label .top {
+    -webkit-transform: translateY(0px) rotateZ(45deg);
+    -moz-transform: translateY(0px) rotateZ(45deg);
+    -ms-transform: translateY(0px) rotateZ(45deg);
+    -o-transform: translateY(0px) rotateZ(45deg);
+    transform: translateY(0px) rotateZ(45deg);
+  }
+
+  input[type="checkbox"]:checked ~ label .bottom {
+    -webkit-transform: translateY(-15px) rotateZ(-45deg);
+    -moz-transform: translateY(-15px) rotateZ(-45deg);
+    -ms-transform: translateY(-15px) rotateZ(-45deg);
+    -o-transform: translateY(-15px) rotateZ(-45deg);
+    transform: translateY(-15px) rotateZ(-45deg);
+  }
+
+  input[type="checkbox"]:checked ~ label .middle {
+    width: 0;
+  }
+
+  .middle {
+    margin: 0 auto;
+  }

@@ -29,10 +29,10 @@ const App = () => {
 
   return (
     <>
-      <Navigation
+      {/* <Navigation
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
-      />
+      /> */}
       <Switch>
         <Route path="/" exact={true} authenticated={authenticated}>
           <SplashPage
@@ -59,7 +59,7 @@ const App = () => {
         <Route path="/vertical">
           <Vertical />
         </Route>
-        <Route path="slide">
+        <Route path="/slide">
           <SlidingSideBar />
         </Route>
       </Switch>
