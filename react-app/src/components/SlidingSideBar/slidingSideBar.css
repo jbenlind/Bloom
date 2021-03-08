@@ -3,8 +3,8 @@
     top: 80px;
     left: 0;
     height: 91.5vh;
-    width: 300px;
-    background-color: #6289bd;;
+    width: 372px;
+    background-color: #4589e0;
     display: flex;
     flex-direction: column;
 }
@@ -37,7 +37,7 @@
         box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
     }
     100% {
-        left: -12vw;
+        left: -300px;
         box-shadow: 0 0 0 transparent
     }
 }
@@ -56,7 +56,7 @@
     overflow: hidden;
     cursor: pointer;
     z-index: 1;
-    background-color: #6289bd;
+    background-color: #4589e0;
 }
 
 #slide-button-start {
@@ -71,7 +71,7 @@
         width: 50px;
     }
     100% {
-        left: 240px;
+        left: 310px;
         padding-top: 25px;
         width:60px;
     }
@@ -84,7 +84,7 @@
 
 @keyframes slide-in {
     0% {
-        left: 240px;
+        left: 310px;
         padding-top: 25px;
     }
     100% {
@@ -145,7 +145,7 @@ margin: 0 auto;
 
 .locked {
     position: absolute;
-    left: 15px;
+    left: 16px;
     top: 130px;
     color: white;
     font-size: 40px;
@@ -154,35 +154,133 @@ margin: 0 auto;
 
 .unlocked {
     position: absolute;
-    left: 15px;
+    left: 16px;
     top: 130px;
     color: white;
     font-size: 40px;
     z-index: 1;
 }
 
-.fa-file-user {
+.user {
     position: absolute;
-    left: 17px;
-    top: 200px;
+    left: 16px;
+    top: 195px;
     color: white;
-    font-size: 40px;
+    font-size: 43px;
     z-index: 1;
+
 }
 
-.fa-calendar-alt {
+.upload-image {
     position: absolute;
-    left: 15px;
+    left: 16px;
+    top: 255px;
     color: white;
-    font-size: 40px;
+    font-size: 38px;
     z-index: 1;
+    animation: slide-image-up .5s;
+    animation-fill-mode: forwards;
 }
 
-.fa-map-marker-alt {
+@keyframes slide-image-up {
+    0% {
+        top: 355px;
+    } 100% {
+        top: 255px;
+    }
+}
+
+.upload-image-slide {
     position: absolute;
-    left: 15px;
+    left: 16px;
+    top: 255px;
     color: white;
-    top: 260px;
+    font-size: 38px;
+    z-index: 1;
+    animation: slide-image-down .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-image-down {
+    0% {
+        top: 255px;
+    } 100% {
+        top: 355px;
+    }
+}
+
+.calendar {
+    position: absolute;
+    left: 16px;
+    top: 310px;
+    color: white;
+    font-size: 39px;
+    z-index: 1;
+    animation: slide-calendar-up .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-calendar-up {
+    0% {
+        top: 510px;
+    } 100% {
+        top: 310px;
+    }
+}
+
+.calendar-slide {
+    position: absolute;
+    left: 16px;
+    top: 310px;
+    color: white;
+    font-size: 39px;
+    z-index: 1;
+    animation: slide-calendar-down .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-calendar-down {
+    0% {
+        top: 310px;
+    } 100% {
+        top: 510px;
+    }
+}
+
+.map-marker {
+    position: absolute;
+    left: 18px;
+    color: white;
+    top: 368px;
     font-size: 40px;
     z-index: 1;
+    animation: slide-marker-up .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-marker-up {
+    0% {
+        top: 610px;
+    } 100% {
+        top: 368px;
+    }
+}
+
+.map-marker-slide {
+    position: absolute;
+    left: 18px;
+    color: white;
+    top: 368px;
+    font-size: 40px;
+    z-index: 1;
+    animation: slide-marker-down .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-marker-down {
+    0% {
+        top: 368px;
+    } 100% {
+        top: 610px;
+    }
 }

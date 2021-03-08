@@ -35,10 +35,12 @@ const SlidingSideBar = () => {
                 {locked === "locked" ?
                 <div onClick={lockInput} className="locked"><i class="far fa-lock-alt"></i></div> :
                 <div onClick={lockInput} className="unlocked"><i class="far fa-unlock-alt"></i></div> }
-                <i class="far fa-file-user"></i>
-                <i class="far fa-calendar-alt"></i>
-                <i class="far fa-map-marker-alt"></i>
+                <div className="user"><i class="far fa-file-user"></i></div>
+                <div className={locked === "locked" ? "upload-image" :"upload-image-slide"}><i class="fas fa-image-polaroid"></i></div>
+                <div className={locked === "locked" ? "calendar" :"calendar-slide"}><i class="far fa-calendar-alt"></i></div>
+                <div className={locked === "locked" ? "map-marker" :"map-marker-slide"}><i class="far fa-map-marker-alt"></i></div>
                 <div id={showSide} className="side-bar">
+                    
                 </div>
             </>
     )
