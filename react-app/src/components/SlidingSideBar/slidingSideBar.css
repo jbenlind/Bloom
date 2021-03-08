@@ -1,14 +1,12 @@
 .side-bar {
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 0;
-    height: 100vh;
+    height: 91.5vh;
     width: 300px;
-    background-color: #f0eeee;
+    background-color: #0f6eea;
     display: flex;
     flex-direction: column;
-    border-right: 2px solid rgba(0, 0, 0, .6);
-    border-top: 2px solid rgba(0, 0, 0, .6);
 }
 
 #open {
@@ -18,13 +16,13 @@
 
 @keyframes slide-open {
     0% {
-        left: -15.6vw;
+        left: -12.6vw;
         box-shadow: 0 0 0 transparent
 
     }
     100% {
         left: 0;
-        box-shadow: 2px 67px 5px rgba(0, 0, 0, .5);
+        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
     }
 }
 
@@ -36,10 +34,10 @@
 @keyframes slide-close {
     0% {
         left: 0;
-        box-shadow: 2px 67px 5px rgba(0, 0, 0, .5);
+        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
     }
     100% {
-        left: -15.6vw;
+        left: -12vw;
         box-shadow: 0 0 0 transparent
     }
 }
@@ -52,16 +50,13 @@
     padding-top:10px;
     padding-bottom: 10px;
     position: absolute;
-    top: 0;
+    top: 81px;
     left: 0;
     width: 60px;
     overflow: hidden;
-    background-color: #e7e7e7;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, .6);
-    border-right: 2px solid rgba(0, 0, 0, .6);
-    border-top: 2px solid rgba(0, 0, 0, .6);
-    border-bottom: 2px solid rgba(0, 0, 0, .6);
     cursor: pointer;
+    z-index: 1;
+    background-color: #0f6eea;
 }
 
 #slide-button-start {
@@ -76,7 +71,7 @@
         width: 50px;
     }
     100% {
-        left: 300px;
+        left: 240px;
         padding-top: 25px;
         width:60px;
     }
@@ -89,7 +84,7 @@
 
 @keyframes slide-in {
     0% {
-        left: 300px;
+        left: 240px;
         padding-top: 25px;
     }
     100% {
@@ -98,10 +93,9 @@
     }
 }
 
-
 .bar {
     display: block;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: white;
     width: 35px;
     height: 3px;
     border-radius: 5px;
@@ -112,37 +106,64 @@
 
 
 input[type="checkbox"] {
-    display: none;
-  }
+display: none;
+}
 
-  input[type="checkbox"]:checked ~ .content {
-    transform: translateX(20%);
-  }
+input[type="checkbox"]:checked ~ .content {
+transform: translateX(20%);
+}
 
-  input[type="checkbox"]:checked ~ label .bar {
-    background-color: rgba(0, 0, 0, .7)
-  }
+input[type="checkbox"]:checked ~ label .bar {
+background-color: white;
+}
 
-  input[type="checkbox"]:checked ~ label .top {
-    -webkit-transform: translateY(0px) rotateZ(45deg);
-    -moz-transform: translateY(0px) rotateZ(45deg);
-    -ms-transform: translateY(0px) rotateZ(45deg);
-    -o-transform: translateY(0px) rotateZ(45deg);
-    transform: translateY(0px) rotateZ(45deg);
-  }
+input[type="checkbox"]:checked ~ label .top {
+-webkit-transform: translateY(0px) rotateZ(45deg);
+-moz-transform: translateY(0px) rotateZ(45deg);
+-ms-transform: translateY(0px) rotateZ(45deg);
+-o-transform: translateY(0px) rotateZ(45deg);
+transform: translateY(0px) rotateZ(45deg);
+}
 
-  input[type="checkbox"]:checked ~ label .bottom {
-    -webkit-transform: translateY(-15px) rotateZ(-45deg);
-    -moz-transform: translateY(-15px) rotateZ(-45deg);
-    -ms-transform: translateY(-15px) rotateZ(-45deg);
-    -o-transform: translateY(-15px) rotateZ(-45deg);
-    transform: translateY(-15px) rotateZ(-45deg);
-  }
+input[type="checkbox"]:checked ~ label .bottom {
+-webkit-transform: translateY(-15px) rotateZ(-45deg);
+-moz-transform: translateY(-15px) rotateZ(-45deg);
+-ms-transform: translateY(-15px) rotateZ(-45deg);
+-o-transform: translateY(-15px) rotateZ(-45deg);
+transform: translateY(-15px) rotateZ(-45deg);
+}
 
-  input[type="checkbox"]:checked ~ label .middle {
-    width: 0;
-  }
+input[type="checkbox"]:checked ~ label .middle {
+width: 0;
+}
 
-  .middle {
-    margin: 0 auto;
-  }
+.middle {
+margin: 0 auto;
+}
+
+.fa-clipboard-list {
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    color: white;
+    font-size: 50px;
+    z-index: 1;
+}
+
+.fa-edit {
+    position: absolute;
+    left: 10px;
+    top: 310px;
+    color: white;
+    font-size: 40px;
+    z-index: 1;
+}
+
+.fa-calendar-alt {
+    position: absolute;
+    left: 10px;
+    top: 230px;
+    color: white;
+    font-size: 43px;
+    z-index: 1;
+}

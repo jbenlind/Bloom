@@ -29,10 +29,10 @@ const App = () => {
 
   return (
     <>
-      {/* <Navigation
+      <Navigation
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
-      /> */}
+      />
       <Switch>
         <Route path="/" exact={true} authenticated={authenticated}>
           <SplashPage

@@ -24,6 +24,9 @@ const SlidingSideBar = () => {
                     <span class="bar bottom"></span>
                     </label>
                 </section>
+                <i className="far fa-edit"></i>
+                <i class="far fa-calendar-alt"></i>
+                <i class="far fa-clipboard-list"></i>
                 <div id={showSide} className="side-bar">
                     <div>My Page</div>
                 </div>
