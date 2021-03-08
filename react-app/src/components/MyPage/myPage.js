@@ -5,8 +5,9 @@ import SlidingSideBar from "../SlidingSideBar";
 const MyPage = () => {
     return (
         <>
-        <SlidingSideBar />
-        <div className="body"></div>
+            <div className="body">
+                <SlidingSideBar />
+            </div>
         </>
     )
 }

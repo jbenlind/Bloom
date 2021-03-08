@@ -4,7 +4,7 @@
     left: 0;
     height: 91.5vh;
     width: 300px;
-    background-color: #0f6eea;
+    background-color: #6289bd;;
     display: flex;
     flex-direction: column;
 }
@@ -56,7 +56,7 @@
     overflow: hidden;
     cursor: pointer;
     z-index: 1;
-    background-color: #0f6eea;
+    background-color: #6289bd;
 }
 
 #slide-button-start {
@@ -163,6 +163,15 @@ margin: 0 auto;
     position: absolute;
     left: 10px;
     top: 230px;
+    color: white;
+    font-size: 43px;
+    z-index: 1;
+}
+
+.fa-unlock-alt {
+    position: absolute;
+    left: 10px;
+    top: 380px;
     color: white;
     font-size: 43px;
     z-index: 1;

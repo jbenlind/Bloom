@@ -4,7 +4,6 @@ import "./slidingSideBar.css"
 const SlidingSideBar = () => {
 
     const [showSide, setShowSide] = useState("open")
-    const [previous, setPrevious] = useState()
 
     const showSideBar = () => {
         if(showSide === "closed") {
@@ -26,7 +25,8 @@ const SlidingSideBar = () => {
                 </section>
                 <i className="far fa-edit"></i>
                 <i class="far fa-calendar-alt"></i>
-                <i class="far fa-clipboard-list"></i>
+                <i class="far fa-unlock-alt"></i>
+                <i class="far fa-lock-alt"></i>
                 <div id={showSide} className="side-bar">
                     <div>My Page</div>
                 </div>

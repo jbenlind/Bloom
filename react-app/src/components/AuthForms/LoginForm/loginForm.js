@@ -19,7 +19,7 @@ const LoginForm = ({setAuthenticated}) => {
         setErrors(["Login Failed"]);
         } else {
             setAuthenticated(true)
-            history.push(`/usePage/${user.id}`)
+            history.push(`/myPage/${user.id}`)
         }
     };
 
