@@ -8,7 +8,7 @@ const SplashPage = () => {
     <>
       <img
         id="backgroundImage"
-        src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/splashpage-background.png"
+        src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/splash-background-2.png"
         alt=""
       ></img>
       <div id="page-container">

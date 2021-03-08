@@ -6,6 +6,12 @@
     width: 270px;
     box-sizing: border-box;
     height: 400px;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; }
+    to {opacity: 1;}
 }
 
 .auth-box h4 {
@@ -15,7 +21,6 @@
     letter-spacing: .2rem;
 	text-transform: uppercase;
     color: rgba(0,0,0, .7);
-    /* color: ; */
 }
 
 .auth-box input {
@@ -60,11 +65,32 @@
 
 }
 
-.auth-box input:focus ~label,
+
+
+.auth-box input:focus ~ label,
 .auth-box input:valid ~ label {
     top:-20px;
     left:10px;
     font-weight: bold;
     font-size: 15px;
     color: #6289bd;
+}
+
+.auth-errors-login {
+    position: absolute;
+    top: -85px;
+    left: 60px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: rgba(255, 0, 0, 0.5);
+}
+
+.auth-errors-signUp {
+    position: absolute;
+    top: -80px;
+    left: 5px;
+    font-size: 20px;
+    width: 400px;
+    text-transform: uppercase;
+    color: rgba(255, 0, 0, 0.5);
 }

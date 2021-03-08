@@ -7,6 +7,7 @@
     font-size: 30px;
     color: rgba(0, 0, 0, .7);
     text-align: justify;
+    animation: fadeIn 2s;
 }
 
 .radio-button-label {
@@ -19,6 +20,5 @@
 
 .radio-button {
     margin-left: 10px;
-    
     transform: scale(1.2);
 }

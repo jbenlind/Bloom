@@ -4,7 +4,7 @@ import { login } from "../../../store/session";
 import { useHistory } from "react-router-dom";
 import "./loginForm.css";
 
-const LoginForm = ({authenticated, setAuthenticated}) => {
+const LoginForm = ({setAuthenticated}) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -27,9 +27,9 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
         setEmail(e.target.value);
       };
 
-      const updatePassword = (e) => {
-        setPassword(e.target.value);
-      };
+    const updatePassword = (e) => {
+    setPassword(e.target.value);
+    };
 
     return (
         <>
@@ -57,7 +57,7 @@ const LoginForm = ({authenticated, setAuthenticated}) => {
                             />
                         <label>Password</label>
                     </div>
-                    <button disabled={!(email && password)} className={email && password ? "ready" : "not-ready"} type="submit">Log In</button>
+                    <button disabled={!(email && password)} id={email && password ? "ready" : ""} className="not-ready" type="submit">Log In</button>
                     <div className="auth-errors-login">
                         {errors.map((error, idx) => <div key={idx}>{error}</div>)}
                     </div>
