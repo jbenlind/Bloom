@@ -66,7 +66,7 @@
 
 @keyframes slide-out {
     0% {
-        left: 0;
+        left: 3px;
         padding-top: 10px;
         width: 50px;
     }
@@ -88,7 +88,7 @@
         padding-top: 25px;
     }
     100% {
-        left: 0;
+        left: 3px;
         padding-top: 10px;
     }
 }
@@ -141,19 +141,30 @@ width: 0;
 margin: 0 auto;
 }
 
-.fa-clipboard-list {
+
+
+.locked {
     position: absolute;
-    left: 10px;
-    top: 150px;
+    left: 15px;
+    top: 130px;
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     z-index: 1;
 }
 
-.fa-edit {
+.unlocked {
     position: absolute;
-    left: 10px;
-    top: 310px;
+    left: 15px;
+    top: 130px;
+    color: white;
+    font-size: 40px;
+    z-index: 1;
+}
+
+.fa-file-user {
+    position: absolute;
+    left: 17px;
+    top: 200px;
     color: white;
     font-size: 40px;
     z-index: 1;
@@ -161,18 +172,17 @@ margin: 0 auto;
 
 .fa-calendar-alt {
     position: absolute;
-    left: 10px;
-    top: 230px;
+    left: 15px;
     color: white;
-    font-size: 43px;
+    font-size: 40px;
     z-index: 1;
 }
 
-.fa-unlock-alt {
+.fa-map-marker-alt {
     position: absolute;
-    left: 10px;
-    top: 380px;
+    left: 15px;
     color: white;
-    font-size: 43px;
+    top: 260px;
+    font-size: 40px;
     z-index: 1;
 }
