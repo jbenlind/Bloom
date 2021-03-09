@@ -71,7 +71,7 @@ const SideBarForm = ({selected, showSide}) => {
             <div id={showSide === "closed" ? "fade-out" : ""} className="myPage-form">
                 <form>
                     {selected === "profile" &&
-                    <div>
+                    <div className="profile-page">
                        <div>
                             <input
                             type="text"
