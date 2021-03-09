@@ -2,7 +2,7 @@ import React from "react";
 import FromCenterButton from "../FromCenterButton";
 import "./splashPage.css";
 
-const SplashPage = () => {
+const SplashPage = ({authenticated}) => {
 
   return (
     <>

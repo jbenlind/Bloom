@@ -1,0 +1,206 @@
+.side-bar {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 91vh;
+    width: 365px;
+    background-color: rgba(209, 209, 209, 0.5);
+    /* border-right: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+}
+
+#open {
+    animation: slide-open 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-open {
+    0% {
+        left: -12.6vw;
+        box-shadow: 0 0 0 transparent;
+        border-right: 1px solid white;
+
+    }
+    100% {
+        left: 0;
+        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        border-right: none;
+    }
+}
+
+#closed {
+    animation: slide-close 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-close {
+    0% {
+        left: 0;
+        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        border-right: none;
+    }
+    100% {
+        left: -300px;
+        box-shadow: 0 0 0 transparent;
+        border-right: 1px solid white;
+    }
+}
+
+
+/* close button */
+
+
+.slide-button-start {
+    padding-top:10px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 81px;
+    left: 3px;
+    width: 60px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#slide-button-start {
+    animation: slide-out .955s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        left: 5px;
+        padding-top: 10px;
+        width: 50px;
+    }
+    100% {
+        left: 305px;
+        padding-top: 25px;
+        width:60px;
+    }
+}
+
+#slide-button-end {
+    animation: slide-in 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        left: 305px;
+        padding-top: 25px;
+    }
+    100% {
+        left: 3px;
+        padding-top: 10px;
+    }
+}
+
+.bar {
+    display: block;
+    background-color: #6289bd;
+    width: 35px;
+    height: 3px;
+    border-radius: 5px;
+    margin: 5px auto;
+    transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] {
+display: none;
+}
+
+input[type="checkbox"]:checked ~ .content {
+transform: translateX(20%);
+}
+
+input[type="checkbox"]:checked ~ label .bar {
+background-color: #6289bd;
+}
+
+input[type="checkbox"]:checked ~ label .top {
+-webkit-transform: translateY(0px) rotateZ(45deg);
+-moz-transform: translateY(0px) rotateZ(45deg);
+-ms-transform: translateY(0px) rotateZ(45deg);
+-o-transform: translateY(0px) rotateZ(45deg);
+transform: translateY(0px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked ~ label .bottom {
+-webkit-transform: translateY(-15px) rotateZ(-45deg);
+-moz-transform: translateY(-15px) rotateZ(-45deg);
+-ms-transform: translateY(-15px) rotateZ(-45deg);
+-o-transform: translateY(-15px) rotateZ(-45deg);
+transform: translateY(-15px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked ~ label .middle {
+width: 0;
+}
+
+.middle {
+margin: 0 auto;
+}
+
+.icon-container {
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    height: 280px;
+    width: 40px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.icon-container div i {
+    position: relative;
+    color: #6289bd;
+    padding: 10px 0;
+}
+
+.user {
+    position: relative;
+    left: 2px;
+    font-size: 43px;
+}
+
+.calendar {
+    position: relative;
+    left: 1px;
+    font-size: 38px;
+}
+
+.map-marker {
+    position: relative;
+    left: 2px;
+    font-size: 40px;
+}
+
+.upload-image {
+    position: relative;
+    left: 1px;
+    font-size: 38px;
+}
+
+.envelope {
+    position: relative;
+    left: 1px;
+    font-size: 33px;
+}
+
+#selected-icon {
+    animation: changeColor 1s;
+    animation-fill-mode: forwards
+}
+
+@keyframes changeColor {
+    0% {
+        color: #6289bd;
+    }
+    100% {
+        color: white
+    }
+}

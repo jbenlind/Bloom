@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import './fromCenterButton.css';
+import './fromCenterButtonSmall.css';
 
-const FromCenterButton = () => {
+const FromCenterButtonSmall = () => {
     const sessionUser = useSelector((state) => state.session.user);
 
     const history = useHistory();
@@ -20,10 +20,10 @@ const FromCenterButton = () => {
     console.log(sessionUser)
     return (
         <>
-            <button onClick={(e) => getStarted(e)} className="btn from-center">Get Started</button>
+            <button onClick={(e) => getStarted(e)} className="btn-small from-center-small">OPEN</button>
         </>
 
     )
 }
 
-export default FromCenterButton;
+export default FromCenterButtonSmall;

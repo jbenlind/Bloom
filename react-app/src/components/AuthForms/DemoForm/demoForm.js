@@ -20,7 +20,7 @@ const DemoForm = ({setAuthenticated}) => {
         const demoPassword = "password";
         setTimeout(await dispatch(login(demoEmail, demoPassword)), 1000);
         setAuthenticated(true)
-        history.push("/userPage/1")
+        history.push("/myPage/1")
       };
 
     return (

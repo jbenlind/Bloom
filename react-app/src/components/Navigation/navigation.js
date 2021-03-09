@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../store/session";
@@ -34,12 +34,14 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
   const location = useLocation();
   const pathName = location.pathname.slice(1);
 
+  const sessionUser = useSelector((state) => state.session.user);
+
   const logoutFunction = async (e) => {
     history.push("/");
     await dispatch(logout());
     setAuthenticated(false);
   };
-  
+
   return (
     <>
       <div id="grid-container">
@@ -63,8 +65,8 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
               Log In
             </NavLink>
           )}
-          {authenticated && (
-            <NavLink className="link" to="">
+          {authenticated && sessionUser && (
+            <NavLink id={pathName.includes("myPage") ? "inUse" : ""} className="link" to={`myPage/${sessionUser.id}`}>
               My page
             </NavLink>
           )}
