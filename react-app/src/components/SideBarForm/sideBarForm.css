@@ -41,18 +41,8 @@
 
 .myPage-form button {
     position: relative;
-    top: 30px;
-    border-bottom: none;
-    height: 50px;
-    width: 150px;
-    margin: 20px 0 0 30px;
-    background-color: #0f6eea;
-    border: none;
-    box-shadow: 3px 2px 5px rgba(0, 0, 0, .5);
-    font-size: 1.3rem;
-    letter-spacing: .2rem;
-    text-transform: uppercase;
-    color: rgba(0,0,0, .7);
+    top: 40px;
+    left: 35px;
 }
 
 .myPage-form p {

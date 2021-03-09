@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FromCenterButtonSmall from "../FromCenterButtonSmall";
 import "./sideBarForm.css";
 
 const SideBarForm = ({selected, showSide}) => {
@@ -181,7 +182,7 @@ const SideBarForm = ({selected, showSide}) => {
                     {selected === "rsvp" &&
                     <div>
                         <p>Open to show guests who <br></br> have rsvp'd</p>
-                        <button>open</button>
+                        <FromCenterButtonSmall />
                     </div>}
                 </form>
             </div>
