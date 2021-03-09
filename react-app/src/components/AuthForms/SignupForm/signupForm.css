@@ -4,8 +4,8 @@
     left: 56.5%;
     transform: translate(-50%, -50%);
     width: 270px;
-    box-sizing: border-box;
     height: 400px;
+    box-sizing: border-box;
     animation: fadeIn 2s;
 }
 

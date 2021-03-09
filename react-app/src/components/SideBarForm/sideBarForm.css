@@ -1,0 +1,85 @@
+.myPage-form {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    height: 500px;
+    width: 220px;
+    box-sizing: border-box;
+    animation: fadeInTwo 2s;
+    z-index: 1;
+}
+
+@keyframes fadeInTwo {
+    from {opacity: 0; }
+    to {opacity: 1;}
+}
+
+.myPage-form h4 {
+    margin: 0 0 35px 45px;
+    padding: 0;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+	text-transform: uppercase;
+    color: rgba(0,0,0, .7);
+}
+
+
+.myPage-form input {
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 35px;
+    font-size: 25px;
+    background-color: transparent;
+    box-sizing:border-box;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0, .7);
+    cursor: pointer;
+    color: rgba(0,0,0, .6);
+}
+
+.myPage-form button {
+    position: relative;
+    top: 35px;
+    border-bottom: none;
+    margin: 10px 0 0 50px;
+}
+
+.myPage-form form div {
+    position: relative;
+}
+
+.myPage-form form .wedding-date-block {
+    position: relative;
+    top: 20px;
+}
+
+.myPage-form form .venue-block {
+    position: relative;
+    top: 40px;
+}
+
+.myPage-form form .image-block {
+    position: relative;
+    top: 60px;
+}
+
+.myPage-form form div label {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    transition: .5s;
+    pointer-events: none;
+    font-size: 25px;
+    color: rgba(0,0,0, .7);
+}
+
+.myPage-form input:focus ~label,
+.myPage-form input:valid ~ label {
+    top:-20px;
+    left:10px;
+    font-weight: bold;
+    font-size: 15px;
+    color:#6289bd;
+}
