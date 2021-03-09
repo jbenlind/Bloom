@@ -15,6 +15,11 @@ const SlidingSideBar = () => {
         }
     }
 
+    const setSideBar = (param) => {
+        setSelected(param);
+        setShowSide("open");
+    }
+
     console.log("--------------", selected)
     return (
         <>
@@ -27,11 +32,11 @@ const SlidingSideBar = () => {
                 </label>
             </section>
             <div className="icon-container">
-                <div onClick={(e) => setSelected("profile")} className="user"><i id={selected === "profile" ? "selected-icon": ""} className="far fa-file-user"></i></div>
-                <div onClick={(e) => setSelected("calendar")} className="calendar">< i id={selected === "calendar" ? "selected-icon": ""} className="far fa-calendar-alt"></i></div>
-                <div onClick={(e) => setSelected("marker")} className="map-marker"><i id={selected === "marker" ? "selected-icon": ""} className="far fa-map-marker-alt"></i></div>
-                <div onClick={(e) => setSelected("image")} className="upload-image"><i id={selected === "image" ? "selected-icon": ""} className="fas fa-image-polaroid"></i></div>
-                <div onClick={(e) => setSelected("rsvp")} className="envelope"><i id={selected === "rsvp" ? "selected-icon": ""} className="far fa-envelope"></i></div>
+                <div onClick={() => setSideBar("profile")} className="user"><i id={selected === "profile" ? "selected-icon": ""} className="far fa-file-user"></i></div>
+                <div onClick={() => setSideBar("calendar")} className="calendar">< i id={selected === "calendar" ? "selected-icon": ""} className="far fa-calendar-alt"></i></div>
+                <div onClick={() => setSideBar("marker")} className="map-marker"><i id={selected === "marker" ? "selected-icon": ""} className="far fa-map-marker-alt"></i></div>
+                <div onClick={() => setSideBar("image")} className="upload-image"><i id={selected === "image" ? "selected-icon": ""} className="fas fa-image-polaroid"></i></div>
+                <div onClick={() => setSideBar("rsvp")} className="envelope"><i id={selected === "rsvp" ? "selected-icon": ""} className="far fa-envelope"></i></div>
             </div>
                 {/* <button></button> */}
             <div id={showSide} className="side-bar">
