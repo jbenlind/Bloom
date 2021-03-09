@@ -12,7 +12,7 @@ class Reservations(db.Model):
     attending = db.Column(db.Boolean, nullable=False)
     numberAttending = db.Column(db.Integer, nullable=False, default=0)
     foodAllergies = db.Column(db.Boolean, nullable=False)
-    foodAllergiesDescription = db.Column(db.Text, nullable=True)
+    foodAllergiesDescription = db.Column(db.Text, nullable=False)
 
     user_page = db.relationship("User_page", back_populates="reservations")
 
