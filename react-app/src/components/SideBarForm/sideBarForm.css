@@ -41,8 +41,8 @@
 
 .myPage-form button {
     position: relative;
-    top: 40px;
-    left: 30px;
+    top: 10px;
+    left: 35px;
 }
 
 .myPage-form p {
@@ -79,4 +79,17 @@
 
 .myPage-form form div {
     animation: fadeIn 1.5s;
+}
+
+.myPage-form form .wedding-date-block label,
+.myPage-form form .wedding-date-block label{
+    top:-20px;
+    left:10px;
+    font-weight: bold;
+    font-size: 15px;
+    color:#6289bd;
+}
+
+.myPage-form form .wedding-date-block input {
+    font-size: 22px;
 }

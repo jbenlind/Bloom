@@ -4,7 +4,7 @@
     left: 0;
     height: 91vh;
     width: 365px;
-    background-color: rgba(209, 209, 209, 0.5);
+    background-color: rgba(209, 209, 209, 0.8);
     /* border-right: 1px solid white; */
     display: flex;
     flex-direction: column;

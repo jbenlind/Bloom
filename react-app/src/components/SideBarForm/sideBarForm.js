@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import FromCenterButtonSmall from "../FromCenterButtonSmall";
+import { createUserPage} from "../../store/userPage";
 import "./sideBarForm.css";
 
 const SideBarForm = ({selected, showSide}) => {
      // set default value to the value from the redux store if it exists
     // proceed with caution with useEffect
+
+    const dispatch = useDispatch();
+    const userId = useSelector((state) => state.session.user ? state.session.user.id: null);
 
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
@@ -16,8 +21,26 @@ const SideBarForm = ({selected, showSide}) => {
     const [venueCity, setVenueCity] = useState("");
     const [venueState, setVenueState] = useState("");
     const [venueZip, setVenueZip] = useState("");
-    const [profileImage, setProfileImage] = useState("");
+    const [profileImg, setProfileImg] = useState("");
 
+    const sendPageInfo = async (e) => {
+        e.preventDefault()
+        const pageInfo = {
+            userId,
+            pageName,
+            partnerOne,
+            partnerTwo,
+            weddingDateTime: weddingDate + " " + weddingTime,
+            venueName,
+            venueAddress,
+            venueCity,
+            venueState,
+            venueZip,
+            profileImg
+        }
+        await dispatch(createUserPage(pageInfo))
+        console.log("worked")
+    }
 
     const updatePageName = (e) => {
         setPageName(e.target.value);
@@ -59,14 +82,13 @@ const SideBarForm = ({selected, showSide}) => {
         setVenueZip(e.target.value)
     };
 
-    const updateProfileImage = (e) => {
-        setProfileImage(e.target.value)
+    const updateProfileImg = (e) => {
+        const file = e.target.files
+        if(file) setProfileImg(file)
     };
 
-    console.log(showSide)
-
     return (
-<>
+        <>
 
             <div id={showSide === "closed" ? "fade-out" : ""} className="myPage-form">
                 <form>
@@ -104,7 +126,7 @@ const SideBarForm = ({selected, showSide}) => {
                         <div  className="wedding-date-block">
                         <div>
                             <input
-                            type="text"
+                            type="date"
                             value={weddingDate}
                             onChange={updateWeddingDate}
                             required={true}
@@ -113,7 +135,7 @@ const SideBarForm = ({selected, showSide}) => {
                         </div>
                         <div>
                             <input
-                            type="text"
+                            type="time"
                             value={weddingTime}
                             onChange={updateWeddingTime}
                             required={true}
@@ -173,8 +195,8 @@ const SideBarForm = ({selected, showSide}) => {
                     <div className="image-block">
                         <input
                         type="text"
-                        value={profileImage}
-                        onChange={updateProfileImage}
+                        value={profileImg}
+                        onChange={updateProfileImg}
                         required={true}
                         />
                         <label>Profile Image</label>
@@ -182,9 +204,13 @@ const SideBarForm = ({selected, showSide}) => {
                     {selected === "rsvp" &&
                     <div>
                         <p>Open to show guests who <br></br> have rsvp'd</p>
-                        <FromCenterButtonSmall />
+                        <div className="open-rsvp">
+                            <FromCenterButtonSmall />
+                        </div>
                     </div>}
                 </form>
+                { selected !== "rsvp" &&
+                <button onClick={sendPageInfo} id={"save"} className="btn-small from-center-small">Save</button>}
             </div>
         </>
     )

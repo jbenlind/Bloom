@@ -17,7 +17,7 @@ const FromCenterButton = () => {
             history.push("/userHub")
         }
     }
-    console.log(sessionUser)
+
     return (
         <>
             <button onClick={(e) => getStarted(e)} className="btn from-center">Get Started</button>

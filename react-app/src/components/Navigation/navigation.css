@@ -1,4 +1,4 @@
-#grid-container {
+.grid-container {
     width: 100vw;
     position: fixed;
     z-index: 1;
@@ -9,6 +9,10 @@
     padding-bottom: 20px;
     border-bottom: 1px solid white;
     height: 50px;
+}
+
+#myPage {
+    background-color: rgba(209, 209, 209, 0.8);
 }
 
 #first-fraction {

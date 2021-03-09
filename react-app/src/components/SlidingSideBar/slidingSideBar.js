@@ -20,15 +20,14 @@ const SlidingSideBar = () => {
         setShowSide("open");
     }
 
-    console.log("--------------", selected)
     return (
         <>
             <section id={showSide === "closed" ? "slide-button-end" : "slide-button-start"} className="slide-button-start">
                 <input defaultChecked={true} onClick={showSideBar} type="checkbox" id="myInput" />
-                <label for="myInput">
-                <span class="bar top"></span>
-                <span class="bar middle"></span>
-                <span class="bar bottom"></span>
+                <label htmlFor="myInput">
+                <span className="bar top"></span>
+                <span className="bar middle"></span>
+                <span className="bar bottom"></span>
                 </label>
             </section>
             <div className="icon-container">

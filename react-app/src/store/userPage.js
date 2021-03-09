@@ -15,6 +15,9 @@ export const setSelectedPage = (payload) => {
     }
 }
 
+// export const getUserPageById = (userId) => async (dispatch) => {
+//     const response = await fetch()
+// }
 
 export const createUserPage =
     ({backgroundImgId,  pageLayoutId, colorPaletteId, userId, pageName, partnerOne,

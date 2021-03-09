@@ -17,7 +17,7 @@ const FromCenterButtonSmall = () => {
             history.push("/userHub")
         }
     }
-    console.log(sessionUser)
+   
     return (
         <>
             <button onClick={(e) => getStarted(e)} className="btn-small from-center-small">OPEN</button>
