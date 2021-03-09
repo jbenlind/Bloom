@@ -3,10 +3,13 @@ import thunk from "redux-thunk";
 
 import sessionReducer from "./session";
 import pageElementsReducer from "./pageElements";
+import userPageReducer from "./userPage";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  pageElements: pageElementsReducer
+  pageElements: pageElementsReducer,
+  userPage: userPageReducer
+
 });
 
 let enhancer;
