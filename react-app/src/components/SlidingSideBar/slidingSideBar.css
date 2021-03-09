@@ -4,8 +4,8 @@
     left: 0;
     height: 91vh;
     width: 365px;
-    background-color: rgba(209, 209, 209, 0.3);
-    border-right: 1px solid white;;
+    background-color: rgba(209, 209, 209, 0.5);
+    /* border-right: 1px solid white; */
     display: flex;
     flex-direction: column;
 }
@@ -18,12 +18,14 @@
 @keyframes slide-open {
     0% {
         left: -12.6vw;
-        box-shadow: 0 0 0 transparent
+        box-shadow: 0 0 0 transparent;
+        border-right: 1px solid white;
 
     }
     100% {
         left: 0;
         box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        border-right: none;
     }
 }
 
@@ -36,10 +38,12 @@
     0% {
         left: 0;
         box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        border-right: none;
     }
     100% {
         left: -300px;
-        box-shadow: 0 0 0 transparent
+        box-shadow: 0 0 0 transparent;
+        border-right: 1px solid white;
     }
 }
 
@@ -52,7 +56,7 @@
     padding-bottom: 10px;
     position: absolute;
     top: 81px;
-    left: 0;
+    left: 3px;
     width: 60px;
     overflow: hidden;
     cursor: pointer;
@@ -60,18 +64,18 @@
 }
 
 #slide-button-start {
-    animation: slide-out 1s;
+    animation: slide-out .955s;
     animation-fill-mode: forwards;
 }
 
 @keyframes slide-out {
     0% {
-        left: 3px;
+        left: 5px;
         padding-top: 10px;
         width: 50px;
     }
     100% {
-        left: 310px;
+        left: 305px;
         padding-top: 25px;
         width:60px;
     }
@@ -84,7 +88,7 @@
 
 @keyframes slide-in {
     0% {
-        left: 310px;
+        left: 305px;
         padding-top: 25px;
     }
     100% {
@@ -141,191 +145,62 @@ width: 0;
 margin: 0 auto;
 }
 
-#show-lock {
-    animation: fadeInTwo 2.5s;
-}
-
-.closed {
-    display: none;
-}
-
-.locked {
+.icon-container {
     position: absolute;
-    left: 16px;
-    top: 90px;
-    color: #6289bd;
-    font-size: 40px;
+    top: 130px;
+    left: 15px;
+    height: 280px;
+    width: 40px;
     z-index: 1;
+    cursor: pointer;
 }
 
-.unlocked {
-    position: absolute;
-    left: 16px;
-    top: 90px;
+.icon-container div i {
+    position: relative;
     color: #6289bd;
-    font-size: 40px;
-    z-index: 1;
+    padding: 10px 0;
 }
 
 .user {
-    position: absolute;
-    left: 17px;
-    top: 190px;
-    color: #6289bd;
+    position: relative;
+    left: 2px;
     font-size: 43px;
-    z-index: 1;
-
 }
 
 .calendar {
-    position: absolute;
-    left: 16px;
-    top: 250px;
-    color: #6289bd;
+    position: relative;
+    left: 1px;
     font-size: 38px;
-    z-index: 1;
-    animation: slide-calendar .5s;
-    animation-fill-mode: forwards;
 }
-
-@keyframes slide-calendar {
-    0% {
-        top: 370px;
-    } 100% {
-        top: 250px;
-    }
-}
-
-.calendar-slide {
-    position: absolute;
-    left: 16px;
-    top: 255px;
-    color: #6289bd;
-    font-size: 38px;
-    z-index: 1;
-    animation: slide-calendar-down .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-calendar-down {
-    0% {
-        top: 250px;
-    } 100% {
-        top: 370px;
-    }
-}
-
 
 .map-marker {
-    position: absolute;
-    left: 18px;
-    color: #6289bd;
-    top: 305px;
+    position: relative;
+    left: 2px;
     font-size: 40px;
-    z-index: 1;
-    animation: slide-marker-up .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-marker-up {
-    0% {
-        top: 490px;
-    } 100% {
-        top: 305px;
-    }
-}
-
-.map-marker-slide {
-    position: absolute;
-    left: 18px;
-    color: #6289bd;
-    top: 305px;
-    font-size: 40px;
-    z-index: 1;
-    animation: slide-marker-down .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-marker-down {
-    0% {
-        top: 305px;
-    } 100% {
-        top: 490px;
-    }
 }
 
 .upload-image {
-    position: absolute;
-    left: 16px;
-    color: #6289bd;
-    top: 358px;
+    position: relative;
+    left: 1px;
     font-size: 38px;
-    z-index: 1;
-    animation: slide-image-up .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-image-down {
-    0% {
-        top: 358px;
-    } 100% {
-        top: 763px;
-    }
-}
-
-.upload-image-slide {
-    position: absolute;
-    left: 16px;
-    color: #6289bd;
-    top: 358px;
-    font-size: 38px;
-    z-index: 1;
-    animation: slide-image-down .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-image-up {
-    0% {
-        top: 763px;
-    } 100% {
-        top: 358px;
-    }
 }
 
 .envelope {
-    position: absolute;
-    left: 16px;
-    color: #6289bd;
-    top: 408px;
+    position: relative;
+    left: 1px;
     font-size: 33px;
-    z-index: 1;
-    animation: slide-envelope-down .5s;
-    animation-fill-mode: forwards;
 }
 
-@keyframes slide-envelope-down {
+#selected-icon {
+    animation: changeColor 1s;
+    animation-fill-mode: forwards
+}
+
+@keyframes changeColor {
     0% {
-        top: 850px;
-    } 100% {
-        top: 408px;
+        color: #6289bd;
     }
-}
-
-.envelope-slide {
-    position: absolute;
-    left: 16px;
-    color: #6289bd;
-    top: 408px;
-    font-size: 33px;
-    z-index: 1;
-    animation: slide-envelope-up .5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide-envelope-up {
-    0% {
-        top: 408px;
-    } 100% {
-        top: 850px;
+    100% {
+        color: white
     }
 }

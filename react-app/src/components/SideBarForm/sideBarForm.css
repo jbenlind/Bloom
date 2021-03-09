@@ -1,34 +1,34 @@
 .myPage-form {
     position: absolute;
-    top: 30px;
-    left: 80px;
+    top: 80px;
+    left: 85px;
     height: 500px;
     width: 220px;
     box-sizing: border-box;
-    animation: fadeInTwo 2s;
+    animation: fadeIn 2s;
     z-index: 1;
 }
 
-@keyframes fadeInTwo {
-    from {opacity: 0; }
+@keyframes fadeIn {
+    from {opacity: 0;}
     to {opacity: 1;}
 }
 
-.myPage-form h4 {
-    margin: 0 0 35px 45px;
-    padding: 0;
-    font-size: 1rem;
-    letter-spacing: .2rem;
-	text-transform: uppercase;
-    color: rgba(0,0,0, .7);
+#fade-out {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
 }
 
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
 
 .myPage-form input {
     padding: 10px 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%;
-    height: 35px;
+    height: 40px;
     font-size: 25px;
     background-color: transparent;
     box-sizing:border-box;
@@ -41,33 +41,36 @@
 
 .myPage-form button {
     position: relative;
-    top: 35px;
+    top: 30px;
     border-bottom: none;
-    margin: 10px 0 0 50px;
+    height: 50px;
+    width: 150px;
+    margin: 20px 0 0 30px;
+    background-color: #0f6eea;
+    border: none;
+    box-shadow: 3px 2px 5px rgba(0, 0, 0, .5);
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: rgba(0,0,0, .7);
+}
+
+.myPage-form p {
+    position: relative;
+    top: 10px;
+    left: 25px;
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
 }
 
 .myPage-form form div {
     position: relative;
-}
-
-.myPage-form form .wedding-date-block {
-    position: relative;
-    top: 20px;
-}
-
-.myPage-form form .venue-block {
-    position: relative;
-    top: 40px;
-}
-
-.myPage-form form .image-block {
-    position: relative;
-    top: 60px;
+    animation: fadeInTwo 1s;
 }
 
 .myPage-form form div label {
     position: absolute;
-    top: 0px;
+    top: 5px;
     left: 10px;
     transition: .5s;
     pointer-events: none;

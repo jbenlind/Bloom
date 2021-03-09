@@ -66,7 +66,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
             </NavLink>
           )}
           {authenticated && sessionUser && (
-            <NavLink className="link" to={`myPage/${sessionUser.id}`}>
+            <NavLink id={pathName.includes("myPage") ? "inUse" : ""} className="link" to={`myPage/${sessionUser.id}`}>
               My page
             </NavLink>
           )}

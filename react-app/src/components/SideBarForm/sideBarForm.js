@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./sideBarForm.css";
 
-const SideBarForm = () => {
+const SideBarForm = ({selected, showSide}) => {
      // set default value to the value from the redux store if it exists
     // proceed with caution with useEffect
 
@@ -62,14 +62,16 @@ const SideBarForm = () => {
         setProfileImage(e.target.value)
     };
 
+    console.log(showSide)
 
     return (
 <>
-            <div className="myPage-form">
-                <h4>Page Info</h4>
+
+            <div id={showSide === "closed" ? "fade-out" : ""} className="myPage-form">
                 <form>
+                    {selected === "profile" &&
                     <div>
-                        <div>
+                       <div>
                             <input
                             type="text"
                             value={pageName}
@@ -85,7 +87,7 @@ const SideBarForm = () => {
                             onChange={updatePartnerOne}
                             required={true}
                             />
-                            <label>Partner one</label>
+                            <label>Partner One</label>
                         </div>
                         <div>
                             <input
@@ -96,8 +98,9 @@ const SideBarForm = () => {
                             />
                             <label>Partner Two</label>
                         </div>
-                    </div>
-                    <div  className="wedding-date-block">
+                    </div>}
+                    {selected === "calendar" &&
+                        <div  className="wedding-date-block">
                         <div>
                             <input
                             type="text"
@@ -116,7 +119,8 @@ const SideBarForm = () => {
                             />
                             <label>Wedding Time</label>
                         </div>
-                    </div>
+                    </div>}
+                    {selected === "marker" &&
                     <div className="venue-block">
                         <div>
                             <input
@@ -163,7 +167,8 @@ const SideBarForm = () => {
                             />
                             <label>Zip code</label>
                         </div>
-                    </div>
+                    </div>}
+                   { selected === "image" &&
                     <div className="image-block">
                         <input
                         type="text"
@@ -172,8 +177,12 @@ const SideBarForm = () => {
                         required={true}
                         />
                         <label>Profile Image</label>
-                    </div>
-                    <button type="submit">Save</button>
+                    </div>}
+                    {selected === "rsvp" &&
+                    <div>
+                        <p>Open to show guests who <br></br> have rsvp'd</p>
+                        <button>open</button>
+                    </div>}
                 </form>
             </div>
         </>
