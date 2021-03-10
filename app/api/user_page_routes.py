@@ -12,28 +12,37 @@ from app.models import Background_images, Color_palette, \
 user_page_routes = Blueprint("user_page", __name__)
 
 
-@user_page_routes.route("/". methods=["GET"])
-def get_user_page_info():
-    userPage = User_page.query.get(request.json.userId)
-    userPage = userPage.to_dict()
-    return userPage
+@user_page_routes.route("/<int:userId>", methods=["GET"])
+def get_user_page_info(userId):
+    userPage = User_page.query.filter(User_page.userId == userId).one()
+    return userPage.to_dict()
 
 
 @user_page_routes.route("/", methods=["POST"])
 def create_user_page():
     form = CreateUserPage()
     form['csrf_token'].data = request.cookies['csrf_token']
+    profileImg = ""
 
-    # if 'profileImg' in request.files:
-    #     image = request.files['profileImg']
+    if 'profileImg' in request.files:
+        image = request.files['profileImg']
 
-    # if allowed_file(image.filename):
-    #     image.filename = secure_filename(image.filename)
-    #     profileImg = upload_file_to_s3(image, Config.S3_BUCKET)
+    if allowed_file(image.filename):
+        image.filename = secure_filename(image.filename)
+        profileImg = upload_file_to_s3(image, Config.S3_BUCKET)
 
-    user_page = User_page()
-    form.populate_obj(user_page)
-    # user_page.profileImg = profileImg
-    db.session.add(user_page)
-    db.session.commit()
-    return user_page.to_dict()
+    try:
+        userPage = User_page.query.filter(User_page.userId == form.userId.data).one()
+        if not profileImg:
+            profileImg = userPage.profileImg
+        form.populate_obj(userPage)
+        userPage.profileImg = profileImg
+        db.session.commit()
+        return userPage.to_dict()
+    except:
+        userPage = User_page()
+        form.populate_obj(userPage)
+        userPage.profileImg = profileImg
+        db.session.add(userPage)
+        db.session.commit()
+        return userPage.to_dict()

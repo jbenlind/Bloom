@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FromCenterButtonSmall from "../FromCenterButtonSmall";
-import { createUserPage} from "../../store/userPage";
+import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
 const SideBarForm = ({selected, showSide}) => {
@@ -10,6 +10,10 @@ const SideBarForm = ({selected, showSide}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id: null);
+
+    useEffect(() => {
+        dispatch(getUserPageById(userId))
+    }, [dispatch, userId])
 
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
@@ -39,7 +43,6 @@ const SideBarForm = ({selected, showSide}) => {
             profileImg
         }
         await dispatch(createUserPage(pageInfo))
-        console.log("worked")
     }
 
     const updatePageName = (e) => {
@@ -83,7 +86,7 @@ const SideBarForm = ({selected, showSide}) => {
     };
 
     const updateProfileImg = (e) => {
-        const file = e.target.files
+        const file = e.target.files[0]
         if(file) setProfileImg(file)
     };
 
@@ -194,8 +197,7 @@ const SideBarForm = ({selected, showSide}) => {
                    { selected === "image" &&
                     <div className="image-block">
                         <input
-                        type="text"
-                        value={profileImg}
+                        type="file"
                         onChange={updateProfileImg}
                         required={true}
                         />

@@ -15,9 +15,12 @@ export const setSelectedPage = (payload) => {
     }
 }
 
-// export const getUserPageById = (userId) => async (dispatch) => {
-//     const response = await fetch()
-// }
+export const getUserPageById = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/user-page/${userId}`)
+    const userPage = await response.json()
+    dispatch(setSelectedPage(userPage))
+    return userPage;
+}
 
 export const createUserPage =
     ({backgroundImgId,  pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
