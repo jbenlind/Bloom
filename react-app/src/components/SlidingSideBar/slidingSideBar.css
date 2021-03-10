@@ -168,7 +168,7 @@ margin: 0 auto;
         top:455px;
         left:195px;
     }
-    35% {
+    40% {
         top:455px;
         left: 0;
     }
@@ -184,7 +184,7 @@ margin: 0 auto;
     font-size: 37px;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
-    animation: save-down 1.3s forwards;
+    animation: save-down 1.2s forwards;
 }
 
 @keyframes save-down {
@@ -192,7 +192,7 @@ margin: 0 auto;
         top: 0%;
         left: 0%;
     }
-    65% {
+    50% {
         top:455px;
         left: 0;
     }
@@ -217,7 +217,7 @@ margin: 0 auto;
         top:510px;
         left:95px;
     }
-    10% {
+    20% {
         left: 0%;
         top:510px;
     }
@@ -233,7 +233,7 @@ margin: 0 auto;
     font-size:35px;
     color: #6289bd;
     transition: all 0.25s ease-in 0s;
-    animation: home-down 1.40s forwards;
+    animation: home-down 1.30s forwards;
 }
 
 @keyframes home-down {
@@ -241,7 +241,7 @@ margin: 0 auto;
         top: 0%;
         left: -3px;
     }
-    90% {
+    80% {
         left: 0%;
         top:510px;
     }

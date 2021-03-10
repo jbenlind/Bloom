@@ -7,7 +7,7 @@ const SlidingSideBar = () => {
 
     const history = useHistory()
     const [showSide, setShowSide] = useState("open");
-    const [selected, setSelected] = useState("profile")
+   
 
     const showSideBar = () => {
         if(showSide === "closed") {
@@ -42,7 +42,7 @@ const SlidingSideBar = () => {
             </div>
                 {/* <button></button> */}
             <div id={showSide} className="side-bar">
-                <SideBarForm selected={selected} showSide={showSide} />
+                <SideBarForm showSide={showSide} />
             </div>
         </>
     )

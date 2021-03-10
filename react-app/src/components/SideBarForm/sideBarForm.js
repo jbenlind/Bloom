@@ -4,7 +4,7 @@ import FromCenterButtonSmall from "../FromCenterButtonSmall";
 import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
-const SideBarForm = ({selected, showSide}) => {
+const SideBarForm = ({showSide}) => {
      // set default value to the value from the redux store if it exists
     // proceed with caution with useEffect
 
