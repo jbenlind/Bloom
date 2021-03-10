@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import SideBarForm from "../SideBarForm";
 import "./slidingSideBar.css"
 
 const SlidingSideBar = () => {
 
+    const history = useHistory()
     const [showSide, setShowSide] = useState("open");
     const [selected, setSelected] = useState("profile")
 
@@ -15,9 +17,8 @@ const SlidingSideBar = () => {
         }
     }
 
-    const setSideBar = (param) => {
-        setSelected(param);
-        setShowSide("open");
+    const returnHome = () => {
+        history.push("/")
     }
 
     return (
@@ -31,11 +32,13 @@ const SlidingSideBar = () => {
                 </label>
             </section>
             <div className="icon-container">
-                <div onClick={() => setSideBar("profile")} className="user"><i id={selected === "profile" ? "selected-icon": ""} className="far fa-file-user"></i></div>
-                <div onClick={() => setSideBar("calendar")} className="calendar">< i id={selected === "calendar" ? "selected-icon": ""} className="far fa-calendar-alt"></i></div>
-                <div onClick={() => setSideBar("marker")} className="map-marker"><i id={selected === "marker" ? "selected-icon": ""} className="far fa-map-marker-alt"></i></div>
-                <div onClick={() => setSideBar("image")} className="upload-image"><i id={selected === "image" ? "selected-icon": ""} className="fas fa-image-polaroid"></i></div>
-                <div onClick={() => setSideBar("rsvp")} className="envelope"><i id={selected === "rsvp" ? "selected-icon": ""} className="far fa-envelope"></i></div>
+                <div className={showSide === "open" ? "user-slide" : "user"}><i className="far fa-file-user"></i></div>
+                <div className={showSide === "open" ? "calendar-slide" : "calendar"}>< i className="far fa-calendar-alt"></i></div>
+                <div className={showSide === "open" ? "map-marker-slide" : "map-marker"}><i className="far fa-map-marker-alt"></i></div>
+                <div className={showSide === "open" ? "calendar-slide" : "calendar"}><i className="fas fa-image-polaroid"></i></div>
+                <div className={showSide === "open" ? "envelope-slide" : "envelope"}><i className="far fa-envelope"></i></div>
+                <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i class="fas fa-home"></i></div>
+                <div className={showSide === "open" ? "save-slide" : "save"}><i class="far fa-save"></i></div>
             </div>
                 {/* <button></button> */}
             <div id={showSide} className="side-bar">

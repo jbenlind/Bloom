@@ -95,9 +95,8 @@ const SideBarForm = ({selected, showSide}) => {
 
             <div id={showSide === "closed" ? "fade-out" : ""} className="myPage-form">
                 <form>
-                    {selected === "profile" &&
-                    <div className="profile-page">
-                       <div>
+                    <div>
+                        <div>
                             <input
                             type="text"
                             value={pageName}
@@ -124,9 +123,8 @@ const SideBarForm = ({selected, showSide}) => {
                             />
                             <label>Partner Two</label>
                         </div>
-                    </div>}
-                    {selected === "calendar" &&
-                        <div  className="wedding-date-block">
+                    </div>
+                    <div className="wedding-date-block">
                         <div>
                             <input
                             type="date"
@@ -145,8 +143,7 @@ const SideBarForm = ({selected, showSide}) => {
                             />
                             <label>Wedding Time</label>
                         </div>
-                    </div>}
-                    {selected === "marker" &&
+                    </div>
                     <div className="venue-block">
                         <div>
                             <input
@@ -193,26 +190,22 @@ const SideBarForm = ({selected, showSide}) => {
                             />
                             <label>Zip code</label>
                         </div>
-                    </div>}
-                   { selected === "image" &&
+                    </div>
                     <div className="image-block">
-                        <input
-                        type="file"
-                        onChange={updateProfileImg}
-                        required={true}
-                        />
-                        <label>Profile Image</label>
-                    </div>}
-                    {selected === "rsvp" &&
-                    <div>
-                        <p>Open to show guests who <br></br> have rsvp'd</p>
-                        <div className="open-rsvp">
-                            <FromCenterButtonSmall />
+                        <div>
+                            <input
+                            type="file"
+                            id="profileImg"
+                            onChange={updateProfileImg}
+                            required={true}
+                            />
+                            <label>Profile Image</label>
                         </div>
-                    </div>}
+                    </div>
+                    <div className="rsvp-block">
+                        <FromCenterButtonSmall />
+                    </div>
                 </form>
-                { selected !== "rsvp" &&
-                <button onClick={sendPageInfo} id={"save"} className="btn-small from-center-small">Save</button>}
             </div>
         </>
     )

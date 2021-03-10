@@ -1,11 +1,10 @@
 .side-bar {
     position: absolute;
-    top: 80px;
+    top: 0px;
     left: 0;
-    height: 91vh;
+    height: 100vh;
     width: 365px;
-    background-color: rgba(209, 209, 209, 0.8);
-    /* border-right: 1px solid white; */
+    background-color: rgba(209, 209, 209, 0.9);
     display: flex;
     flex-direction: column;
 }
@@ -47,16 +46,11 @@
     }
 }
 
-
-/* close button */
-
-
 .slide-button-start {
-    padding-top:10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
     position: absolute;
-    top: 81px;
-    left: 3px;
+    top: 10px;
+    left: 2px;
     width: 60px;
     overflow: hidden;
     cursor: pointer;
@@ -64,7 +58,7 @@
 }
 
 #slide-button-start {
-    animation: slide-out .955s;
+    animation: slide-out .97s;
     animation-fill-mode: forwards;
 }
 
@@ -76,7 +70,7 @@
     }
     100% {
         left: 305px;
-        padding-top: 25px;
+        padding-top: 10px;
         width:60px;
     }
 }
@@ -89,7 +83,7 @@
 @keyframes slide-in {
     0% {
         left: 305px;
-        padding-top: 25px;
+        padding-top: 10px;
     }
     100% {
         left: 3px;
@@ -147,60 +141,84 @@ margin: 0 auto;
 
 .icon-container {
     position: absolute;
-    top: 130px;
+    top: 55px;
     left: 15px;
-    height: 280px;
-    width: 40px;
+    height: 880px;
+    width: 34px;
     z-index: 1;
     cursor: pointer;
 }
 
 .icon-container div i {
     position: relative;
-    color: #6289bd;
+    /* color: #6289bd; */
     padding: 10px 0;
+}
+
+.save {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+     color: #6289bd;
+    transition: all 0.25s ease-in 0s;
+}
+
+.home {
+    position: relative;
+    left: -3px;
+    font-size:35px;
+    color: #6289bd;
+    transition: all 0.25s ease-in 0s;
+}
+
+.home:hover,
+.save:hover {
+    transform: translateX(4px) ;
+    color: #687a94;
 }
 
 .user {
     position: relative;
-    left: 2px;
+    left: 1px;
     font-size: 43px;
+    color: #6289bd;
+    animation: user-slide-down 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes user-slide-down {
+
+}
+
+.user-slide {
+    animation: user-slide-up 2s;
+    animation-fill-mode: forwards;
 }
 
 .calendar {
     position: relative;
     left: 1px;
-    font-size: 38px;
+    font-size: 37px;
+    color: #6289bd;
 }
 
 .map-marker {
     position: relative;
     left: 2px;
     font-size: 40px;
+    color: #6289bd;
 }
 
 .upload-image {
     position: relative;
     left: 1px;
-    font-size: 38px;
+    font-size: 37px;
+    color: #6289bd;
 }
 
 .envelope {
     position: relative;
     left: 1px;
     font-size: 33px;
-}
-
-#selected-icon {
-    animation: changeColor 1s;
-    animation-fill-mode: forwards
-}
-
-@keyframes changeColor {
-    0% {
-        color: #6289bd;
-    }
-    100% {
-        color: white
-    }
+    color: #6289bd;
 }
