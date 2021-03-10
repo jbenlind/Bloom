@@ -151,7 +151,6 @@ margin: 0 auto;
 
 .icon-container div i {
     position: relative;
-    /* color: #6289bd; */
     padding: 10px 0;
 }
 
@@ -161,7 +160,48 @@ margin: 0 auto;
     font-size: 37px;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
+    animation: save-up 1.3s forwards;
 }
+
+@keyframes save-up {
+    0% {
+        top:455px;
+        left:195px;
+    }
+    35% {
+        top:455px;
+        left: 0;
+    }
+    100% {
+        top: 0%;
+        left: 0%;
+    }
+}
+
+.save-slide {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+     color: #6289bd;
+    transition: all 0.25s ease-in 0s;
+    animation: save-down 1.3s forwards;
+}
+
+@keyframes save-down {
+    0% {
+        top: 0%;
+        left: 0%;
+    }
+    65% {
+        top:455px;
+        left: 0;
+    }
+    100% {
+        top:455px;
+        left:195px;
+    }
+}
+
 
 .home {
     position: relative;
@@ -169,6 +209,51 @@ margin: 0 auto;
     font-size:35px;
     color: #6289bd;
     transition: all 0.25s ease-in 0s;
+    animation: home-up 1.25s forwards;
+}
+
+@keyframes home-up {
+    0% {
+        top:510px;
+        left:95px;
+    }
+    10% {
+        left: 0%;
+        top:510px;
+    }
+    100% {
+        top: 0%;
+        left: -3px;
+    }
+}
+
+.home-slide {
+    position: relative;
+    left: -3px;
+    font-size:35px;
+    color: #6289bd;
+    transition: all 0.25s ease-in 0s;
+    animation: home-down 1.40s forwards;
+}
+
+@keyframes home-down {
+    0% {
+        top: 0%;
+        left: -3px;
+    }
+    90% {
+        left: 0%;
+        top:510px;
+    }
+    100% {
+        top:510px;
+        left:95px;
+    }
+}
+
+.save-slide:hover,
+.home-slide:hover {
+    transform: translateY(-4px);
 }
 
 .home:hover,
@@ -182,17 +267,33 @@ margin: 0 auto;
     left: 1px;
     font-size: 43px;
     color: #6289bd;
-    animation: user-slide-down 2s;
-    animation-fill-mode: forwards;
+    animation: user-down 1s forwards;
 }
 
-@keyframes user-slide-down {
-
+@keyframes user-down {
+    0% {
+        top: -45px;
+    }
+    100% {
+        top: 0;
+    }
 }
 
 .user-slide {
-    animation: user-slide-up 2s;
-    animation-fill-mode: forwards;
+    position: relative;
+    left: 1px;
+    font-size: 43px;
+    color: #6289bd;
+    animation: user-up 1s forwards;
+}
+
+@keyframes user-up {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -45px;
+    }
 }
 
 .calendar {
@@ -200,6 +301,33 @@ margin: 0 auto;
     left: 1px;
     font-size: 37px;
     color: #6289bd;
+    animation: calendar-up 1s forwards;
+}
+
+@keyframes calendar-up {
+    0% {
+        top: 110px;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+.calendar-slide {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+    color: #6289bd;
+    animation: calendar-down 1s forwards;
+}
+
+@keyframes calendar-down {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 110px;
+    }
 }
 
 .map-marker {
@@ -207,13 +335,68 @@ margin: 0 auto;
     left: 2px;
     font-size: 40px;
     color: #6289bd;
+    animation: mark-up 1s forwards;
 }
 
-.upload-image {
+@keyframes mark-up {
+    0% {
+        top: 205px;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+
+.map-marker-slide {
+    position: relative;
+    left: 2px;
+    font-size: 40px;
+    color: #6289bd;
+    animation: mark-down 1s forwards;
+}
+
+@keyframes mark-down {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 205px;
+    }
+}
+
+.image {
     position: relative;
     left: 1px;
     font-size: 37px;
     color: #6289bd;
+    animation: image-up 1s forwards;
+}
+
+@keyframes image-up {
+    0% {
+        top: 475px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.image-slide {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+    color: #6289bd;
+    animation: image-down 1.4s forwards;
+}
+
+@keyframes image-down {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 475px;
+    }
 }
 
 .envelope {
@@ -221,4 +404,32 @@ margin: 0 auto;
     left: 1px;
     font-size: 33px;
     color: #6289bd;
+    animation: envelope-up 1s forwards;
+}
+
+@keyframes envelope-up {
+    0% {
+        top: 500px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+
+.envelope-slide {
+    position: relative;
+    left: 1px;
+    font-size: 33px;
+    color: #6289bd;
+    animation: envelope-down 1.4s forwards;
+}
+
+@keyframes envelope-down {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 500px;
+    }
 }

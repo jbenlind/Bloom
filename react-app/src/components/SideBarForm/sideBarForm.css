@@ -28,8 +28,8 @@
     padding: 10px 10px;
     margin-bottom: 30px;
     width: 100%;
-    height: 30px;
-    font-size: 25px;
+    height: 28px;
+    font-size: 20px;
     background-color: transparent;
     box-sizing:border-box;
     box-shadow: none;
@@ -42,7 +42,7 @@
 .myPage-form button {
     position: relative;
     top: 10px;
-    left: 35px;
+    left: 20px;
 }
 
 .myPage-form form div {
@@ -56,7 +56,7 @@
     left: 10px;
     transition: .5s;
     pointer-events: none;
-    font-size: 25px;
+    font-size: 20px;
     color: rgba(0,0,0, .7);
 }
 

@@ -35,7 +35,7 @@ const SlidingSideBar = () => {
                 <div className={showSide === "open" ? "user-slide" : "user"}><i className="far fa-file-user"></i></div>
                 <div className={showSide === "open" ? "calendar-slide" : "calendar"}>< i className="far fa-calendar-alt"></i></div>
                 <div className={showSide === "open" ? "map-marker-slide" : "map-marker"}><i className="far fa-map-marker-alt"></i></div>
-                <div className={showSide === "open" ? "calendar-slide" : "calendar"}><i className="fas fa-image-polaroid"></i></div>
+                <div className={showSide === "open" ? "image-slide" : "image"}><i className="fas fa-image-polaroid"></i></div>
                 <div className={showSide === "open" ? "envelope-slide" : "envelope"}><i className="far fa-envelope"></i></div>
                 <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i class="fas fa-home"></i></div>
                 <div className={showSide === "open" ? "save-slide" : "save"}><i class="far fa-save"></i></div>
