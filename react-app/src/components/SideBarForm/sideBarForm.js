@@ -218,6 +218,7 @@ const SideBarForm = ({showSide}) => {
                     <div className="rsvp-block">
                         <FromCenterButtonSmall />
                     </div>
+                    <button onClick={sendPageInfo} id="save-form-button"></button>
                 </form>
             </div>
         </>

@@ -7,7 +7,7 @@ const SlidingSideBar = () => {
 
     const history = useHistory()
     const [showSide, setShowSide] = useState("open");
-   
+
 
     const showSideBar = () => {
         if(showSide === "closed") {
@@ -19,6 +19,11 @@ const SlidingSideBar = () => {
 
     const returnHome = () => {
         history.push("/")
+    }
+
+    const clickSave = (e) => {
+        document.getElementById("save-form-button").click()
+
     }
 
     return (
@@ -38,7 +43,7 @@ const SlidingSideBar = () => {
                 <div className={showSide === "open" ? "image-slide" : "image"}><i className="fas fa-image-polaroid"></i></div>
                 <div className={showSide === "open" ? "envelope-slide" : "envelope"}><i className="far fa-envelope"></i></div>
                 <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i class="fas fa-home"></i></div>
-                <div className={showSide === "open" ? "save-slide" : "save"}><i class="far fa-save"></i></div>
+                <div onClick={clickSave} className={showSide === "open" ? "save-slide" : "save"}><i class="far fa-save"></i></div>
             </div>
                 {/* <button></button> */}
             <div id={showSide} className="side-bar">
