@@ -1,27 +1,15 @@
-*{
-    box-sizing:border-box;
-  }
-
-  body{
-    background:#3c4145;
-    width:50px;
-    margin:10% auto;
-  }
-
-  .save-icon{
+.save-icon-timeout{
     position:relative;
-
     background:white;
     height:40px;
     width:35px;
     display:block;
     padding-top:10px;
-
     -moz-border-radius:3px;
     border-radius:3px;
   }
 
-  .save-icon:before{
+  .save-icon-timeout:before{
      content:"";
      position:absolute;
      top:0;
@@ -31,9 +19,9 @@
      border-color:#a4a6a7 #3c4145;
   }
 
-  .save-icon:after{
+  .save-icon-timeout:after{
     content:"✓";
-    color:green;
+    color:#0f6eea;
     font-size:30px;
     position:absolute;
     top:15%;left:20%;
@@ -67,7 +55,7 @@
 
   .loader:after{
     content: "";
-    background:#2c3033;
+    background:#3c4145;
     width:0;
     height:5px;
     position:absolute;

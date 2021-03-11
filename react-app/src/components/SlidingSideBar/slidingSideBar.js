@@ -48,7 +48,7 @@ const SlidingSideBar = () => {
             </div>
            {openModal &&
             <div>
-                <SaveModal />
+                <SaveModal openModal={openModal} setOpenModal={setOpenModal} />
             </div>}
             <div id={showSide} className="side-bar">
                 <SideBarForm showSide={showSide} />
