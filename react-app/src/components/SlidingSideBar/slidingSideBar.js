@@ -43,8 +43,8 @@ const SlidingSideBar = () => {
                 <div className={showSide === "open" ? "map-marker-slide" : "map-marker"}><i className="far fa-map-marker-alt"></i></div>
                 <div className={showSide === "open" ? "image-slide" : "image"}><i className="fas fa-image-polaroid"></i></div>
                 <div className={showSide === "open" ? "envelope-slide" : "envelope"}><i className="far fa-envelope"></i></div>
-                <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i class="fas fa-home"></i></div>
-                <div onClick={clickSave} className={showSide === "open" ? "save-slide" : "save"}><i class="far fa-save"></i></div>
+                <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i className="fas fa-home"></i></div>
+                <div onClick={clickSave} className={showSide === "open" ? "save-slide" : "save"}><i className="far fa-save"></i></div>
             </div>
            {openModal &&
             <div>

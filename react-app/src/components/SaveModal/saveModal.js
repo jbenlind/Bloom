@@ -31,11 +31,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
                 </div>}
               {saving &&
               <div className="save-section">
-                <span class="save-icon-timeout">
-                    <span class="loader"></span>
-                    <span class="loader"></span>
-                    <span class="loader"></span>
-                </span>
+                <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>}
             </Modal>}
         </>
