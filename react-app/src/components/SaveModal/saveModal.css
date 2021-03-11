@@ -29,12 +29,10 @@
     -moz-transform:scale(0);
     transform:scale(0);
 
-    -webkit-animation: pop 0.5s 3s forwards;
-       -moz-animation: pop 0.5s 3s forwards;
-            animation: pop 0.5s 3s forwards;
+    -webkit-animation: pop 0.3s 3s forwards;
+       -moz-animation: pop 0.3s 3s forwards;
+            animation: pop 0.3s 3s forwards;
   }
-
-
 
   .loader{
     background:#e2e2e2;
@@ -52,7 +50,6 @@
             animation:fade-loaders 0.2s 3s forwards;
   }
 
-
   .loader:after{
     content: "";
     background:#3c4145;
@@ -63,24 +60,22 @@
   }
 
   .loader:first-child:after{
-    -webkit-animation: loader 0.4s 1s forwards;
-       -moz-animation: loader 0.4s 1s forwards;
-            animation: loader 0.4s 1s forwards;
+    -webkit-animation: loader 0.2s 1s forwards;
+       -moz-animation: loader 0.2s 1s forwards;
+            animation: loader 0.2s 1s forwards;
   }
 
-
   .loader:nth-child(2n):after{
-    -webkit-animation: loader 0.4s 1.5s forwards;
-       -moz-animation: loader 0.4s 1.5s forwards;
-            animation: loader 0.4s 1.5s forwards;
+    -webkit-animation: loader 0.2s 1.5s forwards;
+       -moz-animation: loader 0.2s 1.5s forwards;
+            animation: loader 0.2s 1.5s forwards;
   }
 
   .loader:nth-child(3n):after{
-    -webkit-animation: loader 0.4s 2s forwards;
-       -moz-animation: loader 0.4s 2s forwards;
-            animation: loader 0.4s 2s forwards;
+    -webkit-animation: loader 0.2s 2s forwards;
+       -moz-animation: loader 0.2s 2s forwards;
+            animation: loader 0.2s 2s forwards;
   }
-
 
   @-webkit-keyframes loader {0%{ width: 0%; }100% { width: 100%; }}
      @-moz-keyframes loader {0%{ width: 0%; }100% { width: 100%; }}
@@ -111,3 +106,12 @@
     0%   { opactity:1; }
     100% { opacity:0; }
   }
+
+
+.save-cancel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}

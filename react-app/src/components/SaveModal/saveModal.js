@@ -22,7 +22,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
            { openModal &&
             <Modal>
                 {!saving &&
-                <div>
+                <div className="save-cancel">
                     <h3>Are you sure you want to save?</h3>
                     <div>
                         <button onClick={startSaving}>Save</button>
