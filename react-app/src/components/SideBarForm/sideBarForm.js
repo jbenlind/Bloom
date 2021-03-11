@@ -201,7 +201,7 @@ const SideBarForm = ({showSide}) => {
                         <div>
                             <input
                             type="button"
-                            value={profileImg !== "" ? profileImg.name : ""}
+                            value={profileImg !== "" ? profileImg.name.slice(0, 18) + "...": ""}
                             onClick={grabImageInput}
                             required={true}
                             />

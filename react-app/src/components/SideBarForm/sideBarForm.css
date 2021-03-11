@@ -71,7 +71,8 @@
 }
 
 
-.myPage-form form .wedding-date-block label {
+.myPage-form form .wedding-date-block label,
+.myPage-form form .image-block div label {
     top:-20px;
     left:10px;
     font-weight: bold;

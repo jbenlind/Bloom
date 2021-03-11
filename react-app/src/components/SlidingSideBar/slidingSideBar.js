@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import SideBarForm from "../SideBarForm";
+import SaveModal from "../SaveModal";
 import "./slidingSideBar.css"
 
 const SlidingSideBar = () => {
 
     const history = useHistory()
     const [showSide, setShowSide] = useState("open");
-
+    const [openModal, setOpenModal] = useState(false);
 
     const showSideBar = () => {
         if(showSide === "closed") {
@@ -22,8 +23,8 @@ const SlidingSideBar = () => {
     }
 
     const clickSave = (e) => {
-        document.getElementById("save-form-button").click()
-
+        // document.getElementById("save-form-button").click()
+        setOpenModal(true)
     }
 
     return (
@@ -45,7 +46,10 @@ const SlidingSideBar = () => {
                 <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i class="fas fa-home"></i></div>
                 <div onClick={clickSave} className={showSide === "open" ? "save-slide" : "save"}><i class="far fa-save"></i></div>
             </div>
-                {/* <button></button> */}
+           {openModal &&
+            <div>
+                <SaveModal />
+            </div>}
             <div id={showSide} className="side-bar">
                 <SideBarForm showSide={showSide} />
             </div>
