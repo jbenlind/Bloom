@@ -39,9 +39,10 @@
     color: rgba(0,0,0, .6);
 }
 
+
 .myPage-form button {
     position: relative;
-    top: 10px;
+    top: 5px;
     left: 20px;
 }
 
@@ -70,8 +71,7 @@
 }
 
 
-.myPage-form form .wedding-date-block label,
-.myPage-form form .image-block label{
+.myPage-form form .wedding-date-block label {
     top:-20px;
     left:10px;
     font-weight: bold;
@@ -80,7 +80,25 @@
 }
 
 .wedding-date-block,
-.venue-block,
-.image-block {
+.venue-block {
     margin-top: 38px;
+}
+
+#profileImg {
+    display: none;
+}
+
+
+.myPage-form .image-block input {
+    height: 40px;
+}
+
+.image-block {
+    margin-top: 20px;
+}
+
+.image-label {
+    margin-top: 10px;
+    top: 0px;
+    left:10px;
 }

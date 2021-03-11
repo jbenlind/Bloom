@@ -85,10 +85,16 @@ const SideBarForm = ({showSide}) => {
         setVenueZip(e.target.value)
     };
 
+    const grabImageInput = (e) => {
+        document.getElementById("profileImg").click()
+    }
+
     const updateProfileImg = (e) => {
         const file = e.target.files[0]
         if(file) setProfileImg(file)
     };
+
+    console.log(profileImg.name)
 
     return (
         <>
@@ -188,18 +194,25 @@ const SideBarForm = ({showSide}) => {
                             onChange={updateVenueZip}
                             required={true}
                             />
-                            <label>Zip code</label>
+                            <label>Zip Code</label>
                         </div>
                     </div>
                     <div className="image-block">
                         <div>
                             <input
+                            type="button"
+                            value={profileImg !== "" ? profileImg.name : ""}
+                            onClick={grabImageInput}
+                            required={true}
+                            />
+                            <label className="image-label">Profile Image</label>
+                        </div>
+                        <div>
+                            <input
                             type="file"
                             id="profileImg"
                             onChange={updateProfileImg}
-                            required={true}
                             />
-                            <label>Profile Image</label>
                         </div>
                     </div>
                     <div className="rsvp-block">
