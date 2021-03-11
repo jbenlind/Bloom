@@ -4,7 +4,6 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .6);
     z-index: 3;
   }
 
@@ -18,7 +17,8 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: white;
+    background-color: rgba(220, 220, 220, 0.8);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
   }
 
   #modal-content {

@@ -10,7 +10,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
         setSaving(true)
         setTimeout(() => {
             setOpenModal(false)
-        }, 4000)
+        }, 1500)
     }
 
     const changeModal = () => {
@@ -31,7 +31,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
                 </div>}
               {saving &&
               <div className="save-section">
-                <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+               <div class="lds-dual-ring"></div>
             </div>}
             </Modal>}
         </>
