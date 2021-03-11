@@ -233,7 +233,7 @@ margin: 0 auto;
     font-size:35px;
     color: #6289bd;
     transition: all 0.25s ease-in 0s;
-    animation: home-down 1.31s forwards;
+    animation: home-down 1.3s forwards;
 }
 
 @keyframes home-down {
