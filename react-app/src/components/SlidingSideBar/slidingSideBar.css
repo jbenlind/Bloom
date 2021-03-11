@@ -160,7 +160,7 @@ margin: 0 auto;
     font-size: 37px;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
-    animation: save-up 1.3s forwards;
+    animation: save-up 1.1s forwards;
 }
 
 @keyframes save-up {
@@ -168,7 +168,7 @@ margin: 0 auto;
         top:455px;
         left:195px;
     }
-    40% {
+    30% {
         top:455px;
         left: 0;
     }
@@ -184,7 +184,7 @@ margin: 0 auto;
     font-size: 37px;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
-    animation: save-down 1.2s forwards;
+    animation: save-down 1.1s forwards;
 }
 
 @keyframes save-down {
@@ -192,7 +192,7 @@ margin: 0 auto;
         top: 0%;
         left: 0%;
     }
-    50% {
+    45% {
         top:455px;
         left: 0;
     }
@@ -208,8 +208,8 @@ margin: 0 auto;
     left: -3px;
     font-size:35px;
     color: #6289bd;
-    transition: all 0.25s ease-in 0s;
-    animation: home-up 1.25s forwards;
+    transition: all 0.15s ease-in 0s;
+    animation: home-up 1.05s forwards;
 }
 
 @keyframes home-up {
@@ -217,7 +217,7 @@ margin: 0 auto;
         top:510px;
         left:95px;
     }
-    20% {
+    13% {
         left: 0%;
         top:510px;
     }
@@ -232,8 +232,8 @@ margin: 0 auto;
     left: -3px;
     font-size:35px;
     color: #6289bd;
-    transition: all 0.25s ease-in 0s;
-    animation: home-down 1.3s forwards;
+    transition: all 0.15s ease-in 0s;
+    animation: home-down 1.25s forwards;
 }
 
 @keyframes home-down {
@@ -241,7 +241,7 @@ margin: 0 auto;
         top: 0%;
         left: -3px;
     }
-    80% {
+    68% {
         left: 0%;
         top:510px;
     }
