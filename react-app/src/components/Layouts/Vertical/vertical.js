@@ -13,7 +13,7 @@ const Vertical = () => {
     useEffect(() => {
         dispatch(getTemplatePageElements())
     }, [dispatch])
-     console.log(image)
+
     return (
         <>
             {image &&

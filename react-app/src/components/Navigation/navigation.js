@@ -44,7 +44,8 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
 
   return (
     <>
-      <div id="grid-container">
+      { !pathName.includes("myPage") &&
+        <div className="grid-container">
         <div id="first-fraction">
           <NavLink id={pathName === "" ? "inUse" : pathName} className="bloom-title" to="/">
             <span className="b">B</span>
@@ -81,7 +82,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
             <FromCenterButton />
           )}
         </div>
-      </div>
+      </div>}
     </>
   );
 };

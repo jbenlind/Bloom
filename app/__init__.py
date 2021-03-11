@@ -12,6 +12,7 @@ from .seeds import seed_commands
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.page_element_routes import page_element_routes
+from .api.user_page_routes import user_page_routes
 
 
 app = Flask(__name__)
@@ -33,6 +34,8 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(page_element_routes, url_prefix="/api/page-elements")
+app.register_blueprint(user_page_routes, url_prefix="/api/user-page")
+
 db.init_app(app)
 Migrate(app, db)
 

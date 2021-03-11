@@ -21,7 +21,7 @@ const LayoutImageCarousel = () => {
         width:1200,
         autoPlay:true,
         transitionTime: 1500,
-        interval:8000,
+        interval:6000,
     }
 
     return (

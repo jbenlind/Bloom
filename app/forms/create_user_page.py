@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FileField, IntegerField, FloatField
 from wtforms.fields.html5 import DateTimeLocalField
+from app.models import User_page
 
 
 class CreateUserPage(FlaskForm):

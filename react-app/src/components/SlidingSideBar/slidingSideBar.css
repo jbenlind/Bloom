@@ -1,11 +1,10 @@
 .side-bar {
     position: absolute;
-    top: 80px;
+    top: 0px;
     left: 0;
-    height: 91vh;
+    height: 100vh;
     width: 365px;
-    background-color: rgba(209, 209, 209, 0.5);
-    /* border-right: 1px solid white; */
+    background-color: rgba(209, 209, 209, 0.9);
     display: flex;
     flex-direction: column;
 }
@@ -47,16 +46,11 @@
     }
 }
 
-
-/* close button */
-
-
 .slide-button-start {
-    padding-top:10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
     position: absolute;
-    top: 81px;
-    left: 3px;
+    top: 10px;
+    left: 2px;
     width: 60px;
     overflow: hidden;
     cursor: pointer;
@@ -64,7 +58,7 @@
 }
 
 #slide-button-start {
-    animation: slide-out .955s;
+    animation: slide-out .97s;
     animation-fill-mode: forwards;
 }
 
@@ -76,7 +70,7 @@
     }
     100% {
         left: 305px;
-        padding-top: 25px;
+        padding-top: 10px;
         width:60px;
     }
 }
@@ -89,7 +83,7 @@
 @keyframes slide-in {
     0% {
         left: 305px;
-        padding-top: 25px;
+        padding-top: 10px;
     }
     100% {
         left: 3px;
@@ -147,60 +141,295 @@ margin: 0 auto;
 
 .icon-container {
     position: absolute;
-    top: 130px;
+    top: 55px;
     left: 15px;
-    height: 280px;
-    width: 40px;
+    height: 880px;
+    width: 34px;
     z-index: 1;
     cursor: pointer;
 }
 
 .icon-container div i {
     position: relative;
-    color: #6289bd;
     padding: 10px 0;
+}
+
+.save {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+     color: #6289bd;
+    transition: all 0.25s ease-in 0s;
+    animation: save-up 1.1s forwards;
+}
+
+@keyframes save-up {
+    0% {
+        top:455px;
+        left:195px;
+    }
+    30% {
+        top:455px;
+        left: 0;
+    }
+    100% {
+        top: 0%;
+        left: 0%;
+    }
+}
+
+.save-slide {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+     color: #6289bd;
+    transition: all 0.25s ease-in 0s;
+    animation: save-down 1.15s forwards;
+}
+
+@keyframes save-down {
+    0% {
+        top: 0%;
+        left: 0%;
+    }
+    60% {
+        top:455px;
+        left: 0;
+    }
+    100% {
+        top:455px;
+        left:195px;
+    }
+}
+
+
+.home {
+    position: relative;
+    left: -3px;
+    font-size:35px;
+    color: #6289bd;
+    transition: all 0.15s ease-in 0s;
+    animation: home-up 1.05s forwards;
+}
+
+@keyframes home-up {
+    0% {
+        top:510px;
+        left:95px;
+    }
+    13% {
+        left: 0%;
+        top:510px;
+    }
+    100% {
+        top: 0%;
+        left: -3px;
+    }
+}
+
+.home-slide {
+    position: relative;
+    left: -3px;
+    font-size:35px;
+    color: #6289bd;
+    transition: all 0.15s ease-in 0s;
+    animation: home-down 1.15s forwards;
+}
+
+@keyframes home-down {
+    0% {
+        top: 0%;
+        left: -3px;
+    }
+    68% {
+        left: 0%;
+        top:510px;
+    }
+    100% {
+        top:510px;
+        left:95px;
+    }
+}
+
+.save-slide:hover,
+.home-slide:hover {
+    transform: translateY(-4px);
+}
+
+.home:hover,
+.save:hover {
+    transform: translateX(4px) ;
+    color: #687a94;
 }
 
 .user {
     position: relative;
-    left: 2px;
+    left: 1px;
     font-size: 43px;
+    color: #6289bd;
+    animation: user-down 1s forwards;
+}
+
+@keyframes user-down {
+    0% {
+        top: -45px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.user-slide {
+    position: relative;
+    left: 1px;
+    font-size: 43px;
+    color: #6289bd;
+    animation: user-up 1s forwards;
+}
+
+@keyframes user-up {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -45px;
+    }
 }
 
 .calendar {
     position: relative;
     left: 1px;
-    font-size: 38px;
+    font-size: 37px;
+    color: #6289bd;
+    animation: calendar-up 1s forwards;
+}
+
+@keyframes calendar-up {
+    0% {
+        top: 110px;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+.calendar-slide {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+    color: #6289bd;
+    animation: calendar-down 1s forwards;
+}
+
+@keyframes calendar-down {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 110px;
+    }
 }
 
 .map-marker {
     position: relative;
     left: 2px;
     font-size: 40px;
+    color: #6289bd;
+    animation: mark-up 1s forwards;
 }
 
-.upload-image {
+@keyframes mark-up {
+    0% {
+        top: 205px;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+
+.map-marker-slide {
+    position: relative;
+    left: 2px;
+    font-size: 40px;
+    color: #6289bd;
+    animation: mark-down 1s forwards;
+}
+
+@keyframes mark-down {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 205px;
+    }
+}
+
+.image {
     position: relative;
     left: 1px;
-    font-size: 38px;
+    font-size: 37px;
+    color: #6289bd;
+    animation: image-up 1s forwards;
+}
+
+@keyframes image-up {
+    0% {
+        top: 475px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.image-slide {
+    position: relative;
+    left: 1px;
+    font-size: 37px;
+    color: #6289bd;
+    animation: image-down 1.2s forwards;
+}
+
+@keyframes image-down {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 475px;
+    }
 }
 
 .envelope {
     position: relative;
     left: 1px;
     font-size: 33px;
+    color: #6289bd;
+    animation: envelope-up 1s forwards;
 }
 
-#selected-icon {
-    animation: changeColor 1s;
-    animation-fill-mode: forwards
-}
-
-@keyframes changeColor {
+@keyframes envelope-up {
     0% {
-        color: #6289bd;
+        top: 495px;
     }
     100% {
-        color: white
+        top: 0;
+    }
+}
+
+
+.envelope-slide {
+    position: relative;
+    left: 1px;
+    font-size: 33px;
+    color: #6289bd;
+    animation: envelope-down 1.2s forwards;
+}
+
+@keyframes envelope-down {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 495px;
     }
 }

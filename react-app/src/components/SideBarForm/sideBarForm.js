@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import FromCenterButtonSmall from "../FromCenterButtonSmall";
+import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
-const SideBarForm = ({selected, showSide}) => {
+const SideBarForm = ({showSide}) => {
      // set default value to the value from the redux store if it exists
     // proceed with caution with useEffect
+
+    const dispatch = useDispatch();
+    const userId = useSelector((state) => state.session.user ? state.session.user.id: null);
+
+    useEffect(() => {
+        dispatch(getUserPageById(userId))
+    }, [dispatch, userId])
 
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
@@ -16,8 +25,25 @@ const SideBarForm = ({selected, showSide}) => {
     const [venueCity, setVenueCity] = useState("");
     const [venueState, setVenueState] = useState("");
     const [venueZip, setVenueZip] = useState("");
-    const [profileImage, setProfileImage] = useState("");
+    const [profileImg, setProfileImg] = useState("");
 
+    const sendPageInfo = async (e) => {
+        e.preventDefault()
+        const pageInfo = {
+            userId,
+            pageName,
+            partnerOne,
+            partnerTwo,
+            weddingDateTime: weddingDate + " " + weddingTime,
+            venueName,
+            venueAddress,
+            venueCity,
+            venueState,
+            venueZip,
+            profileImg
+        }
+        await dispatch(createUserPage(pageInfo))
+    }
 
     const updatePageName = (e) => {
         setPageName(e.target.value);
@@ -59,20 +85,24 @@ const SideBarForm = ({selected, showSide}) => {
         setVenueZip(e.target.value)
     };
 
-    const updateProfileImage = (e) => {
-        setProfileImage(e.target.value)
+    const grabImageInput = (e) => {
+        document.getElementById("profileImg").click()
+    }
+
+    const updateProfileImg = (e) => {
+        const file = e.target.files[0]
+        if(file) setProfileImg(file)
     };
 
-    console.log(showSide)
+    console.log(profileImg.name)
 
     return (
-<>
+        <>
 
             <div id={showSide === "closed" ? "fade-out" : ""} className="myPage-form">
                 <form>
-                    {selected === "profile" &&
-                    <div className="profile-page">
-                       <div>
+                    <div>
+                        <div>
                             <input
                             type="text"
                             value={pageName}
@@ -99,12 +129,11 @@ const SideBarForm = ({selected, showSide}) => {
                             />
                             <label>Partner Two</label>
                         </div>
-                    </div>}
-                    {selected === "calendar" &&
-                        <div  className="wedding-date-block">
+                    </div>
+                    <div className="wedding-date-block">
                         <div>
                             <input
-                            type="text"
+                            type="date"
                             value={weddingDate}
                             onChange={updateWeddingDate}
                             required={true}
@@ -113,15 +142,14 @@ const SideBarForm = ({selected, showSide}) => {
                         </div>
                         <div>
                             <input
-                            type="text"
+                            type="time"
                             value={weddingTime}
                             onChange={updateWeddingTime}
                             required={true}
                             />
                             <label>Wedding Time</label>
                         </div>
-                    </div>}
-                    {selected === "marker" &&
+                    </div>
                     <div className="venue-block">
                         <div>
                             <input
@@ -166,24 +194,31 @@ const SideBarForm = ({selected, showSide}) => {
                             onChange={updateVenueZip}
                             required={true}
                             />
-                            <label>Zip code</label>
+                            <label>Zip Code</label>
                         </div>
-                    </div>}
-                   { selected === "image" &&
+                    </div>
                     <div className="image-block">
-                        <input
-                        type="text"
-                        value={profileImage}
-                        onChange={updateProfileImage}
-                        required={true}
-                        />
-                        <label>Profile Image</label>
-                    </div>}
-                    {selected === "rsvp" &&
-                    <div>
-                        <p>Open to show guests who <br></br> have rsvp'd</p>
+                        <div>
+                            <input
+                            type="button"
+                            value={profileImg !== "" ? profileImg.name.slice(0, 18) + "...": ""}
+                            onClick={grabImageInput}
+                            required={true}
+                            />
+                            <label className="image-label">Profile Image</label>
+                        </div>
+                        <div>
+                            <input
+                            type="file"
+                            id="profileImg"
+                            onChange={updateProfileImg}
+                            />
+                        </div>
+                    </div>
+                    <div className="rsvp-block">
                         <FromCenterButtonSmall />
-                    </div>}
+                    </div>
+                    <button onClick={sendPageInfo} id="save-form-button"></button>
                 </form>
             </div>
         </>
