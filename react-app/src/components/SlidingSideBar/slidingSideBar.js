@@ -7,7 +7,7 @@ import "./slidingSideBar.css"
 const SlidingSideBar = () => {
 
     const history = useHistory()
-    const [showSide, setShowSide] = useState("open");
+    const [showSide, setShowSide] = useState("closed");
     const [openModal, setOpenModal] = useState(false);
 
     const showSideBar = () => {
@@ -30,7 +30,7 @@ const SlidingSideBar = () => {
     return (
         <>
             <section id={showSide === "closed" ? "slide-button-end" : "slide-button-start"} className="slide-button-start">
-                <input defaultChecked={true} onClick={showSideBar} type="checkbox" id="myInput" />
+                <input defaultChecked={false} onClick={showSideBar} type="checkbox" id="myInput" />
                 <label htmlFor="myInput">
                 <span className="bar top"></span>
                 <span className="bar middle"></span>

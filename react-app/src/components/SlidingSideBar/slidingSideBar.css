@@ -4,7 +4,7 @@
     left: 0;
     height: 100vh;
     width: 365px;
-    background-color: rgba(209, 209, 209, 0.9);
+    background-color: rgba(209, 209, 209, 1);
     display: flex;
     flex-direction: column;
 }
@@ -254,12 +254,13 @@ margin: 0 auto;
 .save-slide:hover,
 .home-slide:hover {
     transform: translateY(-4px);
+    color: #6d99d1;
 }
 
 .home:hover,
 .save:hover {
     transform: translateX(4px) ;
-    color: #687a94;
+    color: #6d99d1;
 }
 
 .user {
