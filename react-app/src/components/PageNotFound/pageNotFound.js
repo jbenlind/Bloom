@@ -19,13 +19,13 @@ const PageNotFound = () => {
      history.push("/")
     }, 5000)
 
-
-
     return (
         <>
             <div className="not-found-background">
-                <h2>Ooops, this isn't ready yet</h2>
-                <h4>Taking you home. {count}</h4>
+                <div>
+                    <h2>Ooops, this isn't ready yet</h2>
+                    <h4>Taking you home{" "}<span>{" "}{count}</span></h4>
+                </div>
             </div>
         </>
     )
