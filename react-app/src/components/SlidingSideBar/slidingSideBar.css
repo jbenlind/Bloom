@@ -18,12 +18,12 @@
     0% {
         left: -12.6vw;
         box-shadow: 0 0 0 transparent;
-        border-right: 1px solid white;
+        border-right: 2px solid white;
 
     }
     100% {
         left: 0;
-        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
         border-right: none;
     }
 }
