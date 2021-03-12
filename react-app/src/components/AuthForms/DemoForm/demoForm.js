@@ -35,6 +35,7 @@ const DemoForm = ({setAuthenticated}) => {
                         value="clicked"
                         onClick={() => selectedFunction()}
                         defaultChecked={selected}
+                        checked={selected}
                     />
                 </label>
                 <button onClick={demoLogin} disabled={!(selected)} id={selected ? "ready" : ""} className="not-ready" type="submit">Enter</button>
