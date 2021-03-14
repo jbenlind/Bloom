@@ -6,3 +6,36 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+.layout-section div {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-button {
+    height: 40px;
+    width: 135px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 10px 0;
+}
+
+.layout-button:hover {
+    background-color: #6d99d1;
+}
+
+.in-use {
+    height: 40px;
+    width: 135px;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #6289bd;
+    margin: 10px 0;
+}

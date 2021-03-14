@@ -17,7 +17,7 @@ const MyPageLayouts = () => {
                     <h1>Background Image</h1>
                     <BackgroundCarousel setBackgroundImg={setBackgroundImg} />
                     <h1>Page Template</h1>
-                    <LayoutCarousel setLayout={setLayout} />
+                    <LayoutCarousel layout={layout} setLayout={setLayout} />
                     <h1>Color Palette</h1>
                 </div>
                 <div className="horizontal-section">
