@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import BackgroundCarousel from "../BackgroundCarousel";
 import "./myPageLayouts.css"
 
 const MyPageLayouts = () => {
+
+    const [backgroundImg, setBackgroundImg] = useState(0)
+
     return (
         <>
             <div className="my-layout">
                 <div className="vertical-section">
                     <h1>Background Image</h1>
+                    <BackgroundCarousel />
                     <h1>Page Template</h1>
                     <h1>Color Palette</h1>
                 </div>
