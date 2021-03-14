@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "./backgroundCarousel.css";
 
-const BackgroundCarousel = ({setBackgroundImg}) => {
+const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
     const dispatch = useDispatch();
     const backgroundImages = useSelector((state) => state.pageElements.backgroundImages ? state.pageElements.backgroundImages : null);
 
@@ -12,6 +12,11 @@ const BackgroundCarousel = ({setBackgroundImg}) => {
     useEffect(() => {
         dispatch(getTemplatePageElements())
     }, [dispatch])
+
+    const selectImage = (image) => {
+        setImageId(image.id)
+        setBackgroundImg(image.imageUrl)
+    }
 
     const slideLeft = () => {
         if(position === "l1") {
@@ -65,20 +70,19 @@ const BackgroundCarousel = ({setBackgroundImg}) => {
         }
     }
 
-    console.log(position)
     return (
         <>
             <div className="my-images">
-                <div onClick={() => slideLeft()}><i class="arrow fas fa-chevron-left"></i></div>
+                <div onClick={() => slideLeft()}><i className="arrow-left fas fa-chevron-left"></i></div>
                 <div className="back-container">
                     {backgroundImages &&
                     backgroundImages.map((image) => (
                         <div key={image.id}>
-                            <img className={position} onClick={(e) => setBackgroundImg(image.imageUrl)} src={image.imageUrl} alt=""></img>
+                            <img className={position} onClick={(e) => selectImage(image)} src={image.imageUrl} alt=""></img>
                         </div>
                     ))}
                 </div>
-                <div onClick={() => slideRight()}><i class="arrow fas fa-chevron-right"></i></div>
+                <div onClick={() => slideRight()}><i className="arrow-right fas fa-chevron-right"></i></div>
             </div>
         </>
     )

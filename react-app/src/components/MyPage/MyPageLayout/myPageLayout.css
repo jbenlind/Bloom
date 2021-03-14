@@ -12,7 +12,7 @@
     color: rgba(0, 0, 0, 0.7);
 }
 
-.vertical-section {
+.selector-section {
     height: 90%;
     width: 30%;
     background-color: rgba(209, 209, 209, 0.7);
@@ -24,7 +24,7 @@
     justify-content: space-evenly;
 }
 
-.horizontal-section {
+.preview-section {
     width: 50%;
     height: 90%;
     display: flex;
@@ -50,17 +50,18 @@
 .button-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
     width: 80%;
 }
 
 .button-container button {
-    height: 45px;
-    width: 155px;
+    height: 55px;
+    width: 185px;
     background-color: #6289bd;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 25px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     color: white;
 }

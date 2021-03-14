@@ -31,7 +31,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
                 </div>}
               {saving &&
               <div className="save-section">
-               <div class="lds-dual-ring"></div>
+               <div className="lds-dual-ring"></div>
             </div>}
             </Modal>}
         </>

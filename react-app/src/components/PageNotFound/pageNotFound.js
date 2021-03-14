@@ -10,7 +10,6 @@ const PageNotFound = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCount(count -1);
-            console.log(count)
         }, 1000)
         return () => clearInterval(interval);
     }, [count])

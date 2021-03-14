@@ -148,7 +148,6 @@ margin: 0 auto;
     height: 880px;
     width: 34px;
     z-index: 2;
-    cursor: pointer;
 }
 
 .icon-container div i {
@@ -163,6 +162,7 @@ margin: 0 auto;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
     animation: save-up 1.1s forwards;
+    cursor: pointer;
 }
 
 @keyframes save-up {
@@ -187,6 +187,7 @@ margin: 0 auto;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
     animation: save-down 1.15s forwards;
+    cursor: pointer;
 }
 
 @keyframes save-down {
@@ -212,6 +213,7 @@ margin: 0 auto;
     color: #6289bd;
     transition: all 0.15s ease-in 0s;
     animation: home-up 1.05s forwards;
+    cursor: pointer;
 }
 
 @keyframes home-up {
@@ -236,6 +238,7 @@ margin: 0 auto;
     color: #6289bd;
     transition: all 0.15s ease-in 0s;
     animation: home-down 1.15s forwards;
+    cursor: pointer;
 }
 
 @keyframes home-down {

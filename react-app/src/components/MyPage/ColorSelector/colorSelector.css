@@ -1,0 +1,47 @@
+.colorSelector-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.standard {
+    height: 80px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.first-standard {
+    height: 100%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.second-standard{
+    height: 100%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.colored {
+    height: 80px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.first-color {
+    height: 100%;
+    width: 50%;
+    background-color: #5b6c34;
+}
+
+.second-color {
+    height: 100%;
+    width: 50%;
+    background-color: #a5943f;
+}

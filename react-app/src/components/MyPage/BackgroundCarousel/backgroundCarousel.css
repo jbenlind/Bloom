@@ -184,8 +184,53 @@
 }
 
 
-.arrow {
+.arrow-left,
+.arrow-right {
     font-size: 45px;
     color: #6289bd;
     cursor: pointer;
+}
+
+.arrow-left:hover {
+    animation: bounce-left 1.5s infinite;
+}
+
+@keyframes bounce-left {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.arrow-right:hover {
+    animation: bounce-right 1.5s infinite;
+}
+
+@keyframes bounce-right {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }

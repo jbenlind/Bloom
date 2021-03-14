@@ -93,8 +93,6 @@ const SideBarForm = ({showSide}) => {
         if(file) setProfileImg(file)
     };
 
-    console.log(profileImg.name)
-
     return (
         <>
 
