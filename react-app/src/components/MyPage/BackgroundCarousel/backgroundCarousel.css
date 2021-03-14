@@ -1,8 +1,11 @@
-
-.background-image {
+.my-images {
     height: 250px;
+    width: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.thumb {
-    height: 50px;
+#background-img {
+    height: 250px;
+    width: 450px;
 }
