@@ -1,15 +1,44 @@
 .my-images {
     height: 250px;
-    width: 450px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .background-img {
     height: 250px;
     width: 450px;
+    transform: translateX(0);
 }
-.image-container {
+
+.back-container {
     height: 250px;
     width: 450px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.animation-left {
+    animation: slide-left 1s forwards;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-450);
+    }
+}
+
+.arrow {
+    font-size: 45px;
+    color: #6289bd;
+    cursor: pointer;
 }

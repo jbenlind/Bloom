@@ -11,15 +11,24 @@ const BackgroundCarousel = ({setBackgroundImg}) => {
         dispatch(getTemplatePageElements())
     }, [dispatch])
 
+    const slideImage = () => {
+        let position = document.getElementsByClassName("background-img");
+        position.classList.add("animation-left")
+    }
+
     return (
         <>
             <div className="my-images">
-               {backgroundImages &&
-               backgroundImages.map((image) => (
-                    <div key={image.id} className="image-container">
-                        <img className="background-img" onClick={(e) => setBackgroundImg(image.imageUrl)} src={image.imageUrl} alt=""></img>
-                    </div>
-               ))}
+                <div onClick={() => slideImage()}><i class="arrow fas fa-chevron-left"></i></div>
+                <div className="back-container">
+                    {backgroundImages &&
+                    backgroundImages.map((image) => (
+                        <div key={image.id}>
+                            <img className="background-img" onClick={(e) => setBackgroundImg(image.imageUrl)} src={image.imageUrl} alt=""></img>
+                        </div>
+                    ))}
+                </div>
+                <div><i class="arrow fas fa-chevron-right"></i></div>
             </div>
         </>
     )
