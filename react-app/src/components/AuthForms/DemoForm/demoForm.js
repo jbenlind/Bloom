@@ -32,10 +32,10 @@ const DemoForm = ({setAuthenticated}) => {
                     <input
                         className="radio-button"
                         type="radio"
-                        value="clicked"
+                        value={selected}
                         onClick={() => selectedFunction()}
-                        defaultChecked={selected}
                         checked={selected}
+                        readOnly={true}
                     />
                 </label>
                 <button onClick={demoLogin} disabled={!(selected)} id={selected ? "ready" : ""} className="not-ready" type="submit">Enter</button>

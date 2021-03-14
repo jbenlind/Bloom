@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import FromCenterButtonSmall from "../FromCenterButtonSmall";
 import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
@@ -201,6 +200,7 @@ const SideBarForm = ({showSide}) => {
                         <div>
                             <input
                             type="button"
+                            placeholder="Click Here"
                             value={profileImg !== "" ? profileImg.name.slice(0, 18) + "...": ""}
                             onClick={grabImageInput}
                             required={true}
@@ -216,7 +216,7 @@ const SideBarForm = ({showSide}) => {
                         </div>
                     </div>
                     <div className="rsvp-block">
-                        <FromCenterButtonSmall />
+                        <button>RSVP's</button>
                     </div>
                     <button onClick={sendPageInfo} id="save-form-button"></button>
                 </form>

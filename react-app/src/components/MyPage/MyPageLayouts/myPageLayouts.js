@@ -6,9 +6,10 @@ import "./myPageLayouts.css"
 
 const MyPageLayouts = () => {
 
-    const [backgroundImg, setBackgroundImg] = useState("")
+    const [backgroundImg, setBackgroundImg] = useState("");
+    const [layout, setLayout] = useState(0)
 
-    console.log("image", backgroundImg)
+    console.log("layout", layout)
     return (
         <>
             <div className="my-layout">
@@ -16,13 +17,13 @@ const MyPageLayouts = () => {
                     <h1>Background Image</h1>
                     <BackgroundCarousel setBackgroundImg={setBackgroundImg} />
                     <h1>Page Template</h1>
-                    <LayoutCarousel />
+                    <LayoutCarousel setLayout={setLayout} />
                     <h1>Color Palette</h1>
                 </div>
                 <div className="horizontal-section">
                     <h1>Page Preview</h1>
                     <div className="preview-container">
-                        <PreviewContainer backgroundImg={backgroundImg}/>
+                        <PreviewContainer layout={layout} backgroundImg={backgroundImg}/>
                     </div>
                     <div className="button-container">
                         <button>Save Layout</button>

@@ -107,3 +107,19 @@
 #save-form-button {
     display: none;
 }
+
+.rsvp-block button {
+    height: 45px;
+    width: 155px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-left: 10px;
+}
+
+.rsvp-block button:hover {
+    background-color: #6d99d1;
+}
