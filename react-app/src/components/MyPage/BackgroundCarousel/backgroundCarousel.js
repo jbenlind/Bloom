@@ -17,11 +17,10 @@ const BackgroundCarousel = ({setBackgroundImg}) => {
                {backgroundImages &&
                backgroundImages.map((image) => (
                     <div key={image.id} className="image-container">
-                        <img id="background-img" onClick={(e) => setBackgroundImg(image.imageUrl)} src={image.imageUrl} alt=""></img>
+                        <img className="background-img" onClick={(e) => setBackgroundImg(image.imageUrl)} src={image.imageUrl} alt=""></img>
                     </div>
                ))}
             </div>
-
         </>
     )
 }

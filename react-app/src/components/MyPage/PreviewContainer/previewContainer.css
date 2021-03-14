@@ -1,4 +1,15 @@
 .preview-background {
     height: 100%;
     width: 100%;
+    z-index: -1;
+}
+
+.preview-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
 }

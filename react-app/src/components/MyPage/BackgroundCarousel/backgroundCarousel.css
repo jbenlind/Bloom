@@ -5,7 +5,11 @@
     overflow-x: hidden;
 }
 
-#background-img {
+.background-img {
+    height: 250px;
+    width: 450px;
+}
+.image-container {
     height: 250px;
     width: 450px;
 }

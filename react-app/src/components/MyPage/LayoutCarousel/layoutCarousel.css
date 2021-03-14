@@ -1,0 +1,8 @@
+.my-layout {
+    height: 250px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}

@@ -4,9 +4,10 @@ import "./previewContainer.css";
 const PreviewContainer = ({backgroundImg}) => {
     return (
         <>
-
-            <img className="preview-background" src={backgroundImg} alt="Please Select a background"></img>
-
+                {!backgroundImg&&
+                <div className="preview-text">Select a background image to get started</div>}
+               {backgroundImg &&
+                <img className="preview-background" src={backgroundImg} alt=""></img>}
         </>
     )
 }
