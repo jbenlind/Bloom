@@ -7,6 +7,7 @@
     background-color: rgba(209, 209, 209, 1);
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 #open {
@@ -55,6 +56,7 @@
     overflow: hidden;
     cursor: pointer;
     z-index: 1;
+    z-index: 2;
 }
 
 #slide-button-start {
@@ -145,7 +147,7 @@ margin: 0 auto;
     left: 15px;
     height: 880px;
     width: 34px;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
 }
 
