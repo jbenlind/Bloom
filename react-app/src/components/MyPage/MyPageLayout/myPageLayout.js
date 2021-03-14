@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import BackgroundCarousel from "../BackgroundCarousel";
-import LayoutCarousel from "../LayoutCarousel";
+import LayoutSelector from "../LayoutSelector";
 import PreviewContainer from "../PreviewContainer";
-import "./myPageLayouts.css"
+import "./myPageLayout.css"
 
-const MyPageLayouts = () => {
+const MyPageLayout = () => {
 
     const [backgroundImg, setBackgroundImg] = useState("");
     const [layout, setLayout] = useState(0)
@@ -17,7 +17,7 @@ const MyPageLayouts = () => {
                     <h1>Background Image</h1>
                     <BackgroundCarousel setBackgroundImg={setBackgroundImg} />
                     <h1>Page Template</h1>
-                    <LayoutCarousel layout={layout} setLayout={setLayout} />
+                    <LayoutSelector layout={layout} setLayout={setLayout} />
                     <h1>Color Palette</h1>
                 </div>
                 <div className="horizontal-section">
@@ -35,4 +35,4 @@ const MyPageLayouts = () => {
     )
 }
 
-export default MyPageLayouts;
+export default MyPageLayout;

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
-import "./layoutCarousel.css";
+import "./layoutSelector.css";
 
-const LayoutCarousel = ({layout, setLayout}) => {
+const LayoutSelector = ({layout, setLayout}) => {
     const dispatch = useDispatch();
     const layouts = useSelector((state) => state.pageElements.pageLayouts ? state.pageElements.pageLayouts : null);
 
@@ -44,4 +44,4 @@ const LayoutCarousel = ({layout, setLayout}) => {
     )
 }
 
-export default LayoutCarousel;
+export default LayoutSelector;
