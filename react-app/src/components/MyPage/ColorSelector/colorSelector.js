@@ -18,7 +18,7 @@ const ColorSelector = () => {
 
     return (
         <>
-            <div id={selected} className="slider"></div>
+            <div id={selected} className="outline-slider"></div>
             <div className="colorSelector-section">
                 <div onClick={(e) => slideSelector("left")} className="standard">
                     <div className="first-standard"></div>
@@ -30,7 +30,6 @@ const ColorSelector = () => {
                     <div className="second-color"></div>
                 </div>
             </div>
-            <div className="slider-container"></div>
         </>
     )
 }

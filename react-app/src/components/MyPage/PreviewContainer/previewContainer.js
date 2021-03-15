@@ -1,6 +1,7 @@
 import React from "react";
 import "./previewContainer.css";
 import TopNavPreview from "../../Layouts/PreviewLayouts/TopNavPreview";
+import BottomNavPreview from "../../Layouts/PreviewLayouts/BottomNavPreview";
 
 const PreviewContainer = ({backgroundImg, layout, imageId}) => {
     return (
@@ -12,7 +13,7 @@ const PreviewContainer = ({backgroundImg, layout, imageId}) => {
                     {layout === 1 &&
                     <TopNavPreview imageId={imageId}/>}
                     {layout === 2 &&
-                    "bottom nav"}
+                    <BottomNavPreview imageId={imageId}/>}
                     {layout === 3 &&
                     "left nav"}
                     {layout === 4 &&
