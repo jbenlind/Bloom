@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./colorSelector.css";
 
-const ColorSelector = ({}) => {
+const ColorSelector = () => {
 
     const [selected, setSelected] = useState("");
     const [previous, setPrevious] = useState("left")

@@ -27,7 +27,6 @@ export const createUserPage =
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
     venueZip, latitude, longitude, profileImg}) =>
     async (dispatch) => {
-        console.log(pageName)
         const formData = new FormData()
         formData.append("backgroundImgId", backgroundImgId)
         formData.append("pageLayoutId", pageLayoutId)
@@ -49,7 +48,6 @@ export const createUserPage =
         const response = await fetch('/api/user-page/', {
             method: "POST",
             body: formData,
-            headers: {"Content-Type": "application/json"}
           });
         const userPage = await response.json();
         dispatch(setUserPage(userPage));
@@ -57,18 +55,18 @@ export const createUserPage =
 
 }
 
-const initialState = {
-    userPage: []
-}
+const initialState = {}
+
+// removed curly braces
 
 const userPageReducer = (state=initialState, action) => {
     switch(action.type) {
         case SET_USER_PAGE:
-            const {userPage} = action.payload
+            const userPage = action.payload
             const userPageElements = {...state, ...userPage }
             return userPageElements
         case SET_SELECTED_PAGE:
-            const {userPageContent} = action.payload
+            const userPageContent = action.payload
             const userPageFields = {...state, ...userPageContent}
             return userPageFields;
         default:

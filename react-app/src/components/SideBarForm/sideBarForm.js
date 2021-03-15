@@ -4,15 +4,9 @@ import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
 const SideBarForm = ({showSide}) => {
-     // set default value to the value from the redux store if it exists
-    // proceed with caution with useEffect
 
     const dispatch = useDispatch();
-    const userId = useSelector((state) => state.session.user ? state.session.user.id: null);
-
-    useEffect(() => {
-        dispatch(getUserPageById(userId))
-    }, [dispatch, userId])
+    const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
@@ -25,6 +19,26 @@ const SideBarForm = ({showSide}) => {
     const [venueState, setVenueState] = useState("");
     const [venueZip, setVenueZip] = useState("");
     const [profileImg, setProfileImg] = useState("");
+
+
+    useEffect(() => {
+        if(userId) {
+            const func = async () => {
+                let pageElements = await dispatch(getUserPageById(userId))
+                setPageName(pageElements.pageName ? pageElements.pageName : "")
+                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
+                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
+                // setWeddingDate(pageElements.weddingDateTime ? pageElements.weddingDateTime : "") get help
+                setVenueName(pageElements.venueName ? pageElements.venueName : "")
+                setVenueAddress(pageElements.venueAddress ? pageElements.venueAddress : "")
+                setVenueCity(pageElements.venueCity ? pageElements.venueCity : "")
+                setVenueState(pageElements.venueState ? pageElements.venueState : "")
+                setVenueZip(pageElements.venueZip ? pageElements.venueZip : "")
+                setProfileImg(pageElements.profileImg ? pageElements.profileImg : "")
+            }
+            func()
+        }
+    }, [dispatch, userId])
 
     const sendPageInfo = async (e) => {
         e.preventDefault()
@@ -199,7 +213,7 @@ const SideBarForm = ({showSide}) => {
                             <input
                             type="button"
                             placeholder="Click Here"
-                            value={profileImg !== "" ? profileImg.name.slice(0, 18) + "...": ""}
+                            value={profileImg !== "" ? profileImg + "...": ""}
                             onClick={grabImageInput}
                             required={true}
                             />

@@ -24,12 +24,9 @@ def create_user_page():
     form['csrf_token'].data = request.cookies['csrf_token']
     profileImg = ""
     image = ""
-    print("----------", form.data)
 
     if form.data['profileImg'] is not None:
         image = form.data['profileImg']
-        image = json.loads(image)
-        print("-----------------------------------")
 
     if image != "" and allowed_file(image.filename):
         image.filename = secure_filename(image.filename)
