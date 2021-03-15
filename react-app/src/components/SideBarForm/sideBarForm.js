@@ -34,7 +34,7 @@ const SideBarForm = ({showSide}) => {
                 setVenueCity(pageElements.venueCity ? pageElements.venueCity : "")
                 setVenueState(pageElements.venueState ? pageElements.venueState : "")
                 setVenueZip(pageElements.venueZip ? pageElements.venueZip : "")
-                setProfileImg(pageElements.profileImg ? pageElements.profileImg : "")
+                // setProfileImg(pageElements.profileImg ? pageElements.profileImg : "")
             }
             func()
         }

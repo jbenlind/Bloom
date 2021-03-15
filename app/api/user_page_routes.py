@@ -33,7 +33,8 @@ def create_user_page():
         profileImg = upload_file_to_s3(image, Config.S3_BUCKET)
 
     try:
-        userPage = User_page.query.filter(User_page.userId == form.userId.data).one()
+        userPage = User_page.query.filter(
+                                User_page.userId == form.userId.data).one()
         if not profileImg:
             profileImg = userPage.profileImg
         form.populate_obj(userPage)
