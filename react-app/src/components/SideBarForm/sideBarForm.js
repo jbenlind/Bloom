@@ -103,7 +103,7 @@ const SideBarForm = ({showSide}) => {
                             <input
                             type="text"
                             value={pageName}
-                            onChange={updatePageName}
+                            onChange={(e) => updatePageName(e)}
                             required={true}
                             />
                             <label>Page Name</label>

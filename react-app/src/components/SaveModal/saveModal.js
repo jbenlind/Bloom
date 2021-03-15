@@ -7,6 +7,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
     const [saving, setSaving] = useState(false)
 
     const startSaving = () => {
+        document.getElementById("save-form-button").click()
         setSaving(true)
         setTimeout(() => {
             setOpenModal(false)

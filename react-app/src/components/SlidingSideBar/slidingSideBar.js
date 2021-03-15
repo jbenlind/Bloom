@@ -23,7 +23,6 @@ const SlidingSideBar = () => {
     }
 
     const clickSave = (e) => {
-        // document.getElementById("save-form-button").click()
         setOpenModal(true)
     }
 

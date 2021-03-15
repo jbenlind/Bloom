@@ -26,7 +26,8 @@ export const createUserPage =
     ({backgroundImgId,  pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
     venueZip, latitude, longitude, profileImg}) =>
-        async (dispatch) => {
+    async (dispatch) => {
+        console.log(pageName)
         const formData = new FormData()
         formData.append("backgroundImgId", backgroundImgId)
         formData.append("pageLayoutId", pageLayoutId)
@@ -48,10 +49,12 @@ export const createUserPage =
         const response = await fetch('/api/user-page/', {
             method: "POST",
             body: formData,
+            headers: {"Content-Type": "application/json"}
           });
         const userPage = await response.json();
         dispatch(setUserPage(userPage));
         return userPage;
+
 }
 
 const initialState = {

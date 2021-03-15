@@ -23,11 +23,15 @@ def create_user_page():
     form = CreateUserPage()
     form['csrf_token'].data = request.cookies['csrf_token']
     profileImg = ""
+    image = ""
+    print("----------", form.data)
 
-    if 'profileImg' in request.files:
-        image = request.files['profileImg']
+    if form.data['profileImg'] is not None:
+        image = form.data['profileImg']
+        image = json.loads(image)
+        print("-----------------------------------")
 
-    if allowed_file(image.filename):
+    if image != "" and allowed_file(image.filename):
         image.filename = secure_filename(image.filename)
         profileImg = upload_file_to_s3(image, Config.S3_BUCKET)
 
