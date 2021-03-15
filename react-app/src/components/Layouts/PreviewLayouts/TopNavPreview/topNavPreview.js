@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./topNavPreview.css";
 
 const TopNavPreview = ({imageId}) => {
 
-    const [background, setBackground] = useState(0)
+    const [standardColor, setStandardColor] = useState("");
+
+    useEffect(() => {
+        if(imageId === 1 || imageId === 4 || imageId === 5) {
+            setStandardColor("standard-one")
+        } else if(imageId === 2 || imageId === 3) {
+            setStandardColor("")
+        }
+    }, [imageId, setStandardColor])
 
 
     return (
         <>
              <div className="top-nav-preview">
                 <div className="preview-tabs">
-                    <button id="preview-underline" className="preview-button">k & p</button>
-                    <button className="preview-button">venue</button>
-                    <button className="preview-button">ceremony</button>
-                    <button className="preview-button">RSVP</button>
+                    <button id={standardColor} className="preview-button-name">k & p</button>
+                    <button id={standardColor} className="preview-button">venue</button>
+                    <button id={standardColor} className="preview-button">ceremony</button>
+                    <button id={standardColor} className="preview-button">RSVP</button>
                 </div>
                 <div className="card-preview">
                     <div className='top-half-preview'>

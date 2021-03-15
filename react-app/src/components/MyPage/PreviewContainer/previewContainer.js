@@ -3,7 +3,6 @@ import "./previewContainer.css";
 import TopNavPreview from "../../Layouts/PreviewLayouts/TopNavPreview";
 
 const PreviewContainer = ({backgroundImg, layout, imageId}) => {
-    console.log(layout)
     return (
         <>
                 {!backgroundImg&&
