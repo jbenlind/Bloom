@@ -8,9 +8,13 @@
     margin-left: 2%;
 }
 
-.my-layout div h1 {
+.selector-section div h1 {
     color: rgba(0, 0, 0, 0.7);
     margin: 5% 0;
+}
+
+.preview-section h1 {
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .selector-section {
