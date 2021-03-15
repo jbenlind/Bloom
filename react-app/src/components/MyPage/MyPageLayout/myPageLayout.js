@@ -8,7 +8,7 @@ import "./myPageLayout.css"
 const MyPageLayout = () => {
 
     const [backgroundImg, setBackgroundImg] = useState("");
-    const [imageId, setImageId] = useState(0)
+    const [imageId, setImageId] = useState(0);
     const [layout, setLayout] = useState(0);
     const [colorPalette, setColorPalette] = useState(0);
 
@@ -32,7 +32,7 @@ const MyPageLayout = () => {
                 <div className="preview-section">
                     <h1>Page Preview</h1>
                     <div className="preview-container">
-                        <PreviewContainer backgroundImg={backgroundImg} layout={layout} colorPalette={colorPalette}/>
+                        <PreviewContainer backgroundImg={backgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
                     </div>
                     <div className="button-container">
                         <button>Go to page</button>

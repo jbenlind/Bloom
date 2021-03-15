@@ -1,23 +1,23 @@
 import React from "react";
 import "./previewContainer.css";
+import TopNavPreview from "../../Layouts/PreviewLayouts/TopNavPreview";
 
-const PreviewContainer = ({backgroundImg, layout}) => {
+const PreviewContainer = ({backgroundImg, layout, imageId}) => {
+    console.log(layout)
     return (
         <>
                 {!backgroundImg&&
                 <div className="preview-text">Select a background image to get started</div>}
                {backgroundImg &&
-                <img className="preview-background" src={backgroundImg} alt=""></img>}
-                {backgroundImg &&
-                <div className="preview-layout">
+                <div style={{backgroundImage: `url(${backgroundImg})`}} className="preview-background">
                     {layout === 1 &&
-                    <div>1</div>}
+                    <TopNavPreview imageId={imageId}/>}
                     {layout === 2 &&
-                    <div>2</div>}
+                    "bottom nav"}
                     {layout === 3 &&
-                    <div>3</div>}
+                    "left nav"}
                     {layout === 4 &&
-                    <div>4</div>}
+                    "right nav"}
                 </div>}
         </>
     )
