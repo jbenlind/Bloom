@@ -46,14 +46,14 @@
     background-color: #a5943f;
 }
 
-.slider {
+/* .slider {
     position: absolute;
     top: 87.2%;
     left: 11.5%;
     width: 200px;
     border-bottom: 8px solid #6289bd;
     border-radius: 5px;
-}
+} */
 
 #slide-right {
     position: absolute;
