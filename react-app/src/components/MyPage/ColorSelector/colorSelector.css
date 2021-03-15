@@ -48,7 +48,7 @@
 
 .slider {
     position: absolute;
-    top: 90%;
+    top: 88.5%;
     left: 11.5%;
     width: 200px;
     border-bottom: 8px solid #6289bd;
@@ -57,9 +57,9 @@
 
 #slide-right {
     position: absolute;
-    top: 90%;
+    top: 88.5%;
     left: 11.5%;
-    animation: outline-right 1s forwards;
+    animation: outline-right .9s forwards;
 }
 
 @keyframes outline-right {
@@ -73,9 +73,9 @@
 
 #slide-left {
     position: absolute;
-    top: 90%;
+    top: 88.5%;
     left: 11.5%;
-    animation: outline-left 1s forwards;
+    animation: outline-left .9s forwards;
 }
 
 @keyframes outline-left {
@@ -92,4 +92,5 @@
     width: 82%;
     background-color: rgba(255, 255, 255, .5);
     border-radius: 10px;
+    margin-top: 2%;
 }

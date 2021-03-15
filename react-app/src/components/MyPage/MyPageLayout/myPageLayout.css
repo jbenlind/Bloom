@@ -10,6 +10,7 @@
 
 .my-layout div h1 {
     color: rgba(0, 0, 0, 0.7);
+    margin: 5% 0;
 }
 
 .selector-section {
@@ -21,7 +22,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.ss-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.ss-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.ss-three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .preview-section {
