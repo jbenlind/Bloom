@@ -48,7 +48,7 @@
 
 .slider {
     position: absolute;
-    top: 88.5%;
+    top: 87.2%;
     left: 11.5%;
     width: 200px;
     border-bottom: 8px solid #6289bd;
@@ -57,7 +57,7 @@
 
 #slide-right {
     position: absolute;
-    top: 88.5%;
+    top: 87.2%;
     left: 11.5%;
     animation: outline-right .9s forwards;
 }
@@ -73,7 +73,7 @@
 
 #slide-left {
     position: absolute;
-    top: 88.5%;
+    top: 87.2%;
     left: 11.5%;
     animation: outline-left .9s forwards;
 }
