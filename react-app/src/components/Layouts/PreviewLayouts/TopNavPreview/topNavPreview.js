@@ -4,19 +4,24 @@ import "./topNavPreview.css";
 const TopNavPreview = ({imageId, colorPalette}) => {
 
     const [standardColor, setStandardColor] = useState("");
+    const [standardBorder, setStandardBorder] = useState("basic-black");
     const [primaryColor, setPrimaryColor] = useState("");
+    const [primaryName, setPrimaryName] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
 
     useEffect(() => {
         if(imageId === 1 || imageId === 4 || imageId === 5) {
             setStandardColor("standard-one")
+            setStandardBorder("basic-white")
         } else if(imageId === 2 || imageId === 3) {
             setStandardColor("")
+            setStandardBorder("basic-black")
         }
 
         if(colorPalette === 2 && imageId === 1) {
             setPrimaryColor("primary-one")
             setSecondColor("secondary-one")
+            setPrimaryName()
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
@@ -37,7 +42,7 @@ const TopNavPreview = ({imageId, colorPalette}) => {
         <>
              <div className="top-nav-preview">
                 <div className="preview-tabs">
-                    <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button-name">k & p</button>
+                    <button id={colorPalette === 2 ? primaryColor : standardBorder} className="preview-button">k & p</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">RSVP</button>

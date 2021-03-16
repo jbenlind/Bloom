@@ -15,15 +15,14 @@
     margin: 20px 0;
 }
 
-.preview-button-name {
-    background-color: transparent;
-    border: transparent;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: .2rem;
-    margin: 20px 0;
+#basic-black {
     color: rgba(0, 0, 0, .6);
     border-bottom: 2px solid rgba(0, 0, 0, .6);
+}
+
+#basic-white {
+    color: rgba(246, 247, 236, 0.9);
+    border-bottom: 2px solid rgba(246, 247, 236, 0.9);
 }
 
 .preview-button {
@@ -93,12 +92,20 @@
     color: #e08d56;
 }
 
+#primary-one-name {
+    border-bottom: 2px solid #e08d56;
+}
+
 #primary-two {
     color: #0f6eea;
 }
 
 #secondary-two {
     color: #6e7b7f;
+}
+
+#secondary-two-u {
+    border-bottom: 2px solid #6e7b7f;
 }
 
 #primary-three {
@@ -109,6 +116,10 @@
     color: #a5943f;
 }
 
+#secondary-three-u {
+    border-bottom: 2px solid #a5943f;
+}
+
 #primary-four {
     color: #00b7cc;
 }
@@ -117,10 +128,18 @@
     color: #977173;
 }
 
+#secondary-four-u {
+    border-bottom: 2px solid #977173;
+}
+
 #primary-five {
     color: #17a5a3;
 }
 
 #secondary-five {
     color: #f67824;
+}
+
+#secondary-five-u {
+    border-bottom: 2px solid #f67824;
 }
