@@ -12,16 +12,15 @@ const ColorSelector = ({setColorPalette, imageId }) => {
         if(param === "right" && previous === "left") {
             setSelected("slide-right");
             setPrevious("right")
+            setColorPalette(2)
         } else if(param === "left" && previous === "right") {
             setSelected("slide-left")
             setPrevious("left")
+            setColorPalette(1)
         }
     }
 
     useEffect(() => {
-        if(selected === "right") {
-            setColorPalette(2)
-        }
         if(imageId === 1) {
             setColorOne("one-c1")
             setColorTwo("one-c2")
@@ -39,8 +38,7 @@ const ColorSelector = ({setColorPalette, imageId }) => {
             setColorTwo("five-c2")
         }
 
-    }, [imageId, setColorPalette, selected, setColorOne, setColorTwo])
-
+    }, [imageId, selected, setColorOne, setColorTwo])
 
 
     return (
