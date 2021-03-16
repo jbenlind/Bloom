@@ -22,7 +22,7 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
     if (password === repeatPassword) {
       if (!user.errors) {
         setAuthenticated(true);
-        history.push(`/usePage/${user.id}`)
+        history.push(`/myPage/${user.id}`)
       } else {
         const errors = user.errors.map(error => error.split(" : ")[1]);
         setErrors(errors);

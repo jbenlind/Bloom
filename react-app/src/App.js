@@ -48,7 +48,7 @@ const App = () => {
         </Route>
         <Route
           path="/myPage/:userId"
-          exact={true}
+          // exact={true}
           authenticated={authenticated}
         >
           <MyPage
