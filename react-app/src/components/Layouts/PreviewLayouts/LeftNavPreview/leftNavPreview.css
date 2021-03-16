@@ -1,0 +1,31 @@
+.left-nav-preview {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-nav-preview-tabs {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: rgb(254, 255, 238, .7);
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    margin-top: 75px;
+}
+
+
+.left-preview-card {
+    background-color: rgb(254, 255, 238);
+    height: 400px;
+    width: 350px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 75px;
+
+}
