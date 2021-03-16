@@ -1,5 +1,4 @@
 import React from "react";
-import "./leftNavPreview.css";
 
 const RightNavPreview = () => {
     return (

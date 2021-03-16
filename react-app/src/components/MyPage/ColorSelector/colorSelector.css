@@ -7,8 +7,8 @@
 }
 
 .standard {
-    height: 80px;
-    width: 200px;
+    height: 70px;
+    width: 180px;
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -27,8 +27,8 @@
 }
 
 .colored {
-    height: 80px;
-    width: 200px;
+    height: 70px;
+    width: 180px;
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -37,21 +37,59 @@
 .first-color {
     height: 100%;
     width: 50%;
-    background-color: #5b6c34;
 }
 
 .second-color {
     height: 100%;
     width: 50%;
+}
+
+#one-c1 {
+    background-color: #0f6eea;
+}
+
+#one-c2 {
+    background-color: #e08d56;
+}
+
+#two-c1 {
+    background-color: #0f6eea;
+}
+
+#two-c2 {
+    background-color: #6e7b7f;
+}
+
+#three-c1 {
+    background-color: #5b6c34;
+}
+
+#three-c2 {
     background-color: #a5943f;
+}
+
+#four-c1 {
+    background-color: #00b7cc;
+}
+
+#four-c2 {
+    background-color: #ffd0cc;
+}
+
+#five-c1 {
+    background-color: #17a5a3;
+}
+
+#five-c2 {
+    background-color: #e97324;
 }
 
 .outline-slider {
     position: absolute;
     top: 80%;
-    left: 11.2%;
-    width: 200px;
-    height: 80px;
+    left: 11.7%;
+    width: 180px;
+    height: 70px;
     border: 6px solid #6289bd;
     border-radius: 5px;
 }
@@ -59,32 +97,31 @@
 #slide-right {
     position: absolute;
     top: 80%;
-    left: 11.2%;
+    left: 11.7%;
     animation: outline-right .9s forwards;
 }
 
 @keyframes outline-right {
     0% {
-        left:11.2%;
+        left:11.7%;
     }
     100% {
-        left: 24.4%;
+        left: 24.9%;
     }
 }
 
 #slide-left {
     position: absolute;
     top: 80%;
-    left: 11.2%;
+    left: 11.7%;
     animation: outline-left .9s forwards;
 }
 
 @keyframes outline-left {
     0% {
-        left: 24.4%;
+        left: 24.9%;
     }
     100% {
-        left:11.2%;
+        left:11.7%;
     }
 }
-

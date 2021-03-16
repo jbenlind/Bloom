@@ -3,6 +3,7 @@ import "./previewContainer.css";
 import TopNavPreview from "../../Layouts/PreviewLayouts/TopNavPreview";
 import BottomNavPreview from "../../Layouts/PreviewLayouts/BottomNavPreview";
 import LeftNavPreview from "../../Layouts/PreviewLayouts/LeftNavPreview";
+import RightNavPreview from "../../Layouts/PreviewLayouts/RightNavPreview";
 
 const PreviewContainer = ({backgroundImg, layout, imageId}) => {
     return (
@@ -18,7 +19,7 @@ const PreviewContainer = ({backgroundImg, layout, imageId}) => {
                     {layout === 3 &&
                     <LeftNavPreview imageId={imageId}/>}
                     {layout === 4 &&
-                    "right nav"}
+                    <RightNavPreview imageId={imageId}/>}
                 </div>}
         </>
     )

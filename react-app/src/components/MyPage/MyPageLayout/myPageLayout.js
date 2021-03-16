@@ -8,9 +8,9 @@ import "./myPageLayout.css"
 const MyPageLayout = () => {
 
     const [backgroundImg, setBackgroundImg] = useState("");
-    const [imageId, setImageId] = useState(0);
+    const [imageId, setImageId] = useState(3);
     const [layout, setLayout] = useState(0);
-    const [colorPalette, setColorPalette] = useState(0);
+    const [colorPalette, setColorPalette] = useState(1);
 
     return (
         <>

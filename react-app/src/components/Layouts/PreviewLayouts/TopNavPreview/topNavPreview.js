@@ -26,7 +26,7 @@ const TopNavPreview = ({imageId}) => {
                 <div className="card-preview">
                     <div className='top-half-preview'>
                         <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
-                        <h1 className="couple-names-preview">karen and paul</h1>
+                        <h2 className="couple-names-preview">karen and paul</h2>
                     </div>
                         <p className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div className="vertical-line-preview"></div>
