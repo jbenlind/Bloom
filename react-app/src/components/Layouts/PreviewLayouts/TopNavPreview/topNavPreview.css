@@ -93,6 +93,7 @@
 }
 
 #primary-one-name {
+    color: #0f6eea;
     border-bottom: 2px solid #e08d56;
 }
 
@@ -104,7 +105,8 @@
     color: #6e7b7f;
 }
 
-#secondary-two-u {
+#primary-two-name {
+    color: #0f6eea;
     border-bottom: 2px solid #6e7b7f;
 }
 
@@ -116,7 +118,8 @@
     color: #a5943f;
 }
 
-#secondary-three-u {
+#primary-three-name {
+    color: #5b6c34;
     border-bottom: 2px solid #a5943f;
 }
 
@@ -128,7 +131,8 @@
     color: #977173;
 }
 
-#secondary-four-u {
+#primary-four-name {
+    color: #00b7cc;
     border-bottom: 2px solid #977173;
 }
 
@@ -140,6 +144,7 @@
     color: #f67824;
 }
 
-#secondary-five-u {
+#primary-five-name {
+    color: #17a5a3;
     border-bottom: 2px solid #f67824;
 }

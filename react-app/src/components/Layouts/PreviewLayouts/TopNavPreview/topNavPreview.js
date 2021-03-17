@@ -21,28 +21,32 @@ const TopNavPreview = ({imageId, colorPalette}) => {
         if(colorPalette === 2 && imageId === 1) {
             setPrimaryColor("primary-one")
             setSecondColor("secondary-one")
-            setPrimaryName()
+            setPrimaryName("primary-one-name")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
+            setPrimaryName("primary-two-name")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
+            setPrimaryName("primary-three-name")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
+            setPrimaryName("primary-four-name")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
+            setPrimaryName("primary-five-name")
         }
     }, [imageId, setStandardColor, colorPalette])
 
 
     return (
         <>
-             <div className="top-nav-preview">
+            <div className="top-nav-preview">
                 <div className="preview-tabs">
-                    <button id={colorPalette === 2 ? primaryColor : standardBorder} className="preview-button">k & p</button>
+                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">k & p</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">RSVP</button>

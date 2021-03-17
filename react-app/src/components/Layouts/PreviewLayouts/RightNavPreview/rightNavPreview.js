@@ -3,24 +3,37 @@ import React, { useState, useEffect } from "react";
 const RightNavPreview = ({imageId, colorPalette}) => {
 
     const [primaryColor, setPrimaryColor] = useState("");
+    const [standardBorder, setStandardBorder] = useState("basic-black");
     const [secondaryColor, setSecondColor] = useState("");
+    const [primaryName, setPrimaryName] = useState("");
 
     useEffect(() => {
+        if(imageId === 1 || imageId === 4 || imageId === 5) {
+            setStandardBorder("basic-white")
+        } else if(imageId === 2 || imageId === 3) {
+            setStandardBorder("basic-black")
+        }
+
         if(colorPalette === 2 && imageId === 1) {
             setPrimaryColor("primary-one")
             setSecondColor("secondary-one")
+            setPrimaryName("primary-one-name")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
+            setPrimaryName("primary-two-name")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
+            setPrimaryName("primary-three-name")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
+            setPrimaryName("primary-four-name")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
+            setPrimaryName("primary-five-name")
         }
     }, [imageId, colorPalette])
 
@@ -37,7 +50,7 @@ const RightNavPreview = ({imageId, colorPalette}) => {
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">September 23, 2023</p>
                 </div>
                 <div className="left-nav-preview-tabs">
-                    <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button-name">k & p</button>
+                    <button id={colorPalette === 2 ? primaryName: standardBorder} className="preview-button">k & p</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">RSVP</button>

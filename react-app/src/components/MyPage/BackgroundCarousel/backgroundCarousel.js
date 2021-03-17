@@ -8,17 +8,19 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
     const backgroundImages = useSelector((state) => state.pageElements.backgroundImages ? state.pageElements.backgroundImages : null);
 
     const [position, setPosition] = useState("center");
+    const [currId, setCurrId] = useState(3);
 
     useEffect(() => {
         dispatch(getTemplatePageElements())
     }, [dispatch])
 
-    const selectImage = (image) => {
-        setImageId(image.id)
-        setBackgroundImg(image.imageUrl)
+    const selectImage = (index) => {
+        setImageId(index)
+        setBackgroundImg(backgroundImages[index -1].imageUrl)
     }
 
     const slideLeft = () => {
+        setCurrId(() => currId === 1 ? 5 : currId - 1)
         if(position === "l1") {
             setPosition("l2")
         } else if(position === "l2") {
@@ -45,6 +47,7 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
     }
 
     const slideRight = () => {
+        setCurrId(() => currId === 5 ? 1 : currId + 1)
         if(position === "r1") {
             setPosition("r2")
         } else if(position === "r2") {
@@ -70,6 +73,8 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
         }
     }
 
+    console.log(currId)
+
     return (
         <>
             <div className="my-images">
@@ -78,12 +83,13 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
                     {backgroundImages &&
                     backgroundImages.map((image) => (
                         <div key={image.id}>
-                            <img className={position} onClick={(e) => selectImage(image)} src={image.imageUrl} alt=""></img>
+                            <img className={position} src={image.imageUrl} alt=""></img>
                         </div>
                     ))}
                 </div>
                 <div onClick={() => slideRight()}><i className="arrow-right fas fa-chevron-right"></i></div>
             </div>
+            <button onClick={(e) => selectImage(currId)}>Select Image</button>
         </>
     )
 }
