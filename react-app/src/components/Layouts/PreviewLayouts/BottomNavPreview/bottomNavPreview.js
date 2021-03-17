@@ -7,28 +7,20 @@ const BottomNavPreview = ({imageId, colorPalette}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
+    const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "");
+    const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
 
     const [standardColor, setStandardColor] = useState("");
     const [standardBorder, setStandardBorder] = useState("basic-black");
     const [primaryColor, setPrimaryColor] = useState("");
     const [primaryName, setPrimaryName] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
-    const [partnerOne, setPartnerOne] = useState("");
-    const [partnerTwo, setPartnerTwo] = useState("");
-    const [initials, setInitials] = useState("");
-    const [coupleNames, setCoupleNames] = useState("");
 
     useEffect(() => {
         if(userId) {
-            const func = async () => {
-                let pageElements = await dispatch(getUserPageById(userId))
-                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
-                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
-                setInitials(partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P")
-                setCoupleNames(partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul")
-            }
-            func()
+            dispatch(getUserPageById(userId))
         }
+
         if(imageId === 1 || imageId === 4 || imageId === 5) {
             setStandardColor("standard-one")
             setStandardBorder("basic-white")
@@ -58,17 +50,7 @@ const BottomNavPreview = ({imageId, colorPalette}) => {
             setSecondColor("secondary-five")
             setPrimaryName("primary-five-name")
         }
-    }, [imageId,
-        setStandardColor,
-        colorPalette,
-        dispatch,
-        userId,
-        setInitials,
-        setCoupleNames,
-        setPartnerOne,
-        setPartnerTwo,
-        partnerOne,
-        partnerTwo])
+    }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
     return (
         <>
@@ -76,14 +58,14 @@ const BottomNavPreview = ({imageId, colorPalette}) => {
                 <div className="card-preview-bot">
                     <div className='top-half-preview'>
                         <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
-                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{coupleNames}</h2>
+                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                     </div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">September 23, 2023</p>
                 </div>
                 <div className="preview-tabs-bot">
-                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">{initials}</button>
+                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">RSVP</button>

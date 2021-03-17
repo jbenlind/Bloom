@@ -35,7 +35,9 @@ export const createUserPage =
         formData.append("pageName", pageName)
         formData.append("partnerOne", partnerOne)
         formData.append("partnerTwo", partnerTwo)
-        formData.append("weddingDateTime", weddingDateTime)
+        if (weddingDateTime) {
+            formData.append("weddingDateTime", weddingDateTime)
+        }
         formData.append("venueName", venueName)
         formData.append("venueAddress", venueAddress)
         formData.append("venueCity", venueCity)

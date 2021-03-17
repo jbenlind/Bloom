@@ -24,6 +24,7 @@ def create_user_page():
     form['csrf_token'].data = request.cookies['csrf_token']
     profileImg = ""
     image = ""
+    date = ""
 
     if form.data['profileImg'] is not None:
         image = form.data['profileImg']
@@ -41,7 +42,7 @@ def create_user_page():
         if not profileImg:
             profileImg = userPage.profileImg
         form.populate_obj(userPage)
-        userPage.weddingDateTime = request.form.get("weddingDateTime")
+        userPage.weddingDateTime = request.form.get("weddingDateTime", None)
         userPage.profileImg = profileImg
         db.session.commit()
         return userPage.to_dict()

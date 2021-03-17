@@ -40,8 +40,6 @@ const SideBarForm = ({showSide}) => {
         }
     }, [dispatch, userId])
 
-    // new Date(weddingDate + "T" + weddingTime)
-
     const sendPageInfo = async (e) => {
         e.preventDefault()
         const pageInfo = {
@@ -49,7 +47,7 @@ const SideBarForm = ({showSide}) => {
             pageName,
             partnerOne,
             partnerTwo,
-            weddingDateTime: weddingDate + '' + weddingTime,
+            weddingDateTime: weddingDate && weddingTime ? new Date(weddingDate + "T" + weddingTime) : undefined,
             venueName,
             venueAddress,
             venueCity,
