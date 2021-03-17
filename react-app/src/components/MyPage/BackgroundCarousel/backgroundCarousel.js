@@ -89,7 +89,7 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
                 </div>
                 <div onClick={() => slideRight()}><i className="arrow-right fas fa-chevron-right"></i></div>
             </div>
-            <button onClick={(e) => selectImage(currId)}>Select Image</button>
+            <button onClick={(e) => selectImage(currId)} className="select-image">Select Image</button>
         </>
     )
 }

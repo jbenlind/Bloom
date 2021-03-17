@@ -17,16 +17,32 @@
     overflow-y: hidden;
 }
 
+.select-image {
+    height: 35px;
+    width: 145px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.select-image:hover {
+    background-color: #6d99d1;
+}
+
 .center {
     height: 250px;
     width: 450px;
-    cursor: pointer;
 }
 
 .l1 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sl-one 1s forwards;
 }
 
@@ -42,7 +58,6 @@
 .l2 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sl-two 1s forwards;
 }
 
@@ -58,7 +73,6 @@
 .l3 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sl-three 1s forwards;
 }
 
@@ -74,7 +88,6 @@
 .l4 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sl-four 1s forwards;
 }
 
@@ -90,7 +103,6 @@
 .l5 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sl-five 1s forwards;
 }
 
@@ -106,7 +118,6 @@
 .r1 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sr-one 1s forwards;
 }
 
@@ -122,7 +133,6 @@
 .r2 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sr-two 1s forwards;
 }
 
@@ -138,7 +148,6 @@
 .r3 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sr-three 1s forwards;
 }
 
@@ -154,7 +163,6 @@
 .r4 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sr-four 1s forwards;
 }
 
@@ -170,7 +178,6 @@
 .r5 {
     height: 250px;
     width: 450px;
-    cursor: pointer;
     animation: sr-five 1s forwards;
 }
 
