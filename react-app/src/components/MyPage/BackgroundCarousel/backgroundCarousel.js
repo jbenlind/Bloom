@@ -73,8 +73,6 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
         }
     }
 
-    console.log(currId)
-
     return (
         <>
             <div className="my-images">

@@ -24,7 +24,8 @@ def create_user_page():
     form['csrf_token'].data = request.cookies['csrf_token']
     profileImg = ""
     image = ""
-
+    print("---------------------------------------------------------")
+    print(request.form.get("weddingDateTime"))
     if form.data['profileImg'] is not None:
         image = form.data['profileImg']
 
@@ -41,10 +42,12 @@ def create_user_page():
         if not profileImg:
             profileImg = userPage.profileImg
         form.populate_obj(userPage)
+        userPage.weddingDateTime = request.form.get("weddingDateTime")
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++", userPage.weddingDateTime)
         userPage.profileImg = profileImg
         db.session.commit()
         return userPage.to_dict()
-    except:
+    except Exception as e:
         userPage = User_page()
         form.populate_obj(userPage)
         userPage.profileImg = profileImg

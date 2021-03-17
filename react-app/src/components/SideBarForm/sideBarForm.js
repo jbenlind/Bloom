@@ -47,7 +47,7 @@ const SideBarForm = ({showSide}) => {
             pageName,
             partnerOne,
             partnerTwo,
-            weddingDateTime: weddingDate + " " + weddingTime,
+            weddingDateTime: new Date(weddingDate + "T" + weddingTime).toISOString(),
             venueName,
             venueAddress,
             venueCity,

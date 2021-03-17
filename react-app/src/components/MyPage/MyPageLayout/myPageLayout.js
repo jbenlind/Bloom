@@ -17,15 +17,12 @@ const MyPageLayout = () => {
             <div className="my-layout">
                 <div className="selector-section">
                     <div className="ss-one">
-                        <h1>Background Image</h1>
                         <BackgroundCarousel setBackgroundImg={setBackgroundImg} setImageId={setImageId} />
                     </div>
                     <div className="ss-two">
-                        <h1>Page Template</h1>
                         <LayoutSelector layout={layout} setLayout={setLayout} />
                     </div>
                     <div className="ss-three">
-                        <h1>Color Palette</h1>
                         <ColorSelector colorPalette={colorPalette} setColorPalette={setColorPalette} imageId={imageId} />
                     </div>
                 </div>
