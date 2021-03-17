@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: 90%;
+    margin-top: 2%;
 }
 
 .standard {
@@ -124,4 +125,8 @@
     100% {
         left:11.7%;
     }
+}
+
+.color-labels label{
+    font-size: 18px;
 }

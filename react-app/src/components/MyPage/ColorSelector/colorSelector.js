@@ -43,7 +43,11 @@ const ColorSelector = ({setColorPalette, imageId }) => {
 
     return (
         <>
-            <div id={selected} className="outline-slider"></div>
+            <div className="color-labels">
+                <label>Classic</label>
+                <label>Vibrant</label>
+            </div>
+            {/* <div id={selected} className="outline-slider"></div> */}
             <div className="colorSelector-section">
                 <div onClick={(e) => slideSelector("left")} className="standard">
                     <div className="first-standard"></div>
