@@ -9,6 +9,8 @@
 }
 
 .selector-section div h1 {
+    display: flex;
+    align-items: center;
     color: rgba(0, 0, 0, 0.7);
     margin: 4% 0;
 }

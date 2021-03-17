@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "./layoutSelector.css";
 
-const LayoutSelector = ({layout, setLayout}) => {
+const LayoutSelector = ({layout, setLayout, backgroundImg}) => {
     const dispatch = useDispatch();
     const layouts = useSelector((state) => state.pageElements.pageLayouts ? state.pageElements.pageLayouts : null);
 
@@ -18,26 +18,35 @@ const LayoutSelector = ({layout, setLayout}) => {
 
     return (
         <>
+            <h1 className="image-names">Select A Template</h1>
             <div className="layout-section">
                 <div>
                     <button
+                        id={backgroundImg ? "" : "not-allowed"}
                         className={layout === 1 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutOne.id)}
-                    >Top Nav</button>
+                        disabled={!backgroundImg}
+                    >Classic</button>
                     <button
+                        id={backgroundImg ? "" : "not-allowed"}
                         className={layout === 2 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutTwo.id)}
-                    >Bottom Nav</button>
+                        disabled={!backgroundImg}
+                    >Inverted</button>
                 </div>
                 <div>
                     <button
+                        id={backgroundImg ? "" : "not-allowed"}
                         className={layout === 3 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutThree.id)}
-                    >Left Nav</button>
+                        disabled={!backgroundImg}
+                    >Edge</button>
                     <button
+                        id={backgroundImg ? "" : "not-allowed"}
                         className={layout === 4 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutFour.id)}
-                    >Right Nav</button>
+                        disabled={!backgroundImg}
+                    >Side Car</button>
                 </div>
             </div>
         </>

@@ -42,7 +42,7 @@ def create_user_page():
         if not profileImg:
             profileImg = userPage.profileImg
         form.populate_obj(userPage)
-        userPage.weddingDateTime = request.form.get("weddingDateTime", None)
+        userPage.weddingDateTime = request.form.get("weddingDateTime")
         userPage.profileImg = profileImg
         db.session.commit()
         return userPage.to_dict()

@@ -6,6 +6,9 @@ from app.models import db, User_page, Background_images, User
 def seed_user_page():
 
     one = User_page(
+        userId=1,
+    )
+    two = User_page(
         userId=2,
         pageName="Jesse's page",
         partnerOne="Karis Naumann",
@@ -22,7 +25,7 @@ def seed_user_page():
         colorPaletteId=1
     )
 
-    db.session.add_all([one])
+    db.session.add_all([one, two])
     db.session.commit()
 
 

@@ -20,10 +20,10 @@ const MyPageLayout = () => {
                         <BackgroundCarousel setBackgroundImg={setBackgroundImg} setImageId={setImageId} />
                     </div>
                     <div className="ss-two">
-                        <LayoutSelector layout={layout} setLayout={setLayout} />
+                        <LayoutSelector layout={layout} setLayout={setLayout} backgroundImg={backgroundImg} />
                     </div>
                     <div className="ss-three">
-                        <ColorSelector colorPalette={colorPalette} setColorPalette={setColorPalette} imageId={imageId} />
+                        <ColorSelector setColorPalette={setColorPalette} imageId={imageId} layout={layout} />
                     </div>
                 </div>
                 <div className="preview-section">

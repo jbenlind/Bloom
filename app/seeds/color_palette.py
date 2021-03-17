@@ -5,42 +5,22 @@ from app.models import db, Color_palette
 def seed_color_palette():
 
     paletteOne = Color_palette(
-        name="Classic",
-        backgroundImageId=1,
-    )
-    paletteTwo = Color_palette(
         name="Imperial",
         backgroundImageId=1,
     )
-    paletteThree = Color_palette(
-        name="Classic",
-        backgroundImageId=2
-    )
-    paletteFour = Color_palette(
+    paletteTwo = Color_palette(
         name="Regal",
         backgroundImageId=2
     )
-    paletteFive = Color_palette(
-        name="Classic",
-        backgroundImageId=3
-    )
-    paletteSix = Color_palette(
+    paletteThree = Color_palette(
         name="Muted",
         backgroundImageId=3
     )
-    paletteSeven = Color_palette(
-        name="Classic",
-        backgroundImageId=4
-    )
-    paletteEight = Color_palette(
+    paletteFour = Color_palette(
         name="Oceanic",
         backgroundImageId=4
     )
-    paletteNine = Color_palette(
-        name="Classic",
-        backgroundImageId=5
-    )
-    paletteTen = Color_palette(
+    paletteFive = Color_palette(
         name="Vibrant",
         backgroundImageId=5
     )
@@ -49,12 +29,7 @@ def seed_color_palette():
                         paletteTwo,
                         paletteThree,
                         paletteFour,
-                        paletteFive,
-                        paletteSix,
-                        paletteSeven,
-                        paletteEight,
-                        paletteNine,
-                        paletteTen])
+                        paletteFive])
     db.session.commit()
 
 

@@ -35,6 +35,12 @@
     background-color: #6d99d1;
 }
 
+.image-names {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: .2rem;
+}
+
 .center {
     height: 250px;
     width: 450px;
@@ -189,7 +195,6 @@
         transform: translateX(-900px);
     }
 }
-
 
 .arrow-left,
 .arrow-right {

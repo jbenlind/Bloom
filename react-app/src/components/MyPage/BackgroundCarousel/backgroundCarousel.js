@@ -15,12 +15,12 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
     }, [dispatch])
 
     const selectImage = (index) => {
-        setImageId(index)
         setBackgroundImg(backgroundImages[index -1].imageUrl)
     }
 
     const slideLeft = () => {
         setCurrId(() => currId === 1 ? 5 : currId - 1)
+        setImageId(() => currId === 1 ? 5 : currId - 1)
         if(position === "l1") {
             setPosition("l2")
         } else if(position === "l2") {
@@ -48,6 +48,7 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
 
     const slideRight = () => {
         setCurrId(() => currId === 5 ? 1 : currId + 1)
+        setImageId(() => currId === 5 ? 1 : currId + 1)
         if(position === "r1") {
             setPosition("r2")
         } else if(position === "r2") {
@@ -75,6 +76,8 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
 
     return (
         <>
+            {backgroundImages.length > 0 &&
+            <h1 className="image-names">{backgroundImages[currId - 1].name}</h1>}
             <div className="my-images">
                 <div onClick={() => slideLeft()}><i className="arrow-left fas fa-chevron-left"></i></div>
                 <div className="back-container">
@@ -87,7 +90,7 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
                 </div>
                 <div onClick={() => slideRight()}><i className="arrow-right fas fa-chevron-right"></i></div>
             </div>
-            <button onClick={(e) => selectImage(currId)} className="select-image">Select Image</button>
+            <button onClick={(e) => selectImage(currId)} className="select-image">Select Theme</button>
         </>
     )
 }

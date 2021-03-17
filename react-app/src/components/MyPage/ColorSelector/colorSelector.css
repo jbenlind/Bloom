@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    border: none;
 }
 
 .first-standard {
@@ -33,6 +34,7 @@
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    border: none;
 }
 
 .first-color {
@@ -87,7 +89,7 @@
 
 .outline-slider {
     position: absolute;
-    top: 80%;
+    top: 81.4%;
     left: 11.7%;
     width: 180px;
     height: 70px;
@@ -97,7 +99,7 @@
 
 #slide-right {
     position: absolute;
-    top: 80%;
+    top: 81.4%;
     left: 11.7%;
     animation: outline-right .9s forwards;
 }
@@ -113,7 +115,7 @@
 
 #slide-left {
     position: absolute;
-    top: 80%;
+    top: 81.4%;
     left: 11.7%;
     animation: outline-left .9s forwards;
 }
@@ -127,6 +129,14 @@
     }
 }
 
+.color-labels {
+    width: 57%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .color-labels label{
-    font-size: 18px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, .8);
 }

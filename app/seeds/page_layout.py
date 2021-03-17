@@ -19,7 +19,7 @@ def seed_page_layout():
 
     )
     layoutFour = Page_layout(
-        layout='SideCar',
+        layout='Side Car',
         imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-right.png"
 
     )

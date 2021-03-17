@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getTemplatePageElements } from '../../../store/pageElements';
 import "./colorSelector.css";
 
-const ColorSelector = ({setColorPalette, imageId }) => {
+const ColorSelector = ({setColorPalette, imageId, layout}) => {
+
+    const dispatch = useDispatch();
+    const palettes = useSelector((state) => state.pageElements.colorPalettes ? state.pageElements.colorPalettes : null);
 
     const [selected, setSelected] = useState("");
     const [previous, setPrevious] = useState("left");
@@ -21,6 +26,7 @@ const ColorSelector = ({setColorPalette, imageId }) => {
     }
 
     useEffect(() => {
+        dispatch(getTemplatePageElements())
         if(imageId === 1) {
             setColorOne("one-c1")
             setColorTwo("one-c2")
@@ -38,26 +44,27 @@ const ColorSelector = ({setColorPalette, imageId }) => {
             setColorTwo("five-c2")
         }
 
-    }, [imageId, selected, setColorOne, setColorTwo])
-
+    }, [imageId, selected, setColorOne, setColorTwo, dispatch])
 
     return (
-        <>
+        <>  <h1 className="image-names">Select Your Palette</h1>
             <div className="color-labels">
                 <label>Classic</label>
-                <label>Vibrant</label>
+               {palettes.length > 0 &&
+               <label>{palettes[imageId -1].name}</label>}
             </div>
-            {/* <div id={selected} className="outline-slider"></div> */}
+            {layout !== 0 &&
+            <div id={selected} className="outline-slider"></div>}
             <div className="colorSelector-section">
-                <div onClick={(e) => slideSelector("left")} className="standard">
+                <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("left")} className="standard">
                     <div className="first-standard"></div>
                     <div className="second-standard"></div>
-                </div>
+                </button>
                 <div></div>
-                <div onClick={(e) => slideSelector("right")} className="colored">
+                <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("right")} className="colored">
                     <div id={colorOne} className="first-color"></div>
                     <div id={colorTwo} className="second-color"></div>
-                </div>
+                </button>
             </div>
         </>
     )
