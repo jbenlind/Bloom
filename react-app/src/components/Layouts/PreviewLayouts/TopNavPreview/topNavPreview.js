@@ -1,15 +1,34 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserPageById} from "../../../../store/userPage";
 import "./topNavPreview.css";
 
 const TopNavPreview = ({imageId, colorPalette}) => {
+
+    const dispatch = useDispatch();
+    const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
     const [standardColor, setStandardColor] = useState("");
     const [standardBorder, setStandardBorder] = useState("basic-black");
     const [primaryColor, setPrimaryColor] = useState("");
     const [primaryName, setPrimaryName] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
+    const [partnerOne, setPartnerOne] = useState("");
+    const [partnerTwo, setPartnerTwo] = useState("");
+    const [initials, setInitials] = useState("");
+    const [coupleNames, setCoupleNames] = useState("");
 
     useEffect(() => {
+        if(userId) {
+            const func = async () => {
+                let pageElements = await dispatch(getUserPageById(userId))
+                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
+                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
+                setInitials(partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P")
+                setCoupleNames(partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul")
+            }
+            func()
+        }
         if(imageId === 1 || imageId === 4 || imageId === 5) {
             setStandardColor("standard-one")
             setStandardBorder("basic-white")
@@ -39,14 +58,23 @@ const TopNavPreview = ({imageId, colorPalette}) => {
             setSecondColor("secondary-five")
             setPrimaryName("primary-five-name")
         }
-    }, [imageId, setStandardColor, colorPalette])
-
+    }, [imageId,
+        setStandardColor,
+        colorPalette,
+        dispatch,
+        userId,
+        setInitials,
+        setCoupleNames,
+        setPartnerOne,
+        setPartnerTwo,
+        partnerOne,
+        partnerTwo])
 
     return (
         <>
             <div className="top-nav-preview">
                 <div className="preview-tabs">
-                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">k & p</button>
+                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">{initials}</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">RSVP</button>
@@ -54,7 +82,7 @@ const TopNavPreview = ({imageId, colorPalette}) => {
                 <div className="card-preview">
                     <div className='top-half-preview'>
                         <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
-                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">karen and paul</h2>
+                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{coupleNames}</h2>
                     </div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
