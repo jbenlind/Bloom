@@ -14,6 +14,13 @@
     flex-direction: row;
     cursor: pointer;
     border: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease-in 0s;
+}
+
+.standard:hover,
+.colored:hover {
+    transform: translateY(-3px);
 }
 
 .first-standard {
@@ -35,6 +42,8 @@
     flex-direction: row;
     cursor: pointer;
     border: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease-in 0s;
 }
 
 .first-color {
@@ -89,34 +98,34 @@
 
 .outline-slider {
     position: absolute;
-    top: 81.4%;
-    left: 11.7%;
-    width: 180px;
+    top: 81.6%;
+    left: 11.8%;
+    width: 179px;
     height: 70px;
-    border: 6px solid #6289bd;
-    border-radius: 5px;
+    border: 4px solid rgb(165, 165, 165);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #slide-right {
     position: absolute;
-    top: 81.4%;
-    left: 11.7%;
+    top: 81.6%;
+    left: 11.8%;
     animation: outline-right .9s forwards;
 }
 
 @keyframes outline-right {
     0% {
-        left:11.7%;
+        left:11.8%;
     }
     100% {
-        left: 24.9%;
+        left: 25%;
     }
 }
 
 #slide-left {
     position: absolute;
-    top: 81.4%;
-    left: 11.7%;
+    top: 81.6%;
+    left: 11.8%;
     animation: outline-left .9s forwards;
 }
 
@@ -125,7 +134,7 @@
         left: 24.9%;
     }
     100% {
-        left:11.7%;
+        left:11.8%;
     }
 }
 

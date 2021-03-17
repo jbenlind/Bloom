@@ -15,12 +15,12 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
     }, [dispatch])
 
     const selectImage = (index) => {
+        setImageId(index)
         setBackgroundImg(backgroundImages[index -1].imageUrl)
     }
 
     const slideLeft = () => {
         setCurrId(() => currId === 1 ? 5 : currId - 1)
-        setImageId(() => currId === 1 ? 5 : currId - 1)
         if(position === "l1") {
             setPosition("l2")
         } else if(position === "l2") {
@@ -48,7 +48,6 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
 
     const slideRight = () => {
         setCurrId(() => currId === 5 ? 1 : currId + 1)
-        setImageId(() => currId === 5 ? 1 : currId + 1)
         if(position === "r1") {
             setPosition("r2")
         } else if(position === "r2") {
