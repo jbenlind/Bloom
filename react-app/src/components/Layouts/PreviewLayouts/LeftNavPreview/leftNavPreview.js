@@ -7,25 +7,16 @@ const LeftNavPreview = ({imageId, colorPalette}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
+    const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "");
+    const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
 
     const [primaryColor, setPrimaryColor] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
     const [primaryName, setPrimaryName] = useState("");
-    const [partnerOne, setPartnerOne] = useState("");
-    const [partnerTwo, setPartnerTwo] = useState("");
-    const [initials, setInitials] = useState("");
-    const [coupleNames, setCoupleNames] = useState("");
 
     useEffect(() => {
         if(userId) {
-            const func = async () => {
-                let pageElements = await dispatch(getUserPageById(userId))
-                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
-                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
-                setInitials(partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P")
-                setCoupleNames(partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul")
-            }
-            func()
+            dispatch(getUserPageById(userId))
         }
 
         if(colorPalette === 2 && imageId === 1) {
@@ -49,22 +40,13 @@ const LeftNavPreview = ({imageId, colorPalette}) => {
             setSecondColor("secondary-five")
             setPrimaryName("primary-five-name")
         }
-    }, [imageId,
-        colorPalette,
-        dispatch,
-        userId,
-        setInitials,
-        setCoupleNames,
-        setPartnerOne,
-        setPartnerTwo,
-        partnerOne,
-        partnerTwo])
+    }, [imageId, colorPalette, dispatch, userId])
 
     return (
         <>
             <div className="left-nav-preview">
                 <div className="left-nav-preview-tabs">
-                    <button id={colorPalette === 2 ? primaryName : "basic-black-transparent"} className="preview-button">{initials}</button>
+                    <button id={colorPalette === 2 ? primaryName : "basic-black-transparent"} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">RSVP</button>
@@ -72,7 +54,7 @@ const LeftNavPreview = ({imageId, colorPalette}) => {
                 <div className="left-preview-card">
                     <div className='top-half-preview'>
                         <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
-                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{coupleNames}</h2>
+                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                     </div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>

@@ -5,28 +5,57 @@ from app.models import db, Color_palette
 def seed_color_palette():
 
     paletteOne = Color_palette(
-        name="standard",
+        name="Classic",
         backgroundImageId=1,
-        palette="standard",
     )
     paletteTwo = Color_palette(
-        name="muted",
+        name="Imperial",
         backgroundImageId=1,
-        palette="muted"
     )
-    palettedThree = Color_palette(
-        name="vibrant",
-        backgroundImageId="1",
-        palette="vibrant"
+    paletteThree = Color_palette(
+        name="Classic",
+        backgroundImageId=2
+    )
+    paletteFour = Color_palette(
+        name="Regal",
+        backgroundImageId=2
+    )
+    paletteFive = Color_palette(
+        name="Classic",
+        backgroundImageId=3
+    )
+    paletteSix = Color_palette(
+        name="Muted",
+        backgroundImageId=3
+    )
+    paletteSeven = Color_palette(
+        name="Classic",
+        backgroundImageId=4
+    )
+    paletteEight = Color_palette(
+        name="Oceanic",
+        backgroundImageId=4
+    )
+    paletteNine = Color_palette(
+        name="Classic",
+        backgroundImageId=5
+    )
+    paletteTen = Color_palette(
+        name="Vibrant",
+        backgroundImageId=5
     )
 
-    db.session.add_all([paletteOne])
+    db.session.add_all([paletteOne,
+                        paletteTwo,
+                        paletteThree,
+                        paletteFour,
+                        paletteFive,
+                        paletteSix,
+                        paletteSeven,
+                        paletteEight,
+                        paletteNine,
+                        paletteTen])
     db.session.commit()
-
-# Uses a raw SQL query to TRUNCATE the users table.
-# SQLAlchemy doesn't have a built in function to do this
-# TRUNCATE Removes all the data from the table, and resets
-# the auto incrementing primary key
 
 
 def undo_color_palette():
