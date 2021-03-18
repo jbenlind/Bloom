@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createUserPage, getUserPageById} from "../../../store/userPage";
 import BackgroundCarousel from "../BackgroundCarousel";
 import LayoutSelector from "../LayoutSelector";
 import PreviewContainer from "../PreviewContainer";
@@ -7,10 +9,24 @@ import "./myPageLayout.css"
 
 const MyPageLayout = () => {
 
+    const dispatch = useDispatch();
+    const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
+
     const [backgroundImg, setBackgroundImg] = useState("");
     const [imageId, setImageId] = useState(3);
     const [layout, setLayout] = useState(0);
     const [colorPalette, setColorPalette] = useState(1);
+
+
+    const sendPageStructure = async (e) => {
+        e.preventDefault()
+        const pageInfo = {
+            backgroundImgId: imageId,
+            colorPaletteId:colorPalette === 2 ? imageId : null,
+            pageLayoutId: layout
+        }
+        await dispatch(createUserPage(pageInfo))
+    }
 
     return (
         <>
@@ -36,6 +52,7 @@ const MyPageLayout = () => {
                     </div>
                 </div>
             </div>
+            <button id="save-layout-button" onClick={sendPageStructure}></button>
         </>
     )
 }

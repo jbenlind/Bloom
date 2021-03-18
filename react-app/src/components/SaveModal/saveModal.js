@@ -8,6 +8,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
 
     const startSaving = () => {
         document.getElementById("save-form-button").click()
+        document.getElementById("save-layout-button").click()
         setSaving(true)
         setTimeout(() => {
             setOpenModal(false)
@@ -20,7 +21,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
 
     return (
         <>
-           { openModal &&
+           {openModal &&
             <Modal>
                 {!saving &&
                 <div className="save-cancel">
