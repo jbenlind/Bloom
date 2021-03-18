@@ -26,7 +26,7 @@ export const createUserPage =
     ({backgroundImgId,  pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
     venueZip, latitude, longitude, profileImg}) =>
-        async (dispatch) => {
+    async (dispatch) => {
         const formData = new FormData()
         formData.append("backgroundImgId", backgroundImgId)
         formData.append("pageLayoutId", pageLayoutId)
@@ -35,7 +35,9 @@ export const createUserPage =
         formData.append("pageName", pageName)
         formData.append("partnerOne", partnerOne)
         formData.append("partnerTwo", partnerTwo)
-        formData.append("weddingDateTime", weddingDateTime)
+        if (weddingDateTime) {
+            formData.append("weddingDateTime", weddingDateTime)
+        }
         formData.append("venueName", venueName)
         formData.append("venueAddress", venueAddress)
         formData.append("venueCity", venueCity)
@@ -52,20 +54,21 @@ export const createUserPage =
         const userPage = await response.json();
         dispatch(setUserPage(userPage));
         return userPage;
+
 }
 
-const initialState = {
-    userPage: []
-}
+const initialState = {}
+
+// removed curly braces
 
 const userPageReducer = (state=initialState, action) => {
     switch(action.type) {
         case SET_USER_PAGE:
-            const {userPage} = action.payload
+            const userPage = action.payload
             const userPageElements = {...state, ...userPage }
             return userPageElements
         case SET_SELECTED_PAGE:
-            const {userPageContent} = action.payload
+            const userPageContent = action.payload
             const userPageFields = {...state, ...userPageContent}
             return userPageFields;
         default:

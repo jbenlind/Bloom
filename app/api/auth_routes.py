@@ -67,9 +67,9 @@ def sign_up():
     return {'errors': validation_errors_to_error_messages(form.errors)}
 
 
-@auth_routes.route('/unauthorized')
-def unauthorized():
-    """
-    Returns unauthorized JSON when flask-login authentication fails
-    """
-    return {'errors': ['Unauthorized']}, 401
+# @auth_routes.route('/unauthorized')
+# def unauthorized():
+#     """
+#     Returns unauthorized JSON when flask-login authentication fails
+#     """
+#     return {'errors': ['Unauthorized']}, 401

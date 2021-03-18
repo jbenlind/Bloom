@@ -1,0 +1,154 @@
+.top-nav-preview {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preview-tabs {
+    height: 50px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+#basic-black {
+    color: rgba(0, 0, 0, .6);
+    border-bottom: 2px solid rgba(0, 0, 0, .6);
+}
+
+#basic-white {
+    color: rgba(246, 247, 236, 0.9);
+    border-bottom: 2px solid rgba(246, 247, 236, 0.9);
+}
+
+#basic-black-transparent {
+    border-bottom: 2px solid rgba(0, 0, 0, .6);
+}
+
+.preview-button {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    margin: 20px 0;
+    color: rgba(0, 0, 0, .6);
+}
+
+.card-preview {
+    background-color: rgba(246, 247, 236, 0.9);
+    height: 400px;
+    width: 350px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.top-half-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+}
+
+.profile-image-preview {
+    height: 125px;
+    width: 125px;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+.couple-names-preview {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: rgba(0, 0, 0, .7);
+}
+
+.vertical-line-preview {
+    height: 50px;
+    border-left: 2px solid rgba(0, 0, 0, .4);
+}
+
+.invitation-preview {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(0, 0, 0, .8);
+}
+
+#standard-one {
+    color: rgba(246, 247, 236, 0.9);
+}
+
+#primary-one {
+    color: #0f6eea;
+}
+
+#secondary-one {
+    color: #e08d56;
+}
+
+#primary-one-name {
+    color: #0f6eea;
+    border-bottom: 2px solid #e08d56;
+}
+
+#primary-two {
+    color: #0f6eea;
+}
+
+#secondary-two {
+    color: #6e7b7f;
+}
+
+#primary-two-name {
+    color: #0f6eea;
+    border-bottom: 2px solid #6e7b7f;
+}
+
+#primary-three {
+    color: #5b6c34;
+}
+
+#secondary-three {
+    color: #a5943f;
+}
+
+#primary-three-name {
+    color: #5b6c34;
+    border-bottom: 2px solid #a5943f;
+}
+
+#primary-four {
+    color: #00b7cc;
+}
+
+#secondary-four {
+    color: #977173;
+}
+
+#primary-four-name {
+    color: #00b7cc;
+    border-bottom: 2px solid #977173;
+}
+
+#primary-five {
+    color: #17a5a3;
+}
+
+#secondary-five {
+    color: #f67824;
+}
+
+#primary-five-name {
+    color: #17a5a3;
+    border-bottom: 2px solid #f67824;
+}

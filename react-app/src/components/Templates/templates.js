@@ -15,7 +15,7 @@ const Templates = ({translateNav}) => {
         <>
             <div className="template-layout">
                 <p className="templates-header">Your site is only a few clicks away</p>
-                <section>
+                <section id="section-one">
                     <LayoutImageCarousel />
                 </section>
                 <section id="section-2">

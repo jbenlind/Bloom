@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 import UserHub from "./components/UserHub";
 import MyPage from "./components/MyPage";
 import Templates from "./components/Templates";
-import Vertical from "./components/Layouts/Vertical";
+import PageNotFound from "./components/PageNotFound";
 import "./App.css";
 
 const App = () => {
@@ -48,16 +48,17 @@ const App = () => {
         </Route>
         <Route
           path="/myPage/:userId"
-          exact={true}
+          // exact={true}
           authenticated={authenticated}
         >
           <MyPage
             setAuthenticated={setAuthenticated}
           />
         </Route>
-        <Route path="/vertical">
-          <Vertical />
+        <Route>
+          <PageNotFound />
         </Route>
+
       </Switch>
     </>
   );

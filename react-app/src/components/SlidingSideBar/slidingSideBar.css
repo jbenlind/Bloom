@@ -4,9 +4,10 @@
     left: 0;
     height: 100vh;
     width: 365px;
-    background-color: rgba(209, 209, 209, 0.9);
+    background-color: rgba(209, 209, 209, 1);
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 #open {
@@ -18,12 +19,12 @@
     0% {
         left: -12.6vw;
         box-shadow: 0 0 0 transparent;
-        border-right: 1px solid white;
+        border-right: 2px solid white;
 
     }
     100% {
         left: 0;
-        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
         border-right: none;
     }
 }
@@ -55,6 +56,7 @@
     overflow: hidden;
     cursor: pointer;
     z-index: 1;
+    z-index: 2;
 }
 
 #slide-button-start {
@@ -78,6 +80,7 @@
 #slide-button-end {
     animation: slide-in 1s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 @keyframes slide-in {
@@ -101,7 +104,6 @@
     transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in;
     cursor: pointer;
 }
-
 
 input[type="checkbox"] {
 display: none;
@@ -145,8 +147,7 @@ margin: 0 auto;
     left: 15px;
     height: 880px;
     width: 34px;
-    z-index: 1;
-    cursor: pointer;
+    z-index: 2;
 }
 
 .icon-container div i {
@@ -161,6 +162,7 @@ margin: 0 auto;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
     animation: save-up 1.1s forwards;
+    cursor: pointer;
 }
 
 @keyframes save-up {
@@ -185,6 +187,7 @@ margin: 0 auto;
      color: #6289bd;
     transition: all 0.25s ease-in 0s;
     animation: save-down 1.15s forwards;
+    cursor: pointer;
 }
 
 @keyframes save-down {
@@ -210,6 +213,7 @@ margin: 0 auto;
     color: #6289bd;
     transition: all 0.15s ease-in 0s;
     animation: home-up 1.05s forwards;
+    cursor: pointer;
 }
 
 @keyframes home-up {
@@ -234,6 +238,7 @@ margin: 0 auto;
     color: #6289bd;
     transition: all 0.15s ease-in 0s;
     animation: home-down 1.15s forwards;
+    cursor: pointer;
 }
 
 @keyframes home-down {
@@ -254,12 +259,13 @@ margin: 0 auto;
 .save-slide:hover,
 .home-slide:hover {
     transform: translateY(-4px);
+    color: #6d99d1;
 }
 
 .home:hover,
 .save:hover {
     transform: translateX(4px) ;
-    color: #687a94;
+    color: #6d99d1;
 }
 
 .user {

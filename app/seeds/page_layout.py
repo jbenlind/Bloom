@@ -5,21 +5,21 @@ from app.models import db, Page_layout
 def seed_page_layout():
 
     layoutOne = Page_layout(
-        layout='top',
+        layout='Classic',
         imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-top.png"
     )
     layoutTwo = Page_layout(
-        layout='bottom',
+        layout='Inverted',
         imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-bottom.png"
 
     )
     layoutThree = Page_layout(
-        layout='left',
+        layout='Edge',
         imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-left.png"
 
     )
     layoutFour = Page_layout(
-        layout='right',
+        layout='Side Car',
         imageUrl="https://bloombucketjesse.s3.us-east-2.amazonaws.com/layout-nav-right.png"
 
     )

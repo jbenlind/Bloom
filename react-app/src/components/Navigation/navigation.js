@@ -44,7 +44,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
 
   return (
     <>
-      { !pathName.includes("myPage") &&
+      { (pathName === "" || pathName === "templates" || pathName === "userHub")  &&
         <div className="grid-container">
         <div id="first-fraction">
           <NavLink id={pathName === "" ? "inUse" : pathName} className="bloom-title" to="/">

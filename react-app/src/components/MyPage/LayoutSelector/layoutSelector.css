@@ -1,0 +1,48 @@
+.layout-section {
+    height: 100px;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4%;
+}
+
+.layout-section div {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-button {
+    height: 50px;
+    width: 155px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #6289bd;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.layout-button:hover {
+    background-color: rgb(239, 241, 255);
+}
+
+.in-use {
+    height: 50px;
+    width: 155px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+#not-allowed {
+    cursor: not-allowed;
+}

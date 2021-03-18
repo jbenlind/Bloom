@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, FileField, IntegerField, FloatField
-from wtforms.fields.html5 import DateTimeLocalField
+from wtforms import StringField, FileField, IntegerField, FloatField, DateTimeField
+# from wtforms.fields.html5 import DateTimeLocalField
 from app.models import User_page
 
 
@@ -12,7 +12,7 @@ class CreateUserPage(FlaskForm):
     pageName = StringField("pageName")
     partnerOne = StringField("partnerOne")
     partnerTwo = StringField("partnerTwo")
-    weddingDateTime = DateTimeLocalField("weddingDateTime", format="%m/%d/%y")
+    weddingDateTime = DateTimeField("weddingDateTime")
     venueName = StringField("venueName")
     venueAddress = StringField("venueAddress")
     venueCity = StringField("venueCity")

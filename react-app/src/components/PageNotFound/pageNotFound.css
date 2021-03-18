@@ -1,0 +1,41 @@
+.not-found-background {
+    background: url("https://bloombucketjesse.s3.us-east-2.amazonaws.com/page-not-found.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.not-found-background div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.not-found-background div h2 {
+   font-size: 3em;
+   color: rgba(255, 255, 255, .8);
+}
+
+.not-found-background div h4 {
+    margin-top: 2%;
+    margin-left: 30%;
+    font-size: 2.5em;
+    color: rgba(0, 0, 0, .8);
+ }
+
+ .not-found-background div h4 span {
+    color: rgba(255, 255, 255, .7)
+ }

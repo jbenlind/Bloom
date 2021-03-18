@@ -14,7 +14,7 @@ user_page_routes = Blueprint("user_page", __name__)
 
 @user_page_routes.route("/<int:userId>", methods=["GET"])
 def get_user_page_info(userId):
-    userPage = User_page.query.filter(User_page.userId == userId).one()
+    userPage = User_page.query.filter(User_page.userId == userId).first()
     return userPage.to_dict()
 
 
@@ -23,23 +23,30 @@ def create_user_page():
     form = CreateUserPage()
     form['csrf_token'].data = request.cookies['csrf_token']
     profileImg = ""
+    image = ""
+    date = ""
 
-    if 'profileImg' in request.files:
-        image = request.files['profileImg']
+    if form.data['profileImg'] is not None:
+        image = form.data['profileImg']
 
-    if allowed_file(image.filename):
-        image.filename = secure_filename(image.filename)
-        profileImg = upload_file_to_s3(image, Config.S3_BUCKET)
+    if image != "":
+        if type(image) == str:
+            profileImg = image
+        elif allowed_file(image.filename):
+            image.filename = secure_filename(image.filename)
+            profileImg = upload_file_to_s3(image, Config.S3_BUCKET)
 
     try:
-        userPage = User_page.query.filter(User_page.userId == form.userId.data).one()
+        userPage = User_page.query.filter(
+                                User_page.userId == form.userId.data).first()
         if not profileImg:
             profileImg = userPage.profileImg
         form.populate_obj(userPage)
+        userPage.weddingDateTime = request.form.get("weddingDateTime")
         userPage.profileImg = profileImg
         db.session.commit()
         return userPage.to_dict()
-    except:
+    except Exception as e:
         userPage = User_page()
         form.populate_obj(userPage)
         userPage.profileImg = profileImg

@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import FromCenterButtonSmall from "../FromCenterButtonSmall";
 import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
 const SideBarForm = ({showSide}) => {
-     // set default value to the value from the redux store if it exists
-    // proceed with caution with useEffect
 
     const dispatch = useDispatch();
-    const userId = useSelector((state) => state.session.user ? state.session.user.id: null);
-
-    useEffect(() => {
-        dispatch(getUserPageById(userId))
-    }, [dispatch, userId])
+    const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
@@ -27,6 +20,26 @@ const SideBarForm = ({showSide}) => {
     const [venueZip, setVenueZip] = useState("");
     const [profileImg, setProfileImg] = useState("");
 
+
+    useEffect(() => {
+        if(userId) {
+            const func = async () => {
+                let pageElements = await dispatch(getUserPageById(userId))
+                setPageName(pageElements.pageName ? pageElements.pageName : "")
+                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
+                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
+                // setWeddingDate(pageElements.weddingDateTime ? pageElements.weddingDateTime : "") get help
+                setVenueName(pageElements.venueName ? pageElements.venueName : "")
+                setVenueAddress(pageElements.venueAddress ? pageElements.venueAddress : "")
+                setVenueCity(pageElements.venueCity ? pageElements.venueCity : "")
+                setVenueState(pageElements.venueState ? pageElements.venueState : "")
+                setVenueZip(pageElements.venueZip ? pageElements.venueZip : "")
+                setProfileImg(pageElements.profileImg ? pageElements.profileImg : "")
+            }
+            func()
+        }
+    }, [dispatch, userId])
+
     const sendPageInfo = async (e) => {
         e.preventDefault()
         const pageInfo = {
@@ -34,7 +47,7 @@ const SideBarForm = ({showSide}) => {
             pageName,
             partnerOne,
             partnerTwo,
-            weddingDateTime: weddingDate + " " + weddingTime,
+            weddingDateTime: weddingDate && weddingTime ? new Date(weddingDate + "T" + weddingTime) : undefined,
             venueName,
             venueAddress,
             venueCity,
@@ -94,8 +107,6 @@ const SideBarForm = ({showSide}) => {
         if(file) setProfileImg(file)
     };
 
-    console.log(profileImg.name)
-
     return (
         <>
 
@@ -106,7 +117,7 @@ const SideBarForm = ({showSide}) => {
                             <input
                             type="text"
                             value={pageName}
-                            onChange={updatePageName}
+                            onChange={(e) => updatePageName(e)}
                             required={true}
                             />
                             <label>Page Name</label>
@@ -201,7 +212,8 @@ const SideBarForm = ({showSide}) => {
                         <div>
                             <input
                             type="button"
-                            value={profileImg !== "" ? profileImg.name.slice(0, 18) + "...": ""}
+                            placeholder="Click Here"
+                            value={profileImg !== "" ? profileImg + "...": ""}
                             onClick={grabImageInput}
                             required={true}
                             />
@@ -216,7 +228,7 @@ const SideBarForm = ({showSide}) => {
                         </div>
                     </div>
                     <div className="rsvp-block">
-                        <FromCenterButtonSmall />
+                        <button>RSVP's</button>
                     </div>
                     <button onClick={sendPageInfo} id="save-form-button"></button>
                 </form>

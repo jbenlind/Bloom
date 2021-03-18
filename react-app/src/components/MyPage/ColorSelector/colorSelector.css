@@ -1,0 +1,151 @@
+.colorSelector-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin-top: 2%;
+}
+
+.standard {
+    height: 70px;
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease-in 0s;
+}
+
+.standard:hover,
+.colored:hover {
+    transform: translateY(-2px);
+}
+
+.first-standard {
+    height: 100%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.second-standard{
+    height: 100%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.colored {
+    height: 70px;
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease-in 0s;
+}
+
+.first-color {
+    height: 100%;
+    width: 50%;
+}
+
+.second-color {
+    height: 100%;
+    width: 50%;
+}
+
+#one-c1 {
+    background-color: #0f6eea;
+}
+
+#one-c2 {
+    background-color: #e08d56;
+}
+
+#two-c1 {
+    background-color: #0f6eea;
+}
+
+#two-c2 {
+    background-color: #6e7b7f;
+}
+
+#three-c1 {
+    background-color: #5b6c34;
+}
+
+#three-c2 {
+    background-color: #a5943f;
+}
+
+#four-c1 {
+    background-color: #00b7cc;
+}
+
+#four-c2 {
+    background-color: #977173;
+}
+
+#five-c1 {
+    background-color: #17a5a3;
+}
+
+#five-c2 {
+    background-color: #f67824;
+}
+
+.outline-slider {
+    position: absolute;
+    top: 81.6%;
+    left: 11.8%;
+    width: 179px;
+    height: 70px;
+    border: 4px solid rgb(165, 165, 165);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#slide-right {
+    position: absolute;
+    top: 81.6%;
+    left: 11.8%;
+    animation: outline-right .9s forwards;
+}
+
+@keyframes outline-right {
+    0% {
+        left:11.8%;
+    }
+    100% {
+        left: 25%;
+    }
+}
+
+#slide-left {
+    position: absolute;
+    top: 81.6%;
+    left: 11.8%;
+    animation: outline-left .9s forwards;
+}
+
+@keyframes outline-left {
+    0% {
+        left: 24.9%;
+    }
+    100% {
+        left:11.8%;
+    }
+}
+
+.color-labels {
+    width: 57%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color-labels label{
+    font-size: 20px;
+    color: rgba(0, 0, 0, .8);
+}

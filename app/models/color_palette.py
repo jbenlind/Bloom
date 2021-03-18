@@ -8,7 +8,6 @@ class Color_palette(db.Model):
     backgroundImageId = db.Column(
         db.Integer, db.ForeignKey("background_images.id"), nullable=True)
     name = db.Column(db.String(100), nullable=True)
-    palette = db.Column(db.String(255), nullable=True)
 
     user_page = db.relationship("User_page", back_populates="color_palette")
     background_images = db.relationship(
@@ -19,5 +18,4 @@ class Color_palette(db.Model):
             "id": self.id,
             "backgroundImageId": self.backgroundImageId,
             "name": self.name,
-            "palette": self.palette,
         }
