@@ -80,6 +80,7 @@
 #slide-button-end {
     animation: slide-in 1s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 @keyframes slide-in {
@@ -103,7 +104,6 @@
     transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in;
     cursor: pointer;
 }
-
 
 input[type="checkbox"] {
 display: none;
