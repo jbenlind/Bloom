@@ -78,7 +78,7 @@ const BackgroundCarousel = ({imageId, setImageId}) => {
             setPosition("r1")
         }
     }
-    console.log(imageId)
+
     return (
         <>
             {backgroundImages.length > 0 &&

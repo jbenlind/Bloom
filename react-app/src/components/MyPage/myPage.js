@@ -26,7 +26,6 @@ const MyPage = () => {
     const [venueZip, setVenueZip] = useState("");
     const [profileImg, setProfileImg] = useState("");
 
-
     useEffect(() => {
         if(userId) {
             const func = async () => {
