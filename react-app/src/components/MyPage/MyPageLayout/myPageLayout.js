@@ -23,7 +23,7 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                 <div className="preview-section">
                     <h1>Page Preview</h1>
                     <div className="preview-container">
-                        <PreviewContainer backgroundImg={backgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
+                        <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
                     </div>
                     <div className="button-container">
                         <button>Go to page</button>

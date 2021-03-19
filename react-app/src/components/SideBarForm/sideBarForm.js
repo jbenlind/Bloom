@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createUserPage} from "../../store/userPage";
+import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
 const SideBarForm = ({showSide,
-    imageId, setImageId,
-    layout, setLayout,
-    colorPalette, setColorPalette,
+    imageId,
+    layout,
+    colorPalette,
     pageName, setPageName,
     partnerOne, setPartnerOne,
     partnerTwo, setPartnerTwo,
@@ -23,11 +23,42 @@ const SideBarForm = ({showSide,
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
+    useEffect(() => {
+        if(userId) {
+            const func = async () => {
+                let userPage = await dispatch(getUserPageById(userId))
+                setPageName(userPage.pageName ? userPage.pageName : "")
+                setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
+                setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
+                // setWeddingDate(userPage.weddingDateTime ? userPage.weddingDateTime : "") get help
+                setVenueName(userPage.venueName ? userPage.venueName : "")
+                setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
+                setVenueCity(userPage.venueCity ? userPage.venueCity : "")
+                setVenueState(userPage.venueState ? userPage.venueState : "")
+                setVenueZip(userPage.venueZip ? userPage.venueZip : "")
+                setProfileImg(userPage.profileImg ? userPage.profileImg : "")
+            }
+            func()
+        }
+    }, [dispatch,
+        userId,
+        setPageName,
+        setPartnerOne,
+        setPartnerTwo,
+        setVenueName,
+        setVenueAddress,
+        setVenueCity,
+        setVenueState,
+        setVenueZip,
+        setProfileImg
+    ])
+
+
     const sendPageInfo = async (e) => {
         e.preventDefault()
         const pageInfo = {
             backgroundImgId: imageId,
-            colorPaletteId:colorPalette === 2 ? imageId : 0,
+            colorPaletteId:(colorPalette === 2 ? imageId : 6),
             pageLayoutId: layout,
             userId: userId,
             pageName,

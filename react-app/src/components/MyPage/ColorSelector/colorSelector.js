@@ -46,6 +46,8 @@ const ColorSelector = ({setColorPalette, imageId, layout}) => {
 
     }, [imageId, selected, setColorOne, setColorTwo, dispatch])
 
+    console.log(imageId)
+
     return (
         <>  <h1 className="image-names">Select Your Palette</h1>
             <div className="color-labels">

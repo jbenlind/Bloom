@@ -5,9 +5,9 @@ import SaveModal from "../SaveModal";
 import "./slidingSideBar.css"
 
 const SlidingSideBar = ({
-    imageId, setImageId,
-    layout, setLayout,
-    colorPalette, setColorPalette,
+    imageId,
+    layout,
+    colorPalette,
     pageName, setPageName,
     partnerOne, setPartnerOne,
     partnerTwo, setPartnerTwo,
@@ -67,9 +67,9 @@ const SlidingSideBar = ({
             <div id={showSide} className="side-bar">
                 <SideBarForm
                     showSide={showSide}
-                    imageId={imageId} setImageId={setImageId}
-                    layout={layout} setLayout={setLayout}
-                    colorPalette={colorPalette} setColorPalette={setColorPalette}
+                    imageId={imageId} 
+                    layout={layout}
+                    colorPalette={colorPalette}
                     pageName={pageName} setPageName={setPageName}
                     partnerOne={partnerOne} setPartnerOne={setPartnerOne}
                     partnerTwo={partnerTwo} setPartnerTwo={setPartnerTwo}

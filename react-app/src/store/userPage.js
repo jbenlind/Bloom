@@ -23,7 +23,7 @@ export const getUserPageById = (userId) => async (dispatch) => {
 }
 
 export const createUserPage =
-    ({backgroundImgId,  pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
+    ({backgroundImgId, pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
     venueZip, latitude, longitude, profileImg}) =>
     async (dispatch) => {

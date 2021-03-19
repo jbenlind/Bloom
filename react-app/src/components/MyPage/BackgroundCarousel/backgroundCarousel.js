@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "./backgroundCarousel.css";
 
-const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
+const BackgroundCarousel = ({setImageId}) => {
     const dispatch = useDispatch();
     const backgroundImages = useSelector((state) => state.pageElements.backgroundImages ? state.pageElements.backgroundImages : null);
 
@@ -16,7 +16,6 @@ const BackgroundCarousel = ({setBackgroundImg, setImageId}) => {
 
     const selectImage = (index) => {
         setImageId(index)
-        setBackgroundImg(backgroundImages[index -1].imageUrl)
     }
 
     const slideLeft = () => {

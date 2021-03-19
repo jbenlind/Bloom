@@ -1,11 +1,21 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./previewContainer.css";
 import TopNavPreview from "../../Layouts/PreviewLayouts/TopNavPreview";
 import BottomNavPreview from "../../Layouts/PreviewLayouts/BottomNavPreview";
 import LeftNavPreview from "../../Layouts/PreviewLayouts/LeftNavPreview";
 import RightNavPreview from "../../Layouts/PreviewLayouts/RightNavPreview";
 
-const PreviewContainer = ({backgroundImg, layout, imageId, colorPalette}) => {
+const PreviewContainer = ({backgroundImg, setBackgroundImg, layout, imageId, colorPalette}) => {
+
+    const backgroundImages = useSelector((state) => state.pageElements.backgroundImages ? state.pageElements.backgroundImages : null)
+
+    const image = backgroundImages.find((img) => img.id === imageId)
+
+    setBackgroundImg(image ? image.imageUrl : "");
+
+
+
     return (
         <>
                 {!backgroundImg&&
