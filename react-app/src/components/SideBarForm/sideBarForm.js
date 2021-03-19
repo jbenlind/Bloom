@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
@@ -23,20 +23,25 @@ const SideBarForm = ({showSide,
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
+    const [loaded, setLoaded] = useState(false);
+
     useEffect(() => {
         if(userId) {
             const func = async () => {
                 let userPage = await dispatch(getUserPageById(userId))
+                let date = new Date(userPage.weddingDateTime)
+                setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-0${date.getMonth()}-0${date.getDay()}` : "")
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
-                // setWeddingDate(userPage.weddingDateTime ? userPage.weddingDateTime : "") get help
+                // setWeddingTime(userPage.weddingDateTime ? new Date(userPage.weddingDateTime).getTime : "")
                 setVenueName(userPage.venueName ? userPage.venueName : "")
                 setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
                 setVenueState(userPage.venueState ? userPage.venueState : "")
                 setVenueZip(userPage.venueZip ? userPage.venueZip : "")
                 setProfileImg(userPage.profileImg ? userPage.profileImg : "")
+                setLoaded(true)
             }
             func()
         }
@@ -50,7 +55,9 @@ const SideBarForm = ({showSide,
         setVenueCity,
         setVenueState,
         setVenueZip,
-        setProfileImg
+        setProfileImg,
+        setWeddingDate,
+        setWeddingTime
     ])
 
 
@@ -64,7 +71,7 @@ const SideBarForm = ({showSide,
             pageName,
             partnerOne,
             partnerTwo,
-            weddingDateTime: weddingDate && weddingTime ? new Date(weddingDate + "T" + weddingTime) : undefined,
+            weddingDateTime: weddingDate && weddingTime ? new Date(weddingDate + "T" + weddingTime).toISOString() : undefined,
             venueName,
             venueAddress,
             venueCity,
@@ -124,6 +131,7 @@ const SideBarForm = ({showSide,
         if(file) setProfileImg(file)
     };
 
+    if(!loaded) return null;
     return (
         <>
 

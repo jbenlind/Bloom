@@ -15,6 +15,10 @@ user_page_routes = Blueprint("user_page", __name__)
 @user_page_routes.route("/<int:userId>", methods=["GET"])
 def get_user_page_info(userId):
     userPage = User_page.query.filter(User_page.userId == userId).first()
+    if not userPage:
+        userPage = User_page()
+        db.session.add(userPage)
+        db.session.commit()
     return userPage.to_dict()
 
 

@@ -8,10 +8,13 @@ const BackgroundCarousel = ({imageId, setImageId}) => {
     const backgroundImages = useSelector((state) => state.pageElements.backgroundImages ? state.pageElements.backgroundImages : null);
 
     const [position, setPosition] = useState(imageId > 0 ? `r${imageId}` : "center");
-    const [currId, setCurrId] = useState(imageId)
+    const [currId, setCurrId] = useState(3);
 
     useEffect(() => {
         dispatch(getTemplatePageElements())
+        if(imageId) {
+            setCurrId(imageId)
+        }
     }, [dispatch, imageId])
 
     const selectImage = (index) => {
@@ -71,7 +74,7 @@ const BackgroundCarousel = ({imageId, setImageId}) => {
             setPosition("r1")
         }
     }
-     console.log(position)
+
     return (
         <>
             {backgroundImages.length > 0 &&
