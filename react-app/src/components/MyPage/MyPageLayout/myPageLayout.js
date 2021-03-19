@@ -5,13 +5,13 @@ import PreviewContainer from "../PreviewContainer";
 import ColorSelector from "../ColorSelector";
 import "./myPageLayout.css"
 
-const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette}) => {
+const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray}) => {
     return (
         <>
             <div className="my-layout">
                 <div className="selector-section">
                     <div className="ss-one">
-                        <BackgroundCarousel imageId={imageId} setImageId={setImageId} />
+                        <BackgroundCarousel imageId={imageId} setImageId={setImageId} imageArray={imageArray} />
                     </div>
                     <div className="ss-two">
                         <LayoutSelector layout={layout} setLayout={setLayout} backgroundImg={backgroundImg} />
