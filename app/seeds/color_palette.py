@@ -32,7 +32,8 @@ def seed_color_palette():
                         paletteTwo,
                         paletteThree,
                         paletteFour,
-                        paletteFive])
+                        paletteFive,
+                        paletteSix])
     db.session.commit()
 
 

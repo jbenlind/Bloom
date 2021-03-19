@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "./colorSelector.css";
 
-const ColorSelector = ({setColorPalette, imageId, layout}) => {
+const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
 
     const dispatch = useDispatch();
     const palettes = useSelector((state) => state.pageElements.colorPalettes ? state.pageElements.colorPalettes : null);
@@ -27,6 +27,8 @@ const ColorSelector = ({setColorPalette, imageId, layout}) => {
 
     useEffect(() => {
         dispatch(getTemplatePageElements())
+        setSelected(colorPalette > 1 ? "slide-right" : "")
+        setPrevious(colorPalette > 1 ? "right" : "left")
         if(imageId === 1) {
             setColorOne("one-c1")
             setColorTwo("one-c2")
@@ -44,19 +46,17 @@ const ColorSelector = ({setColorPalette, imageId, layout}) => {
             setColorTwo("five-c2")
         }
 
-    }, [imageId, selected, setColorOne, setColorTwo, dispatch])
-
-    console.log(imageId)
+    }, [imageId, selected, setColorOne, setColorTwo, dispatch, setPrevious, setSelected, colorPalette])
 
     return (
-        <>  <h1 className="image-names">Select Your Palette</h1>
+        <>
+            <h1 className="image-names">Select Your Palette</h1>
             <div className="color-labels">
                 <label>Classic</label>
-               {palettes.length > 0 &&
+               {palettes.length > 0 && imageId > 0 &&
                <label>{palettes[imageId -1].name}</label>}
             </div>
-            {layout !== 0 &&
-            <div id={selected} className="outline-slider"></div>}
+            <div id={selected} className="outline-slider"></div>
             <div className="colorSelector-section">
                 <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("left")} className="standard">
                     <div className="first-standard"></div>

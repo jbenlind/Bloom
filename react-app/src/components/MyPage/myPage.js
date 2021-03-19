@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector} from "react-redux";
+import { getUserPageById } from "../../store/userPage";
 import SlidingSideBar from "../SlidingSideBar";
 import MyPageLayout from "./MyPageLayout";
 import "./myPage.css";
 
 const MyPage = () => {
 
-    const [imageId, setImageId] = useState(3);
+    const dispatch = useDispatch();
+    const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
+
+    const [imageId, setImageId] = useState();
     const [backgroundImg, setBackgroundImg] = useState("");
-    const [layout, setLayout] = useState(0);
-    const [colorPalette, setColorPalette] = useState(0);
+    const [layout, setLayout] = useState();
+    const [colorPalette, setColorPalette] = useState();
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
     const [partnerTwo, setPartnerTwo] = useState("");
@@ -20,6 +25,19 @@ const MyPage = () => {
     const [venueState, setVenueState] = useState("");
     const [venueZip, setVenueZip] = useState("");
     const [profileImg, setProfileImg] = useState("");
+
+
+    useEffect(() => {
+        if(userId) {
+            const func = async () => {
+                let userPage = await dispatch(getUserPageById(userId))
+                setImageId(userPage.backgroundImgId ? userPage.backgroundImgId : "");
+                setLayout(userPage.pageLayoutId ? userPage.pageLayoutId : "");
+                setColorPalette(userPage.colorPaletteId < 6 ? 2 : "")
+            }
+            func()
+        }
+    }, [dispatch, userId])
 
     return (
         <>

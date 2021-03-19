@@ -11,13 +11,13 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
             <div className="my-layout">
                 <div className="selector-section">
                     <div className="ss-one">
-                        <BackgroundCarousel setBackgroundImg={setBackgroundImg} setImageId={setImageId} />
+                        <BackgroundCarousel imageId={imageId} setImageId={setImageId} />
                     </div>
                     <div className="ss-two">
                         <LayoutSelector layout={layout} setLayout={setLayout} backgroundImg={backgroundImg} />
                     </div>
                     <div className="ss-three">
-                        <ColorSelector setColorPalette={setColorPalette} imageId={imageId} layout={layout} />
+                        <ColorSelector setColorPalette={setColorPalette} colorPalette={colorPalette} imageId={imageId} layout={layout} />
                     </div>
                 </div>
                 <div className="preview-section">
