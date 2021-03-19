@@ -8,19 +8,16 @@ const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
     const dispatch = useDispatch();
     const palettes = useSelector((state) => state.pageElements.colorPalettes ? state.pageElements.colorPalettes : null);
 
-    const [selected, setSelected] = useState("")
-    const [previous, setPrevious] = useState("left")
+    const [selected, setSelected] = useState(colorPalette !== 0 ? "slide-right" : "")
     const [colorOne, setColorOne] = useState("");
     const [colorTwo, setColorTwo] = useState("");
 
     const slideSelector = (param) => {
-        if(param === "right" && previous === "left") {
+        if(param === "right" && selected === "slide-left") {
             setSelected("slide-right");
-            setPrevious("right")
             setColorPalette(2)
-        } else if(param === "left" && previous === "right") {
+        } else if(param === "left" && selected === "slide-right") {
             setSelected("slide-left")
-            setPrevious("left")
             setColorPalette(1)
         }
     }
