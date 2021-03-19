@@ -110,7 +110,7 @@
     position: absolute;
     top: 81.6%;
     left: 11.8%;
-    animation: outline-right .9s forwards;
+    animation: outline-right .7s forwards;
 }
 
 @keyframes outline-right {
@@ -126,7 +126,7 @@
     position: absolute;
     top: 81.6%;
     left: 11.8%;
-    animation: outline-left .9s forwards;
+    animation: outline-left .7s forwards;
 }
 
 @keyframes outline-left {

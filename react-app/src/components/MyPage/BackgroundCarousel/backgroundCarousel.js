@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "./backgroundCarousel.css";
 
-const BackgroundCarousel = ({setImageId}) => {
+const BackgroundCarousel = ({imageId, setImageId}) => {
     const dispatch = useDispatch();
     const backgroundImages = useSelector((state) => state.pageElements.backgroundImages ? state.pageElements.backgroundImages : null);
 
@@ -12,7 +12,14 @@ const BackgroundCarousel = ({setImageId}) => {
 
     useEffect(() => {
         dispatch(getTemplatePageElements())
-    }, [dispatch])
+        if(imageId) {
+            const positionFunc = async () => {
+                setPosition(imageId > 0 ? `r${imageId}` : "center")
+                setCurrId(imageId > 0 ? imageId : 3)
+            }
+            positionFunc()
+        }
+    }, [dispatch, imageId])
 
     const selectImage = (index) => {
         setImageId(index)
@@ -71,7 +78,7 @@ const BackgroundCarousel = ({setImageId}) => {
             setPosition("r1")
         }
     }
-
+    console.log(imageId)
     return (
         <>
             {backgroundImages.length > 0 &&
