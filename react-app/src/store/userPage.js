@@ -28,54 +28,25 @@ export const createUserPage =
     venueZip, latitude, longitude, profileImg}) =>
     async (dispatch) => {
         const formData = new FormData()
-        if(backgroundImgId) {
-            formData.append("backgroundImgId", backgroundImgId)
-        }
-        if(pageLayoutId) {
-            formData.append("pageLayoutId", pageLayoutId)
-        }
-        if(colorPaletteId) {
-            formData.append("colorPaletteId", colorPaletteId)
-        }
-        if(userId) {
-            formData.append("userId", userId)
-        }
-        if(pageName) {
-            formData.append("pageName", pageName)
-        }
-        if(partnerOne) {
-            formData.append("partnerOne", partnerOne)
-        }
-        if(partnerTwo) {
-            formData.append("partnerTwo", partnerTwo)
-        }
+        formData.append("backgroundImgId", backgroundImgId)
+        formData.append("pageLayoutId", pageLayoutId)
+        formData.append("colorPaletteId", colorPaletteId)
+        formData.append("userId", userId)
+        formData.append("pageName", pageName)
+        formData.append("partnerOne", partnerOne)
+        formData.append("partnerTwo", partnerTwo)
         if(weddingDateTime) {
             formData.append("weddingDateTime", weddingDateTime)
         }
-        if(venueName) {
-            formData.append("venueName", venueName)
-        }
-        if(venueAddress) {
-            formData.append("venueAddress", venueAddress)
-        }
-        if(venueCity) {
-            formData.append("venueCity", venueCity)
-        }
-        if(venueState) {
-            formData.append("venueState", venueState)
-        }
-        if(venueZip) {
-            formData.append("venueZip", venueZip)
-        }
-        if(latitude) {
-            formData.append("latitude", latitude)
-        }
-        if(longitude) {
-            formData.append("longitude", longitude)
-        }
-        if(profileImg) {
-            formData.append("profileImg", profileImg)
-        }
+        formData.append("venueName", venueName)
+        formData.append("venueAddress", venueAddress)
+        formData.append("venueCity", venueCity)
+        formData.append("venueState", venueState)
+        formData.append("venueZip", venueZip)
+        formData.append("latitude", latitude)
+        formData.append("longitude", longitude)
+        formData.append("profileImg", profileImg)
+
 
         const response = await fetch('/api/user-page/', {
             method: "POST",
@@ -88,8 +59,6 @@ export const createUserPage =
 }
 
 const initialState = {}
-
-// removed curly braces
 
 const userPageReducer = (state=initialState, action) => {
     switch(action.type) {
