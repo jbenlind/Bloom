@@ -1,49 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createUserPage, getUserPageById} from "../../store/userPage";
+import { createUserPage} from "../../store/userPage";
 import "./sideBarForm.css";
 
-const SideBarForm = ({showSide}) => {
+const SideBarForm = ({showSide,
+    imageId, setImageId,
+    layout, setLayout,
+    colorPalette, setColorPalette,
+    pageName, setPageName,
+    partnerOne, setPartnerOne,
+    partnerTwo, setPartnerTwo,
+    weddingDate, setWeddingDate,
+    weddingTime, setWeddingTime,
+    venueName, setVenueName,
+    venueAddress, setVenueAddress,
+    venueCity, setVenueCity,
+    venueState, setVenueState,
+    venueZip, setVenueZip,
+    profileImg, setProfileImg
+}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
-    const [pageName, setPageName] = useState("");
-    const [partnerOne, setPartnerOne] = useState("");
-    const [partnerTwo, setPartnerTwo] = useState("");
-    const [weddingDate, setWeddingDate] = useState("");
-    const [weddingTime, setWeddingTime] = useState("");
-    const [venueName, setVenueName] = useState("");
-    const [venueAddress, setVenueAddress] = useState("");
-    const [venueCity, setVenueCity] = useState("");
-    const [venueState, setVenueState] = useState("");
-    const [venueZip, setVenueZip] = useState("");
-    const [profileImg, setProfileImg] = useState("");
-
-
-    useEffect(() => {
-        if(userId) {
-            const func = async () => {
-                let pageElements = await dispatch(getUserPageById(userId))
-                setPageName(pageElements.pageName ? pageElements.pageName : "")
-                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
-                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
-                // setWeddingDate(pageElements.weddingDateTime ? pageElements.weddingDateTime : "") get help
-                setVenueName(pageElements.venueName ? pageElements.venueName : "")
-                setVenueAddress(pageElements.venueAddress ? pageElements.venueAddress : "")
-                setVenueCity(pageElements.venueCity ? pageElements.venueCity : "")
-                setVenueState(pageElements.venueState ? pageElements.venueState : "")
-                setVenueZip(pageElements.venueZip ? pageElements.venueZip : "")
-                setProfileImg(pageElements.profileImg ? pageElements.profileImg : "")
-            }
-            func()
-        }
-    }, [dispatch, userId])
-
     const sendPageInfo = async (e) => {
         e.preventDefault()
         const pageInfo = {
-            userId,
+            backgroundImgId: imageId,
+            colorPaletteId:colorPalette === 2 ? imageId : 0,
+            pageLayoutId: layout,
+            userId: userId,
             pageName,
             partnerOne,
             partnerTwo,
@@ -212,7 +198,6 @@ const SideBarForm = ({showSide}) => {
                         <div>
                             <input
                             type="button"
-                            placeholder="Click Here"
                             value={profileImg !== "" ? profileImg + "...": ""}
                             onClick={grabImageInput}
                             required={true}
