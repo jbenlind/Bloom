@@ -4,7 +4,22 @@ import SideBarForm from "../SideBarForm";
 import SaveModal from "../SaveModal";
 import "./slidingSideBar.css"
 
-const SlidingSideBar = () => {
+const SlidingSideBar = ({
+    imageId,
+    layout,
+    colorPalette,
+    pageName, setPageName,
+    partnerOne, setPartnerOne,
+    partnerTwo, setPartnerTwo,
+    weddingDate, setWeddingDate,
+    weddingTime, setWeddingTime,
+    venueName, setVenueName,
+    venueAddress, setVenueAddress,
+    venueCity, setVenueCity,
+    venueState, setVenueState,
+    venueZip, setVenueZip,
+    profileImg, setProfileImg
+}) => {
 
     const history = useHistory()
     const [showSide, setShowSide] = useState("closed");
@@ -50,7 +65,23 @@ const SlidingSideBar = () => {
                 <SaveModal openModal={openModal} setOpenModal={setOpenModal} />
             </div>}
             <div id={showSide} className="side-bar">
-                <SideBarForm showSide={showSide} />
+                <SideBarForm
+                    showSide={showSide}
+                    imageId={imageId} 
+                    layout={layout}
+                    colorPalette={colorPalette}
+                    pageName={pageName} setPageName={setPageName}
+                    partnerOne={partnerOne} setPartnerOne={setPartnerOne}
+                    partnerTwo={partnerTwo} setPartnerTwo={setPartnerTwo}
+                    weddingDate={weddingDate} setWeddingDate={setWeddingDate}
+                    weddingTime={weddingTime} setWeddingTime={setWeddingTime}
+                    venueName={venueName} setVenueName={setVenueName}
+                    venueAddress={venueAddress} setVenueAddress={setVenueAddress}
+                    venueCity={venueCity} setVenueCity={setVenueCity}
+                    venueState={venueState} setVenueState={setVenueState}
+                    venueZip={venueZip} setVenueZip={setVenueZip}
+                    profileImg={profileImg} setProfileImg={setProfileImg}
+                    />
             </div>
         </>
     )

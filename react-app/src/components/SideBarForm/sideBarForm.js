@@ -1,53 +1,77 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserPage, getUserPageById} from "../../store/userPage";
 import "./sideBarForm.css";
 
-const SideBarForm = ({showSide}) => {
+const SideBarForm = ({showSide,
+    imageId,
+    layout,
+    colorPalette,
+    pageName, setPageName,
+    partnerOne, setPartnerOne,
+    partnerTwo, setPartnerTwo,
+    weddingDate, setWeddingDate,
+    weddingTime, setWeddingTime,
+    venueName, setVenueName,
+    venueAddress, setVenueAddress,
+    venueCity, setVenueCity,
+    venueState, setVenueState,
+    venueZip, setVenueZip,
+    profileImg, setProfileImg
+}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
-    const [pageName, setPageName] = useState("");
-    const [partnerOne, setPartnerOne] = useState("");
-    const [partnerTwo, setPartnerTwo] = useState("");
-    const [weddingDate, setWeddingDate] = useState("");
-    const [weddingTime, setWeddingTime] = useState("");
-    const [venueName, setVenueName] = useState("");
-    const [venueAddress, setVenueAddress] = useState("");
-    const [venueCity, setVenueCity] = useState("");
-    const [venueState, setVenueState] = useState("");
-    const [venueZip, setVenueZip] = useState("");
-    const [profileImg, setProfileImg] = useState("");
-
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         if(userId) {
             const func = async () => {
-                let pageElements = await dispatch(getUserPageById(userId))
-                setPageName(pageElements.pageName ? pageElements.pageName : "")
-                setPartnerOne(pageElements.partnerOne ? pageElements.partnerOne : "")
-                setPartnerTwo(pageElements.partnerTwo ? pageElements.partnerTwo : "")
-                // setWeddingDate(pageElements.weddingDateTime ? pageElements.weddingDateTime : "") get help
-                setVenueName(pageElements.venueName ? pageElements.venueName : "")
-                setVenueAddress(pageElements.venueAddress ? pageElements.venueAddress : "")
-                setVenueCity(pageElements.venueCity ? pageElements.venueCity : "")
-                setVenueState(pageElements.venueState ? pageElements.venueState : "")
-                setVenueZip(pageElements.venueZip ? pageElements.venueZip : "")
-                setProfileImg(pageElements.profileImg ? pageElements.profileImg : "")
+                let userPage = await dispatch(getUserPageById(userId))
+                let date = new Date(userPage.weddingDateTime)
+                setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-0${date.getMonth()}-0${date.getDay()}` : "")
+                setPageName(userPage.pageName ? userPage.pageName : "")
+                setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
+                setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
+                // setWeddingTime(userPage.weddingDateTime ? new Date(userPage.weddingDateTime).getTime : "")
+                setVenueName(userPage.venueName ? userPage.venueName : "")
+                setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
+                setVenueCity(userPage.venueCity ? userPage.venueCity : "")
+                setVenueState(userPage.venueState ? userPage.venueState : "")
+                setVenueZip(userPage.venueZip ? userPage.venueZip : "")
+                setProfileImg(userPage.profileImg ? userPage.profileImg : "")
+                setLoaded(true)
             }
             func()
         }
-    }, [dispatch, userId])
+    }, [dispatch,
+        userId,
+        setPageName,
+        setPartnerOne,
+        setPartnerTwo,
+        setVenueName,
+        setVenueAddress,
+        setVenueCity,
+        setVenueState,
+        setVenueZip,
+        setProfileImg,
+        setWeddingDate,
+        setWeddingTime
+    ])
+
 
     const sendPageInfo = async (e) => {
         e.preventDefault()
         const pageInfo = {
-            userId,
+            backgroundImgId: imageId,
+            colorPaletteId:(colorPalette === 2 ? imageId : 6),
+            pageLayoutId: layout,
+            userId: userId,
             pageName,
             partnerOne,
             partnerTwo,
-            weddingDateTime: weddingDate && weddingTime ? new Date(weddingDate + "T" + weddingTime) : undefined,
+            weddingDateTime: weddingDate && weddingTime ? new Date(weddingDate + "T" + weddingTime).toISOString() : undefined,
             venueName,
             venueAddress,
             venueCity,
@@ -107,6 +131,7 @@ const SideBarForm = ({showSide}) => {
         if(file) setProfileImg(file)
     };
 
+    if(!loaded) return null;
     return (
         <>
 
@@ -212,7 +237,6 @@ const SideBarForm = ({showSide}) => {
                         <div>
                             <input
                             type="button"
-                            placeholder="Click Here"
                             value={profileImg !== "" ? profileImg + "...": ""}
                             onClick={grabImageInput}
                             required={true}

@@ -3,24 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemplatePageElements } from '../../../store/pageElements';
 import "./colorSelector.css";
 
-const ColorSelector = ({setColorPalette, imageId, layout}) => {
+const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
 
     const dispatch = useDispatch();
     const palettes = useSelector((state) => state.pageElements.colorPalettes ? state.pageElements.colorPalettes : null);
 
-    const [selected, setSelected] = useState("");
-    const [previous, setPrevious] = useState("left");
+    const [selected, setSelected] = useState(colorPalette !== 6 ? "slide-right" : "slide-left")
     const [colorOne, setColorOne] = useState("");
     const [colorTwo, setColorTwo] = useState("");
 
     const slideSelector = (param) => {
-        if(param === "right" && previous === "left") {
+        if(param === "right" && selected === "slide-left") {
             setSelected("slide-right");
-            setPrevious("right")
             setColorPalette(2)
-        } else if(param === "left" && previous === "right") {
+        } else if(param === "left" && selected === "slide-right") {
             setSelected("slide-left")
-            setPrevious("left")
             setColorPalette(1)
         }
     }
@@ -44,17 +41,17 @@ const ColorSelector = ({setColorPalette, imageId, layout}) => {
             setColorTwo("five-c2")
         }
 
-    }, [imageId, selected, setColorOne, setColorTwo, dispatch])
+    }, [imageId, setColorOne, setColorTwo, dispatch])
 
     return (
-        <>  <h1 className="image-names">Select Your Palette</h1>
+        <>
+            <h1 className="image-names">Select Your Palette</h1>
             <div className="color-labels">
                 <label>Classic</label>
-               {palettes.length > 0 &&
+               {palettes.length > 0 && imageId > 0 &&
                <label>{palettes[imageId -1].name}</label>}
             </div>
-            {layout !== 0 &&
-            <div id={selected} className="outline-slider"></div>}
+            <div id={selected} className="outline-slider"></div>
             <div className="colorSelector-section">
                 <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("left")} className="standard">
                     <div className="first-standard"></div>

@@ -23,7 +23,7 @@ export const getUserPageById = (userId) => async (dispatch) => {
 }
 
 export const createUserPage =
-    ({backgroundImgId,  pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
+    ({backgroundImgId, pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
     venueZip, latitude, longitude, profileImg}) =>
     async (dispatch) => {
@@ -35,7 +35,7 @@ export const createUserPage =
         formData.append("pageName", pageName)
         formData.append("partnerOne", partnerOne)
         formData.append("partnerTwo", partnerTwo)
-        if (weddingDateTime) {
+        if(weddingDateTime) {
             formData.append("weddingDateTime", weddingDateTime)
         }
         formData.append("venueName", venueName)
@@ -46,6 +46,7 @@ export const createUserPage =
         formData.append("latitude", latitude)
         formData.append("longitude", longitude)
         formData.append("profileImg", profileImg)
+
 
         const response = await fetch('/api/user-page/', {
             method: "POST",
@@ -58,8 +59,6 @@ export const createUserPage =
 }
 
 const initialState = {}
-
-// removed curly braces
 
 const userPageReducer = (state=initialState, action) => {
     switch(action.type) {

@@ -24,12 +24,16 @@ def seed_color_palette():
         name="Vibrant",
         backgroundImageId=5
     )
+    paletteSix = Color_palette(
+        name="Classic",
+    )
 
     db.session.add_all([paletteOne,
                         paletteTwo,
                         paletteThree,
                         paletteFour,
-                        paletteFive])
+                        paletteFive,
+                        paletteSix])
     db.session.commit()
 
 
