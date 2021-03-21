@@ -1,0 +1,10 @@
+#layout-in {
+    animation: fade-page 3s;
+}
+
+@keyframes fade-page {
+   0% {
+       
+   }
+    to {opacity: 1;}
+}

@@ -1,28 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "../../context/modal";
-import UserSite from "../UserSite";
 import "./loadingPageModal.css";
 
-const LoadingPageModal = ({openModal, setOpenModal, backgroundImg, layout, colorPalette, imageId}) => {
+const LoadingPageModal = ({openModal, setOpenModal}) => {
 
     const pageName = useSelector((state) => state.userPage.pageName ? state.userPage.pageName : "")
-
-    const [loading, setLoading] = useState(false);
-    const [closed, setClosed] = useState(false);
-    const [showContent, setShowContent] = useState(false)
 
     const closeLoad = () => {
         setOpenModal(false)
     }
 
-    const startAnimation = () => {
-        setLoading(true)
-
-        setTimeout(() => {
-            setShowContent(true)
-        },2000)
-    }
 
     return (
         <>
@@ -34,24 +22,16 @@ const LoadingPageModal = ({openModal, setOpenModal, backgroundImg, layout, color
                     <button onClick={closeLoad}>Close</button>
                 </div>
                 }
-                {pageName && !loading &&
+                {pageName &&
                 <div className="can-load">
                     <h3>Are you sure you want to leave?</h3>
                     <div>
-                        <button onClick={startAnimation}>Leave</button>
+                        <button>Leave</button>
                         <button onClick={closeLoad}>Cancel</button>
                     </div>
                 </div>
                 }
             </Modal>}
-            {loading &&
-            <div className="transition-my-site">
-                <div className="my-site">
-                    <div id={closed ? "contract" : ""} className="expand">
-                        <UserSite setOpenModal={setOpenModal} setClosed={setClosed} closed={closed} showContent={showContent} backgroundImg={backgroundImg} layout={layout} imageId={imageId} colorPalette={colorPalette}/>
-                    </div>
-                </div>
-            </div>}
         </>
     )
 }
