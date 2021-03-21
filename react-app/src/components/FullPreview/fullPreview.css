@@ -1,6 +1,6 @@
 .layout-in {
     opacity: 1;
-    animation: fade 1s linear;
+    animation: fade .8s linear;
 }
 
 @keyframes fade {
@@ -67,7 +67,7 @@
     100% {
         width: 0%;
         height: 0%;
-        margin-top: 19.5%;
+        margin-top: 18.5%;
     }
 }
 
@@ -83,18 +83,24 @@
 
 @keyframes bounce-in {
     0% {
+        border: 2px solid white;
         border-radius: 50%;
     }
     75% {
         border-radius: 50%;
+        border: 2px solid white;
+    }
+    90% {
+        border: 2px solid white;
     }
     100% {
         border-radius: 0%;
+        border: none;
     }
 }
 
 #mini-bounce {
-    animation: bounce-out 2s forwards;
+    animation: bounce-out 1s forwards;
 }
 
 @keyframes bounce-out {
