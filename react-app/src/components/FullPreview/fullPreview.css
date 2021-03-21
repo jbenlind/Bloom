@@ -1,10 +1,13 @@
 #layout-in {
-    animation: fade-page 3s;
+    animation: fade-page 2s;
 }
 
 @keyframes fade-page {
    0% {
-       
+       opacity: 0;
+
    }
-    to {opacity: 1;}
+    100% {
+        opacity: 1;
+    }
 }
