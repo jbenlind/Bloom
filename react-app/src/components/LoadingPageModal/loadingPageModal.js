@@ -4,7 +4,7 @@ import { Modal } from "../../context/modal";
 import UserSite from "../UserSite";
 import "./loadingPageModal.css";
 
-const LoadingPageModal = ({openModal, setOpenModal, backgroundImg}) => {
+const LoadingPageModal = ({openModal, setOpenModal, backgroundImg, layout, colorPalette, imageId}) => {
 
     const pageName = useSelector((state) => state.userPage.pageName ? state.userPage.pageName : "")
 
@@ -21,8 +21,7 @@ const LoadingPageModal = ({openModal, setOpenModal, backgroundImg}) => {
 
         setTimeout(() => {
             setShowContent(true)
-        },1500)
-
+        },2000)
     }
 
     return (
@@ -49,7 +48,7 @@ const LoadingPageModal = ({openModal, setOpenModal, backgroundImg}) => {
             <div className="transition-my-site">
                 <div className="my-site">
                     <div id={closed ? "contract" : ""} className="expand">
-                        <UserSite setOpenModal={setOpenModal} setClosed={setClosed} closed={closed} showContent={showContent} backgroundImg={backgroundImg}/>
+                        <UserSite setOpenModal={setOpenModal} setClosed={setClosed} closed={closed} showContent={showContent} backgroundImg={backgroundImg} layout={layout} imageId={imageId} colorPalette={colorPalette}/>
                     </div>
                 </div>
             </div>}
