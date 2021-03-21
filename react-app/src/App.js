@@ -9,6 +9,7 @@ import UserHub from "./components/UserHub";
 import MyPage from "./components/MyPage";
 import Templates from "./components/Templates";
 import PageNotFound from "./components/PageNotFound";
+import UserSite from "./components/UserSite";
 import "./App.css";
 
 const App = () => {
@@ -55,6 +56,11 @@ const App = () => {
             setAuthenticated={setAuthenticated}
           />
         </Route>
+
+        <Route path="/:pageName/:userId">
+          <UserSite />
+        </Route>
+
         <Route>
           <PageNotFound />
         </Route>

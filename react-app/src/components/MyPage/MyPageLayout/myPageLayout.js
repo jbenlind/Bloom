@@ -6,6 +6,7 @@ import ColorSelector from "../ColorSelector";
 import "./myPageLayout.css"
 
 const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray}) => {
+    
     return (
         <>
             <div className="my-layout">

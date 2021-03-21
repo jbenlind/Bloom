@@ -8,7 +8,6 @@ const SaveModal = ({openModal, setOpenModal}) => {
 
     const startSaving = () => {
         document.getElementById("save-form-button").click()
-        // document.getElementById("save-layout-button").click()
         setSaving(true)
         setTimeout(() => {
             setOpenModal(false)
@@ -23,18 +22,22 @@ const SaveModal = ({openModal, setOpenModal}) => {
         <>
            {openModal &&
             <Modal>
-                {!saving &&
-                <div className="save-cancel">
-                    <h3>Are you sure you want to save?</h3>
-                    <div>
-                        <button onClick={startSaving}>Save</button>
-                        <button onClick={changeModal}>Cancel</button>
+                 <div id="modal-background">
+                    <div id="modal-content">
+                    {!saving &&
+                        <div className="save-cancel">
+                        <h3>Are you sure you want to save?</h3>
+                            <div>
+                                <button onClick={startSaving}>Save</button>
+                                <button onClick={changeModal}>Cancel</button>
+                            </div>
+                        </div>}
+                        {saving &&
+                            <div className="save-section">
+                            <div className="lds-dual-ring"></div>
+                        </div>}
                     </div>
-                </div>}
-              {saving &&
-              <div className="save-section">
-               <div className="lds-dual-ring"></div>
-            </div>}
+                </div>
             </Modal>}
         </>
     )
