@@ -20,13 +20,13 @@ const SaveModal = ({openModal, setOpenModal}) => {
 
     return (
         <>
-           {openModal &&
+            {openModal &&
             <Modal>
-                 <div id="modal-background">
-                    <div id="modal-content">
+                 <div id="modal-background-save">
+                    <div id="modal-content-save">
                     {!saving &&
                         <div className="save-cancel">
-                        <h3>Are you sure you want to save?</h3>
+                            <h3>Are you sure you want to save?</h3>
                             <div>
                                 <button onClick={startSaving}>Save</button>
                                 <button onClick={changeModal}>Cancel</button>

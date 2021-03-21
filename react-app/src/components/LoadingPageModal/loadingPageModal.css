@@ -1,0 +1,64 @@
+.cant-load {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.cant-load button {
+    margin-top: 10%;
+    height: 30px;
+    width: 90px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    color: white;
+    font-size: 18px;
+}
+
+.cant-load button:hover {
+    background-color: #6d99d1;
+}
+
+.can-load {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.can-load div {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.can-load div button {
+    height: 30px;
+    width: 90px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    color: white;
+    font-size: 18px;
+}
+
+.can-load button:hover {
+    background-color: #6d99d1;
+}
+
+.transition-my-site {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+}

@@ -27,7 +27,11 @@ export function Modal({children }) {
 
     return ReactDOM.createPortal(
       <div id="modal">
+        <div id="modal-background">
+          <div id="modal-content">
             {children}
+          </div>
+        </div>
       </div>,
       modalNode
     );

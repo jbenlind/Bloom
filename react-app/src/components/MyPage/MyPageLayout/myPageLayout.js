@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import BackgroundCarousel from "../BackgroundCarousel";
 import LayoutSelector from "../LayoutSelector";
 import PreviewContainer from "../PreviewContainer";
 import ColorSelector from "../ColorSelector";
+import LoadingPageModal from "../../LoadingPageModal";
 import "./myPageLayout.css"
 
 const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray}) => {
-    
+
+    const [openModal, setOpenModal] = useState(false);
+
+    const buildPage = () => {
+        setOpenModal(true)
+    }
+
     return (
         <>
             <div className="my-layout">
@@ -27,9 +34,12 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                         <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
                     </div>
                     <div className="button-container">
-                        <button>Go to page</button>
+                        <button onClick={buildPage}>Go to page</button>
                     </div>
                 </div>
+                {openModal &&
+                <LoadingPageModal openModal={openModal} setOpenModal={setOpenModal}/>
+                }
             </div>
         </>
     )

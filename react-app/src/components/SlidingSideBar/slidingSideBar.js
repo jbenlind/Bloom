@@ -37,7 +37,7 @@ const SlidingSideBar = ({
         history.push("/")
     }
 
-    const clickSave = (e) => {
+    const clickSave = () => {
         setOpenModal(true)
     }
 
@@ -60,14 +60,13 @@ const SlidingSideBar = ({
                 <div onClick={returnHome} className={showSide === "open" ? "home-slide" : "home"}><i className="fas fa-home"></i></div>
                 <div onClick={clickSave} className={showSide === "open" ? "save-slide" : "save"}><i className="far fa-save"></i></div>
             </div>
-           {openModal &&
-            <div>
-                <SaveModal openModal={openModal} setOpenModal={setOpenModal} />
-            </div>}
+            {openModal &&
+            <SaveModal openModal={openModal} setOpenModal={setOpenModal} />
+            }
             <div id={showSide} className="side-bar">
                 <SideBarForm
                     showSide={showSide}
-                    imageId={imageId} 
+                    imageId={imageId}
                     layout={layout}
                     colorPalette={colorPalette}
                     pageName={pageName} setPageName={setPageName}

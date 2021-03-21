@@ -57,21 +57,3 @@
     }
   }
 
-  #modal-background {
-    position: fixed;
-    width: 20%;
-    height: 20%;
-    margin-left: 40%;
-    margin-top: 15%;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(220, 220, 220, 0.8);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-  }
-
-  #modal-content {
-    height: 100%;
-    width: 100%;
-  }
