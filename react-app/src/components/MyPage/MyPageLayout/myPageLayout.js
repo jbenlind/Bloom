@@ -38,7 +38,7 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                     </div>
                 </div>
                 {openModal &&
-                <LoadingPageModal openModal={openModal} setOpenModal={setOpenModal}/>
+                <LoadingPageModal openModal={openModal} setOpenModal={setOpenModal} backgroundImg={backgroundImg} layout={layout} colorPalette={colorPalette}/>
                 }
             </div>
         </>
