@@ -5,12 +5,16 @@ import LeftNavPreview from "../Layouts/PreviewLayouts/LeftNavPreview";
 import RightNavPreview from "../Layouts/PreviewLayouts/RightNavPreview";
 import "./fullPreview.css";
 
-const FullPreview = ({setFullPreview, fullPreview, backgroundImg, layout, colorPalette, imageId}) => {
+const FullPreview = ({ loaded, setLoaded, setFullPreview, fullPreview, backgroundImg, layout, colorPalette, imageId}) => {
 
     const [contract, setContract] = useState(false)
 
     const transition = () => {
         setContract(true)
+        setTimeout(() => {
+            setLoaded(false)
+        }, 300)
+
         setTimeout(() => {
             setFullPreview(false)
 
@@ -24,8 +28,8 @@ const FullPreview = ({setFullPreview, fullPreview, backgroundImg, layout, colorP
                 <div className="my-site">
                     <div id={contract ? "contract" : ""} className="expand">
                         <div style={{backgroundImage: `url(${backgroundImg})`}} className="preview-background">
-                            {fullPreview &&
-                            <div id="layout-in">
+                            {loaded &&
+                            <div  className="layout-in">
                                 <button onClick={(e) => transition()}>Return To builder</button>
                                 {layout === 1 &&
                                 <TopNav imageId={imageId} colorPalette={colorPalette}/>}

@@ -11,9 +11,13 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
 
     const [openModal, setOpenModal] = useState(false);
     const [fullPreview, setFullPreview] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
     const buildPage = () => {
         setFullPreview(true)
+        setTimeout(() => {
+            setLoaded(true)
+        }, 1000)
     }
 
     const transitionPages = () => {
@@ -48,7 +52,7 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                     <LoadingPageModal openModal={openModal} setOpenModal={setOpenModal}/>
                 }
                 {fullPreview &&
-                    <FullPreview fullPreview={fullPreview} setFullPreview={setFullPreview} backgroundImg={backgroundImg} imageId={imageId} layout={layout} colorPalette={colorPalette}/>
+                    <FullPreview loaded={loaded} setLoaded={setLoaded} fullPreview={fullPreview} setFullPreview={setFullPreview} backgroundImg={backgroundImg} imageId={imageId} layout={layout} colorPalette={colorPalette}/>
                 }
             </div>
         </>
