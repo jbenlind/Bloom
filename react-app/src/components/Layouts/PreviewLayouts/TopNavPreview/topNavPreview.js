@@ -58,7 +58,6 @@ const TopNavPreview = ({imageId, colorPalette}) => {
                 <div className="preview-tabs">
                     <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">venue</button>
-                    <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">ceremony</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">RSVP</button>
                 </div>
                 <div className="card-preview">
