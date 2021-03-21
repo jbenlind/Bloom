@@ -11,10 +11,7 @@ const FullPreview = ({ loaded, setLoaded, setFullPreview, fullPreview, backgroun
 
     const transition = () => {
         setContract(true)
-        setTimeout(() => {
-            setLoaded(false)
-        }, 300)
-
+        setLoaded(false)
         setTimeout(() => {
             setFullPreview(false)
 
@@ -27,9 +24,9 @@ const FullPreview = ({ loaded, setLoaded, setFullPreview, fullPreview, backgroun
             <div className="transition-my-site">
                 <div className="my-site">
                     <div id={contract ? "contract" : ""} className="expand">
-                        <div style={{backgroundImage: `url(${backgroundImg})`}} className="preview-background">
+                        <div id={contract ? "contract" : ""} style={{backgroundImage: `url(${backgroundImg})`}} className="fullPreview-background">
                             {loaded &&
-                            <div  className="layout-in">
+                            <div className="layout-in">
                                 <button onClick={(e) => transition()}>Return To builder</button>
                                 {layout === 1 &&
                                 <TopNav imageId={imageId} colorPalette={colorPalette}/>}

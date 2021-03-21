@@ -1,18 +1,12 @@
 .layout-in {
-    animation: fade-page 1.7s;
+    opacity: 1;
+    animation: fade 1s linear;
 }
 
-@keyframes fade-page {
-   0% {
-       opacity: 0;
-   }
-   50% {
-       opacity: 0;
-   }
-    100% {
-        opacity: 1;
-    }
-}
+@keyframes fade {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
 
 .transition-my-site {
     position: absolute;
@@ -32,32 +26,31 @@
 
 .expand {
     margin-top: 15%;
-    width: 20%;
-    height: 20%;
+    width: 10%;
+    height: 10%;
     animation: load-page 2s forwards;
 }
 
 @keyframes load-page {
     0% {
-        width: 0%;
-        height: 0%;
-        border-radius: 0%;
+        width: 10%;
+        height: 15%;
         margin-top: 18.5%;
     }
-    35% {
+    25% {
         width: 15%;
-        height: 15%;
+        height: 20%;
         margin-top: 16.2%;
     }
-    70% {
+    60% {
         width: 5%;
-        height: 5%;
+        height: 10%;
         margin-top: 18.5%;
     }
     100% {
         width: 100%;
         height: 100%;
-        margin-top: 0;
+        margin-top: 0%;
     }
 }
 
@@ -74,7 +67,50 @@
     100% {
         width: 0%;
         height: 0%;
-        border-radius: 0%;
         margin-top: 19.5%;
+    }
+}
+
+.fullPreview-background {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    animation: bounce-in 2s forwards;
+}
+
+@keyframes bounce-in {
+    0% {
+        border-radius: 50%;
+    }
+    75% {
+        border-radius: 50%;
+    }
+    100% {
+        border-radius: 0%;
+    }
+}
+
+#mini-bounce {
+    animation: bounce-out 2s forwards;
+}
+
+@keyframes bounce-out {
+    0% {
+        border-radius: 0
+    }
+    25% {
+        border-radius: 35%;
+    }
+    50% {
+        border-radius: 50%;
+    }
+    75% {
+        border-radius: 50%;
+    }
+    100% {
+        border-radius: 50%;
     }
 }
