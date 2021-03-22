@@ -10,7 +10,7 @@
     bottom: 0;
     background-color: rgba(220, 220, 220, 0.9);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 1s;
+    animation: fadeIn .5s;
 }
 
 #modal-content-contact {
