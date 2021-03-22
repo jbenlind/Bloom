@@ -32,6 +32,7 @@ const SideBarForm = ({showSide,
                 let date = new Date(userPage.weddingDateTime)
                 setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
                 // doesnt work on resave
+                console.log(`${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}`)
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
@@ -131,7 +132,6 @@ const SideBarForm = ({showSide,
         if(file) setProfileImg(file)
     };
 
-    console.log(weddingTime)
     if(!loaded) return null;
     return (
         <>

@@ -32,7 +32,7 @@ const LoadingPageModal = ({openModal, setOpenModal}) => {
                     <div id="modal-content">
                         {!pageName &&
                         <div className="cant-load">
-                            <h3>Please choose a page name to continue</h3>
+                            <h3>Please enter a page name to continue</h3>
                             <button onClick={closeLoad}>Close</button>
                         </div>
                         }

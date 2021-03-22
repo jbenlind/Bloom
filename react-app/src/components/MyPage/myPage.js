@@ -17,7 +17,7 @@ const MyPage = () => {
     const [pageName, setPageName] = useState("");
     const [partnerOne, setPartnerOne] = useState("");
     const [partnerTwo, setPartnerTwo] = useState("");
-    const [weddingDate, setWeddingDate] = useState();
+    const [weddingDate, setWeddingDate] = useState("");
     const [weddingTime, setWeddingTime] = useState("");
     const [venueName, setVenueName] = useState("");
     const [venueAddress, setVenueAddress] = useState("");
