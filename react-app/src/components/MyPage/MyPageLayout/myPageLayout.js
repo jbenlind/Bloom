@@ -44,7 +44,11 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                         <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
                     </div>
                     <div className="button-container">
-                        <button onClick={buildPage}>Full Preview</button>
+                        <button
+                            onClick={buildPage}
+                            disabled={!backgroundImg}
+                            id={backgroundImg ? "" : "not-allowed"}
+                            >Full Preview<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image</span></button>
                         <button onClick={transitionPages}>Go To Page</button>
                     </div>
                 </div>

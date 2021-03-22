@@ -52,8 +52,8 @@
 #not-allowed .text {
     visibility: hidden;
     width: 140px;
-    background-color: black;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(239, 241, 255);
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;

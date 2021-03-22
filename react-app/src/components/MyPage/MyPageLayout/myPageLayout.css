@@ -94,6 +94,8 @@
     font-size: 25px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     color: white;
+    position: relative;
+    display: inline-block;
 }
 
 .button-container button:hover {
