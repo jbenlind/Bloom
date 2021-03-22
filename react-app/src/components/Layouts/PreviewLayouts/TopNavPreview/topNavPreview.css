@@ -7,22 +7,21 @@
 
 .preview-tabs {
     height: 50px;
-    width: 70%;
+    width: 546px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: 2px solid rgba(246, 247, 236, 0.9);
+    border-left: 2px solid rgba(246, 247, 236, 0.9);
+    border-right: 2px solid rgba(246, 247, 236, 0.9);
+    margin-top: 10%;
 }
 
 #basic-black {
     color: rgba(0, 0, 0, .6);
     border-bottom: 2px solid rgba(0, 0, 0, .6);
-}
-
-#basic-white {
-    color: rgba(246, 247, 236, 0.9);
-    border-bottom: 2px solid rgba(246, 247, 236, 0.9);
 }
 
 #basic-black-transparent {
@@ -33,7 +32,7 @@
     background-color: transparent;
     border: transparent;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: .2rem;
     margin: 20px 0;
     color: rgba(0, 0, 0, .6);
@@ -41,24 +40,30 @@
 
 .card-preview {
     background-color: rgba(246, 247, 236, 0.9);
-    height: 400px;
-    width: 350px;
+    height: 300px;
+    width: 550px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .top-half-preview {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 2px solid rgba(0, 0, 0, .4);
+}
+
+.bot-half-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-image-preview {
-    height: 125px;
-    width: 125px;
+    height: 150px;
+    width: 150px;
     margin: 20px 0;
     border-radius: 50%;
 }
@@ -68,6 +73,7 @@
     font-size: 1.5rem;
     letter-spacing: .1rem;
     color: rgba(0, 0, 0, .7);
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
 }
 
 .vertical-line-preview {
@@ -78,14 +84,11 @@
 .invitation-preview {
     margin: 20px 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     font-size: 18px;
     color: rgba(0, 0, 0, .8);
-}
-
-#standard-one {
-    color: rgba(246, 247, 236, 0.9);
 }
 
 #primary-one {

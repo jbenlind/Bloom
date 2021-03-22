@@ -11,7 +11,6 @@ const TopNavPreview = ({imageId, colorPalette}) => {
     const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
 
     const [standardColor, setStandardColor] = useState("");
-    const [standardBorder, setStandardBorder] = useState("basic-black");
     const [primaryColor, setPrimaryColor] = useState("");
     const [primaryName, setPrimaryName] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
@@ -19,14 +18,6 @@ const TopNavPreview = ({imageId, colorPalette}) => {
     useEffect(() => {
         if(userId) {
             dispatch(getUserPageById(userId))
-        }
-
-        if(imageId === 1 || imageId === 4 || imageId === 5) {
-            setStandardColor("standard-one")
-            setStandardBorder("basic-white")
-        } else if(imageId === 2 || imageId === 3) {
-            setStandardColor("")
-            setStandardBorder("basic-black")
         }
 
         if(colorPalette === 2 && imageId === 1) {
@@ -56,18 +47,20 @@ const TopNavPreview = ({imageId, colorPalette}) => {
         <>
             <div className="top-nav-preview">
                 <div className="preview-tabs">
-                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
+                    <button id={colorPalette === 2 ? primaryName : "basic-black"} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : standardColor} className="preview-button">RSVP</button>
                 </div>
                 <div className="card-preview">
                     <div className='top-half-preview'>
                         <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
-                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                     </div>
+                    <div className='bot-half-preview'>
+                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">September 23, 2023</p>
+                    </div>
                 </div>
             </div>
         </>
