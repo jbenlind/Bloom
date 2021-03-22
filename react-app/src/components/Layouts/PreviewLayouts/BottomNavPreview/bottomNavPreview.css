@@ -13,12 +13,12 @@
 
 .card-preview-bot {
     background-color: rgba(246, 247, 236, 0.9);
-    height: 300px;
+    height: 280px;
     width: 550px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 10%;
+    margin-top: 11%;
 }

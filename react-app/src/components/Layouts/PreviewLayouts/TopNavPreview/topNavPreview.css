@@ -16,7 +16,7 @@
     border-top: 2px solid rgba(246, 247, 236, 0.9);
     border-left: 2px solid rgba(246, 247, 236, 0.9);
     border-right: 2px solid rgba(246, 247, 236, 0.9);
-    margin-top: 10%;
+    margin-top: 11%;
 }
 
 #basic-black {
@@ -40,7 +40,7 @@
 
 .card-preview {
     background-color: rgba(246, 247, 236, 0.9);
-    height: 300px;
+    height: 280px;
     width: 550px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
     display: flex;

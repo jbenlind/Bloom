@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPageById} from "../../../../store/userPage";
+import "./rightNavPreview.css";
 
 const RightNavPreview = ({imageId, colorPalette}) => {
 
@@ -53,7 +54,7 @@ const RightNavPreview = ({imageId, colorPalette}) => {
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">September 23, 2023</p>
                 </div>
-                <div className="left-nav-preview-tabs">
+                <div className="right-nav-preview-tabs">
                     <button id={colorPalette === 2 ? primaryName: "basic-black-transparent"} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">venue</button>
                     <button id={colorPalette === 2 ? primaryColor : ""} className="preview-button">RSVP</button>
