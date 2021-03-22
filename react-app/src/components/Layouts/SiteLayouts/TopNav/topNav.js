@@ -11,7 +11,7 @@ const TopNav = ({imageId, colorPalette}) => {
     const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
 
     const [standardColor, setStandardColor] = useState("");
-    const [standardBorder, setStandardBorder] = useState("basic-black");
+    const [standardBorder, setStandardBorder] = useState("basic-black-site");
     const [primaryColor, setPrimaryColor] = useState("");
     const [primaryName, setPrimaryName] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
@@ -63,11 +63,13 @@ const TopNav = ({imageId, colorPalette}) => {
                 <div className="site-card">
                     <div className='top-half-site'>
                         <img className="profile-image-site" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
-                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-site">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                     </div>
+                    <div className='bot-half-site'>
+                        <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-site">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-site"></div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">September 23, 2023</p>
+                    </div>
                 </div>
             </div>
         </>
