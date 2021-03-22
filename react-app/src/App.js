@@ -9,13 +9,13 @@ import UserHub from "./components/UserHub";
 import MyPage from "./components/MyPage";
 import Templates from "./components/Templates";
 import PageNotFound from "./components/PageNotFound";
+import PageBuild from "./components/PageBuild";
 import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
 
   const [authenticated, setAuthenticated] = useState(false);
-  // const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -33,18 +33,21 @@ const App = () => {
         setAuthenticated={setAuthenticated}
       />
       <Switch>
+
         <Route path="/" exact={true} authenticated={authenticated}>
           <SplashPage />
         </Route>
-        
+
         <Route path="/userHub" exact={true} authenticated={authenticated}>
           <UserHub
             setAuthenticated={setAuthenticated}
           />
         </Route>
+
         <Route path="/templates" exact={true}>
           <Templates />
         </Route>
+
         <Route
           path="/myPage/:userId"
           // exact={true}
@@ -53,6 +56,10 @@ const App = () => {
           <MyPage
             setAuthenticated={setAuthenticated}
           />
+        </Route>
+
+        <Route path="/page-:userId">
+          <PageBuild />
         </Route>
 
         <Route>
