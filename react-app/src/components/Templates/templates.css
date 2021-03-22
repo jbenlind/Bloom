@@ -44,48 +44,11 @@ section {
     padding: 10px 10px 5px 10px;
 }
 
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0;
-}
-
-.carousel-root {
-    width: fit-content;
-    box-shadow: 5px 5px 4px rgba(0, 0, 0, .2);
-}
-
-.carousel.carousel-slider .control-arrow {
-    padding: 20px;
-    margin-top: 250px;
-    height: 100px;
-    background-color: rgb(19, 111, 216, .6);
-}
-
-.carousel.carousel-slider .control-arrow::after {
-    padding: 20px;
-    margin-top: 250px;
-    height: 100px;
-    background-color: rgb(19, 111, 216, .6);
-}
-
-.carousel.carousel-slider .control-arrow:hover {
-    padding: 20px;
-    margin-top: 250px;
-    height: 100px;
-    background-color: rgb(19, 111, 216, .7);
-}
 
 .templates-description {
     width: 15vw;
     font-size: 35px;
     color: rgba(0, 0, 0, .6);
-}
-
-
-.templates-image {
-    height: 600px;
 }
 
 .color-palette-container {
