@@ -34,10 +34,9 @@ const App = () => {
       />
       <Switch>
         <Route path="/" exact={true} authenticated={authenticated}>
-          <SplashPage
-            authenticated={authenticated}
-          />
+          <SplashPage />
         </Route>
+        
         <Route path="/userHub" exact={true} authenticated={authenticated}>
           <UserHub
             setAuthenticated={setAuthenticated}
@@ -55,7 +54,7 @@ const App = () => {
             setAuthenticated={setAuthenticated}
           />
         </Route>
-        
+
         <Route>
           <PageNotFound />
         </Route>
