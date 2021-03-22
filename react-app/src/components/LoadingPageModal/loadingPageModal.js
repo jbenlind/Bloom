@@ -16,21 +16,25 @@ const LoadingPageModal = ({openModal, setOpenModal}) => {
         <>
             {openModal &&
             <Modal>
-                {!pageName &&
-                <div className="cant-load">
-                    <h3>Please choose a page name to continue</h3>
-                    <button onClick={closeLoad}>Close</button>
+                <div id="modal-background">
+                    <div id="modal-content">
+                        {!pageName &&
+                        <div className="cant-load">
+                            <h3>Please choose a page name to continue</h3>
+                            <button onClick={closeLoad}>Close</button>
+                        </div>
+                        }
+                        {pageName &&
+                        <div className="can-load">
+                            <h3>Are you sure you want to leave?</h3>
+                            <div>
+                                <button>Leave</button>
+                                <button onClick={closeLoad}>Cancel</button>
+                            </div>
+                        </div>
+                        }
+                     </div>
                 </div>
-                }
-                {pageName &&
-                <div className="can-load">
-                    <h3>Are you sure you want to leave?</h3>
-                    <div>
-                        <button>Leave</button>
-                        <button onClick={closeLoad}>Cancel</button>
-                    </div>
-                </div>
-                }
             </Modal>}
         </>
     )

@@ -22,20 +22,24 @@ const SaveModal = ({openModal, setOpenModal}) => {
         <>
             {openModal &&
             <Modal>
-                 <div id="modal-background-save">
-                    <div id="modal-content-save">
-                    {!saving &&
-                        <div className="save-cancel">
-                            <h3>Are you sure you want to save?</h3>
-                            <div>
-                                <button onClick={startSaving}>Save</button>
-                                <button onClick={changeModal}>Cancel</button>
+                 <div id="modal-background">
+                    <div id="modal-content">
+                        <div id="modal-background-save">
+                            <div id="modal-content-save">
+                        {!saving &&
+                            <div className="save-cancel">
+                                <h3>Are you sure you want to save?</h3>
+                                <div>
+                                    <button onClick={startSaving}>Save</button>
+                                    <button onClick={changeModal}>Cancel</button>
+                                </div>
+                            </div>}
+                            {saving &&
+                                <div className="save-section">
+                                <div className="lds-dual-ring"></div>
+                                </div>}
                             </div>
-                        </div>}
-                        {saving &&
-                            <div className="save-section">
-                            <div className="lds-dual-ring"></div>
-                        </div>}
+                        </div>
                     </div>
                 </div>
             </Modal>}
