@@ -8,13 +8,12 @@ const ContactModal = ({setShowModal}) => {
             <Modal>
                 <div id="modal-background-contact">
                     <div id="modal-content-contact">
-                        <form autoComplete="off" className="contact-form">
+                        <form className="contact-form">
                             <h4>Get in Touch</h4>
                             <div className="horizontal-contact">
                                 <div>
                                     <input
                                         placeholder="Name"
-                                        name="name"
                                         type="text"
                                         autoComplete="off"
                                         />
@@ -22,7 +21,6 @@ const ContactModal = ({setShowModal}) => {
                                 <div>
                                     <input
                                         placeholder="Email"
-                                        name="emailed"
                                         type="text"
                                         autoComplete="off"
                                     />

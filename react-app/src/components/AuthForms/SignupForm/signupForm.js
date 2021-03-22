@@ -69,7 +69,6 @@ const SignupForm = ({authenticated, setAuthenticated}) => {
             <div>
               <input
                 autoComplete="off"
-                name="email"
                 type="text"
                 value={email}
                 onChange={updateEmail}

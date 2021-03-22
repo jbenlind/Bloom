@@ -58,7 +58,7 @@ const App = () => {
           />
         </Route>
 
-        <Route path="/page-:userId">
+        <Route exact={true} path="/:pageName-:userId">
           <PageBuild />
         </Route>
 

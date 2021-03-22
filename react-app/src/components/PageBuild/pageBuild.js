@@ -15,16 +15,20 @@ const PageBuild = () => {
     const [backgroundImg, setBackgroundImg] = useState()
 
     useEffect(() => {
-        dispatch(getUserPageById(userId))
-        dispatch(getTemplatePageElements())
-
-
+        if(userId) {
+            dispatch(getUserPageById(userId))
+            dispatch(getTemplatePageElements())
+        }
     }, [dispatch, userId])
 
     useEffect(() => {
-        if(pageElements) {
+        if(pageElements.backgroundImages.length === 5 && userInfo.backgroundImgId !== null) {
+            console.log(pageElements)
             let selectedImage = pageElements.backgroundImages.find((image) => image.id === userInfo.backgroundImgId)
             setBackgroundImg(selectedImage.imageUrl)
+        }
+        if(pageElements.pageLayouts) {
+            
         }
     }, [pageElements, userInfo])
 

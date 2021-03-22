@@ -30,11 +30,12 @@ const SideBarForm = ({showSide,
             const func = async () => {
                 let userPage = await dispatch(getUserPageById(userId))
                 let date = new Date(userPage.weddingDateTime)
-                setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-0${date.getMonth()}-0${date.getDay()}` : "")
+                setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
+                // doesnt work on resave
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
-                // setWeddingTime(userPage.weddingDateTime ? new Date(userPage.weddingDateTime).getTime : "")
+                setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setVenueName(userPage.venueName ? userPage.venueName : "")
                 setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
@@ -59,7 +60,6 @@ const SideBarForm = ({showSide,
         setWeddingDate,
         setWeddingTime
     ])
-
 
     const sendPageInfo = async (e) => {
         e.preventDefault()
@@ -131,6 +131,7 @@ const SideBarForm = ({showSide,
         if(file) setProfileImg(file)
     };
 
+    console.log(weddingTime)
     if(!loaded) return null;
     return (
         <>
