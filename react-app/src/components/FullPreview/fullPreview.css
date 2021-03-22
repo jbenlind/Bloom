@@ -84,7 +84,7 @@
     100% {
         width: 0%;
         height: 0%;
-        margin-top: 18.5%;
+        margin-top: 20%;
     }
 }
 
@@ -113,27 +113,5 @@
     100% {
         border-radius: 0%;
         border: none;
-    }
-}
-
-#mini-bounce {
-    animation: bounce-out 1s forwards;
-}
-
-@keyframes bounce-out {
-    0% {
-        border-radius: 0
-    }
-    25% {
-        border-radius: 25%;
-    }
-    50% {
-        border-radius: 35%;
-    }
-    75% {
-        border-radius: 50%;
-    }
-    100% {
-        border-radius: 50%;
     }
 }
