@@ -35,7 +35,7 @@ const FullPreview = ({ loaded, setLoaded, setFullPreview, fullPreview, backgroun
                                 <LeftNav imageId={imageId} colorPalette={colorPalette}/>}
                                 {layout === 4 &&
                                 <RightNav imageId={imageId} colorPalette={colorPalette}/>}
-                                <button onClick={(e) => transition()}>Return To builder</button>
+                                <button className="return-button" onClick={(e) => transition()}>Return to Builder</button>
                             </div>}
                         </div>
                     </div>

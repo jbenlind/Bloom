@@ -1,12 +1,29 @@
 .layout-in {
     opacity: 1;
-    animation: fade .8s linear;
+    animation: fade .7s linear;
 }
 
 @keyframes fade {
     0% { opacity: 0 }
     100% { opacity: 1 }
-  }
+}
+
+.return-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 150px;
+    text-align: center;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, .4);
+    color: rgba(0, 0, 0, .6);
+    font-size: 15px;
+}
+
+.return-button:hover {
+    background-color: rgba(255, 255, 255, .6);
+}
 
 .transition-my-site {
     position: absolute;
