@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserPage, getUserPageById} from "../../store/userPage";
+import { format } from 'date-fns'
+import Geocode from "react-geocode";
 import "./sideBarForm.css";
 
 const SideBarForm = ({showSide,
@@ -23,6 +25,7 @@ const SideBarForm = ({showSide,
     const getYear = require('date-fns/getYear')
     const getMonth = require('date-fns/getMonth')
     const getDate = require('date-fns/getDate')
+
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
@@ -33,14 +36,12 @@ const SideBarForm = ({showSide,
             const func = async () => {
                 let userPage = await dispatch(getUserPageById(userId))
                 let date = new Date(userPage.weddingDateTime)
-                console.log("+++++++", userPage.weddingDateTime)
-                console.log("start date",date)
                 // setWeddingDate(userPage.weddingDateTime ? `${date.getYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
-                setWeddingDate(userPage.weddingDateTime ? `${getYear(date)}-${getMonth(date)}-${getDate(date)}` : "")
+                setWeddingDate(userPage.weddingDateTime ? format(date, 'yyyy-MM-dd') : "")
+                setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
-                setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setVenueName(userPage.venueName ? userPage.venueName : "")
                 setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
@@ -247,7 +248,7 @@ const SideBarForm = ({showSide,
                         <div>
                             <input
                             type="button"
-                            value={profileImg !== "" ? profileImg + "...": ""}
+                            value={profileImg !== "" ? "Image Uploaded": ""}
                             onClick={grabImageInput}
                             required={true}
                             />
@@ -255,6 +256,7 @@ const SideBarForm = ({showSide,
                         </div>
                         <div>
                             <input
+                             placeholder="your image"
                             type="file"
                             id="profileImg"
                             onChange={updateProfileImg}

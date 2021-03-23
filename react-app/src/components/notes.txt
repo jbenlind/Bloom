@@ -1,6 +1,4 @@
-Geocode.setApiKey(googleApiKey);
-  Geocode.setLanguage("en");
-  Geocode.setLocationType("ROOFTOP");
+
   const getLat = (address, city, state, zipcode) => {
     return Geocode.fromAddress(`${address} ${city}, ${state} ${zipcode}`).then(
       (response) => {

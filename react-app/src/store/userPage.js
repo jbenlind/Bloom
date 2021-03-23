@@ -1,3 +1,5 @@
+import Geocode from "react-geocode";
+
 const SET_USER_PAGE = "userPage/SET_NEW_USER_PAGE";
 const SET_SELECTED_PAGE = "userPage/SET_SELECTED_PAGE"
 
@@ -25,8 +27,34 @@ export const getUserPageById = (userId) => async (dispatch) => {
 export const createUserPage =
     ({backgroundImgId, pageLayoutId, colorPaletteId, userId, pageName, partnerOne,
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
-    venueZip, latitude, longitude, profileImg}) =>
+    venueZip, profileImg}) =>
     async (dispatch) => {
+        Geocode.setApiKey("AIzaSyDn9h2bxz9VhT_g8ZDSR_TR-ayDi1NUMCM");
+        Geocode.setLanguage("en");
+        Geocode.setLocationType("ROOFTOP");
+        const getLat = (venueAddress, venueCity, venueState, venueZip) => {
+            return Geocode.fromAddress(`${venueAddress} ${venueCity}, ${venueState} ${venueZip}`).then(
+              (response) => {
+                const { lat } = response.results[0].geometry.location;
+                return lat;
+              },
+              (error) => {
+                return 0;
+              }
+            );
+        }
+        const getLng = (venueAddress, venueCity, venueState, venueZip) => {
+            return Geocode.fromAddress(`${venueAddress} ${venueCity}, ${venueState} ${venueZip}`).then(
+              (response) => {
+                const { lng } = response.results[0].geometry.location;
+                return lng;
+              },
+              (error) => {
+                return 0;
+              }
+            );
+        };
+
         const formData = new FormData()
         formData.append("backgroundImgId", backgroundImgId)
         formData.append("pageLayoutId", pageLayoutId)
@@ -43,8 +71,10 @@ export const createUserPage =
         formData.append("venueCity", venueCity)
         formData.append("venueState", venueState)
         formData.append("venueZip", venueZip)
-        formData.append("latitude", latitude)
-        formData.append("longitude", longitude)
+        if(venueAddress && venueCity && venueState && venueZip) {
+            formData.append("latitude", getLat())
+            formData.append("longitude", getLng())
+        }
         formData.append("profileImg", profileImg)
 
 

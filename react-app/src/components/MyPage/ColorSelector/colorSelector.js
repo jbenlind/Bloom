@@ -45,7 +45,7 @@ const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
 
     return (
         <>
-            <h1 className="image-names">Select Your Palette</h1>
+            <h1 className="image-names">Select a Palette</h1>
             <div className="color-labels">
                 <label>Classic</label>
                {palettes.length > 0 && imageId > 0 &&
