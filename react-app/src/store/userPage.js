@@ -39,6 +39,7 @@ export const createUserPage =
                 return lat;
               },
               (error) => {
+                  console.log("lat",error)
                 return 0;
               }
             );
@@ -50,6 +51,7 @@ export const createUserPage =
                 return lng;
               },
               (error) => {
+                console.log("lng", error)
                 return 0;
               }
             );
@@ -72,8 +74,8 @@ export const createUserPage =
         formData.append("venueState", venueState)
         formData.append("venueZip", venueZip)
         if(venueAddress && venueCity && venueState && venueZip) {
-            formData.append("latitude", getLat())
-            formData.append("longitude", getLng())
+            formData.append("latitude", await getLat(venueName, venueAddress, venueCity, venueState))
+            formData.append("longitude", await getLng(venueName, venueAddress, venueCity, venueState))
         }
         formData.append("profileImg", profileImg)
 

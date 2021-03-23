@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserPage, getUserPageById} from "../../store/userPage";
 import { format } from 'date-fns'
-import Geocode from "react-geocode";
 import "./sideBarForm.css";
 
 const SideBarForm = ({showSide,
