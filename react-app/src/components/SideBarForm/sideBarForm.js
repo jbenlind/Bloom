@@ -139,8 +139,6 @@ const SideBarForm = ({showSide,
         if(file) setProfileImg(file)
     };
 
-    console.log(weddingDate)
-
     if(!loaded) return null;
     return (
         <>

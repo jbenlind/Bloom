@@ -18,6 +18,8 @@ const PageBuild = () => {
     const [imageId, setImageId] = useState(0)
     const [layout, setLayout] = useState(0);
     const [colorPalette, setColorPalette] = useState(0);
+    const [lat, setLat] = useState(0);
+    const [lng, setLng] = useState(0);
 
     const pageElements = useSelector((state) => state.pageElements ? state.pageElements : null)
     const userInfo = useSelector((state) => state.userPage ? state.userPage : null)
@@ -31,7 +33,6 @@ const PageBuild = () => {
 
     useEffect(() => {
         if(pageElements.backgroundImages.length === 5 && userInfo.backgroundImgId !== null) {
-            console.log(pageElements)
             let selectedImage = pageElements.backgroundImages.find((image) => image.id === userInfo.backgroundImgId)
             setBackgroundImg(selectedImage.imageUrl)
         }
@@ -42,20 +43,23 @@ const PageBuild = () => {
             setLayout(userInfo.pageLayoutId)
             setColorPalette(userInfo.colorPaletteId < 6 ? 2 : 1)
             setImageId(userInfo.backgroundImgId)
+            setLat(userInfo.latitude)
+            setLng(userInfo.longitude)
         }
     }, [userInfo, setLayout, setColorPalette, setImageId])
 
+    console.log("pppppp", lat, lng)
     return (
         <>
             <div style={{backgroundImage: `url(${backgroundImg})`}} className="site-background">
                 {layout === 1 &&
-                <TopNav colorPalette={colorPalette} imageId={imageId}/>}
+                <TopNav colorPalette={colorPalette} imageId={imageId} lat={lat} lng={lng}/>}
                 {layout === 2 &&
-                <BotNav colorPalette={colorPalette} imageId={imageId}/>}
+                <BotNav colorPalette={colorPalette} imageId={imageId} lat={lat} lng={lng}/>}
                 {layout === 3 &&
-                <LeftNav colorPalette={colorPalette} imageId={imageId}/>}
+                <LeftNav colorPalette={colorPalette} imageId={imageId} lat={lat} lng={lng}/>}
                 {layout === 4 &&
-                <RightNav colorPalette={colorPalette} imageId={imageId}/>}
+                <RightNav colorPalette={colorPalette} imageId={imageId} lat={lat} lng={lng}/>}
             </div>
         </>
     )

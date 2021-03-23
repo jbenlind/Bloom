@@ -29,7 +29,7 @@ export const createUserPage =
     partnerTwo, weddingDateTime, venueName, venueAddress, venueCity, venueState,
     venueZip, profileImg}) =>
     async (dispatch) => {
-        Geocode.setApiKey("AIzaSyDn9h2bxz9VhT_g8ZDSR_TR-ayDi1NUMCM");
+        Geocode.setApiKey("AIzaSyAhUv7D1k_1HGN2tm-Im677gbBTetI64lo");
         Geocode.setLanguage("en");
         Geocode.setLocationType("ROOFTOP");
         const getLat = (venueAddress, venueCity, venueState, venueZip) => {
@@ -39,7 +39,6 @@ export const createUserPage =
                 return lat;
               },
               (error) => {
-                  console.log("lat",error)
                 return 0;
               }
             );
@@ -51,7 +50,6 @@ export const createUserPage =
                 return lng;
               },
               (error) => {
-                console.log("lng", error)
                 return 0;
               }
             );

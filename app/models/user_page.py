@@ -45,6 +45,8 @@ class User_page(db.Model):
             "venueCity": self.venueCity,
             "venueState": self.venueState,
             "venueZip": self.venueZip,
+            "latitude": self.latitude,
+            "longitude": self.longitude,
             "profileImg": self.profileImg,
             "pageLayoutId": self.pageLayoutId,
             "backgroundImgId": self.backgroundImgId,

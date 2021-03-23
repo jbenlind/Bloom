@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPageById } from "../../../../store/userPage";
+import VenueMap from "../../../VenueMap";
 import "./topNav.css";
 
-const TopNav = ({imageId, colorPalette}) => {
+const TopNav = ({imageId, colorPalette, lat, lng}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
@@ -74,6 +75,9 @@ const TopNav = ({imageId, colorPalette}) => {
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">September 23, 2023</p>
                     </div>
                     </div>}
+                    {section === 2 &&
+                    <VenueMap lat={lat} lng={lng} />
+                    }
                 </div>
             </div>
         </>
