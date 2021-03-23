@@ -29,10 +29,10 @@
 
 .footer {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 1%;
+    left: .25%;
     width: 15%;
-    height: 9vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

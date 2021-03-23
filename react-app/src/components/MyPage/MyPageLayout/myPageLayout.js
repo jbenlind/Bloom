@@ -17,7 +17,7 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
         setFullPreview(true)
         setTimeout(() => {
             setLoaded(true)
-        }, 1600)
+        }, 800)
     }
 
     const transitionPages = () => {

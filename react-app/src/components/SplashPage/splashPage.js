@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import FromCenterButton from "../FromCenterButton";
-import ContactModal from "../ContactModal";
+
 import "./splashPage.css";
 
 const SplashPage = () => {
-
-  const [showModal, setShowModal] = useState(false)
 
   return (
     <>
@@ -21,10 +19,8 @@ const SplashPage = () => {
       <div className="footer">
         <a href="https://www.linkedin.com/in/jesse-lindloff-0ba8591aa/"><i className="foot-but fab fa-linkedin"></i></a>
         <a href="https://github.com/jbenlind"><i className="foot-but fab fa-github-square"></i></a>
-        <button onClick={(e) => setShowModal(true)}><i className="foot-but fas fa-envelope-square"></i></button>
+        <button><i className="foot-but fas fa-envelope-square"></i></button>
       </div>
-      {showModal &&
-        <ContactModal setShowModal={setShowModal} />}
     </>
   );
 };

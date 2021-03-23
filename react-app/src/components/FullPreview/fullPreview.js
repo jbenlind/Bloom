@@ -23,7 +23,7 @@ const FullPreview = ({ loaded, setLoaded, setFullPreview, fullPreview, backgroun
 
             <div className="transition-my-site">
                 <div className="my-site">
-                    <div id={contract ? "contract" : ""} className="expand">
+                    <div  className="expand">
                         <div id={contract ? "contract" : ""} style={{backgroundImage: `url(${backgroundImg})`}} className="fullPreview-background">
                             {loaded &&
                             <div className="layout-in">
