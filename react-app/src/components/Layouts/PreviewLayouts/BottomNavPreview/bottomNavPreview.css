@@ -12,7 +12,7 @@
 }
 
 .card-preview-bot {
-    background-color: rgba(246, 247, 236, 0.9);
+    background-color: rgba(246, 247, 236);
     height: 280px;
     width: 550px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);

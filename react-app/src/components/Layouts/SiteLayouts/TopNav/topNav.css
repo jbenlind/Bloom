@@ -20,7 +20,6 @@
     border-right: 4px solid rgb(254, 255, 238);
 }
 
-
 .site-button {
     background-color: transparent;
     border: transparent;
@@ -31,10 +30,17 @@
 }
 
 .site-card {
-    background-color: rgba(246, 247, 236, 0.9);
+    background-color: rgba(246, 247, 236);
     height: 500px;
     width: 50%;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.site-card-pos {
     display: flex;
     align-items: center;
     justify-content: space-evenly;

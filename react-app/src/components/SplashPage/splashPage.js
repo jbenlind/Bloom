@@ -19,7 +19,7 @@ const SplashPage = () => {
       <div className="footer">
         <a href="https://www.linkedin.com/in/jesse-lindloff-0ba8591aa/"><i className="foot-but fab fa-linkedin"></i></a>
         <a href="https://github.com/jbenlind"><i className="foot-but fab fa-github-square"></i></a>
-        <button><i className="foot-but fas fa-envelope-square"></i></button>
+        <a href="mailto:jbenlind@gmail.com"><i className="foot-but fas fa-envelope-square"></i></a>
       </div>
     </>
   );

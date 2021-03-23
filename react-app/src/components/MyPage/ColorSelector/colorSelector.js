@@ -62,7 +62,7 @@ const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
                 <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("right")} className="colored">
                     <div id={colorOne} className="first-color"></div>
                     <div id={colorTwo} className="second-color"></div>
-                    <span id={layout ? "hide-tool" : ""} className="text">Select an Layout</span>
+                    <span id={layout ? "hide-tool" : ""} className="text">Select a Layout</span>
                 </button>
             </div>
         </>

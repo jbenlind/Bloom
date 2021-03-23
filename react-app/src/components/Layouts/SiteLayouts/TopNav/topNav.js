@@ -15,6 +15,7 @@ const TopNav = ({imageId, colorPalette}) => {
     const [primaryColor, setPrimaryColor] = useState("");
     const [primaryName, setPrimaryName] = useState("");
     const [secondaryColor, setSecondColor] = useState("");
+    const [section, setSection] = useState(1);
 
     useEffect(() => {
         if(userId) {
@@ -56,11 +57,13 @@ const TopNav = ({imageId, colorPalette}) => {
         <>
             <div className="top-nav">
                 <div className="site-tabs">
-                    <button id={colorPalette === 2 ? primaryName : standardBorder} className="site-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
-                    <button id={colorPalette === 2 ? primaryColor : standardColor} className="site-button">venue</button>
-                    <button id={colorPalette === 2 ? primaryColor : standardColor} className="site-button">RSVP</button>
+                    <button onClick={(e) => setSection(1)} id={colorPalette === 2 ? primaryName : standardBorder} className="site-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
+                    <button onClick={(e) => setSection(2)} id={colorPalette === 2 ? primaryColor : standardColor} className="site-button">venue</button>
+                    <button onClick={(e) => setSection(3)} id={colorPalette === 2 ? primaryColor : standardColor} className="site-button">RSVP</button>
                 </div>
                 <div className="site-card">
+                {section === 1 &&
+                <div className="site-card-pos">
                     <div className='top-half-site'>
                         <img className="profile-image-site" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
                     </div>
@@ -70,6 +73,7 @@ const TopNav = ({imageId, colorPalette}) => {
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-site"></div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">September 23, 2023</p>
                     </div>
+                    </div>}
                 </div>
             </div>
         </>

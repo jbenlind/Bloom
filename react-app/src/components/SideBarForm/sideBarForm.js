@@ -20,6 +20,9 @@ const SideBarForm = ({showSide,
     profileImg, setProfileImg
 }) => {
 
+    const getYear = require('date-fns/getYear')
+    const getMonth = require('date-fns/getMonth')
+    const getDate = require('date-fns/getDate')
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
 
@@ -30,13 +33,14 @@ const SideBarForm = ({showSide,
             const func = async () => {
                 let userPage = await dispatch(getUserPageById(userId))
                 let date = new Date(userPage.weddingDateTime)
-                // setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
-                // doesnt work on resave
-                console.log(`${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}`)
+                console.log("+++++++", userPage.weddingDateTime)
+                console.log("start date",date)
+                // setWeddingDate(userPage.weddingDateTime ? `${date.getYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
+                setWeddingDate(userPage.weddingDateTime ? `${getYear(date)}-${getMonth(date)}-${getDate(date)}` : "")
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
-                // setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
+                setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setVenueName(userPage.venueName ? userPage.venueName : "")
                 setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
@@ -59,7 +63,10 @@ const SideBarForm = ({showSide,
         setVenueZip,
         setProfileImg,
         setWeddingDate,
-        setWeddingTime
+        setWeddingTime,
+        getYear,
+        getMonth,
+        getDate
     ])
 
     const sendPageInfo = async (e) => {
@@ -131,6 +138,8 @@ const SideBarForm = ({showSide,
         const file = e.target.files[0]
         if(file) setProfileImg(file)
     };
+
+    console.log(weddingDate)
 
     if(!loaded) return null;
     return (
