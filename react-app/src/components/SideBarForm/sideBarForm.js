@@ -30,13 +30,13 @@ const SideBarForm = ({showSide,
             const func = async () => {
                 let userPage = await dispatch(getUserPageById(userId))
                 let date = new Date(userPage.weddingDateTime)
-                setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
+                // setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
                 // doesnt work on resave
                 console.log(`${date.getFullYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}`)
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
-                setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
+                // setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setVenueName(userPage.venueName ? userPage.venueName : "")
                 setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
