@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createUserPage, getUserPageById} from "../../store/userPage";
+import { createUserPage } from "../../store/userPage";
 import { format } from 'date-fns'
 import "./sideBarForm.css";
 
@@ -18,24 +18,21 @@ const SideBarForm = ({showSide,
     venueCity, setVenueCity,
     venueState, setVenueState,
     venueZip, setVenueZip,
-    profileImg, setProfileImg
+    profileImg, setProfileImg,
+    savedImg, setSavedImg,
+    setOpenModal
 }) => {
-
-    const getYear = require('date-fns/getYear')
-    const getMonth = require('date-fns/getMonth')
-    const getDate = require('date-fns/getDate')
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
+    const userPage = useSelector((state) => state.userPage ? state.userPage : null)
 
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        if(userId) {
+        if(userPage) {
             const func = async () => {
-                let userPage = await dispatch(getUserPageById(userId))
                 let date = new Date(userPage.weddingDateTime)
-                // setWeddingDate(userPage.weddingDateTime ? `${date.getYear()}-${date.getMonth().toString().padStart(2, "0")}-${date.getDay().toString().padStart(2, "0")}` : "")
                 setWeddingDate(userPage.weddingDateTime ? format(date, 'yyyy-MM-dd') : "")
                 setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setPageName(userPage.pageName ? userPage.pageName : "")
@@ -46,8 +43,11 @@ const SideBarForm = ({showSide,
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
                 setVenueState(userPage.venueState ? userPage.venueState : "")
                 setVenueZip(userPage.venueZip ? userPage.venueZip : "")
-                setProfileImg(userPage.profileImg ? userPage.profileImg : "")
+                setSavedImg(userPage.profileImg ? userPage.profileImg : "")
                 setLoaded(true)
+                setTimeout(() => {
+                    setOpenModal(false)
+                }, 500)
             }
             func()
         }
@@ -64,9 +64,9 @@ const SideBarForm = ({showSide,
         setProfileImg,
         setWeddingDate,
         setWeddingTime,
-        getYear,
-        getMonth,
-        getDate
+        userPage,
+        setSavedImg,
+        setOpenModal
     ])
 
     const sendPageInfo = async (e) => {
@@ -245,7 +245,7 @@ const SideBarForm = ({showSide,
                         <div>
                             <input
                             type="button"
-                            value={profileImg !== "" ? "Image Uploaded": ""}
+                            value={savedImg !== "" ? "Image Uploaded": ""}
                             onClick={grabImageInput}
                             required={true}
                             />

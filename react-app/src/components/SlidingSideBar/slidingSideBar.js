@@ -18,7 +18,8 @@ const SlidingSideBar = ({
     venueCity, setVenueCity,
     venueState, setVenueState,
     venueZip, setVenueZip,
-    profileImg, setProfileImg
+    profileImg, setProfileImg,
+    savedImg, setSavedImg
 }) => {
 
     const history = useHistory()
@@ -80,6 +81,8 @@ const SlidingSideBar = ({
                     venueState={venueState} setVenueState={setVenueState}
                     venueZip={venueZip} setVenueZip={setVenueZip}
                     profileImg={profileImg} setProfileImg={setProfileImg}
+                    savedImg={savedImg} setSavedImg={setSavedImg}
+                    setOpenModal={setOpenModal}
                     />
             </div>
         </>

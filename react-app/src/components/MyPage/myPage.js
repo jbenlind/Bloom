@@ -25,7 +25,9 @@ const MyPage = () => {
     const [venueState, setVenueState] = useState("");
     const [venueZip, setVenueZip] = useState("");
     const [profileImg, setProfileImg] = useState("");
+    const [savedImg, setSavedImg] = useState("")
     const [loaded, setLoaded] = useState(false);
+
 
     useEffect(() => {
         if(user) {
@@ -39,6 +41,8 @@ const MyPage = () => {
             func()
         }
     }, [dispatch, user])
+
+
 
     if(!loaded) return null;
     return (
@@ -59,12 +63,14 @@ const MyPage = () => {
                     venueState={venueState} setVenueState={setVenueState}
                     venueZip={venueZip} setVenueZip={setVenueZip}
                     profileImg={profileImg} setProfileImg={setProfileImg}
+                    savedImg={savedImg} setSavedImg={setSavedImg}
                     />
                 <MyPageLayout
                     backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg}
                     imageId={imageId} setImageId={setImageId}
                     layout={layout} setLayout={setLayout}
                     colorPalette={colorPalette} setColorPalette={setColorPalette}
+                    profileImg={profileImg} savedImg={savedImg}
                     />
             </div>
         </>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserPageById } from "../../../../store/userPage";
 import "./topNavPreview.css";
 
-const TopNavPreview = ({imageId, colorPalette}) => {
+const TopNavPreview = ({imageId, colorPalette, savedImg}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
@@ -53,7 +53,7 @@ const TopNavPreview = ({imageId, colorPalette}) => {
                 </div>
                 <div className="card-preview">
                     <div className='top-half-preview'>
-                        <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
+                        <img className="profile-image-preview" src={savedImg ? savedImg :"https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg"} alt=""></img>
                     </div>
                     <div className='bot-half-preview'>
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>

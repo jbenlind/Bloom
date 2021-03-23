@@ -7,7 +7,7 @@ import LoadingPageModal from "../../LoadingPageModal";
 import FullPreview from "../../FullPreview";
 import "./myPageLayout.css"
 
-const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray}) => {
+const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray, savedImg}) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [fullPreview, setFullPreview] = useState(false);
@@ -41,7 +41,7 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                 <div className="preview-section">
                     <h1>Page Preview</h1>
                     <div className="preview-container">
-                        <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
+                        <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId} savedImg={savedImg}/>
                     </div>
                     <div className="button-container">
                         <button

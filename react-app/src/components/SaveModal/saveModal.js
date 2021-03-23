@@ -9,9 +9,6 @@ const SaveModal = ({openModal, setOpenModal}) => {
     const startSaving = () => {
         document.getElementById("save-form-button").click()
         setSaving(true)
-        setTimeout(() => {
-            setOpenModal(false)
-        }, 1500)
     }
 
     const changeModal = () => {
