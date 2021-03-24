@@ -45,9 +45,6 @@
     cursor: pointer;
 }
 
-#not-allowed {
-    cursor: not-allowed;
-}
 
 #not-allowed .text {
     visibility: hidden;

@@ -48,7 +48,7 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                             onClick={buildPage}
                             disabled={!backgroundImg}
                             id={backgroundImg ? "" : "not-allowed"}
-                            >Full Preview<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image</span></button>
+                            >Full Preview<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image First</span></button>
                         <button onClick={transitionPages}>Go To Page</button>
                     </div>
                 </div>

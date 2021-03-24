@@ -26,13 +26,13 @@ const LayoutSelector = ({layout, setLayout, backgroundImg}) => {
                         className={layout === 1 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutOne.id)}
                         disabled={!backgroundImg}
-                    >Classic<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image</span></button>
+                    >Classic<span id={backgroundImg ? "hide-tool" : ""} className="text">Select a theme First</span></button>
                     <button
                         id={backgroundImg ? "" : "not-allowed"}
                         className={layout === 2 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutTwo.id)}
                         disabled={!backgroundImg}
-                    >Inverted<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image</span></button>
+                    >Inverted<span id={backgroundImg ? "hide-tool" : ""} className="text">Select a theme First</span></button>
                 </div>
                 <div>
                     <button
@@ -40,13 +40,13 @@ const LayoutSelector = ({layout, setLayout, backgroundImg}) => {
                         className={layout === 3 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutThree.id)}
                         disabled={!backgroundImg}
-                    >Edge<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image</span></button>
+                    >Edge<span id={backgroundImg ? "hide-tool" : ""} className="text">Select a theme First</span></button>
                     <button
                         id={backgroundImg ? "" : "not-allowed"}
                         className={layout === 4 ? "in-use" : "layout-button"}
                         onClick={(e) => setLayout(layoutFour.id)}
                         disabled={!backgroundImg}
-                    >Side Car<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image</span></button>
+                    >Side Car<span id={backgroundImg ? "hide-tool" : ""} className="text">Select a theme First</span></button>
                 </div>
             </div>
         </>
