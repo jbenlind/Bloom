@@ -9,13 +9,19 @@ const SplashPage = () => {
     <>
       <img
         id="backgroundImage"
-        src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/splash-background-2.png"
+        src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/splash-background.png"
         alt=""
       ></img>
       <div id="page-container">
         <h1 id="slogan-header">Beautiful sites made easy</h1>
         <FromCenterButton />
       </div>
+      {/* <div className="searchBar">
+        <div className="searchIcon"><i className="far fa-search"></i></div>
+        <div className="circle">
+
+        </div>
+      </div> */}
       <div className="footer">
         <a href="https://www.linkedin.com/in/jesse-lindloff-0ba8591aa/"><i className="foot-but fab fa-linkedin"></i></a>
         <a href="https://github.com/jbenlind"><i className="foot-but fab fa-github-square"></i></a>

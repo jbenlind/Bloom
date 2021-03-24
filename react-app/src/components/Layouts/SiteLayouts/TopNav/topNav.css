@@ -41,6 +41,7 @@
 }
 
 .site-card-pos {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -61,10 +62,10 @@
 }
 
 .profile-image-site {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     margin: 20px 0;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 .couple-names-site {

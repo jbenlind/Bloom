@@ -52,3 +52,58 @@
 .foot-but:hover {
     color: #6289bd;
 }
+
+.searchBar {
+    background-color:rgb(223, 223, 223);
+    border-bottom: 2px solid black;
+    height: 60px;
+    width: 735px;
+    position: absolute;
+    top: 30%;
+    right: 332.5px;
+    z-index: -1;
+}
+
+.searchIcon {
+    color: rgba(0, 0, 0, .7);
+    font-size: 25px;
+    margin-left: 23px;
+    margin-top: 15px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    /* border: 2px solid #0f6eea; */
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    top: 5px;
+    left: 10px;
+}
+
+.circle:before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #0f6eea;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    border-radius: 40%;
+    animation: fill 7s ease-in-out forwards;
+    z-index: -1;
+}
+
+@keyframes fill {
+    from {
+        top: 100%;
+        transform: translateX(-50%) rotate(0deg);
+
+    }
+    to {
+        top: -5px;
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
