@@ -56,30 +56,29 @@
 .searchBar {
     background-color:rgb(223, 223, 223);
     border-bottom: 2px solid black;
-    height: 60px;
-    width: 735px;
+    height: 470px;
+    width: 725px;
     position: absolute;
     top: 30%;
-    right: 332.5px;
+    right: 337px;
     z-index: -1;
 }
 
 .searchIcon {
     color: rgba(0, 0, 0, .7);
     font-size: 25px;
-    margin-left: 23px;
-    margin-top: 15px;
+    margin-left: 38px;
+    margin-top: 35px;
 }
 
 .circle {
     width: 50px;
     height: 50px;
-    /* border: 2px solid #0f6eea; */
     border-radius: 50%;
     position: absolute;
     overflow: hidden;
-    top: 5px;
-    left: 10px;
+    top: 25px;
+    left: 25px;
 }
 
 .circle:before {
