@@ -44,7 +44,6 @@ const SideBarForm = ({showSide,
                 setVenueState(userPage.venueState ? userPage.venueState : "")
                 setVenueZip(userPage.venueZip ? userPage.venueZip : "")
                 setSavedImg(userPage.profileImg ? userPage.profileImg : "")
-
                 setLoaded(true)
                 setTimeout(() => {
                     setOpenModal(false)
@@ -244,13 +243,13 @@ const SideBarForm = ({showSide,
                         </div>
                     </div>
                     <div className="image-block">
-                      {!savedImg &&
-                      <button onClick={grabImageInput}>Upload Image</button>}
-                      {savedImg &&
-                      <button onClick={grabImageInput}>Change Image</button>}
+                        {!savedImg &&
+                            <button onClick={grabImageInput}>Upload Image</button>}
+                        {savedImg &&
+                            <button onClick={grabImageInput}>Change Image</button>}
                         <div>
                             <input
-                            placeholder="your image"
+                             placeholder="your image"
                             type="file"
                             id="profileImg"
                             onChange={updateProfileImg}
