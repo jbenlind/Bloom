@@ -12,7 +12,7 @@ class User_page(db.Model):
     colorPaletteId = db.Column(
         db.Integer, db.ForeignKey("color_palette.id"), nullable=True)
     userId = db.Column(db.Integer, db.ForeignKey("users.id"))
-    pageName = db.Column(db.String(100), nullable=True)
+    pageName = db.Column(db.String(100), default="")
     partnerOne = db.Column(db.String(100), nullable=True)
     partnerTwo = db.Column(db.String(100), nullable=True)
     weddingDateTime = db.Column(db.DateTime, nullable=True)

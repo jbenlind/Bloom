@@ -1,7 +1,8 @@
 import Geocode from "react-geocode";
 
 const SET_USER_PAGE = "userPage/SET_NEW_USER_PAGE";
-const SET_SELECTED_PAGE = "userPage/SET_SELECTED_PAGE"
+const SET_SELECTED_PAGE = "userPage/SET_SELECTED_PAGE";
+const SET_ALL_PAGES = "userPage/SET_ALL_PAGES";
 
 export const setUserPage = (payload) => {
     return {
@@ -15,6 +16,21 @@ export const setSelectedPage = (payload) => {
         type: SET_SELECTED_PAGE,
         payload
     }
+}
+
+export const setAllPages = (payload) => {
+  return {
+    type: SET_ALL_PAGES,
+    payload
+  }
+}
+
+export const findAllPages = (setPages) => async (dispatch) => {
+  const response = await fetch("/api/user-page/all");
+  const pages = await response.json()
+  dispatch(setAllPages(pages))
+  setPages(pages)
+  return pages;
 }
 
 export const getUserPageById = (userId) => async (dispatch) => {
@@ -100,6 +116,10 @@ const userPageReducer = (state=initialState, action) => {
             const userPageContent = action.payload
             const userPageFields = {...state, ...userPageContent}
             return userPageFields;
+        case SET_ALL_PAGES:
+          const pages = action.payload
+          const allPages = {...state, ...pages}
+          return allPages;
         default:
             return state
     }
