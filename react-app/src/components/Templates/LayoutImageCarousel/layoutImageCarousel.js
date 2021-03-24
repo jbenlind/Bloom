@@ -78,7 +78,7 @@ const LayoutImageCarousel = () => {
                     make your site your own. Keep scrolling to see the other ways
                     you can customize your page.
                 </p>
-                <div className="my-images">
+                <div className="my-images-tem">
                     <div onClick={() => slideLeft()}><i className="arrow-left fas fa-chevron-left"></i></div>
                     <div className="i-container">
                         {layouts &&

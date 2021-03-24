@@ -72,18 +72,18 @@ const LayoutImageCarousel = () => {
              {/* {backgroundImages.length > 0 &&
             <h1 className="image-names">{backgroundImages[currId - 1].name}</h1>} */}
             <div className="carousel-container">
-            <div className="my-images">
-                <div onClick={() => slideLeft()}><i className="arrow-left fas fa-chevron-left"></i></div>
-                <div className="i-container">
-                    {backgroundImages &&
-                    backgroundImages.map((image) => (
-                        <div key={image.id}>
-                            <img className={position} src={image.imageUrl} alt=""></img>
-                        </div>
-                    ))}
+                <div className="my-images-tem">
+                    <div onClick={() => slideLeft()}><i className="arrow-left fas fa-chevron-left"></i></div>
+                    <div className="i-container">
+                        {backgroundImages &&
+                        backgroundImages.map((image) => (
+                            <div key={image.id}>
+                                <img className={position} src={image.imageUrl} alt=""></img>
+                            </div>
+                        ))}
+                    </div>
+                    <div onClick={() => slideRight()}><i className="arrow-right fas fa-chevron-right"></i></div>
                 </div>
-                <div onClick={() => slideRight()}><i className="arrow-right fas fa-chevron-right"></i></div>
-            </div>
                 <p className="templates-description">
                     We keep the customization coming with different background images. We want every aspect to be
                     exactly the way you want it!
