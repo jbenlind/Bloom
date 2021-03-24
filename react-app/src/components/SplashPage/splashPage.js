@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import FromCenterButton from "../FromCenterButton";
 
 import "./splashPage.css";
 
-const SplashPage = () => {
+const SplashPage = ({searching, setSearching}) => {
+
+  const [slide, setSlide] = useState(false);
+
+  const iconClick = () => {
+    setSlide("slide-in")
+  }
 
   return (
     <>
@@ -16,11 +22,22 @@ const SplashPage = () => {
         <h1 id="slogan-header">Beautiful sites made easy</h1>
         <FromCenterButton />
       </div>
-      {/* <div className="searchBar">
-        <div className="searchIcon"><i className="far fa-search"></i></div>
+    { searching &&
+     <div className="searchPage">
+        <div className="searchBar">
+          <div onClick={iconClick} id={slide === "slide-in" ? "slide-icon-in" : ""} className={!slide ? "searchIcon" : "icon-slider"}><i  className="far fa-search"></i></div>
+          <div className>
+            <input
+            placeholder="Search"
+            className={slide ? "slide-ani" : ""}
+            id={slide === "slide-in" ? "slide-ani-in" : ""}
+            onFocus={(e) => setSlide(true)}
+            // onBlur={(e) => setSlide("slide-in")}
+            />
+          </div>
+        </div>
         <div className="circle"></div>
-        <div className></div>
-      </div> */}
+      </div>}
       <div className="footer">
         <a href="https://www.linkedin.com/in/jesse-lindloff-0ba8591aa/"><i className="foot-but fab fa-linkedin"></i></a>
         <a href="https://github.com/jbenlind"><i className="foot-but fab fa-github-square"></i></a>
