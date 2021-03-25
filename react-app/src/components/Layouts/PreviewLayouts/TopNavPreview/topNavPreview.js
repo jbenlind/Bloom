@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPageById } from "../../../../store/userPage";
-import { format } from 'date-fns'
+import { format } from 'date-fns';
 import "./topNavPreview.css";
 
 const TopNavPreview = ({imageId, colorPalette, savedImg}) => {
@@ -10,7 +10,7 @@ const TopNavPreview = ({imageId, colorPalette, savedImg}) => {
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
     const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "");
     const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
-    const date = useSelector((state) => state.userPage.weddingDateTime ? state.userPage.weddingDateTime : "")
+    const date = useSelector((state) => state.userPage.weddingDateTime ? state.userPage.weddingDateTime : "");
 
     const [standardColor, setStandardColor] = useState("");
     const [primaryColor, setPrimaryColor] = useState("");
@@ -55,7 +55,7 @@ const TopNavPreview = ({imageId, colorPalette, savedImg}) => {
                 </div>
                 <div className="card-preview">
                     <div className='top-half-preview'>
-                        <img className="profile-image-preview" src={ savedImg ? savedImg :"https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg"} alt=""></img>
+                        <img className="profile-image-preview" src={savedImg ? savedImg :"https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg"} alt=""></img>
                     </div>
                     <div className='bot-half-preview'>
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>

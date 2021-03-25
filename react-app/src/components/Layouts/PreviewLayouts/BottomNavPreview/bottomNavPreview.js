@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPageById} from "../../../../store/userPage";
+import { format } from 'date-fns';
 import "./bottomNavPreview.css";
 
-const BottomNavPreview = ({imageId, colorPalette}) => {
+const BottomNavPreview = ({imageId, colorPalette, savedImg}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
     const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "");
     const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
+    const date = useSelector((state) => state.userPage.weddingDateTime ? state.userPage.weddingDateTime : "")
 
     const [standardColor, setStandardColor] = useState("");
     const [primaryColor, setPrimaryColor] = useState("");
@@ -48,13 +50,13 @@ const BottomNavPreview = ({imageId, colorPalette}) => {
              <div className="top-nav-preview">
                 <div className="card-preview-bot">
                     <div className='top-half-preview'>
-                        <img className="profile-image-preview" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
+                        <img className="profile-image-preview"  src={savedImg ? savedImg :"https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg"} alt=""></img>
                     </div>
                     <div className='bot-half-preview'>
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-preview">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">September 23, 2023</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
                     </div>
                 </div>
                 <div className="preview-tabs-bot">
