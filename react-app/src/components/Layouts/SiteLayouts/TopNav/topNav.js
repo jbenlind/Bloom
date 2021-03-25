@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPageById } from "../../../../store/userPage";
 import VenueMap from "../../../VenueMap";
+import { format } from 'date-fns';
 import "./topNav.css";
 
 const TopNav = ({imageId, colorPalette, lat, lng}) => {
@@ -15,6 +16,8 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
     const venueCity = useSelector((state) => state.userPage.venueCity? state.userPage.venueCity : "City");
     const venueState = useSelector((state) => state.userPage.venueState ? state.userPage.venueState : "State");
     const venueZip = useSelector((state) => state.userPage.venueZip ? state.userPage.venueZip : "Zip");
+    const date = useSelector((state) => state.userPage.weddingDateTime ? state.userPage.weddingDateTime : "");
+    const profileImg = useSelector((state) => state.userPage.profileImg ? state.userPage.profileImg: "")
 
     const [standardColor, setStandardColor] = useState("");
     const [primaryColor, setPrimaryColor] = useState("");
@@ -74,13 +77,13 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                 {section === 1 &&
                 <div className="site-card-pos">
                     <div className='top-half-site'>
-                        <img className="profile-image-site" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg" alt=""></img>
+                        <img className="profile-image-site" src={profileImg ? profileImg :"https://bloombucketjesse.s3.us-east-2.amazonaws.com/profile-example.jpg"} alt=""></img>
                     </div>
                     <div className='bot-half-site'>
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-site">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-site"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">September 23, 2023</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
                     </div>
                     </div>}
                     {section === 2 &&
