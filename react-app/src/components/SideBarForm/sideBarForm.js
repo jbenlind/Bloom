@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { createUserPage } from "../../store/userPage";
 import { format } from 'date-fns'
 import "./sideBarForm.css";
@@ -24,6 +25,7 @@ const SideBarForm = ({showSide,
 }) => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
     const userPage = useSelector((state) => state.userPage ? state.userPage : null)
 
@@ -139,6 +141,10 @@ const SideBarForm = ({showSide,
         const file = e.target.files[0]
         if(file) setProfileImg(file)
     };
+
+    const resPage = () => {
+        history.push(`/reservations/${userId}`)
+    }
 
     if(!loaded) return null;
     return (
@@ -257,7 +263,7 @@ const SideBarForm = ({showSide,
                         </div>
                     </div>
                     <div className="rsvp-block">
-                        <button>RSVP's</button>
+                        <button onClick={resPage}>RSVP's</button>
                     </div>
                     <button onClick={sendPageInfo} id="save-form-button"></button>
                 </form>

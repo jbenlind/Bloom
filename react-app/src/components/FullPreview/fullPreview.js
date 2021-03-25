@@ -6,7 +6,7 @@ import LeftNav from "../Layouts/SiteLayouts/LeftNav";
 import RightNav from "../Layouts/SiteLayouts/RightNav";
 import "./fullPreview.css";
 
-const FullPreview = ({ loaded, setLoaded, setFullPreview, fullPreview, backgroundImg, layout, colorPalette, imageId}) => {
+const FullPreview = ({ loaded, setLoaded, setFullPreview, backgroundImg, layout, colorPalette, imageId}) => {
 
     const [contract, setContract] = useState(false)
     const [lat, setLat] = useState(0);

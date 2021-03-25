@@ -37,7 +37,7 @@
     border-bottom: 2px solid rgba(0, 0, 0, .6);
     padding-left: 10px;
     color: rgba(0, 0, 0, .7);
-    text-align: center;
+    /* text-align: center; */
 }
 
 .input-container input::placeholder {
@@ -79,7 +79,7 @@
         left: 470px;
     }
     100% {
-        left: 615px;
+        left: 555px;
     }
 }
 
