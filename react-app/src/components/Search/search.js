@@ -14,10 +14,6 @@ const Search = ({setSearching}) => {
     const [pages, setPages] = useState([]);
     let matches = [];
 
-    const iconClick = () => {
-        setSlide("slide-in")
-    }
-
     const findPages = () => {
         dispatch(findAllPages(setPages))
     }
@@ -61,22 +57,24 @@ const Search = ({setSearching}) => {
                     {search.length !== 0 &&
                     <div className="link-container">
                         {matches.map((match) => (
-                            <NavLink className="" key={match.id} to={`${match.pageName.split(" ").join("")}-${match.userId}`}>
-                                <div className="">
-                                   {match.profileImg === null &&
+                            <NavLink className="search-link" key={match.id} to={`${match.pageName.split(" ").join("")}-${match.userId}`}>
+                                <div className="link-content">
+                                   {(match.profileImg === null || match.profileImg === "") &&
                                     <div className="thumb-images-container">
                                         <img className="thumb-image" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png" alt="poop"></img>
                                     </div>
                                    }
-                                   {match.profileImg !== null &&
+                                   {(match.profileImg !== null && match.profileImg !== "") &&
                                     <div className="thumb-images-container">
                                          <img className="thumb-image" src={match.profileImg} alt=""></img>
                                     </div>
                                    }
-                                    {/* <div>
-                                        <div>{match.pageName}</div>
-                                    </div> */}
+                                    <div>
+                                        <div className="search-pageName">{match.pageName}</div>
+                                        <div className="search-partners">{match.partnerOne && match.partnerTwo ? `${match.partnerOne} and ${match.partnerTwo}` : ""}</div>
+                                    </div>
                                 </div>
+                                <div className="line"></div>
                             </NavLink>
                         ))}
                     </div>

@@ -97,8 +97,7 @@
     position: absolute;
     width: 850px;
     height: 800px;
-    background-color:  #6289bd;
-    opacity: .3;
+    background-color:rgba(209, 209, 209, .9);
     border: 2px solid white;
     left: 50%;
     top: 0;
@@ -122,6 +121,7 @@
 .link-container {
     margin: 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -134,8 +134,9 @@
 
 .thumb-image {
     float: left;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
+    margin-right: 20px;
 }
 
 
@@ -167,4 +168,34 @@
 .close-button:hover,
 #close-button:hover {
     background-color: rgb(222, 232, 253);
+}
+
+.search-link {
+    text-decoration: none;
+
+}
+
+.link-content {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-pageName {
+    font-size: 30px;
+}
+
+.search-partners {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+.line {
+    width: 350px;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+    margin: 10px;
 }
