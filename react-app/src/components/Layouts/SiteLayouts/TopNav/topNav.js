@@ -36,10 +36,8 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
             dispatch(getUserPageById(userId))
         }
 
-        if(imageId === 1 || imageId === 4 || imageId === 5) {
-            setStandardColor("standard-one")
-        } else if(imageId === 2 || imageId === 3) {
-            setStandardColor("")
+        if(colorPalette !== 2) {
+            setUnderlined("standard-und")
         }
 
         if(colorPalette === 2 && imageId === 1) {
@@ -78,7 +76,7 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
     const takeMeHome = () => {
         history.push("/")
     }
-    console.log(pathName)
+
     return (
         <>
             <div className="top-nav">

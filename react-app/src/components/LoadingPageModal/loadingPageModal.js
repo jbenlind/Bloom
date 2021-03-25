@@ -18,6 +18,7 @@ const LoadingPageModal = ({openModal, setOpenModal}) => {
 
     const leavePage = () => {
         setLeaving(true)
+        document.getElementById("save-form-button").click()
         setTimeout(() => {
 
             history.push(`/${pageName.split(" ").join("")}-${userId}`)

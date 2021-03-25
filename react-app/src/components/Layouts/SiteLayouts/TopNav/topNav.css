@@ -79,6 +79,16 @@
     border-bottom: 2px solid #f67824;
 }
 
+.standard-und {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color:  rgba(0, 0, 0, .7);
+    border-bottom: 2px solid  rgba(0, 0, 0, .7);
+}
+
 .site-card {
     background-color: rgba(246, 247, 236);
     height: 500px;
@@ -158,13 +168,11 @@
 }
 
 .venue-location {
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 80%;
-    /* align-items: flex-start; */
-    /* justify-content:start; */
+
 }
 
 .venue-name-g {
@@ -179,7 +187,6 @@
 .venue-address-g {
     font-size: 25px;
     color: rgba(0, 0, 0, .8);
-
 }
 
 .directions-button {
