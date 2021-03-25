@@ -46,11 +46,11 @@ const LoadingPageModal = ({openModal, setOpenModal}) => {
                         </div>
                         }
                          {leaving &&
-                         <div>
+                         <div className="loading-ani-sec">
                                 <div className="save-section">
                                 <div className="lds-dual-ring"></div>
                                 </div>
-                                <p>Building your page</p></div>}
+                                <p className="build-ani">Building your page</p></div>}
                      </div>
                 </div>
             </Modal>}

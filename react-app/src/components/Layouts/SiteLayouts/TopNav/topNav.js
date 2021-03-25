@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
 import { getUserPageById } from "../../../../store/userPage";
 import VenueMap from "../../../VenueMap";
 import { format } from 'date-fns';
@@ -8,6 +9,9 @@ import "./topNav.css";
 const TopNav = ({imageId, colorPalette, lat, lng}) => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
+    const location = useLocation();
+    const pathName = location.pathname
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
     const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "Partner");
     const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "Partner");
@@ -24,7 +28,8 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
     const [underlind, setUnderlined] = useState("")
     const [secondaryColor, setSecondColor] = useState("");
     const [section, setSection] = useState(1);
-    const [buttonColor, setButtonColor] = useState("")
+    const [buttonColor, setButtonColor] = useState("");
+    const [footerColor, setFooterColor] = useState("")
 
     useEffect(() => {
         if(userId) {
@@ -42,29 +47,38 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
             setSecondColor("secondary-one")
             setUnderlined("one-active")
             setButtonColor("b-1")
+            setFooterColor("f-1")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
             setUnderlined("two-active")
             setButtonColor("b-2")
+            setFooterColor("f-2")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
             setUnderlined("three-active")
             setButtonColor("b-3")
+            setFooterColor("f-3")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
             setUnderlined("four-active")
             setButtonColor("b-4")
+            setFooterColor("f-4")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
             setUnderlined("five-active")
             setButtonColor("b-5")
+            setFooterColor("f-5")
         }
     }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
+    const takeMeHome = () => {
+        history.push("/")
+    }
+    console.log(pathName)
     return (
         <>
             <div className="top-nav">
@@ -99,6 +113,10 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                     }
                 </div>
             </div>
+            {!pathName.includes("myPage") &&
+            <div className="small-footer">
+                Powered by <p onClick={takeMeHome} id={footerColor !== "" ? footerColor : ""} className="bloom-logo">Bloom</p>
+            </div>}
         </>
     )
 }

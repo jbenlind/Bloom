@@ -32,9 +32,11 @@ const SaveModal = ({openModal, setOpenModal}) => {
                                 </div>
                             </div>}
                             {saving &&
-                                <div className="save-section">
-                                <div className="lds-dual-ring"></div>
-                                </div>}
+                                <div className="loading-ani-sec">
+                                    <div className="save-section">
+                                    <div className="lds-dual-ring"></div>
+                                </div>
+                                <p className="build-ani">Saving...</p></div>}
                             </div>
                         </div>
                     </div>

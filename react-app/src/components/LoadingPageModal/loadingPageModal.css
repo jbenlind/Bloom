@@ -54,3 +54,13 @@
     background-color: #6d99d1;
 }
 
+.loading-ani-sec {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.loading-ani-sec p {
+    margin-top: 10px;
+    font-size: 20px;
+}
