@@ -8,15 +8,20 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
-    const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "");
-    const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "");
+    const partnerOne = useSelector((state) => state.userPage.partnerOne ? state.userPage.partnerOne : "Partner");
+    const partnerTwo = useSelector((state) => state.userPage.partnerTwo ? state.userPage.partnerTwo : "Partner");
+    const venueName = useSelector((state) => state.userPage.venueName ? state.userPage.venueName : "Venue Name");
+    const venueAddress = useSelector((state) => state.userPage.venueAddress ? state.userPage.venueAddress : "Address");
+    const venueCity = useSelector((state) => state.userPage.venueCity? state.userPage.venueCity : "City");
+    const venueState = useSelector((state) => state.userPage.venueState ? state.userPage.venueState : "State");
+    const venueZip = useSelector((state) => state.userPage.venueZip ? state.userPage.venueZip : "Zip");
 
     const [standardColor, setStandardColor] = useState("");
-    const [standardBorder, setStandardBorder] = useState("basic-black-site");
     const [primaryColor, setPrimaryColor] = useState("");
-    const [primaryName, setPrimaryName] = useState("");
+    const [underlind, setUnderlined] = useState("")
     const [secondaryColor, setSecondColor] = useState("");
     const [section, setSection] = useState(1);
+    const [buttonColor, setButtonColor] = useState("")
 
     useEffect(() => {
         if(userId) {
@@ -25,32 +30,35 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
 
         if(imageId === 1 || imageId === 4 || imageId === 5) {
             setStandardColor("standard-one")
-            setStandardBorder("basic-white")
         } else if(imageId === 2 || imageId === 3) {
             setStandardColor("")
-            setStandardBorder("basic-black")
         }
 
         if(colorPalette === 2 && imageId === 1) {
             setPrimaryColor("primary-one")
             setSecondColor("secondary-one")
-            setPrimaryName("primary-one-name")
+            setUnderlined("one-active")
+            setButtonColor("b-1")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
-            setPrimaryName("primary-two-name")
+            setUnderlined("two-active")
+            setButtonColor("b-2")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
-            setPrimaryName("primary-three-name")
+            setUnderlined("three-active")
+            setButtonColor("b-3")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
-            setPrimaryName("primary-four-name")
+            setUnderlined("four-active")
+            setButtonColor("b-4")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
-            setPrimaryName("primary-five-name")
+            setUnderlined("five-active")
+            setButtonColor("b-5")
         }
     }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
@@ -58,9 +66,9 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
         <>
             <div className="top-nav">
                 <div className="site-tabs">
-                    <button onClick={(e) => setSection(1)} id={colorPalette === 2 ? primaryName : standardBorder} className="site-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
-                    <button onClick={(e) => setSection(2)} id={colorPalette === 2 ? primaryColor : standardColor} className="site-button">venue</button>
-                    <button onClick={(e) => setSection(3)} id={colorPalette === 2 ? primaryColor : standardColor} className="site-button">RSVP</button>
+                    <button onClick={(e) => setSection(1)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 1 ? underlind : "site-button"}>{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>
+                    <button onClick={(e) => setSection(2)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 2 ? underlind : "site-button"}>venue</button>
+                    <button onClick={(e) => setSection(3)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 3 ? underlind : "site-button"}>RSVP</button>
                 </div>
                 <div className="site-card">
                 {section === 1 &&
@@ -78,6 +86,12 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                     {section === 2 &&
                     <div className="venue-map">
                         <VenueMap lat={lat} lng={lng} />
+                        <div className="venue-location">
+                            <div className="venue-name-g">{venueName}</div>
+                            <div className="venue-address-g">{venueAddress}</div>
+                            <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
+                            <a id={colorPalette === 2 ? buttonColor : "" } className="directions-button" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
+                        </div>
                     </div>
                     }
                 </div>
