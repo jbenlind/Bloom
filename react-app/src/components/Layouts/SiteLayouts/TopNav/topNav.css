@@ -46,6 +46,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
+    animation: fadeIn 1s;
 }
 
 .top-half-site {
@@ -88,4 +89,14 @@
     text-align: center;
     font-size: 30px;
     color: rgba(0, 0, 0, .8);
+}
+
+.venue-map {
+    animation: fadeIn 1s;
+}
+
+.map-link {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
 }

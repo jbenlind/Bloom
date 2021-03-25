@@ -1,6 +1,7 @@
 .layout-in {
     opacity: 1;
     animation: fade .3s linear;
+    overflow: hidden;
 }
 
 @keyframes fade {

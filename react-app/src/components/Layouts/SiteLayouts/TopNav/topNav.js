@@ -76,7 +76,9 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                     </div>
                     </div>}
                     {section === 2 &&
-                    <VenueMap lat={lat} lng={lng} />
+                    <div className="venue-map">
+                        <VenueMap lat={lat} lng={lng} />
+                    </div>
                     }
                 </div>
             </div>
