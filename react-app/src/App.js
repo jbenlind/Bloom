@@ -16,7 +16,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const [authenticated, setAuthenticated] = useState(false);
-  const [searching, setSearching] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -32,12 +31,12 @@ const App = () => {
       <Navigation
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
-        setSearching={setSearching}
+
       />
       <Switch>
 
         <Route path="/" exact={true} authenticated={authenticated}>
-          <SplashPage searching={searching} setSearching={setSearching}/>
+          <SplashPage />
         </Route>
 
         <Route path="/userHub" exact={true} authenticated={authenticated}>

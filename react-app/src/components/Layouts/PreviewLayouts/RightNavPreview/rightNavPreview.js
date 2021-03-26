@@ -54,7 +54,7 @@ const RightNavPreview = ({imageId, colorPalette, savedImg}) => {
                     </div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">{date ? format(new Date(date), "EEEE MMMM dd, yyyy") :"September 23, 2023"}</p>
                 </div>
                 <div className="right-nav-preview-tabs">
                     <button id={colorPalette === 2 ? primaryName: "basic-black-transparent"} className="preview-button">{partnerOne && partnerTwo ? `${partnerOne.slice(0,1)} & ${partnerTwo.slice(0,1)}` : "K & P"}</button>

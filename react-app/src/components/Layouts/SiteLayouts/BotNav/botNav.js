@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { getUserPageById } from "../../../../store/userPage";
 import VenueMap from "../../../VenueMap";
 import { format } from 'date-fns';
+import RSVPForm from "../../../RSVP";
 import "./botNav.css";
 
 const BotNav = ({imageId, colorPalette, lat, lng}) => {
@@ -30,6 +31,8 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
     const [section, setSection] = useState(1);
     const [buttonColor, setButtonColor] = useState("");
     const [footerColor, setFooterColor] = useState("")
+    const [venueColor, setVenueColor] = useState("");
+    const [rsvpPosition] = useState("horizontal-bot");
 
     useEffect(() => {
         if(userId) {
@@ -46,30 +49,35 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
             setUnderlined("one-active")
             setButtonColor("b-1")
             setFooterColor("f-1")
+            setVenueColor("primary-one")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
             setUnderlined("two-active")
             setButtonColor("b-2")
             setFooterColor("f-2")
+            setVenueColor("primary-two")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
             setUnderlined("three-active")
             setButtonColor("b-3")
             setFooterColor("f-3")
+            setVenueColor("primary-three")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
             setUnderlined("four-active")
             setButtonColor("b-4")
             setFooterColor("f-4")
+            setVenueColor("primary-four")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
             setUnderlined("five-active")
             setButtonColor("b-5")
             setFooterColor("f-5")
+            setVenueColor("primary-five")
         }
     }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
@@ -90,17 +98,17 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-site">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-site"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "EEEE MMMM dd, yyyy") :"September 23, 2023"}</p>
                     </div>
                     </div>}
                     {section === 2 &&
                     <div className="venue-map">
                         <VenueMap lat={lat} lng={lng} />
                         <div className="venue-location">
-                            <div className="venue-name-g">{venueName}</div>
+                            <div id={venueColor ? venueColor : ""} className="venue-name-g">{venueName}</div>
                             <div className="venue-address-g">{venueAddress}</div>
                             <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
-                            <a id={colorPalette === 2 ? buttonColor : "" } className="directions-button" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
+                            <a id={colorPalette === 2 ? buttonColor : "" } target="_blank" rel="noreferrer" className="directions-button" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
                         </div>
                     </div>
                     }
@@ -110,6 +118,9 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
                     <button onClick={(e) => setSection(2)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 2 ? underlind : "site-button"}>venue</button>
                     <button onClick={(e) => setSection(3)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 3 ? underlind : "site-button"}>RSVP</button>
                 </div>
+                {section === 3 &&
+                    <RSVPForm rsvpPosition={rsvpPosition} footerColor={footerColor} buttonColor={buttonColor}/>
+                    }
             </div>
             {!pathName.includes("myPage") &&
             <div className="small-footer">

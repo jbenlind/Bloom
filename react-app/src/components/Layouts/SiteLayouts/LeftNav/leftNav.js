@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { getUserPageById} from "../../../../store/userPage";
 import VenueMap from "../../../VenueMap";
+import RSVPForm from "../../../RSVP";
 import { format } from 'date-fns';
 import "./leftNav.css";
 
@@ -30,7 +31,9 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
     const [secondaryColor, setSecondColor] = useState("");
     const [section, setSection] = useState(1);
     const [buttonColor, setButtonColor] = useState("");
-    const [footerColor, setFooterColor] = useState("")
+    const [footerColor, setFooterColor] = useState("");
+    const [rsvpPosition] = useState("vertical")
+    const [venueColor, setVenueColor] = useState("");
 
     useEffect(() => {
         if(userId) {
@@ -47,30 +50,35 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
             setUnderlined("one-active-r")
             setButtonColor("b-1")
             setFooterColor("f-1")
+            setVenueColor("primary-one")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
             setUnderlined("two-active-r")
             setButtonColor("b-2")
             setFooterColor("f-2")
+            setVenueColor("primary-two")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
             setUnderlined("three-active-r")
             setButtonColor("b-3")
             setFooterColor("f-3")
+            setVenueColor("primary-three")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
             setUnderlined("four-active-r")
             setButtonColor("b-4")
             setFooterColor("f-4")
+            setVenueColor("primary-four")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
             setUnderlined("five-active-r")
             setButtonColor("b-5")
             setFooterColor("f-5")
+            setVenueColor("primary-five")
         }
     }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
@@ -96,21 +104,24 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-site">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-site"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "EEEE MMMM dd, yyyy") :"September 23, 2023"}</p>
                     </div>
                     </div>}
                     {section === 2 &&
                     <div className="venue-map-r">
                         <div className="venue-location-r">
-                            <div className="venue-name-g">{venueName}</div>
+                            <div id={venueColor ? venueColor : ""} className="venue-name-g">{venueName}</div>
                             <div className="venue-address-g">{venueAddress}</div>
                             <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
                         </div>
                         <VenueMap lat={lat} lng={lng} />
-                        <a id={colorPalette === 2 ? buttonColor : "" } className="directions-button-r" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
+                        <a id={colorPalette === 2 ? buttonColor : "" } target="_blank" rel="noreferrer" className="directions-button-r" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
                     </div>
                     }
                 </div>
+                {section === 3 &&
+                    <RSVPForm rsvpPosition={rsvpPosition} footerColor={footerColor} buttonColor={buttonColor} />
+                    }
             </div>
             {!pathName.includes("myPage") &&
             <div className="small-footer">
