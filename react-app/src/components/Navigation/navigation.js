@@ -49,7 +49,7 @@ const Navigation = ({ authenticated, setAuthenticated, setSearching}) => {
         <div id="first-fraction">
           <NavLink id={pathName === "" ? "inUse" : pathName} className="bloom-title" to="/">
             <span className="b">B</span>
-             <span id={pathName} className="loom">
+             <span id={pathName} className="loom-hover loom">
               loom
             </span>
           </NavLink>

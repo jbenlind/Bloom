@@ -71,7 +71,6 @@
     animation: slider 3.5s .6s forwards;
 }
 
-
 @keyframes slider {
     0% {
       transform: translate(0, 0);
