@@ -32,7 +32,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
     const [buttonColor, setButtonColor] = useState("");
     const [footerColor, setFooterColor] = useState("")
     const [venueColor, setVenueColor] = useState("");
-    const [rsvpPosition] = useState("horizontal");
+    const [rsvpPosition] = useState("horizontal-bot");
 
     useEffect(() => {
         if(userId) {
