@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { getUserPageById} from "../../../../store/userPage";
 import VenueMap from "../../../VenueMap";
 import { format } from 'date-fns';
+import RSVPForm from "../../../RSVP";
 import "./rightNav.css";
 
 const RightNav = ({imageId, colorPalette, lat, lng}) => {
@@ -111,6 +112,9 @@ const RightNav = ({imageId, colorPalette, lat, lng}) => {
                     <button onClick={(e) => setSection(2)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 2 ? underlind : "site-button-r"}>venue</button>
                     <button onClick={(e) => setSection(3)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 3 ? underlind : "site-button-r"}>RSVP</button>
                 </div>
+                {section === 3 &&
+                    <RSVPForm />
+                    }
             </div>
             {!pathName.includes("myPage") &&
             <div className="small-footer">
