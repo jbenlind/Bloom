@@ -32,6 +32,7 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
     const [buttonColor, setButtonColor] = useState("");
     const [footerColor, setFooterColor] = useState("");
     const [venueColor, setVenueColor] = useState("");
+    const [rsvpPosition] = useState("horizontal");
 
     useEffect(() => {
         if(userId) {
@@ -117,7 +118,7 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                     </div>
                     }
                     {section === 3 &&
-                    <RSVPForm />
+                    <RSVPForm rsvpPosition={rsvpPosition} footerColor={footerColor} buttonColor={buttonColor}/>
                     }
                 </div>
             </div>

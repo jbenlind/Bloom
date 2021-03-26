@@ -32,6 +32,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
     const [buttonColor, setButtonColor] = useState("");
     const [footerColor, setFooterColor] = useState("")
     const [venueColor, setVenueColor] = useState("");
+    const [rsvpPosition] = useState("horizontal");
 
     useEffect(() => {
         if(userId) {
@@ -118,7 +119,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
                     <button onClick={(e) => setSection(3)} id={colorPalette === 2 ? primaryColor : standardColor} className={section === 3 ? underlind : "site-button"}>RSVP</button>
                 </div>
                 {section === 3 &&
-                    <RSVPForm />
+                    <RSVPForm rsvpPosition={rsvpPosition} footerColor={footerColor} buttonColor={buttonColor}/>
                     }
             </div>
             {!pathName.includes("myPage") &&

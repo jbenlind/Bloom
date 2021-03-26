@@ -7,6 +7,7 @@ const RSVPForm = ({rsvpPosition, footerColor, buttonColor}) => {
         <>
             <div className={`rsvp-form-${rsvpPosition}`}>
                 <form>
+                  <div className="first-block">
                     <div>
                         <input
                           required={true}/>
@@ -28,6 +29,8 @@ const RSVPForm = ({rsvpPosition, footerColor, buttonColor}) => {
                           required={true}/>
                         <label id={footerColor? footerColor :""}>Attending</label>
                     </div>
+                  </div>
+                  <div className="second-block">
                     <div>
                         <input
                           required={true}/>
@@ -44,6 +47,7 @@ const RSVPForm = ({rsvpPosition, footerColor, buttonColor}) => {
                         <label id={footerColor? footerColor :""}>Allergies Description</label>
                     </div>
                     <button id={buttonColor ? buttonColor :""}>Submit</button>
+                  </div>
                 </form>
             </div>
         </>

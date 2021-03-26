@@ -135,3 +135,85 @@
 .rsvp-form-vertical-right button:hover {
     transform: translateY(-3px);
 }
+
+.rsvp-form-horizontal {
+    position: absolute;
+    top: 55%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    animation: fadeIn 2s;
+}
+
+.rsvp-form-horizontal .first-block {
+    position: absolute;
+    top: 0%;
+    left: 60%;
+}
+
+.rsvp-form-horizontal .second-block {
+    position: absolute;
+    top: 0%;
+    left: 80%;
+}
+
+.rsvp-form-horizontal input {
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    background-color: transparent;
+    box-sizing:border-box;
+    box-shadow: none;
+    border: 2px solid rgba(0,0,0, .7);
+    cursor: pointer;
+    color: rgba(0,0,0, .6);
+}
+
+.rsvp-form-horizontal form div {
+    position: relative;
+}
+
+.rsvp-form-horizontal form div label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: .5s;
+    pointer-events: none;
+    font-size: 25px;
+    color: rgba(0,0,0, .7);
+}
+
+.rsvp-form-horizontal input:focus ~ label {
+    top:-20px;
+    left: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rsvp-form-horizontal input:valid ~ label {
+    top:-20px;
+    left:10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.rsvp-form-horizontal button {
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
+    height: 45px;
+    width: 200px;
+    font-size: 30px;
+    margin-left: 60px;
+    margin-top: 5px;
+    transition: .25s all ease-in-out;
+    cursor: pointer;
+}
+
+.rsvp-form-horizontal button:hover {
+    transform: translateY(-3px);
+}
