@@ -28,7 +28,7 @@ const VenueMap = ({lat, lng}) => {
          <Marker onClick={(e) => setSelected(true)} position={{lat: lat, lng: lng}}/>
          {selected &&
           <InfoWindow onCloseClick={(e) => setSelected(false)} position={{lat: lat, lng: lng}}>
-            <a className="map-link" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Click for Directions</a>
+            <a className="map-link" target="_blank" rel="noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Click for Directions</a>
           </InfoWindow>}
           <></>
         </GoogleMap>

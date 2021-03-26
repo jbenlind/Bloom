@@ -108,7 +108,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
                             <div id={venueColor ? venueColor : ""} className="venue-name-g">{venueName}</div>
                             <div className="venue-address-g">{venueAddress}</div>
                             <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
-                            <a id={colorPalette === 2 ? buttonColor : "" } className="directions-button" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
+                            <a id={colorPalette === 2 ? buttonColor : "" } target="_blank" rel="noreferrer" className="directions-button" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
                         </div>
                     </div>
                     }

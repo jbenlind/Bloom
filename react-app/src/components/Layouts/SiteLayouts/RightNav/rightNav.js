@@ -110,7 +110,7 @@ const RightNav = ({imageId, colorPalette, lat, lng}) => {
                             <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
                         </div>
                         <VenueMap lat={lat} lng={lng} />
-                        <a id={colorPalette === 2 ? buttonColor : "" } className="directions-button-r" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
+                        <a id={colorPalette === 2 ? buttonColor : "" } target="_blank" rel="noreferrer" className="directions-button-r" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>
                     </div>
                     }
                 </div>
