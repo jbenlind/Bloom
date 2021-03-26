@@ -183,7 +183,6 @@
 
 }
 
-
 .venue-address-g {
     font-size: 25px;
     color: rgba(0, 0, 0, .8);
@@ -200,7 +199,7 @@
     color: black;
     font-size: 20px;
     padding-top: 5px;
-    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, .6); */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
     transition: .25s all ease-in-out;
 }
 
@@ -212,35 +211,39 @@
     background-color: #0f6eea;
     color: white;
     border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
 }
 #b-2 {
     color: white;
     background-color: #0f6eea;;
     border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
 }
 #b-3 {
     color: white;
     background-color:#5b6c34;
     border: none;
-
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
 }
 #b-4 {
     background-color: #00b7cc;
     border: none;
     color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
 }
 
 #b-5 {
     background: #17a5a3;
     border: none;
     color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .6);
 }
 
 .small-footer {
     position: absolute;
     bottom: 0;
     left: 45%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     border: 2px solid white;
     width: 200px;
     padding: 5px 0;
@@ -251,27 +254,24 @@
 .bloom-logo {
     display: inline;
     cursor: pointer;
+    font-size: 20px;
 }
 
 
 #f-1 {
-    color: #0f6eea;
-    border-bottom: 1px solid #e08d56;
+   color: #0f6eea;
 }
 #f-2 {
     color: #0f6eea;;
-    border-bottom: 1px solid #6e7b7f;
 }
 #f-3 {
     color:#5b6c34;
-    border-bottom: 1px solid #a5943f;
 }
+
 #f-4 {
     color: #00b7cc;
-    border-bottom: 1px solid #977173;
 }
 
 #f-5 {
     color: #17a5a3;
-    border-bottom: 1px solid #f67824;
 }

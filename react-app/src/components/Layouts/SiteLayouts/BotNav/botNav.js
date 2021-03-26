@@ -91,7 +91,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
                         <h2 id={colorPalette === 2 ? secondaryColor : ""} className="couple-names-site">{partnerOne && partnerTwo ? `${partnerOne} and ${partnerTwo}` : "Karen and Paul"}</h2>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-site"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-site">{date ? format(new Date(date), "EEEE MMMM dd, yyyy") :"September 23, 2023"}</p>
                     </div>
                     </div>}
                     {section === 2 &&

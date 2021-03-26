@@ -59,7 +59,7 @@ const LeftNavPreview = ({imageId, colorPalette, savedImg}) => {
                     </div>
                         <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">joyfully invite you to their<br></br> wedding celebration</p>
                         <div id={colorPalette === 2 ? secondaryColor : ""} className="vertical-line-preview"></div>
-                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">{date ? format(new Date(date), "MMM dd, yyyy") :"September 23, 2023"}</p>
+                        <p id={colorPalette === 2 ? primaryColor : ""} className="invitation-preview">{date ? format(new Date(date), "EEEE MMMM dd, yyyy") :"September 23, 2023"}</p>
                 </div>
             </div>
         </>
