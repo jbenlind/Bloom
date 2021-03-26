@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../store/session";
+import Search from "../Search";
 import FromCenterButton from "../FromCenterButton";
 import "./navigation.css";
 
@@ -28,13 +29,14 @@ document.addEventListener("scroll", debounce(storeScroll), { passive: true });
 
 storeScroll();
 
-const Navigation = ({ authenticated, setAuthenticated, setSearching}) => {
+const Navigation = ({ authenticated, setAuthenticated }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
   const pathName = location.pathname.slice(1);
 
   const sessionUser = useSelector((state) => state.session.user);
+  const [searching, setSearching] = useState(false);
 
   const logoutFunction = async (e) => {
     history.push("/");
@@ -47,32 +49,36 @@ const Navigation = ({ authenticated, setAuthenticated, setSearching}) => {
       { (pathName === "" || pathName === "templates" || pathName === "userHub")  &&
         <div className="grid-container">
         <div id="first-fraction">
+          {!searching &&
           <NavLink id={pathName === "" ? "inUse" : pathName} className="bloom-title" to="/">
             <span className="b">B</span>
              <span id={pathName} className="loom-hover loom">
               loom
             </span>
-          </NavLink>
+          </NavLink>}
         </div>
         <div id="second-fraction">
-          <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
+        {searching &&
+          <Search searching={searching} setSearching={setSearching} />}
+        {!searching &&  <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
             Templates
-          </NavLink>
-          <NavLink className="link" to="" onClick={(e) => setSearching(true)}>
+          </NavLink>}
+
+      {!searching && <NavLink className="link" to="" onClick={(e) => setSearching(true)}>
             Find a page
-          </NavLink>
-          {!authenticated && (
+          </NavLink>}
+          {(!authenticated && !searching) && (
             <NavLink id={pathName === "userHub"? "inUse" : ""} className="link" to="/userHub">
               Log In
             </NavLink>
           )}
-          {authenticated && sessionUser && (
+          {(authenticated && sessionUser && !searching) && (
             <NavLink id={pathName.includes("myPage") ? "inUse" : ""} className="link" to={`myPage/${sessionUser.id}`}>
               My page
             </NavLink>
           )}
         </div>
-        <div id="third-fraction">
+       {!searching && <div id="third-fraction">
           {((authenticated && (pathName !== "templates")) &&  (
             <button className="btn from-center" onClick={logoutFunction}>
               log out
@@ -81,7 +87,7 @@ const Navigation = ({ authenticated, setAuthenticated, setSearching}) => {
           {(((!authenticated && (pathName === "")) || (pathName === "templates")))  && (
             <FromCenterButton />
           )}
-        </div>
+        </div>}
       </div>}
     </>
   );

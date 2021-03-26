@@ -109,6 +109,13 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                         </div>
                     </div>
                     }
+                    {section === 3 &&
+                        <div>
+                            <form>
+                                
+                            </form>
+                        </div>
+                    }
                 </div>
             </div>
             {!pathName.includes("myPage") &&
