@@ -12,6 +12,13 @@ from app.models import Background_images, Color_palette, \
 user_page_routes = Blueprint("user_page", __name__)
 
 
+@user_page_routes.route("/all")
+def get_all_pages():
+    page = User_page.query.all()
+    page = [page.to_dict() for page in page]
+    return jsonify(page)
+
+
 @user_page_routes.route("/<int:userId>", methods=["GET"])
 def get_user_page_info(userId):
     userPage = User_page.query.filter(User_page.userId == userId).first()

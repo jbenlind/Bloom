@@ -77,8 +77,7 @@ const BackgroundCarousel = ({imageId, setImageId}) => {
 
     return (
         <>
-            {backgroundImages.length > 0 &&
-            <h1 className="image-names">{backgroundImages[currId - 1].name}</h1>}
+            <h1 className="image-names">Select a backdrop</h1>
             <div className="my-images">
                 <div onClick={() => slideLeft()}><i className="arrow-left fas fa-chevron-left"></i></div>
                 <div className="back-container">

@@ -26,3 +26,30 @@
     color: white;
     margin-bottom: 30px;
 }
+
+.footer {
+    position: absolute;
+    bottom: 1%;
+    left: .25%;
+    width: 15%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.foot-but {
+    font-size: 35px;
+    color:#0f6eea;
+}
+
+.foot-but:hover {
+    color: #6289bd;
+}
+

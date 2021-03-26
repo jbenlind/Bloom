@@ -11,10 +11,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 396px;
     background-color: rgb(254, 255, 238, .7);
     box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
     margin-top: 75px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 
@@ -28,4 +31,11 @@
     flex-direction: column;
     margin-top: 75px;
 
+}
+
+.profile-image-preview-sides {
+    height: 150px;
+    width: 190px;
+    margin: 20px 0;
+    border-radius: 10%;
 }

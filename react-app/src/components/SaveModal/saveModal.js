@@ -8,11 +8,7 @@ const SaveModal = ({openModal, setOpenModal}) => {
 
     const startSaving = () => {
         document.getElementById("save-form-button").click()
-        // document.getElementById("save-layout-button").click()
         setSaving(true)
-        setTimeout(() => {
-            setOpenModal(false)
-        }, 1500)
     }
 
     const changeModal = () => {
@@ -21,20 +17,30 @@ const SaveModal = ({openModal, setOpenModal}) => {
 
     return (
         <>
-           {openModal &&
+            {openModal &&
             <Modal>
-                {!saving &&
-                <div className="save-cancel">
-                    <h3>Are you sure you want to save?</h3>
-                    <div>
-                        <button onClick={startSaving}>Save</button>
-                        <button onClick={changeModal}>Cancel</button>
+                 <div id="modal-background">
+                    <div id="modal-content">
+                        <div id="modal-background-save">
+                            <div id="modal-content-save">
+                        {!saving &&
+                            <div className="save-cancel">
+                                <h3>Are you sure you want to save?</h3>
+                                <div>
+                                    <button onClick={startSaving}>Save</button>
+                                    <button onClick={changeModal}>Cancel</button>
+                                </div>
+                            </div>}
+                            {saving &&
+                                <div className="loading-ani-sec">
+                                    <div className="save-section">
+                                    <div className="lds-dual-ring"></div>
+                                </div>
+                                <p className="build-ani">Saving...</p></div>}
+                            </div>
+                        </div>
                     </div>
-                </div>}
-              {saving &&
-              <div className="save-section">
-               <div className="lds-dual-ring"></div>
-            </div>}
+                </div>
             </Modal>}
         </>
     )

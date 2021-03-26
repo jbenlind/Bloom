@@ -1,0 +1,276 @@
+.top-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.site-tabs {
+    height: 50px;
+    width: 49.6%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 8%;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-top: 4px solid rgb(254, 255, 238);
+    border-left: 4px solid rgb(254, 255, 238);
+    border-right: 4px solid rgb(254, 255, 238);
+}
+
+.site-button {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: rgba(0, 0, 0, .6);
+}
+
+.one-active {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: #0f6eea;
+    border-bottom: 2px solid #e08d56;
+}
+
+.two-active {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: #0f6eea;
+    border-bottom: 2px solid #6e7b7f;
+}
+
+.three-active {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: #5b6c34;
+    border-bottom: 2px solid #a5943f;
+}
+
+.four-active {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: #00b7cc;
+    border-bottom: 2px solid #977173;
+}
+
+.five-active {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color: #17a5a3;
+    border-bottom: 2px solid #f67824;
+}
+
+.standard-und {
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    color:  rgba(0, 0, 0, .7);
+    border-bottom: 2px solid  rgba(0, 0, 0, .7);
+}
+
+.site-card {
+    background-color: rgba(246, 247, 236);
+    height: 500px;
+    width: 50%;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.site-card-pos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    animation: fadeIn 1s;
+}
+
+.top-half-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bot-half-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.profile-image-site {
+    height: 300px;
+    width: 350px;
+    margin: 20px 0;
+    border-radius: 10%;
+}
+
+.couple-names-site {
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: .1rem;
+    color: rgba(0, 0, 0, .7);
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+}
+
+.vertical-line-site {
+    height: 80px;
+    border-left: 3px solid rgba(0, 0, 0, .4);
+}
+
+.invitation-site {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(0, 0, 0, .8);
+}
+
+.venue-map {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: fadeIn 1s;
+    width: 100%;
+    height: 100%;
+}
+
+.map-link {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.venue-location {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 80%;
+
+}
+
+.venue-name-g {
+    font-size: 30px;
+    color: rgba(0, 0, 0, .8);
+    border-bottom: 1px solid rgba(0, 0, 0, .8);
+    margin-bottom: 30px;
+
+}
+
+
+.venue-address-g {
+    font-size: 25px;
+    color: rgba(0, 0, 0, .8);
+}
+
+.directions-button {
+    margin-top: 30px;
+    text-align: center;
+    height: 30px;
+    width: 150px;
+    text-decoration: none;
+    border: 2px solid rgba(0, 0, 0, .8);
+    background:rgba(218, 218, 218, 0.6);
+    color: black;
+    font-size: 20px;
+    padding-top: 5px;
+    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, .6); */
+    transition: .25s all ease-in-out;
+}
+
+.directions-button:hover {
+    transform: translateX(3px);
+}
+
+#b-1 {
+    background-color: #0f6eea;
+    border: 2px solid #e08d56;
+    color: white;
+}
+#b-2 {
+    color: white;
+    background-color: #0f6eea;;
+    border: 2px solid #6e7b7f;
+}
+#b-3 {
+    color: white;
+    background-color:#5b6c34;
+    border: 2px solid #a5943f;
+}
+#b-4 {
+    background-color: #00b7cc;
+    border: 2px solid #977173;
+    color: white;
+}
+
+#b-5 {
+    background: #17a5a3;
+    border: 2px solid #f67824;
+    color: white;
+}
+
+.small-footer {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    width: 200px;
+    padding: 5px 0;
+    text-align: center;
+    color:rgba(0, 0, 0, .6);
+}
+
+.bloom-logo {
+    display: inline;
+    cursor: pointer;
+}
+
+
+#f-1 {
+    color: #0f6eea;
+    border-bottom: 1px solid #e08d56;
+}
+#f-2 {
+    color: #0f6eea;;
+    border-bottom: 1px solid #6e7b7f;
+}
+#f-3 {
+    color:#5b6c34;
+    border-bottom: 1px solid #a5943f;
+}
+#f-4 {
+    color: #00b7cc;
+    border-bottom: 1px solid #977173;
+}
+
+#f-5 {
+    color: #17a5a3;
+    border-bottom: 1px solid #f67824;
+}

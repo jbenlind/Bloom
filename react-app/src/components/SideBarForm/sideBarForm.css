@@ -1,6 +1,6 @@
 .myPage-form {
     position: absolute;
-    top: 30px;
+    top: 35px;
     left: 85px;
     height: 500px;
     width: 220px;
@@ -95,31 +95,39 @@
 }
 
 .image-block {
-    margin-top: 20px;
-}
-
-.image-label {
     margin-top: 10px;
-    top: 0px;
-    left:10px;
 }
 
 #save-form-button {
     display: none;
 }
 
-.rsvp-block button {
+.image-block button {
     height: 45px;
-    width: 155px;
+    width: 160px;
     background-color: #6289bd;
     border: none;
     outline: none;
     font-size: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     color: white;
-    margin-left: 10px;
+    margin-left: 8px;
+    margin-bottom: 30px;
 }
 
-.rsvp-block button:hover {
+.rsvp-block button {
+    height: 45px;
+    width: 160px;
+    background-color: #6289bd;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-left: 8px;
+}
+
+.rsvp-block button:hover,
+.image-block button:hover {
     background-color: #6d99d1;
 }

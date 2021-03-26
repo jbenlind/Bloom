@@ -28,7 +28,7 @@ document.addEventListener("scroll", debounce(storeScroll), { passive: true });
 
 storeScroll();
 
-const Navigation = ({ authenticated, setAuthenticated }) => {
+const Navigation = ({ authenticated, setAuthenticated, setSearching}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
@@ -49,7 +49,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
         <div id="first-fraction">
           <NavLink id={pathName === "" ? "inUse" : pathName} className="bloom-title" to="/">
             <span className="b">B</span>
-             <span id={pathName} className="loom">
+             <span id={pathName} className="loom-hover loom">
               loom
             </span>
           </NavLink>
@@ -58,7 +58,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
           <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
             Templates
           </NavLink>
-          <NavLink className="link" to="">
+          <NavLink className="link" to="" onClick={(e) => setSearching(true)}>
             Find a page
           </NavLink>
           {!authenticated && (

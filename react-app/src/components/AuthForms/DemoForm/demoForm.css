@@ -11,6 +11,7 @@
 }
 
 .radio-button-label {
+    position: relative;
     margin-top: 15px;
     color:#0f6eea;
     text-transform: uppercase;
@@ -19,6 +20,8 @@
 }
 
 .radio-button {
-    margin-left: 10px;
+    position: absolute;
+    top: 8px;
+    left: 105px;
     transform: scale(1.2);
 }

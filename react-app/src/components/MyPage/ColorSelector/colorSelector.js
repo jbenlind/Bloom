@@ -45,7 +45,7 @@ const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
 
     return (
         <>
-            <h1 className="image-names">Select Your Palette</h1>
+            <h1 className="image-names">Select a Palette</h1>
             <div className="color-labels">
                 <label>Classic</label>
                {palettes.length > 0 && imageId > 0 &&
@@ -56,11 +56,13 @@ const ColorSelector = ({setColorPalette, colorPalette, imageId, layout}) => {
                 <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("left")} className="standard">
                     <div className="first-standard"></div>
                     <div className="second-standard"></div>
+                    <span id={layout ? "hide-tool" : ""} className="text">Select a Layout First</span>
                 </button>
                 <div></div>
                 <button disabled={!layout} id={layout ? "" : "not-allowed"} onClick={(e) => slideSelector("right")} className="colored">
                     <div id={colorOne} className="first-color"></div>
                     <div id={colorTwo} className="second-color"></div>
+                    <span id={layout ? "hide-tool" : ""} className="text">Select a Layout First</span>
                 </button>
             </div>
         </>

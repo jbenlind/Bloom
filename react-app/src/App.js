@@ -9,13 +9,14 @@ import UserHub from "./components/UserHub";
 import MyPage from "./components/MyPage";
 import Templates from "./components/Templates";
 import PageNotFound from "./components/PageNotFound";
+import PageBuild from "./components/PageBuild";
 import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
 
   const [authenticated, setAuthenticated] = useState(false);
-  // const [loaded, setLoaded] = useState(false);
+  const [searching, setSearching] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -31,21 +32,24 @@ const App = () => {
       <Navigation
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
+        setSearching={setSearching}
       />
       <Switch>
+
         <Route path="/" exact={true} authenticated={authenticated}>
-          <SplashPage
-            authenticated={authenticated}
-          />
+          <SplashPage searching={searching} setSearching={setSearching}/>
         </Route>
+
         <Route path="/userHub" exact={true} authenticated={authenticated}>
           <UserHub
             setAuthenticated={setAuthenticated}
           />
         </Route>
+
         <Route path="/templates" exact={true}>
           <Templates />
         </Route>
+
         <Route
           path="/myPage/:userId"
           // exact={true}
@@ -55,6 +59,11 @@ const App = () => {
             setAuthenticated={setAuthenticated}
           />
         </Route>
+
+        <Route exact={true} path="/:pageName-:userId">
+          <PageBuild />
+        </Route>
+
         <Route>
           <PageNotFound />
         </Route>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createUserPage, getUserPageById} from "../../store/userPage";
+import { useHistory } from "react-router-dom";
+import { createUserPage } from "../../store/userPage";
+import { format } from 'date-fns'
 import "./sideBarForm.css";
 
 const SideBarForm = ({showSide,
@@ -17,31 +19,37 @@ const SideBarForm = ({showSide,
     venueCity, setVenueCity,
     venueState, setVenueState,
     venueZip, setVenueZip,
-    profileImg, setProfileImg
+    profileImg, setProfileImg,
+    savedImg, setSavedImg,
+    setOpenModal
 }) => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const userId = useSelector((state) => state.session.user ? state.session.user.id : null);
+    const userPage = useSelector((state) => state.userPage ? state.userPage : null)
 
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        if(userId) {
+        if(userPage) {
             const func = async () => {
-                let userPage = await dispatch(getUserPageById(userId))
                 let date = new Date(userPage.weddingDateTime)
-                setWeddingDate(userPage.weddingDateTime ? `${date.getFullYear()}-0${date.getMonth()}-0${date.getDay()}` : "")
+                setWeddingDate(userPage.weddingDateTime ? format(date, 'yyyy-MM-dd') : "")
+                setWeddingTime(userPage.weddingDateTime ? `${date.getHours()}:${date.getUTCMinutes()}` : "")
                 setPageName(userPage.pageName ? userPage.pageName : "")
                 setPartnerOne(userPage.partnerOne ? userPage.partnerOne : "")
                 setPartnerTwo(userPage.partnerTwo ? userPage.partnerTwo : "")
-                // setWeddingTime(userPage.weddingDateTime ? new Date(userPage.weddingDateTime).getTime : "")
                 setVenueName(userPage.venueName ? userPage.venueName : "")
                 setVenueAddress(userPage.venueAddress ? userPage.venueAddress : "")
                 setVenueCity(userPage.venueCity ? userPage.venueCity : "")
                 setVenueState(userPage.venueState ? userPage.venueState : "")
                 setVenueZip(userPage.venueZip ? userPage.venueZip : "")
-                setProfileImg(userPage.profileImg ? userPage.profileImg : "")
+                setSavedImg(userPage.profileImg ? userPage.profileImg : "")
                 setLoaded(true)
+                setTimeout(() => {
+                    setOpenModal(false)
+                }, 500)
             }
             func()
         }
@@ -57,9 +65,11 @@ const SideBarForm = ({showSide,
         setVenueZip,
         setProfileImg,
         setWeddingDate,
-        setWeddingTime
+        setWeddingTime,
+        userPage,
+        setSavedImg,
+        setOpenModal
     ])
-
 
     const sendPageInfo = async (e) => {
         e.preventDefault()
@@ -123,6 +133,7 @@ const SideBarForm = ({showSide,
     };
 
     const grabImageInput = (e) => {
+        e.preventDefault()
         document.getElementById("profileImg").click()
     }
 
@@ -130,6 +141,10 @@ const SideBarForm = ({showSide,
         const file = e.target.files[0]
         if(file) setProfileImg(file)
     };
+
+    const resPage = () => {
+        history.push(`/reservations/${userId}`)
+    }
 
     if(!loaded) return null;
     return (
@@ -234,17 +249,13 @@ const SideBarForm = ({showSide,
                         </div>
                     </div>
                     <div className="image-block">
+                        {!savedImg &&
+                            <button onClick={grabImageInput}>Upload Image</button>}
+                        {savedImg &&
+                            <button onClick={grabImageInput}>Change Image</button>}
                         <div>
                             <input
-                            type="button"
-                            value={profileImg !== "" ? profileImg + "...": ""}
-                            onClick={grabImageInput}
-                            required={true}
-                            />
-                            <label className="image-label">Profile Image</label>
-                        </div>
-                        <div>
-                            <input
+                             placeholder="your image"
                             type="file"
                             id="profileImg"
                             onChange={updateProfileImg}
@@ -252,7 +263,7 @@ const SideBarForm = ({showSide,
                         </div>
                     </div>
                     <div className="rsvp-block">
-                        <button>RSVP's</button>
+                        <button onClick={resPage}>RSVP's</button>
                     </div>
                     <button onClick={sendPageInfo} id="save-form-button"></button>
                 </form>

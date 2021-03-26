@@ -195,13 +195,13 @@ margin: 0 auto;
         top: 0%;
         left: 0%;
     }
-    60% {
+    55% {
         top:455px;
         left: 0;
     }
     100% {
         top:455px;
-        left:195px;
+        left:210px;
     }
 }
 
@@ -252,7 +252,7 @@ margin: 0 auto;
     }
     100% {
         top:510px;
-        left:95px;
+        left:110px;
     }
 }
 
@@ -401,7 +401,7 @@ margin: 0 auto;
         top: 0;
     }
     100% {
-        top: 475px;
+        top: 470px;
     }
 }
 
@@ -436,6 +436,6 @@ margin: 0 auto;
         top: 0;
     }
     100% {
-        top: 495px;
+        top: 490px;
     }
 }

@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import BackgroundCarousel from "../BackgroundCarousel";
 import LayoutSelector from "../LayoutSelector";
 import PreviewContainer from "../PreviewContainer";
 import ColorSelector from "../ColorSelector";
+import LoadingPageModal from "../../LoadingPageModal";
+import FullPreview from "../../FullPreview";
 import "./myPageLayout.css"
 
-const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray}) => {
+const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, layout, setLayout, colorPalette, setColorPalette, imageArray, savedImg}) => {
+
+    const [openModal, setOpenModal] = useState(false);
+    const [fullPreview, setFullPreview] = useState(false);
+    const [loaded, setLoaded] = useState(false);
+
+    const buildPage = () => {
+        setFullPreview(true)
+        setTimeout(() => {
+            setLoaded(true)
+        }, 750)
+    }
+
+    const transitionPages = () => {
+        setOpenModal(true)
+    }
+
     return (
         <>
             <div className="my-layout">
@@ -23,12 +41,23 @@ const MyPageLayout = ({backgroundImg, setBackgroundImg, imageId, setImageId, lay
                 <div className="preview-section">
                     <h1>Page Preview</h1>
                     <div className="preview-container">
-                        <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId}/>
+                        <PreviewContainer backgroundImg={backgroundImg} setBackgroundImg={setBackgroundImg} layout={layout} colorPalette={colorPalette} imageId={imageId} savedImg={savedImg}/>
                     </div>
                     <div className="button-container">
-                        <button>Go to page</button>
+                        <button
+                            onClick={buildPage}
+                            disabled={!backgroundImg}
+                            id={backgroundImg ? "" : "not-allowed"}
+                            >Full Preview<span id={backgroundImg ? "hide-tool" : ""} className="text">Select an Image First</span></button>
+                        <button onClick={transitionPages}>Go To Page</button>
                     </div>
                 </div>
+                {openModal &&
+                    <LoadingPageModal openModal={openModal} setOpenModal={setOpenModal}/>
+                }
+                {fullPreview &&
+                    <FullPreview loaded={loaded} setLoaded={setLoaded} fullPreview={fullPreview} setFullPreview={setFullPreview} backgroundImg={backgroundImg} imageId={imageId} layout={layout} colorPalette={colorPalette}/>
+                }
             </div>
         </>
     )
