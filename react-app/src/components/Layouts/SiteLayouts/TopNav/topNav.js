@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { getUserPageById } from "../../../../store/userPage";
 import VenueMap from "../../../VenueMap";
 import { format } from 'date-fns';
+import RSVPForm from "../../../RSVP";
 import "./topNav.css";
 
 const TopNav = ({imageId, colorPalette, lat, lng}) => {
@@ -110,11 +111,7 @@ const TopNav = ({imageId, colorPalette, lat, lng}) => {
                     </div>
                     }
                     {section === 3 &&
-                        <div>
-                            <form>
-                                
-                            </form>
-                        </div>
+                    <RSVPForm />
                     }
                 </div>
             </div>

@@ -210,28 +210,29 @@
 
 #b-1 {
     background-color: #0f6eea;
-    border: 2px solid #e08d56;
     color: white;
+    border: none;
 }
 #b-2 {
     color: white;
     background-color: #0f6eea;;
-    border: 2px solid #6e7b7f;
+    border: none;
 }
 #b-3 {
     color: white;
     background-color:#5b6c34;
-    border: 2px solid #a5943f;
+    border: none;
+
 }
 #b-4 {
     background-color: #00b7cc;
-    border: 2px solid #977173;
+    border: none;
     color: white;
 }
 
 #b-5 {
     background: #17a5a3;
-    border: 2px solid #f67824;
+    border: none;
     color: white;
 }
 
