@@ -31,7 +31,9 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
     const [secondaryColor, setSecondColor] = useState("");
     const [section, setSection] = useState(1);
     const [buttonColor, setButtonColor] = useState("");
-    const [footerColor, setFooterColor] = useState("")
+    const [footerColor, setFooterColor] = useState("");
+    const [rsvpPosition] = useState("vertical")
+    const [venueColor, setVenueColor] = useState("");
 
     useEffect(() => {
         if(userId) {
@@ -48,30 +50,35 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
             setUnderlined("one-active-r")
             setButtonColor("b-1")
             setFooterColor("f-1")
+            setVenueColor("primary-one")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
             setUnderlined("two-active-r")
             setButtonColor("b-2")
             setFooterColor("f-2")
+            setVenueColor("primary-two")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
             setUnderlined("three-active-r")
             setButtonColor("b-3")
             setFooterColor("f-3")
+            setVenueColor("primary-three")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
             setUnderlined("four-active-r")
             setButtonColor("b-4")
             setFooterColor("f-4")
+            setVenueColor("primary-four")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
             setUnderlined("five-active-r")
             setButtonColor("b-5")
             setFooterColor("f-5")
+            setVenueColor("primary-five")
         }
     }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
@@ -103,7 +110,7 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
                     {section === 2 &&
                     <div className="venue-map-r">
                         <div className="venue-location-r">
-                            <div className="venue-name-g">{venueName}</div>
+                            <div id={venueColor ? venueColor : ""} className="venue-name-g">{venueName}</div>
                             <div className="venue-address-g">{venueAddress}</div>
                             <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
                         </div>
@@ -113,7 +120,7 @@ const LeftNav = ({imageId, colorPalette, lat, lng}) => {
                     }
                 </div>
                 {section === 3 &&
-                    <RSVPForm />
+                    <RSVPForm rsvpPosition={rsvpPosition} footerColor={footerColor} buttonColor={buttonColor} />
                     }
             </div>
             {!pathName.includes("myPage") &&

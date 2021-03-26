@@ -31,6 +31,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
     const [section, setSection] = useState(1);
     const [buttonColor, setButtonColor] = useState("");
     const [footerColor, setFooterColor] = useState("")
+    const [venueColor, setVenueColor] = useState("");
 
     useEffect(() => {
         if(userId) {
@@ -47,30 +48,35 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
             setUnderlined("one-active")
             setButtonColor("b-1")
             setFooterColor("f-1")
+            setVenueColor("primary-one")
         } else if(colorPalette === 2 && imageId === 2) {
             setPrimaryColor("primary-two")
             setSecondColor("secondary-two")
             setUnderlined("two-active")
             setButtonColor("b-2")
             setFooterColor("f-2")
+            setVenueColor("primary-two")
         } else if(colorPalette === 2 && imageId === 3) {
             setPrimaryColor("primary-three")
             setSecondColor("secondary-three")
             setUnderlined("three-active")
             setButtonColor("b-3")
             setFooterColor("f-3")
+            setVenueColor("primary-three")
         } else if(colorPalette === 2 && imageId === 4) {
             setPrimaryColor("primary-four")
             setSecondColor("secondary-four")
             setUnderlined("four-active")
             setButtonColor("b-4")
             setFooterColor("f-4")
+            setVenueColor("primary-four")
         }else if(colorPalette === 2 && imageId === 5) {
             setPrimaryColor("primary-five")
             setSecondColor("secondary-five")
             setUnderlined("five-active")
             setButtonColor("b-5")
             setFooterColor("f-5")
+            setVenueColor("primary-five")
         }
     }, [imageId, setStandardColor, colorPalette, dispatch, userId])
 
@@ -98,7 +104,7 @@ const BotNav = ({imageId, colorPalette, lat, lng}) => {
                     <div className="venue-map">
                         <VenueMap lat={lat} lng={lng} />
                         <div className="venue-location">
-                            <div className="venue-name-g">{venueName}</div>
+                            <div id={venueColor ? venueColor : ""} className="venue-name-g">{venueName}</div>
                             <div className="venue-address-g">{venueAddress}</div>
                             <div className="venue-address-g">{`${venueCity}, ${venueState} ${venueZip}`}</div>
                             <a id={colorPalette === 2 ? buttonColor : "" } className="directions-button" href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get Directions</a>

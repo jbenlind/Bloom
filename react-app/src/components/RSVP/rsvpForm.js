@@ -1,48 +1,49 @@
 import React from "react";
 import "./rsvpForm.css";
 
-const RSVPForm = () => {
+const RSVPForm = ({rsvpPosition, footerColor, buttonColor}) => {
 
     return (
         <>
-            <div className="rsvp-form">
+            <div className={`rsvp-form-${rsvpPosition}`}>
                 <form>
                     <div>
                         <input
                           required={true}/>
-                        <label>First Name</label>
+                        <label id={footerColor? footerColor :""}>First Name</label>
                     </div>
                     <div>
                         <input
                           required={true}/>
-                        <label>Last Name</label>
+                        <label id={footerColor? footerColor :""}>Last Name</label>
                     </div>
                     <div>
                         <input
                           required={true}/>
-                        <label>Email</label>
+                        <label id={footerColor? footerColor :""}>Email</label>
+                    </div>
+                    <div>
+                        <input
+                        // type="radio"
+                          required={true}/>
+                        <label id={footerColor? footerColor :""}>Attending</label>
                     </div>
                     <div>
                         <input
                           required={true}/>
-                        <label>Attending</label>
+                        <label id={footerColor? footerColor :""}>Number Attending</label>
                     </div>
                     <div>
                         <input
                           required={true}/>
-                        <label>Number Attending</label>
+                        <label id={footerColor? footerColor :""}>Allergies</label>
                     </div>
                     <div>
                         <input
                           required={true}/>
-                        <label>Allergies</label>
+                        <label id={footerColor? footerColor :""}>Allergies Description</label>
                     </div>
-                    <div>
-                        <input
-                          required={true}/>
-                        <label>Allergies Description</label>
-                    </div>
-                    <button>Submit</button>
+                    <button id={buttonColor ? buttonColor :""}>Submit</button>
                 </form>
             </div>
         </>
