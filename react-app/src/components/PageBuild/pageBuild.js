@@ -48,7 +48,6 @@ const PageBuild = () => {
         }
     }, [userInfo, setLayout, setColorPalette, setImageId])
 
-    console.log("pppppp", lat, lng)
     return (
         <>
             <div style={{backgroundImage: `url(${backgroundImg})`}} className="site-background">

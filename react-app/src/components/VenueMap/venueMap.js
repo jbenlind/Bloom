@@ -14,10 +14,11 @@ const VenueMap = ({lat, lng}) => {
   };
 
   const [selected, setSelected] = useState(false)
+  console.log(process.env.REACT_APP_API_KEY)
 
     return (
       <LoadScript
-        googleMapsApiKey="AIzaSyAhUv7D1k_1HGN2tm-Im677gbBTetI64lo"
+        googleMapsApiKey={process.env.REACT_APP_API_KEY}
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
