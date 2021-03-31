@@ -35,7 +35,6 @@ const AuthForms = ({authenticated, setAuthenticated}) => {
     const signupSelected = () => {
         setPrevious(selected)
         setSelected("signup")
-
     }
 
     const demoSelected = () => {
