@@ -55,7 +55,13 @@
     letter-spacing: .3rem;
 	text-transform: uppercase;
 }
-
+@media (max-width: 1440px) {
+    .loom,
+    .link,
+    .btn {
+        font-size: 1.2rem;
+    }
+  }
 .loom,
 .link {
     color:#0f6eea;
