@@ -27,6 +27,12 @@
     margin-bottom: 30px;
 }
 
+@media (max-width: 1440px) {
+    #slogan-header {
+        font-size: 2.5rem;
+    }
+  }
+
 .footer {
     position: absolute;
     bottom: 1%;
@@ -52,4 +58,3 @@
 .foot-but:hover {
     color: #6289bd;
 }
-
