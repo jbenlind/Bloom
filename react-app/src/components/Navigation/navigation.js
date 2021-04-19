@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../store/session";
-import Search from "../Search";
 import FromCenterButton from "../FromCenterButton";
 import "./navigation.css";
 
@@ -49,36 +48,32 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
       { (pathName === "" || pathName === "templates" || pathName === "userHub")  &&
         <div className="grid-container">
         <div id="first-fraction">
-          {!searching &&
           <NavLink id={pathName === "" ? "inUse" : pathName} className="bloom-title" to="/">
             <span className="b">B</span>
              <span id={pathName} className="loom-hover loom">
               loom
             </span>
-          </NavLink>}
+          </NavLink>
         </div>
         <div id="second-fraction">
-        {searching &&
-          <Search searching={searching} setSearching={setSearching} />}
-        {!searching &&  <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
+          <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
             Templates
-          </NavLink>}
-
-      {!searching && <NavLink className="link" to="" onClick={(e) => setSearching(true)}>
+          </NavLink>
+          <NavLink className="link" to="" onClick={(e) => setSearching(true)}>
             Find a page
-          </NavLink>}
-          {(!authenticated && !searching) && (
+          </NavLink>
+          {!authenticated  && (
             <NavLink id={pathName === "userHub"? "inUse" : ""} className="link" to="/userHub">
               Log In
             </NavLink>
           )}
-          {(authenticated && sessionUser && !searching) && (
+          {(authenticated && sessionUser) && (
             <NavLink id={pathName.includes("myPage") ? "inUse" : ""} className="link" to={`myPage/${sessionUser.id}`}>
               My page
             </NavLink>
           )}
         </div>
-       {!searching && <div id="third-fraction">
+        <div id="third-fraction">
           {((authenticated && (pathName !== "templates")) &&  (
             <button className="btn from-center" onClick={logoutFunction}>
               log out
@@ -87,7 +82,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
           {(((!authenticated && (pathName === "")) || (pathName === "templates")))  && (
             <FromCenterButton />
           )}
-        </div>}
+        </div>
       </div>}
     </>
   );

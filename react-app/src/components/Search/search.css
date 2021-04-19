@@ -85,7 +85,8 @@
     width: 550px;
     height: 450px;
     position: absolute;
-    background-color: rgb(206, 206, 206);
+    /* background-color: rgb(206, 206, 206); */
+    background-color: white;
     top: 65px;
     left: 70px;
     animation: fadeIn 1s;
