@@ -1,7 +1,6 @@
 .searchPage {
     width: 100%;
     height: 100%;
-    z-index: -1;
     animation: fadeIn 1s;
     display: flex;
     align-items: center;
@@ -24,41 +23,47 @@
 }
 
 .searchBar input {
-    height: 40px;
-    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 30px;
     background-color: transparent;
     border: none;
     outline: none;
     padding-left: 10px;
     color: rgba(0, 0, 0, .7);
-    /* text-align: center; */
+}
+
+.search-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .input-container input::placeholder {
     width: 100%;
     color: #6289bd;
 }
-
-.searchIcon {
-    color:  #6289bd;
-    font-size: 25px;
-    top: 20px;
-    left: 440px;
+.input-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon-slider {
     color:  #6289bd;
     font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .circle {
-    width: 30%;
-    height: 50%;
+    width: 25%;
+    height: 60%;
     /* background-color: rgb(206, 206, 206); */
     background-color: white;
-    top: 65px;
-    left: 70px;
     animation: fadeIn 1s;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
 }

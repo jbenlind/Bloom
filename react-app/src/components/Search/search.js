@@ -8,7 +8,6 @@ import "./search.css";
 const Search = ({setSearching, searching}) => {
 
     const dispatch = useDispatch();
-    const [slide, setSlide] = useState(false);
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("Search");
     const [search, setSearch] = useState("");
@@ -17,12 +16,6 @@ const Search = ({setSearching, searching}) => {
 
     const findPages = () => {
         dispatch(findAllPages(setPages))
-    }
-
-    const setFocus = () => {
-        setLoading(true)
-        setSlide(true)
-        setMessage("Search by Page Name")
     }
 
     if(pages.length > 0) {
@@ -42,19 +35,17 @@ const Search = ({setSearching, searching}) => {
             <Modal>
                 <div className="searchPage">
                     <div className="searchBar">
-                        <div className={!slide ? "searchIcon" : "icon-slider"}><i  className="far fa-search"></i></div>
+                        <div className="icon-slider"><i  className="far fa-search"></i></div>
                             <div className="input-container">
                                 <input
                                 onClick={findPages}
                                 value={search}
                                 placeholder="Search By Page Name"
-                                className={slide ? "slide-ani" : ""}
-                                onFocus={(e) => setFocus()}
+                                className="search-in"
                                 onChange={(e) => setSearch(e.target.value)}
                                 />
                             </div>
                         </div>
-                        {loading &&
                         <div className="circle">
                         {search.length !== 0 &&
                         <div className="link-container">
@@ -81,7 +72,7 @@ const Search = ({setSearching, searching}) => {
                             ))}
                         </div>
                         }
-                    </div>}
+                    </div>
                     <button id={loading ? "close-button" : ""} className="close-button" onClick={(e) => setSearching(false)}>Close Search</button>
                 </div>
             </Modal>}
