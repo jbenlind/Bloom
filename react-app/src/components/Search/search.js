@@ -16,6 +16,11 @@ const Search = ({setSearching, searching}) => {
         dispatch(findAllPages(setPages))
     }
 
+    const reset = () => {
+        setSearch("")
+        setSearching(false)
+    }
+
     if(pages.length > 0) {
     matches = pages.filter((page) => {
         if(search === "") {
@@ -49,7 +54,7 @@ const Search = ({setSearching, searching}) => {
                         <div className="link-container">
                             {matches.map((match) => (
                                 <NavLink className="search-link" key={match.id} to={`${match.pageName.split(" ").join("")}-${match.userId}`}>
-                                    <div className="link-content" onClick={(e) => setSearching(false)}>
+                                    <div className="link-content" onClick={(e) => reset()}>
                                     {(match.profileImg === null || match.profileImg === "") &&
                                         <div className="thumb-images-container">
                                             <img className="thumb-image" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png" alt="poop"></img>

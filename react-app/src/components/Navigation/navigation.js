@@ -61,7 +61,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
           <NavLink id={pathName === "templates"? "inUse" : ""} className="link" to="/templates">
             Templates
           </NavLink>
-          <NavLink className="link" to="" onClick={(e) => setSearching(true)}>
+          <NavLink id={searching ? "inUse" : ""} className="link" to="" onClick={(e) => setSearching(true)}>
             Find a page
           </NavLink>
           {!authenticated  && (
