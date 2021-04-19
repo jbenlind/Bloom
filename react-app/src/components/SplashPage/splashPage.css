@@ -20,11 +20,17 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 1440px) {
+    #page-container {
+        left: 0;
+    }
+  }
 
 #slogan-header {
     font-size: 50px;
     color: white;
     margin-bottom: 30px;
+
 }
 
 @media (max-width: 1440px) {

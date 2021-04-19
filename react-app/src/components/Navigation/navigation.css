@@ -10,6 +10,12 @@
     border-bottom: 1px solid white;
     height: 50px;
 }
+@media (max-width: 1440px) {
+    .grid-container {
+        grid-template-columns: 29% 42% 29%;
+    }
+  }
+
 
 #myPage {
     background-color: rgba(209, 209, 209, 0.8);
@@ -43,7 +49,7 @@
 }
 @media (max-width: 1440px) {
     .b {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
   }
 
@@ -63,7 +69,7 @@
     .loom,
     .link,
     .btn {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
   }
 .loom,
