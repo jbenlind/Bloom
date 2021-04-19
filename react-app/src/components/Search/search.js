@@ -47,7 +47,7 @@ const Search = ({setSearching, searching}) => {
                                 <input
                                 onClick={findPages}
                                 value={search}
-                                placeholder={message}
+                                placeholder="Search By Page Name"
                                 className={slide ? "slide-ani" : ""}
                                 onFocus={(e) => setFocus()}
                                 onChange={(e) => setSearch(e.target.value)}
