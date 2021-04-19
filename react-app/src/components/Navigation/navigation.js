@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../store/session";
 import FromCenterButton from "../FromCenterButton";
+import Search from "../Search";
 import "./navigation.css";
 
 const debounce = (fn) => {
@@ -45,6 +46,7 @@ const Navigation = ({ authenticated, setAuthenticated }) => {
 
   return (
     <>
+      <Search searching={searching} setSearching={setSearching}/>
       { (pathName === "" || pathName === "templates" || pathName === "userHub")  &&
         <div className="grid-container">
         <div id="first-fraction">
