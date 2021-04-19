@@ -8,8 +8,6 @@ import "./search.css";
 const Search = ({setSearching, searching}) => {
 
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("Search");
     const [search, setSearch] = useState("");
     const [pages, setPages] = useState([]);
     let matches = [];
@@ -34,9 +32,9 @@ const Search = ({setSearching, searching}) => {
         <>  {searching &&
             <Modal>
                 <div className="searchPage">
-                    <div className="searchBar">
-                        <div className="icon-slider"><i  className="far fa-search"></i></div>
-                            <div className="input-container">
+                    <div className="search-box">
+                        <div className="searchBar">
+                            <div className="input-container"><i  className="far fa-search"></i>
                                 <input
                                 onClick={findPages}
                                 value={search}
@@ -44,14 +42,14 @@ const Search = ({setSearching, searching}) => {
                                 className="search-in"
                                 onChange={(e) => setSearch(e.target.value)}
                                 />
+                                <button id="close-button" className="close-button" onClick={(e) => setSearching(false)}>Close</button>
                             </div>
-                        </div>
-                        <div className="circle">
+                            </div>
                         {search.length !== 0 &&
                         <div className="link-container">
                             {matches.map((match) => (
                                 <NavLink className="search-link" key={match.id} to={`${match.pageName.split(" ").join("")}-${match.userId}`}>
-                                    <div className="link-content">
+                                    <div className="link-content" onClick={(e) => setSearching(false)}>
                                     {(match.profileImg === null || match.profileImg === "") &&
                                         <div className="thumb-images-container">
                                             <img className="thumb-image" src="https://bloombucketjesse.s3.us-east-2.amazonaws.com/bloomFavicon.ico.png" alt="poop"></img>
@@ -70,10 +68,8 @@ const Search = ({setSearching, searching}) => {
                                     <div className="line"></div>
                                 </NavLink>
                             ))}
-                        </div>
-                        }
+                        </div>}
                     </div>
-                    <button id={loading ? "close-button" : ""} className="close-button" onClick={(e) => setSearching(false)}>Close Search</button>
                 </div>
             </Modal>}
         </>

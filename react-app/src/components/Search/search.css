@@ -6,15 +6,16 @@
     align-items: center;
     flex-direction: column;
     z-index: 2;
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .searchBar {
-    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    flex-direction: row;
+    margin: 10px;
+
 }
 
 .searchBar button {
@@ -22,7 +23,13 @@
     border: none;
 }
 
-.searchBar input {
+.searchBar i {
+    font-size: 30px;
+    color: #6289bd;
+    margin-left: 5px;
+}
+
+.input-container input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,14 +37,12 @@
     background-color: transparent;
     border: none;
     outline: none;
-    padding-left: 10px;
     color: rgba(0, 0, 0, .7);
-}
-
-.search-in {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #6289bd;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .input-container input::placeholder {
@@ -49,23 +54,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
+    border: 2px solid #6289bd;
+    height: 40px;
 }
 
-.icon-slider {
-    color:  #6289bd;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.circle {
-    width: 25%;
+.search-box {
+    width: 30%;
     height: 60%;
     /* background-color: rgb(206, 206, 206); */
     background-color: white;
     animation: fadeIn 1s;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    margin-top: 100px;
 }
 
 .link-container {
@@ -89,58 +90,29 @@
     margin-right: 20px;
 }
 
-
-.close-button {
-    height: 35px;
-    width: 130px;
-    background-color: #6289bd;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    color: white;
-    margin-top: 10px;
-}
-
 #close-button {
-    height: 35px;
-    width: 130px;
+    height: 30px;
+    width: 90px;
     background-color: #6289bd;
     border: none;
     outline: none;
     font-size: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     color: white;
-    margin-top: 10px;
-    animation: slide-cb 1s forwards;
-    z-index: 4;
+    margin-right: 5px;
 }
 
-@keyframes slide-cb {
-    0% {
-
-        padding: 10px;
-        margin-top: 10px;
-    }
-    100% {
-        margin-top: 440px;
-        padding: 10px;
-    }
-}
-
-.close-button:hover,
 #close-button:hover {
     background-color: #6d99d1;
 }
 
 .search-link {
     text-decoration: none;
-
 }
 
 .link-content {
     text-decoration: none;
-    color: black;
+    color: rgba(0, 0, 0, .7);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -155,7 +127,6 @@
 .search-partners {
     font-size: 20px;
 }
-
 
 .line {
     width: 350px;
