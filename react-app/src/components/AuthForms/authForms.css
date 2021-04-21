@@ -45,6 +45,11 @@
     background-color: rgba(255, 255, 255, 0.5);
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-one {
+        left: 23.9vw;
+    }
+  }
 
 #p-two {
     position: absolute;
@@ -56,6 +61,11 @@
     animation: a-one 1s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-two {
+        left: 23.9vw;
+    }
+  }
 
 @keyframes a-one {
     0% {
@@ -77,6 +87,11 @@
     animation: a-two 1s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-three {
+        left: 23.9vw;
+    }
+  }
 
 @keyframes a-two {
     0% {
@@ -97,6 +112,11 @@
     animation: a-three 1s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-four {
+        left: 23.9vw;
+    }
+  }
 
 @keyframes a-three {
     0% {
@@ -117,6 +137,11 @@
     animation: a-four 1s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-five {
+        left: 23.9vw;
+    }
+  }
 
 @keyframes a-four {
     0% {
@@ -137,6 +162,11 @@
     animation: a-five 1s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-six {
+        left: 23.9vw;
+    }
+  }
 
 @keyframes a-five {
     0% {
@@ -157,6 +187,11 @@
     animation: a-six 1s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 1440px) {
+    #p-seven {
+        left: 23.9vw;
+    }
+  }
 
 @keyframes a-six {
     0% {

@@ -86,6 +86,35 @@
 #userHub {
     animation: slider 3.5s .6s forwards;
 }
+@media (max-width: 1440px) {
+    #userHub{
+        animation: small-slider 3.5s .6s forwards;
+    }
+}
+
+@keyframes small-slider {
+    0% {
+      transform: translate(0, 0);
+      text-decoration: none;
+      color:#0f6eea;
+    }
+    25% {
+        transform: translate(0, 250px);
+        color:#0f6eea;
+    }
+    60% {
+        transform: translate(261px, 250px);
+        color:#0f6eea;
+    }
+    99% {
+        transform: translate(261px, 250px);
+        color: white;
+      }
+    100% {
+      transform: translate(261px, 250px);
+      color: white;
+    }
+}
 
 @keyframes slider {
     0% {

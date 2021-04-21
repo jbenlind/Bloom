@@ -8,6 +8,11 @@
     box-sizing: border-box;
     animation: fadeIn 2s;
 }
+@media (max-width: 1440px) {
+    .auth-box-two{
+        left: 58.5%;
+    }
+  }
 
 .auth-box-two h4 {
     margin: 0 0 30px 40px;

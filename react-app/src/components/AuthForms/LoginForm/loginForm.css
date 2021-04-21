@@ -8,6 +8,11 @@
     height: 400px;
     animation: fadeIn 2s;
 }
+@media (max-width: 1440px) {
+    .auth-box {
+        left: 58.5%;
+    }
+  }
 
 @keyframes fadeIn {
     from {opacity: 0; }
