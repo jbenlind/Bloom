@@ -7,6 +7,11 @@
     justify-content: space-evenly;
     margin: 5px 0;
 }
+@media (max-width: 1440px) {
+    .my-images-tem {
+        width: 55%;
+    }
+}
 
 .my-images-tem {
     width: 65%;
@@ -15,7 +20,11 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
+@media (max-width: 1440px) {
+    .my-images-tem {
+        width: 60%;
+    }
+}
 .i-container {
     width: 1100px;
     display: flex;
@@ -26,9 +35,16 @@
     box-shadow: 2px 2px 5px solid black;
 }
 
+
 .center-l {
     height: 600px;
     width: 1100px;
+}
+@media (max-width: 1440px) {
+    .center-l {
+        height: 500px;
+        width: 1000px
+    }
 }
 
 .l1-l {

@@ -15,6 +15,13 @@ section {
     height: 70vh;
     width: 100%;
 }
+@media (max-width: 1440px) {
+    #section-one {
+        margin: 0;
+        padding: 0;
+        height: 80vh;
+    }
+}
 #section-2 {
     height: 70vh;
     padding-top: 140px;
@@ -34,11 +41,22 @@ section {
     letter-spacing: .2rem;
     margin-left: 430px;
 }
+@media (max-width: 1440px) {
+    .templates-header {
+        font-size: 33px;
+        margin-left: 380px;
+    }
+}
 
 .templates-description {
     width: 17vw;
     font-size: 40px;
     color: rgba(0, 0, 0, .6);
+}
+@media (max-width: 1440px) {
+    .templates-description {
+        width: 20vw;
+    }
 }
 
 .color-palette-container {
@@ -70,4 +88,10 @@ section {
     height: 450px;
     width: 800px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, .2);
+}
+@media (max-width: 1440px) {
+    .color-palette-img  {
+        height: 400px;
+        width: 650px;
+    }
 }

@@ -203,6 +203,7 @@
     cursor: pointer;
 }
 
+
 .arrow-left:hover {
     animation: bounce-left 1.5s infinite;
 }
