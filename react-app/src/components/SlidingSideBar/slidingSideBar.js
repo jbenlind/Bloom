@@ -83,7 +83,7 @@ const SlidingSideBar = ({
                     profileImg={profileImg} setProfileImg={setProfileImg}
                     savedImg={savedImg} setSavedImg={setSavedImg}
                     setOpenModal={setOpenModal}
-                    />
+                />
             </div>
         </>
     )
