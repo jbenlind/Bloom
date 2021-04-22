@@ -6,6 +6,11 @@
     align-items: center;
     justify-content: space-evenly;
 }
+@media (max-width: 1440px) {
+    #page-container {
+        left: 0;
+    }
+}
 
 .back-container {
     height: 250px;
