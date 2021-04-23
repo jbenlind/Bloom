@@ -70,6 +70,12 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: rgba(209, 209, 209, 0.5);
 }
+@media (max-width: 1440px) {
+    .preview-container {
+        height: 60%;
+    }
+}
+
 
 .horizontal-section h1 {
     text-transform: uppercase;
