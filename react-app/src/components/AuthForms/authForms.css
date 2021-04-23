@@ -65,7 +65,7 @@
     #p-two {
         left: 23.9vw;
     }
-  }
+}
 
 @keyframes a-one {
     0% {
@@ -75,7 +75,6 @@
         top: 46vh;
     }
 }
-
 
 #p-three {
     position: absolute;
@@ -91,7 +90,7 @@
     #p-three {
         left: 23.9vw;
     }
-  }
+}
 
 @keyframes a-two {
     0% {
@@ -116,7 +115,7 @@
     #p-four {
         left: 23.9vw;
     }
-  }
+}
 
 @keyframes a-three {
     0% {
@@ -166,7 +165,7 @@
     #p-six {
         left: 23.9vw;
     }
-  }
+}
 
 @keyframes a-five {
     0% {
@@ -191,7 +190,7 @@
     #p-seven {
         left: 23.9vw;
     }
-  }
+}
 
 @keyframes a-six {
     0% {
