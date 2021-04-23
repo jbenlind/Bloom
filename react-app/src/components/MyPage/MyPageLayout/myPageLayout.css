@@ -72,7 +72,8 @@
 }
 @media (max-width: 1440px) {
     .preview-container {
-        height: 60%;
+        height: 50%;
+        width: 90%;
     }
 }
 
