@@ -7,6 +7,12 @@
     justify-content: space-evenly;
     margin-left: 2%;
 }
+@media (max-width: 1440px) {
+    .my-layout {
+        margin-left: 6%;
+    }
+}
+
 
 .selector-section div h1 {
     display: flex;
@@ -28,6 +34,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+@media (max-width: 1440px) {
+    .selector-section {
+        height: 90%;
+        width: 35%;
+    }
 }
 
 .ss-one {
@@ -76,7 +88,6 @@
         width: 90%;
     }
 }
-
 
 .horizontal-section h1 {
     text-transform: uppercase;
