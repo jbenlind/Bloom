@@ -1,5 +1,3 @@
-/* button styling */
-
 .btn {
 	position: relative;
 	padding: .5rem 2.2rem;
@@ -34,8 +32,6 @@
 	transition-delay: .15s;
 }
 
-/* From Center */
-
 .from-center:before {
 	top: 0;
 	left: 50%;
@@ -58,7 +54,6 @@
 .from-center:hover:before {
 	left: 0;
 	width: 100%;
-
 }
 
 .from-center:hover:after {
