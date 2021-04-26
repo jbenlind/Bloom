@@ -49,7 +49,7 @@
     #p-one {
         left: 23.9vw;
     }
-  }
+}
 
 #p-two {
     position: absolute;
@@ -140,7 +140,7 @@
     #p-five {
         left: 23.9vw;
     }
-  }
+}
 
 @keyframes a-four {
     0% {
