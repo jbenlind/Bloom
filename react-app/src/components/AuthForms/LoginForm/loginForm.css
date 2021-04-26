@@ -12,7 +12,7 @@
     .auth-box {
         left: 58.5%;
     }
-  }
+}
 
 @keyframes fadeIn {
     from {opacity: 0; }
@@ -40,7 +40,6 @@
     border: 2px solid rgba(0,0,0, .7);
     cursor: pointer;
     color: rgba(0,0,0, .6);
-
 }
 
 .auth-box button {
@@ -67,10 +66,7 @@
     left: 10px;
     font-weight: bold;
     font-size: 15px;
-
 }
-
-
 
 .auth-box input:focus ~ label,
 .auth-box input:valid ~ label {
