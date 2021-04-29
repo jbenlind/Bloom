@@ -16,18 +16,18 @@
 }
 
 .save-cancel div button {
-    height: 30px;
-    width: 90px;
-    background-color: #6289bd;
-    border: none;
-    outline: none;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
-    color: white;
-    font-size: 18px;
+  height: 30px;
+  width: 90px;
+  background-color: #6289bd;
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+  color: white;
+  font-size: 18px;
 }
 
 .save-cancel div button:hover {
-    background-color: #6d99d1;
+  background-color: #6d99d1;
 }
 
 .lds-dual-ring {
