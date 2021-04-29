@@ -25,6 +25,7 @@
     color: white;
     font-size: 18px;
 }
+
 .save-cancel div button:hover {
     background-color: #6d99d1;
 }
@@ -56,4 +57,3 @@
       transform: rotate(360deg);
     }
   }
-
