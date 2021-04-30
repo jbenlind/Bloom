@@ -105,15 +105,15 @@
 }
 
 input[type="checkbox"] {
-display: none;
+    display: none;
 }
 
 input[type="checkbox"]:checked ~ .content {
-transform: translateX(20%);
+    transform: translateX(20%);
 }
 
 input[type="checkbox"]:checked ~ label .bar {
-background-color: #6289bd;
+    background-color: #6289bd;
 }
 
 input[type="checkbox"]:checked ~ label .top {
