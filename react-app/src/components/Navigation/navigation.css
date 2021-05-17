@@ -94,9 +94,9 @@
 
 @keyframes small-slider {
     0% {
-      transform: translate(0, 0);
-      text-decoration: none;
-      color:#0f6eea;
+        transform: translate(0, 0);
+        text-decoration: none;
+        color:#0f6eea;
     }
     25% {
         transform: translate(0, 250px);
@@ -111,8 +111,8 @@
         color: white;
       }
     100% {
-      transform: translate(261px, 250px);
-      color: white;
+        transform: translate(261px, 250px);
+        color: white;
     }
 }
 
