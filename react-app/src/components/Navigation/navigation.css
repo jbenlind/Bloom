@@ -118,9 +118,9 @@
 
 @keyframes slider {
     0% {
-      transform: translate(0, 0);
-      text-decoration: none;
-      color:#0f6eea;
+        transform: translate(0, 0);
+        text-decoration: none;
+        color:#0f6eea;
     }
     25% {
         transform: translate(0, 260px);
@@ -135,8 +135,8 @@
         color: white;
       }
     100% {
-      transform: translate(390px, 260px);
-      color: white;
+        transform: translate(390px, 260px);
+        color: white;
     }
 }
 
