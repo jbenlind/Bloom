@@ -92,7 +92,7 @@
         transform: translateX(-450px);
     }
     100% {
-            transform: translateX(0px);
+        transform: translateX(0px);
     }
 }
 
